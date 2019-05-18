@@ -1,0 +1,20 @@
+<paquet
+	prefix="svptype"
+	categorie="outil"
+	version="0.1.0"
+	etat="dev"
+	compatibilite="[3.2.0;3.2.*]"
+	logo="svptype_logo-64.png"
+	schema="1"
+>	
+
+	<nom>SVP Typologie</nom>
+	<!-- Module SVP de gestion des catégories et des tags de plugins -->
+
+	<auteur>Eric Lupinacci</auteur>
+
+	<licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GNU/GPL</licence>
+
+	<pipeline nom="declarer_tables_auxiliaires" inclure="base/svptype_declarations.php" />
+	<pipeline nom="declarer_tables_interfaces" inclure="base/svptype_declarations.php" />
+</paquet>
