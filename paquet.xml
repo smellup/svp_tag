@@ -15,6 +15,14 @@
 
 	<licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GNU/GPL</licence>
 
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/svptype_declarations.php" />
 	<pipeline nom="declarer_tables_auxiliaires" inclure="base/svptype_declarations.php" />
 	<pipeline nom="declarer_tables_interfaces" inclure="base/svptype_declarations.php" />
+	<pipeline nom="autoriser" inclure="svptype_autorisations.php" />
+	<pipeline nom="formulaire_verifier" inclure="svptype_pipelines.php" />
+
+	<necessite nom="svp" compatibilite="[1.6.1;[" />
+	<necessite nom="mots_techniques" compatibilite="[1.0.4;[" />
+	<necessite nom="motsar" compatibilite="[1.1.8;[" />
+	<necessite nom="cextras" compatibilite="[3.11.8;]" />
 </paquet>
