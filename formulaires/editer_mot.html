@@ -9,8 +9,9 @@
 		#ACTION_FORMULAIRE
 		<input type='hidden' name='id_mot' value='#ENV{id_mot}' />
 		<div class="editer-groupe">
+		#SET{groupes_plugin, #LISTE{plugin-categories, plugin-tags}}
 		#SET{groupe_identifiant, ''}
-		<BOUCLE_groupe_plugin(GROUPES_MOTS){id_groupe}{identifiant=plugin-categories}>
+		<BOUCLE_groupe_plugin(GROUPES_MOTS){id_groupe}{identifiant IN #GET{groupes_plugin}}>
 			<div class="editer editer_identifiant obligatoire[ (#ENV**{erreurs}|table_valeur{identifiant}|oui)erreur]">
 				<label for="identifiant"><:svptype:identifiant_label:></label>[
 				<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{identifiant})</span>
