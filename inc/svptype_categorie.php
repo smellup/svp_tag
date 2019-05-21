@@ -6,6 +6,53 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
+
+
+
+function groupe_lire_identifiant($id_groupe) {
+
+	static $identifiants = array();
+
+	if (!isset($identifiants[$id_groupe])) {
+		$identifiants[$id_groupe] = '';
+
+		$from = 'spip_rubriques';
+		$where = array('id_rubrique=' . intval($id_groupe));
+		$categorie = sql_getfetsel('identifiant', $from, $where);
+		if ($categorie !== null) {
+			$identifiants[$id_groupe] = $categorie;
+		}
+	}
+
+	return $identifiants[$id_groupe];
+}
+
+/**
+ * Vérifie que la rubrique concernée fait bien partie d'un secteur-plugin.
+ * Il suffit de vérifier que le secteur a bien une catégorie non vide.
+ *
+ * @param int $id
+ * 		Id de la rubrique concernée.
+ *
+ * @return bool
+ *       True si la rubrique fait partie d'un secteur-plugin, false sinon.
+ */
+function groupe_est_plugin($id_groupe) {
+
+	static $est_plugin = array();
+
+	if (!isset($est_plugin[$id_groupe])) {
+		$est_plugin[$id_groupe] = false;
+
+		if (groupe_lire_identifiant($id_groupe)) {
+			$est_plugin[$id_groupe] = true;
+		}
+	}
+
+	return $est_plugin[$id_groupe];
+}
+
+
 /**
  * Renvoie l'information brute demandée pour l'ensemble des contrôles utilisés
  * ou toute les descriptions si aucune information n'est explicitement demandée.
@@ -29,37 +76,12 @@ function categorie_plugin_repertorier($filtres = array(), $information = '') {
 	if (!$categories) {
 		// On récupère la description complète de toutes les catégories de plugin
 		$from = array('spip_mots AS m', 'spip_groupes_mots AS gm');
-		$select('m.*');
+		$select = array('m.*');
 		$where = array(
 			''
 		);
 		$categories = sql_allfetsel($select, $from, $where);
 	}
-
-	if ($niveau == 1) {
-	// On ne veut que les catégorie de niveau 1
-	$categories = array_keys($svp_categories);
-	} elseif ($niveau == 2) {
-	// On veut soit toutes les catégories de niveau 2, soit les catégories de niveau 2 d'une catégorie niveau 1
-	if ($categorie and array_key_exists($categorie, $svp_categories)) {
-	$categories = $svp_categories[$categorie];
-	} else {
-	foreach ($svp_categories as $_categorie => $_sous_categories) {
-	foreach ($_sous_categories as $_sous_categorie) {
-	$categories[] = $_sous_categorie;
-	}
-	}
-	}
-	} else {
-	// On veut toutes les catégories et sous-catégories à plat
-	foreach ($svp_categories as $_categorie => $_sous_categories) {
-	$categories[] = $_categorie;
-	foreach ($_sous_categories as $_sous_categorie) {
-	$categories[] = $_sous_categorie;
-	}
-	}
-	}
-
 
     return $categories;
 }

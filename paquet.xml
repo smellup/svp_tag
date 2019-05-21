@@ -20,6 +20,8 @@
 	<pipeline nom="declarer_tables_interfaces" inclure="base/svptype_declarations.php" />
 	<pipeline nom="autoriser" inclure="svptype_autorisations.php" />
 	<pipeline nom="formulaire_verifier" inclure="svptype_pipelines.php" />
+	<pipeline nom="pre_insertion" inclure="svptype_pipelines.php" />
+	<pipeline nom="pre_edition" inclure="svptype_pipelines.php" />
 
 	<necessite nom="svp" compatibilite="[1.6.0;[" />
 	<necessite nom="mots_techniques" compatibilite="[1.0.4;[" />

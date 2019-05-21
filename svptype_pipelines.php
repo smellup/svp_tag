@@ -29,3 +29,30 @@ function svptype_formulaire_verifier($flux) {
 
 	return $flux;
 }
+
+/**
+ * Insère des modifications juste avant la création d'un mot
+ *
+ * Lors de la création d'un mot :
+ * - Ajoute l'identifiant du mot pour les groupes plugin.
+ *
+ * @pipeline pre_insertion
+ * @param array $flux
+ *     Données du pipeline
+ * @return array
+ *     Données du pipeline complétées
+ **/
+function svptype_pre_insertion($flux) {
+
+	// lors de la création d'un mot
+	if ($flux['args']['table'] == 'spip_mots') {
+		if ($identifiant = _request('identifiant')) {
+			include_spip('inc/svptype_categorie');
+			if (groupe_est_plugin(_request('id_groupe'))) {
+				$flux['data']['identifiant'] = $identifiant;
+			}
+		}
+	}
+
+	return $flux;
+}
