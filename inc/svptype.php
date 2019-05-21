@@ -7,8 +7,6 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 
-
-
 function groupe_lire_identifiant($id_groupe) {
 
 	static $identifiants = array();
@@ -16,8 +14,8 @@ function groupe_lire_identifiant($id_groupe) {
 	if (!isset($identifiants[$id_groupe])) {
 		$identifiants[$id_groupe] = '';
 
-		$from = 'spip_rubriques';
-		$where = array('id_rubrique=' . intval($id_groupe));
+		$from = 'spip_groupes_mots';
+		$where = array('id_groupe=' . intval($id_groupe));
 		$categorie = sql_getfetsel('identifiant', $from, $where);
 		if ($categorie !== null) {
 			$identifiants[$id_groupe] = $categorie;
@@ -26,6 +24,26 @@ function groupe_lire_identifiant($id_groupe) {
 
 	return $identifiants[$id_groupe];
 }
+
+
+function groupe_lire_id($identifiant) {
+
+	static $ids_groupe = array();
+
+	if (!isset($ids_groupe[$identifiant])) {
+		$ids_groupe[$identifiant] = 0;
+
+		$from = 'spip_groupes_mots';
+		$where = array('identifiant=' . sql_quote($identifiant));
+		$id = sql_getfetsel('id_groupe', $from, $where);
+		if ($id !== null) {
+			$ids_groupe[$identifiant] = intval($id);
+		}
+	}
+
+	return $ids_groupe[$identifiant];
+}
+
 
 /**
  * Vérifie que la rubrique concernée fait bien partie d'un secteur-plugin.
@@ -44,7 +62,7 @@ function groupe_est_plugin($id_groupe) {
 	if (!isset($est_plugin[$id_groupe])) {
 		$est_plugin[$id_groupe] = false;
 
-		if (groupe_lire_identifiant($id_groupe)) {
+		if (stripos(groupe_lire_identifiant($id_groupe), 'plugin-') === 0) {
 			$est_plugin[$id_groupe] = true;
 		}
 	}
@@ -74,14 +92,31 @@ function categorie_plugin_repertorier($filtres = array(), $information = '') {
 	static $categories = array();
 
 	if (!$categories) {
+		// On récupère l'id du groupe plugin-categorie
+		$id_groupe = groupe_lire_id('plugin-categorie');
+
 		// On récupère la description complète de toutes les catégories de plugin
-		$from = array('spip_mots AS m', 'spip_groupes_mots AS gm');
-		$select = array('m.*');
-		$where = array(
-			''
-		);
-		$categories = sql_allfetsel($select, $from, $where);
+		$from = array('spip_mots');
+		$where = array('id_groupe=' . $id_groupe);
+		$categories = sql_allfetsel('*', $from, $where);
 	}
 
-    return $categories;
+	// Application des filtres éventuellement demandés en argument de la fonction
+	$categories_filtrees = $categories;
+	if ($filtres) {
+		foreach ($categories_filtrees as $_categorie) {
+			foreach ($filtres as $_critere => $_valeur) {
+				if (isset($_description[$_critere]) and ($_categorie[$_critere] != $_valeur)) {
+					unset($categories_filtrees[$_categorie]);
+					break;
+				}
+			}
+		}
+	}
+
+	if ($information) {
+		$categories_filtrees = array_column($categories_filtrees, $information);
+	}
+
+    return $categories_filtrees;
 }

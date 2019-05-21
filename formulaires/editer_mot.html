@@ -32,6 +32,9 @@
 				<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{id_groupe})</span>
 				][(#INCLURE{fond=formulaires/selecteur_groupe_mot, id_groupe=#ENV{id_groupe}, table=#ENV{table,''}, name=id_groupe, id=id_groupe})]
 			</div>]
+			[(#GET{groupe_identifiant}|oui)
+			<input type='hidden' name='id_groupe' value='#ENV{id_groupe}' />
+			]
 
 			<div class="editer editer_descriptif[ (#ENV**{erreurs}|table_valeur{descriptif}|oui)erreur]">
 				<label for="descriptif"><:texte_descriptif_rapide:></label>[
