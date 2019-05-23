@@ -62,12 +62,29 @@ function groupe_est_plugin($id_groupe) {
 	if (!isset($est_plugin[$id_groupe])) {
 		$est_plugin[$id_groupe] = false;
 
-		if (stripos(groupe_lire_identifiant($id_groupe), 'plugin-') === 0) {
+		if (in_array(groupe_lire_identifiant($id_groupe), groupe_plugin_lister())) {
 			$est_plugin[$id_groupe] = true;
 		}
 	}
 
 	return $est_plugin[$id_groupe];
+}
+
+
+/**
+ * Renvoie la liste des identifiants de groupe plugin.
+ *
+ * @return array
+ *       Identifiants des groupes.
+ */
+function groupe_plugin_lister() {
+
+	include_spip('inc/config');
+	if ($groupes = lire_config('svptype/groupes', array())) {
+		$groupes = array_column($groupes, 'identifiant');
+	}
+
+	return $groupes;
 }
 
 
@@ -98,7 +115,8 @@ function categorie_plugin_repertorier($filtres = array(), $information = '') {
 		// On récupère la description complète de toutes les catégories de plugin
 		$from = array('spip_mots');
 		$where = array('id_groupe=' . $id_groupe);
-		$categories = sql_allfetsel('*', $from, $where);
+		$order_by = array('identifiant');
+		$categories = sql_allfetsel('*', $from, $where, '', $order_by);
 	}
 
 	// Application des filtres éventuellement demandés en argument de la fonction

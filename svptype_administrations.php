@@ -29,34 +29,37 @@ function svptype_upgrade($nom_meta_base_version, $version_cible){
 
 	$maj = array();
 
+	// Créer la configuration par défaut du plugin
+	$config_defaut = configurer_svptype();
+
 	// Création des tables
 	$maj['create'] = array(
 		array('maj_tables', array('spip_groupes_mots', 'spip_mots', 'spip_plugins_typologies')),
+		array('ecrire_config', 'svptype', $config_defaut)
 	);
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
 
-	// Création des groupes de mots nécessaires à la typologie des plugins :
-	// - plugin-categories : le groupe des catégories de plugin
-	// - plugin-tags : le groupe des tags de plugin (pas initialisé pour l'instant)
+	// Création des groupes de mots nécessaires à la typologie des plugins (groupe technique, sans tables liées
+	// uniquement pour les administrateurs complets :
+	// - plugin-categories : le groupe arborescent des catégories de plugin
+	// - plugin-tags : le groupe non arborescent des tags de plugin (initialisé mais pas utilisé pour l'instant)
 	include_spip('action/editer_objet');
-
-	// Groupe plugin-categories :
-	// - groupe technique, arborescent et sans tables liées
-	// - uniquement pour les administrateurs complets
-	$groupe = array(
-		'identifiant'       => 'plugin-categories',
-		'titre'             => 'plugin-categories',
-		'technique'         => 'oui',
-		'mots_arborescents' => 'oui',
-		'tables_liees'      => '',
-		'minirezo'          => 'oui',
-		'comite'            => 'non',
-		'forum'             => 'non',
-	);
-	if (!objet_inserer('groupe_mots', null, $groupe)) {
-		spip_log("Erreur lors de l'ajout du groupe plugin-categories", 'svptype' . _LOG_ERREUR);
+	foreach ($config_defaut['groupes'] as $_groupe) {
+		$groupe = array(
+			'identifiant'       => $_groupe['identifiant'],
+			'titre'             => $_groupe['identifiant'],
+			'technique'         => 'oui',
+			'mots_arborescents' => $_groupe['mots_arborescents'],
+			'tables_liees'      => '',
+			'minirezo'          => 'oui',
+			'comite'            => 'non',
+			'forum'             => 'non',
+		);
+		if (!objet_inserer('groupe_mots', null, $groupe)) {
+			spip_log("Erreur lors de l'ajout du groupe {$_groupe['identifiant']}", 'svptype' . _LOG_ERREUR);
+		}
 	}
 }
 
@@ -84,6 +87,34 @@ function svptype_vider_tables($nom_meta_base_version) {
 	// on efface les tables
 	sql_drop_table('spip_plugins_typologies');
 
+	// Effacer la meta de configuration du plugin
+	effacer_meta('svptype');
+
 	// on efface la meta du schéma du plugin
 	effacer_meta($nom_meta_base_version);
+}
+
+
+/**
+ * Initialise la configuration du plugin.
+ *
+ * @return array
+ * 		Le tableau de la configuration par défaut qui servira à initialiser la meta `svptype`.
+ */
+function configurer_svptype() {
+
+	$config = array(
+		'groupes' => array(
+			array(
+				'identifiant' => 'plugin-categories',
+				'mots_arborescents' => 'oui'
+			),
+			array(
+				'identifiant' => 'plugin-tags',
+				'mots_arborescents' => 'non'
+			),
+		),
+	);
+
+	return $config;
 }

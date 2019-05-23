@@ -93,3 +93,40 @@ function svptype_pre_edition($flux) {
 
 	return $flux;
 }
+
+
+/**
+ * Modifie les champs du formulaire de groupe de mot et de mots
+ *
+ * Sur les mots appartenant à un groupe plugin :
+ * - ajouter l'identifiant
+ *
+ * @pipeline formulaire_fond
+ * @param array $flux
+ * 		Données du pipeline
+ * @return array
+ * 		Données du pipeline complétées
+**/
+function svptype_formulaire_fond($flux) {
+
+	// sur le formulaire d'édition de mot
+	// mais seulement si le groupe de mot choisi permet l'arborescence.
+	$env = $flux['args']['contexte'];
+	if ($flux['args']['form'] == 'editer_mot' and isset($env['id_groupe'])) {
+		include_spip('inc/svptype');
+		if (groupe_est_plugin($env['id_groupe'])) {
+			// la parenté sur tous : on récupère le sélecteur et on l'ajoute après le titre...
+			$saisie_identifiant = recuperer_fond('formulaires/identifiant_mot', $env);
+
+			if (strpos($flux['data'], '<!--extra-->') !== false) {
+				$flux['data'] = preg_replace(
+					'%(<!--extra-->)%is',
+					"${saisie_identifiant}\n" . '$1',
+					$flux['data']
+				);
+			}
+		}
+	}
+
+	return $flux;
+}
