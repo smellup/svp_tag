@@ -88,6 +88,25 @@ function groupe_plugin_lister() {
 }
 
 
+function mot_lire_groupe($id_mot) {
+
+	static $ids_groupe = array();
+
+	if (!isset($ids_groupe[$id_mot])) {
+		$ids_groupe[$id_mot] = 0;
+
+		$from = 'spip_mots';
+		$where = array('id_mot=' . intval($id_mot));
+		$id = sql_getfetsel('id_groupe', $from, $where);
+		if ($id !== null) {
+			$ids_groupe[$id_mot] = intval($id);
+		}
+	}
+
+	return $ids_groupe[$id_mot];
+}
+
+
 /**
  * Renvoie l'information brute demandée pour l'ensemble des contrôles utilisés
  * ou toute les descriptions si aucune information n'est explicitement demandée.
