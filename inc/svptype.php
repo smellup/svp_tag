@@ -107,6 +107,89 @@ function mot_lire_groupe($id_mot) {
 }
 
 
+function mot_lire_profondeur($id_mot) {
+
+	static $profondeurs = array();
+
+	if (!isset($profondeurs[$id_mot])) {
+		$profondeurs[$id_mot] = 0;
+
+		$from = 'spip_mots';
+		$where = array('id_mot=' . intval($id_mot));
+		$profondeur = sql_getfetsel('profondeur', $from, $where);
+		if ($profondeur !== null) {
+			$profondeurs[$id_mot] = intval($profondeur);
+		}
+	}
+
+	return $profondeurs[$id_mot];
+}
+
+
+function mot_lire_id($identifiant) {
+
+	static $ids_mot = array();
+
+	if (!isset($ids_mot[$identifiant])) {
+		$ids_mot[$identifiant] = 0;
+
+		$from = 'spip_mots';
+		$where = array('identifiant=' . sql_quote($identifiant));
+		$id = sql_getfetsel('id_mot', $from, $where);
+		if ($id !== null) {
+			$ids_mot[$identifiant] = intval($id);
+		}
+	}
+
+	return $ids_mot[$identifiant];
+}
+
+
+function categorie_plugin_compter_affectations($categorie) {
+
+	static $compteurs = array();
+	static $id_groupe = null;
+
+	// Déterminer l'id du groupe des catégories si il n'est pas encore stocké.
+	if ($id_groupe === null) {
+		include_spip('inc/config');
+		$id_groupe = intval(lire_config('svptype/groupes/categories/id_groupe', 0));
+	}
+
+	// l'id du mot reflétant la catégorie si c'est une feuille ou la liste des
+	// ids si c'est une catégorie de regroupement.
+	if (is_string($categorie)) {
+		// On a passé l'identifiant, il faut déterminer l'id du mot.
+		$id_mot = mot_lire_id($categorie);
+	} else {
+		// On a passé l'id du mot.
+		$id_mot = intval($categorie);
+	}
+
+	// Recherche des affectations de plugin. Il faut distinguer :
+	// -- les catégories de regroupement comme auteur
+	// -- et les catégories feuille auxquelles sont attachés les plugins (auteur/extension)
+	if (!isset($compteurs[$id_mot])) {
+		// Initialisation de la condition sur le groupe
+		$where = array('id_groupe=' . $id_groupe);
+
+		// Déterminer le mode de recherche suivant que la catégorie est un regroupement ou une feuille.
+		$profondeur = mot_lire_profondeur($id_mot);
+		if (!$profondeur) {
+			// La catégorie est un regroupement, il faut établir la condition sur le parent.
+			$where[] = 'id_parent=' . $id_mot;
+		} else {
+			// La profondeur est > 0 (forcément 1), c'est donc une feuille qui peut être affectée à un plugin.
+			$where[] = 'id_mot=' . $id_mot;
+		}
+
+		$compteurs[$id_mot] = sql_countsel('spip_plugins_typologies', $where);
+	}
+
+	return $compteurs[$id_mot];
+}
+
+
 /**
  * Renvoie l'information brute demandée pour l'ensemble des contrôles utilisés
  * ou toute les descriptions si aucune information n'est explicitement demandée.
@@ -122,24 +205,25 @@ function mot_lire_groupe($id_mot) {
  *        Tableau de la forme `[type_controle]  information ou description complète`. Les champs textuels
  *        sont retournés en l'état, le timestamp `maj n'est pas fourni.
  */
-function categorie_plugin_repertorier($filtres = array(), $information = '') {
+function type_plugin_repertorier($type, $filtres = array(), $information = '') {
 
 	// Utilisation d'une statique pour éviter les requêtes multiples sur le même hit.
 	static $categories = array();
 
-	if (!$categories) {
-		// On récupère l'id du groupe plugin-categorie
-		$id_groupe = groupe_lire_id('plugin-categorie');
+	if (!isset($categories[$type])) {
+		// On récupère l'id du groupe pour le type précisé (categorie, tag).
+		include_spip('inc/config');
+		$id_groupe = lire_config("svptype/groupes/${type}/id_groupe", 0);
 
 		// On récupère la description complète de toutes les catégories de plugin
 		$from = array('spip_mots');
 		$where = array('id_groupe=' . $id_groupe);
 		$order_by = array('identifiant');
-		$categories = sql_allfetsel('*', $from, $where, '', $order_by);
+		$categories[$type] = sql_allfetsel('*', $from, $where, '', $order_by);
 	}
 
 	// Application des filtres éventuellement demandés en argument de la fonction
-	$categories_filtrees = $categories;
+	$categories_filtrees = $categories[$type];
 	if ($filtres) {
 		foreach ($categories_filtrees as $_categorie) {
 			foreach ($filtres as $_critere => $_valeur) {
@@ -156,4 +240,40 @@ function categorie_plugin_repertorier($filtres = array(), $information = '') {
 	}
 
     return $categories_filtrees;
+}
+
+
+/**
+ * Renvoie l'information brute demandée pour l'ensemble des contrôles utilisés
+ * ou toute les descriptions si aucune information n'est explicitement demandée.
+ *
+ * @param array  $filtres
+ *        Identifiant d'un champ de la description d'un contrôle.
+ * @param string $information
+ *        Identifiant d'un champ de la description d'un contrôle.
+ *        Si l'argument est vide, la fonction renvoie les descriptions complètes et si l'argument est
+ *        un champ invalide la fonction renvoie un tableau vide.
+ *
+ * @return array
+ *        Tableau de la forme `[type_controle]  information ou description complète`. Les champs textuels
+ *        sont retournés en l'état, le timestamp `maj n'est pas fourni.
+ */
+function type_plugin_lister_affectation($type) {
+
+	// Utilisation d'une statique pour éviter les requêtes multiples sur le même hit.
+	static $affectations = array();
+
+	if (!isset($affectations[$type])) {
+		// On récupère l'id du groupe pour le type précisé (categorie, tag).
+		include_spip('inc/config');
+		$id_groupe = lire_config("svptype/groupes/${type}/id_groupe", 0);
+
+		// On récupère la description complète de toutes les catégories de plugin
+		$from = array('spip_plugins_typologies');
+		$where = array('id_groupe=' . $id_groupe);
+		$order_by = array('id_mot', 'prefixe');
+		$affectations[$type] = sql_allfetsel('*', $from, $where, '', $order_by);
+	}
+
+    return $affectations[$type];
 }

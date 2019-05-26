@@ -173,7 +173,7 @@ function svptype_afficher_contenu_objet($flux){
 			and groupe_est_plugin($id_groupe)) {
 				// On affiche l'identifiant du mot
 				$contexte = array('id_mot' => $id_objet);
-				$html_identifiant = recuperer_fond('prive/inclure/mot_identifiant', $contexte);
+				$html_identifiant = recuperer_fond('prive/squelettes/inclure/mot_identifiant', $contexte);
 				$flux['data'] .= $html_identifiant;
 			}
 		}

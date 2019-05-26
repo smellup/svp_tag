@@ -24,9 +24,12 @@
 	<pipeline nom="pre_insertion" inclure="svptype_pipelines.php" />
 	<pipeline nom="pre_edition" inclure="svptype_pipelines.php" />
 	<pipeline nom="afficher_contenu_objet" inclure="svptype_pipelines.php" />
+	<pipeline nom="ieconfig" inclure="svptype_ieconfig.php" />
 
 	<necessite nom="svp" compatibilite="[1.6.0;[" />
 	<necessite nom="mots_techniques" compatibilite="[1.0.4;[" />
 	<necessite nom="motsar" compatibilite="[1.1.8;[" />
-	<necessite nom="cextras" compatibilite="[3.11.8;]" />
+	<necessite nom="ieconfig" compatibilite="[2.0.10;]" />
+
+	<menu nom="svptype" titre="svptype:svptype_menu" parent="menu_administration" icone="images/svptype_menu-16.png" action="svptype_categorie" />
 </paquet>

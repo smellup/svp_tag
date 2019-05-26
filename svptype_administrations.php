@@ -15,8 +15,6 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * Le schéma comprend des tables et des variables de configuration.
  *
  * @api
- * @see controle_declarer_tables_principales()
- * @see controle_declarer_tables_interfaces()
  *
  * @param string $nom_meta_base_version
  * 		Nom de la meta dans laquelle sera rangée la version du schéma
@@ -41,26 +39,9 @@ function svptype_upgrade($nom_meta_base_version, $version_cible){
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
 
-	// Création des groupes de mots nécessaires à la typologie des plugins (groupe technique, sans tables liées
-	// uniquement pour les administrateurs complets :
-	// - plugin-categories : le groupe arborescent des catégories de plugin
-	// - plugin-tags : le groupe non arborescent des tags de plugin (initialisé mais pas utilisé pour l'instant)
-	include_spip('action/editer_objet');
-	foreach ($config_defaut['groupes'] as $_groupe) {
-		$groupe = array(
-			'identifiant'       => $_groupe['identifiant'],
-			'titre'             => $_groupe['identifiant'],
-			'technique'         => 'oui',
-			'mots_arborescents' => $_groupe['mots_arborescents'],
-			'tables_liees'      => '',
-			'minirezo'          => 'oui',
-			'comite'            => 'non',
-			'forum'             => 'non',
-		);
-		if (!objet_inserer('groupe_mots', null, $groupe)) {
-			spip_log("Erreur lors de l'ajout du groupe {$_groupe['identifiant']}", 'svptype' . _LOG_ERREUR);
-		}
-	}
+	// Création des groupes de mots nécessaires à la typologie des plugins
+	// -- la configuration a déjà été mise à jour en BDD.
+	creer_groupes_svptype();
 }
 
 
@@ -77,8 +58,8 @@ function svptype_upgrade($nom_meta_base_version, $version_cible){
  */
 function svptype_vider_tables($nom_meta_base_version) {
 
-	// on supprime les groupes créés
-	sql_delete('spip_groupes_mots', array('identifiant=' . sql_quote('plugin-categories')));
+	// on supprime les groupes et les mots-clés créés
+//	sql_delete('spip_groupes_mots', array('identifiant=' . sql_quote('plugin-categories')));
 
 	// on supprime les champs additionnels des tables existantes
 	sql_alter("TABLE spip_groupes_mots DROP COLUMN identifiant");
@@ -105,16 +86,74 @@ function configurer_svptype() {
 
 	$config = array(
 		'groupes' => array(
-			array(
-				'identifiant' => 'plugin-categories',
-				'mots_arborescents' => 'oui'
+			'categorie' => array(
+				'identifiant'       => 'plugin-categories',
+				'mots_arborescents' => 'oui',
+				'id_groupe'         => 0
 			),
-			array(
-				'identifiant' => 'plugin-tags',
-				'mots_arborescents' => 'non'
+			'tag'       => array(
+				'identifiant'       => 'plugin-tags',
+				'mots_arborescents' => 'non',
+				'id_groupe'         => 0
 			),
 		),
 	);
 
 	return $config;
+}
+
+
+/**
+ * Création des groupes de mots nécessaires à la typologie des plugins.
+ * Si le groupe existe déjà on ne fait rien, sinon on le crée en stockant l'id dans la configuration.
+ *
+ * @param array $config
+ * 		Configuration du plugin : données des groupes de mots.
+ *
+ * @return void
+ */
+function creer_groupes_svptype() {
+
+	// Les groupes plugin ont les caractéristiques communes suivantes :
+	// - groupe technique
+	// - sans tables liées
+	// - et uniquement pour les administrateurs complets.
+	// En outre :
+	// - plugin-categories : le groupe arborescent des catégories de plugin
+	// - plugin-tags : le groupe non arborescent des tags de plugin (initialisé mais pas utilisé pour l'instant)
+	include_spip('action/editer_objet');
+	include_spip('inc/config');
+
+	// On acquiert la configuration du plugin et donc celle des groupes.
+	$config = lire_config('svptype', array());
+
+	if (!empty($config['groupes'])) {
+		$config_modifiee = false;
+		foreach ($config['groupes'] as $_type => $_groupe) {
+			// On vérifie d'abord si le groupe existe déjà. Si oui, on ne fait rien.
+			if (!sql_countsel('spip_groupes_mots', array('identifiant=' . sql_quote($_groupe['identifiant'])))) {
+				$groupe = array(
+					'identifiant'       => $_groupe['identifiant'],
+					'titre'             => $_groupe['identifiant'],
+					'technique'         => 'oui',
+					'mots_arborescents' => $_groupe['mots_arborescents'],
+					'tables_liees'      => '',
+					'minirezo'          => 'oui',
+					'comite'            => 'non',
+					'forum'             => 'non',
+				);
+				if ($id_groupe = objet_inserer('groupe_mots', null, $groupe)) {
+					$config['groupes'][$_type]['id_groupe'] = $id_groupe;
+					$config_modifiee = true;
+				} else {
+					spip_log("Erreur lors de l'ajout du groupe {$_groupe['identifiant']}", 'svptype' . _LOG_ERREUR);
+				}
+			}
+		}
+
+		// Ecriture de la configuration mise à jour
+		if ($config_modifiee) {
+			ecrire_config('svptype', $config);
+		}
+	}
 }

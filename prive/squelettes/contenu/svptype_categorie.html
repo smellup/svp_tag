@@ -1,0 +1,13 @@
+[(#AUTORISER{webmestre}|sinon_interdire_acces)]
+<h1><:svptype:categorie_page_titre:></h1>
+
+[(#ENV{fonction, liste}|=={liste}|oui)
+	[(#REM) <!-- Liste des catégories --> ]
+	<INCLURE{fond=prive/objets/liste/categories,
+		titre=<:svptype:categorie_liste_titre:>,
+		env, ajax} />
+]
+
+[(#ENV{fonction, liste}|=={affectation}|oui)
+	[(#REM) <!-- Affectation des catégories aux plugins --> ]
+]

@@ -1,0 +1,16 @@
+[(#REM) <!-- Menu des onglets "fonction liste", "fonction affectation".
+ --> ]
+<ul class="liste-items sous_navigation">
+	[<li class="item">
+		(#URL_ECRIRE{svptype_categorie}|parametre_url{fonction, liste}
+			|lien_ou_expose{
+				<:svptype:categorie_liste_menu:>,
+				[(#ENV{exec}|=={svptype_categorie}|et{#ENV{fonction, liste}|=={liste}})]})
+	</li>]
+	[<li class="item">
+		(#URL_ECRIRE{svptype_categorie}|parametre_url{fonction, affectation}
+			|lien_ou_expose{
+				<:svptype:categorie_affectation_menu:>,
+				[(#ENV{exec}|=={svptype_categorie}|et{#ENV{fonction, liste}|=={affectation}})]})
+	</li>]
+</ul>
