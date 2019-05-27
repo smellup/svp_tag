@@ -278,25 +278,39 @@ function type_plugin_lister_affectation($type) {
     return $affectations[$type];
 }
 
-function categorie_plugin_importer($arbre) {
+function categorie_plugin_importer($liste) {
 
-	if ($arbre) {
+	if ($liste) {
 		// Récupération de l'id du groupe
 		include_spip('inc/config');
 		if ($id_groupe = intval(lire_config("svptype/groupes/categorie/id_groupe", 0))) {
 			include_spip('action/editer_objet');
-			foreach ($arbre as $_categorie => $_sous_categories) {
+			foreach ($liste as $_categorie => $_sous_categories) {
 				// On teste l'existence de la catégorie :
-				// - si elle n'existe pas on la rajoute et on stocke son id, sinon on ne fait rien d'autre que sotcker l'id.
-				if (!$id = mot_lire_id($_categorie)) {
+				// - si elle n'existe pas on la rajoute et on réserve son id,
+				// - sinon on ne fait rien d'autre que de réserver l'id.
+				if (!$id_categorie = mot_lire_id($_categorie)) {
 					// On insère la catégorie
 					$set = array(
 						'identifiant' => $_categorie,
-						'titre'       => $_categorie,
-						'id_groupe'   => $id_groupe,
 						'id_parent'   => 0,
 					);
-					$id = objet_inserer('mot', null, $set);
+					$id_categorie = objet_inserer('mot', $id_groupe, $set);
+				}
+
+				// On traite maintenant les sous-catégories si on est sur que la catégorie existe
+				if ($id_categorie) {
+					// On insère les sous-catégories
+					foreach ($_sous_categories as $_sous_categorie) {
+						if (!mot_lire_id($_sous_categorie)) {
+							// On insère la sous-catégorie
+							$set = array(
+								'identifiant' => $_sous_categorie,
+								'id_parent'   => $id_categorie,
+							);
+							objet_inserer('mot', $id_groupe, $set);
+						}
+					}
 				}
 			}
 		}

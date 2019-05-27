@@ -9,6 +9,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// C
 	'categorie_affectation_menu' => 'Gérer l\'affectation des plugins',
 	'categorie_affectation_boite_info' => 'Bla bla bla, bla bla',
+	'categorie_liste_import' => 'Importer une liste de catégories',
 	'categorie_liste_boite_info' => 'Bla bla bla',
 	'categorie_liste_menu' => 'Gérer les catégories',
 	'categorie_liste_titre' => 'Liste des catégories',
