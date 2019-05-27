@@ -277,3 +277,28 @@ function type_plugin_lister_affectation($type) {
 
     return $affectations[$type];
 }
+
+function categorie_plugin_importer($arbre) {
+
+	if ($arbre) {
+		// Récupération de l'id du groupe
+		include_spip('inc/config');
+		if ($id_groupe = intval(lire_config("svptype/groupes/categorie/id_groupe", 0))) {
+			include_spip('action/editer_objet');
+			foreach ($arbre as $_categorie => $_sous_categories) {
+				// On teste l'existence de la catégorie :
+				// - si elle n'existe pas on la rajoute et on stocke son id, sinon on ne fait rien d'autre que sotcker l'id.
+				if (!$id = mot_lire_id($_categorie)) {
+					// On insère la catégorie
+					$set = array(
+						'identifiant' => $_categorie,
+						'titre'       => $_categorie,
+						'id_groupe'   => $id_groupe,
+						'id_parent'   => 0,
+					);
+					$id = objet_inserer('mot', null, $set);
+				}
+			}
+		}
+	}
+}

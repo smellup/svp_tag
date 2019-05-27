@@ -1,0 +1,22 @@
+[(#REM) Raccourcis d'import-export spécifique à SVP typologie :
+	- catégories : format JSON arborescent
+	- affectations : format JSON liste prefixe-identifiant
+]
+[(#AUTORISER{configurer}|oui)
+	[(#ENV{fonction}|=={liste}|oui)
+	#BOITE_OUVRIR{'','raccourcis'}
+		[(#URL_ECRIRE{svptype_import}
+			|parametre_url{type, liste_categorie}
+			|icone_horizontale{<:svptype:categorie_import_raccourci:>, svptype-import})]
+	#BOITE_FERMER]
+]
+
+[(#REM) Raccourcis d'import-export via IEConfig]
+[(#AUTORISER{configurer}|et{#PLUGIN{ieconfig}}|oui)
+	#BOITE_OUVRIR{'','raccourcis'}
+		[(#URL_ECRIRE{ieconfig_export}
+			|icone_horizontale{<:ieconfig:titre_export:>, config-export})]
+		[(#URL_ECRIRE{ieconfig_import}
+			|icone_horizontale{<:ieconfig:titre_import:>, config-import})]
+	#BOITE_FERMER
+]
