@@ -293,6 +293,7 @@ function categorie_plugin_importer($liste) {
 					// On insère la catégorie
 					$set = array(
 						'identifiant' => $_categorie,
+						'titre'       => $_categorie,
 						'id_parent'   => 0,
 					);
 					$id_categorie = objet_inserer('mot', $id_groupe, $set);
@@ -306,6 +307,7 @@ function categorie_plugin_importer($liste) {
 							// On insère la sous-catégorie
 							$set = array(
 								'identifiant' => $_sous_categorie,
+								'titre'       => $_sous_categorie,
 								'id_parent'   => $id_categorie,
 							);
 							objet_inserer('mot', $id_groupe, $set);
