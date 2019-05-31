@@ -121,13 +121,13 @@ function creer_groupes_svptype() {
 	// En outre :
 	// - plugin-categories : le groupe arborescent des catégories de plugin
 	// - plugin-tags : le groupe non arborescent des tags de plugin (initialisé mais pas utilisé pour l'instant)
-	include_spip('action/editer_objet');
-	include_spip('inc/config');
 
 	// On acquiert la configuration du plugin et donc celle des groupes.
+	include_spip('inc/config');
 	$config = lire_config('svptype', array());
 
 	if (!empty($config['groupes'])) {
+		include_spip('action/editer_objet');
 		$config_modifiee = false;
 		foreach ($config['groupes'] as $_type => $_groupe) {
 			// On vérifie d'abord si le groupe existe déjà. Si oui, on ne fait rien.

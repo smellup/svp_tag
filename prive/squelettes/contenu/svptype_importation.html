@@ -1,0 +1,15 @@
+[(#AUTORISER{webmestre}|sinon_interdire_acces)]
+<h1><:svptype:importation_page_titre:></h1>
+
+#SET{redirect, ''}
+[(#ENV{popin}|non)
+	[(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
+		|parametre_url{typologie, #ENV{typologie, categorie}}
+		|parametre_url{vue, #ENV{type_import, liste}})]
+	})]
+]
+#SET{redirect, #ENV{redirect}|sinon{#GET{redirect}}}
+
+[<div class="noajax">
+	(#FORMULAIRE_IMPORTER_TYPOLOGIE{#ENV{typologie, categorie}, #ENV{type_import, liste}, #GET{redirect}})
+</div>]

@@ -1,0 +1,21 @@
+[(#REM)<script>]
+/**
+ * SVP Typologie
+ *
+ * => Import des typologies
+ * => Edition des mots-clés
+ */
+;jQuery(function($){
+	/**
+	 * Importer des typologies dans une modale
+	 */
+	$('.typologie-import x').click(function(){
+		var contenu = $(this).parents('.liste-objets').eq(0);
+		$(contenu).animateLoading();
+		$.modalboxload(parametre_url(parametre_url(parametre_url($(this).attr('href'),'popin','oui'),'var_zajax','contenu'), 'redirect',''),{
+			onClose: function (dialog) {$(contenu).ajaxReload()}
+		});
+		return false;
+	});
+
+});

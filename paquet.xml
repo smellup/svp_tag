@@ -30,5 +30,5 @@
 	<necessite nom="mots_techniques" compatibilite="[1.0.4;[" />
 	<necessite nom="motsar" compatibilite="[1.1.8;[" />
 
-	<menu nom="svptype" titre="svptype:svptype_menu" parent="menu_administration" icone="images/svptype_menu-16.png" action="svptype_categorie" />
+	<menu nom="svptype" titre="svptype:svptype_menu_titre" parent="menu_administration" icone="images/svptype_menu-16.png" action="svptype_typologie" />
 </paquet>

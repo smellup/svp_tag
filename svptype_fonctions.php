@@ -1,3 +1,3 @@
 <?php
 
-include_spip('inc/svptype');
+include_spip('inc/svptype_typologie');

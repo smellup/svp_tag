@@ -2,13 +2,20 @@
 	- catégories : format JSON arborescent
 	- affectations : format JSON liste prefixe-identifiant
 ]
+
+#SET{typologie, #ENV{typologie, categorie}}
+#SET{vue, #ENV{vue, liste}}
+
 [(#AUTORISER{webmestre}|oui)
-	[(#ENV{fonction, liste}|=={liste}|oui)
+	[(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_import_}|concat{#GET{vue}}|concat{_bouton_titre}|_T)]})]
+	[(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}|concat{_import}})]
+
 	#BOITE_OUVRIR{'','raccourcis'}
-		[(#URL_ECRIRE{svptype_import}
-			|parametre_url{type, liste_categorie}
-			|icone_horizontale{<:svptype:categorie_liste_import:>, categorie_liste_import})]
-	#BOITE_FERMER]
+		[(#URL_ECRIRE{svptype_importation}
+			|parametre_url{typologie, #GET{typologie}}
+			|parametre_url{type_import, #GET{vue}}
+			|icone_horizontale{#GET{bouton_titre}, #GET{bouton_icone}, '', typologie-import})]
+	#BOITE_FERMER
 ]
 
 [(#REM) Raccourcis d'import-export via IEConfig]

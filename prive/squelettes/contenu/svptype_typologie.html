@@ -1,0 +1,24 @@
+[(#AUTORISER{webmestre}|sinon_interdire_acces)]
+#SET{typologie, #ENV{typologie, categorie}}
+#SET{vue, #ENV{vue, liste}}
+
+<h1>[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_page_titre}|_T)]</h1>
+
+[(#SET{fond_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_titre}|_T)]})]
+[(#SET{fond, [(#GET{typologie, categorie})s_plugins]})]
+
+[(#ENV{vue, liste}|=={liste}|oui)
+	[(#REM) <!-- Liste des types pour la typologie concernée (catégorie, tag...) --> ]
+	<INCLURE{fond=prive/objets/liste/#GET{fond},
+		titre=#GET{fond_titre},
+		env, ajax} />
+]
+
+[(#ENV{vue, liste}|=={affectation}|oui)
+	[(#REM) <!-- Affectation des types aux plugins --> ]
+	<INCLURE{fond=prive/squelettes/affectation/#GET{fond},
+		titre=#GET{fond_titre},
+		env, ajax} />
+]
+
+[<script src="(#PRODUIRE{fond=javascript/svptype_typologie.js}|compacte{js}|timestamp)" type="text/javascript"></script>]

@@ -23,7 +23,7 @@ function svptype_formulaire_fond($flux) {
 	and isset($env['id_groupe'])) {
 		// Formulaire d'édition d'un mot :
 		// -- on teste si c'est un mot plugin (catégorie ou tag)
-		include_spip('inc/svptype');
+		include_spip('inc/svptype_mot');
 		if (groupe_est_plugin($env['id_groupe'])) {
 			// Construction de la saisie et positionnement en fin du formulaire.
 			$saisie_identifiant = recuperer_fond('formulaires/inclure/identifiant_mot', $env);
@@ -62,7 +62,7 @@ function svptype_formulaire_verifier($flux) {
 		// Formulaire d'édition d'un mot :
 		// -- on récupère l'id du groupe.
 		if ($id_groupe = intval(_request('id_groupe'))) {
-			include_spip('inc/svptype');
+			include_spip('inc/svptype_mot');
 			// On teste si c'est un mot plugin (catégorie ou tag)
 			if (groupe_est_plugin($id_groupe)) {
 				$identifiant = _request('identifiant');
@@ -107,7 +107,7 @@ function svptype_pre_insertion($flux) {
 		// -- L'identifiant et l'id du groupe doivent être fournis
 		if ($identifiant = _request('identifiant')
 		and ($id_groupe = intval(_request('id_groupe')))) {
-			include_spip('inc/svptype');
+			include_spip('inc/svptype_mot');
 			// On teste si c'est un mot plugin (catégorie ou tag)
 			if (groupe_est_plugin($id_groupe)) {
 				$flux['data']['identifiant'] = $identifiant;
@@ -140,7 +140,7 @@ function svptype_pre_edition($flux) {
 		if ($identifiant = _request('identifiant')
 		and ($id_groupe = intval(_request('id_groupe')))) {
 			// On teste si c'est un mot plugin (catégorie ou tag)
-			include_spip('inc/svptype');
+			include_spip('inc/svptype_mot');
 			if (groupe_est_plugin($id_groupe)) {
 				$flux['data']['identifiant'] = $identifiant;
 			}
@@ -168,7 +168,7 @@ function svptype_afficher_contenu_objet($flux){
 		if (($objet == 'mot') and $id_objet) {
 			// On est bien en présence d'un mot:
 			// -- on teste si c'est un mot plugin (catégorie ou tag)
-			include_spip('inc/svptype');
+			include_spip('inc/svptype_mot');
 			if (($id_groupe = mot_lire_groupe($id_objet))
 			and groupe_est_plugin($id_groupe)) {
 				// On affiche l'identifiant du mot

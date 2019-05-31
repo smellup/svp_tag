@@ -1,16 +1,33 @@
-[(#REM) <!-- Menu des onglets "fonction liste", "fonction affectation".
- --> ]
+[(#REM) <!-- Menu des onglets "fonction liste", "fonction affectation". --> ]
+
+#SET{typologie, #ENV{typologie, categorie}}
+#SET{vue, #ENV{vue, liste}}
+
+<BOUCLE_typologies(DATA){source table, #CONFIG{svptype/groupes}|array_keys}>
+<h3>[(#VAL{svptype:}|concat{#VALEUR}|concat{_menu_titre}|_T)]</h3>
 <ul class="liste-items sous_navigation">
 	[<li class="item">
-		(#URL_ECRIRE{svptype_categorie}|parametre_url{fonction, liste}
+		(#URL_ECRIRE{svptype_typologie}
+			|parametre_url{typologie, #VALEUR}
+			|parametre_url{vue, liste}
 			|lien_ou_expose{
-				<:svptype:categorie_liste_menu:>,
-				[(#ENV{exec}|=={svptype_categorie}|et{#ENV{fonction, liste}|=={liste}})]})
+				<:svptype:typologie_menu_liste_titre:>,
+				[(#ENV{exec}|=={svptype_typologie}
+					|et{#GET{typologie}|=={#VALEUR}}
+					|et{#GET{vue}|=={liste}}
+				)]})
 	</li>]
 	[<li class="item">
-		(#URL_ECRIRE{svptype_categorie}|parametre_url{fonction, affectation}
+		(#URL_ECRIRE{svptype_typologie}
+			|parametre_url{typologie, #VALEUR}
+			|parametre_url{vue, affectation}
 			|lien_ou_expose{
-				<:svptype:categorie_affectation_menu:>,
-				[(#ENV{exec}|=={svptype_categorie}|et{#ENV{fonction, liste}|=={affectation}})]})
+				<:svptype:typologie_menu_affectation_titre:>,
+				[(#ENV{exec}|=={svptype_typologie}
+					|et{#GET{typologie}|=={#VALEUR}}
+					|et{#GET{vue}|=={affectation}}
+				)]})
 	</li>]
 </ul>
+</BOUCLE_typologies>
+
