@@ -17,13 +17,3 @@
 			|icone_horizontale{#GET{bouton_titre}, #GET{bouton_icone}, '', typologie-import})]
 	#BOITE_FERMER
 ]
-
-[(#REM) Raccourcis d'import-export via IEConfig]
-[(#AUTORISER{webmestre}|et{#PLUGIN{ieconfig}}|oui)
-	#BOITE_OUVRIR{'','raccourcis'}
-		[(#URL_ECRIRE{ieconfig_export}
-			|icone_horizontale{<:ieconfig:titre_export:>, config-export})]
-		[(#URL_ECRIRE{ieconfig_import}
-			|icone_horizontale{<:ieconfig:titre_import:>, config-import})]
-	#BOITE_FERMER
-]

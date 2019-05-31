@@ -11,7 +11,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	Pour chaque typologie, une vue permet de consulter et de modifier la liste des types et une autre de consulter et de modifier les affectations aux plugins.',
 
 	// C
-	'categorie_import_affectation_bouton_titre' => 'Importer une liste d\'affectation catégorie-plugin',
+	'categorie_import_affectation_bouton_titre' => 'Importer des affectations catégorie-plugin',
 	'categorie_import_affectation_form_titre' => 'Importation d\'une liste d\'affectation catégorie-plugin',
 	'categorie_import_liste_bouton_titre' => 'Importer une liste de catégories',
 	'categorie_import_liste_form_titre' => 'Importation d\'une liste de catégories',

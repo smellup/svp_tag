@@ -6,7 +6,7 @@
 }})
 ]<B_liste_categorie>
 #ANCRE_PAGINATION
-<div class="liste-objets categories affectation-plugin">
+<div class="liste-objets categories-plugins">
 <table class="spip liste">
 [<caption><strong class="caption">(#ENV*{titre})</strong></caption>]
 	<thead>
@@ -20,26 +20,19 @@
 	<BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES)
 		{id_groupe=#CONFIG{svptype/groupes/categorie/id_groupe}}
 		{where?}
-		{recherche?}
 		{tri #ENV{par, prefixe}, #GET{defaut_tri}}
 		{pagination #ENV{nb,100}}>
 		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
 			<td class="titre principale">
 				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
-					[(#PROFONDEUR|mostar_tabulation)]
-					#IDENTIFIANT
+					#PREFIXE
 				</a>
 			</td>
 			<td class="titre">
-				[(#PROFONDEUR|mostar_tabulation{&nbsp;})]
-				[(#ID_MOT|categorie_plugin_compter_affectations)]
+				[(#IDENTIFIANT)]
 			</td>
-			<td class="id">[(#AUTORISER{modifier, mot, #ID_MOT}|?{
-				<a href="[(#URL_ECRIRE{mot_edit,id_mot=#ID_MOT})]" title="<:mots:icone_modifier_mot|attribut_html:>">#ID_MOT</a>,
-				#ID_MOT
-			})]</td>
 			<td class="action">
-			[(#AUTORISER{supprimer, mot, #ID_MOT}|oui)
+			[(#AUTORISER{modifier_affectation}|oui)
 				[(#BOUTON_ACTION{supprimer,#URL_ACTION_AUTEUR{supprimer_mot,#ID_MOT,#SELF},ajax,'','','(function(me){$(me).parents("tr").animateRemove();return true;})(this)'})]
 			]
 			</td>
@@ -50,5 +43,5 @@
 [<p class="pagination">(#PAGINATION{prive})</p>]
 </div>
 </B_liste_categorie>[
-<div class="liste-objets categories caption-wrap"><strong class="caption">(#ENV*{sinon,''})</strong></div>
+<div class="liste-objets categories-plugins caption-wrap"><strong class="caption">(#ENV*{sinon,''})</strong></div>
 ]<//B_liste_categorie>

@@ -13,7 +13,7 @@
 		<tr class="first_row">
 			<th class="titre" scope="col">[(#TRI{titre,<:svptype:identifiant_label:>,ajax})]</th>
 			<th class="nombre" scope="col">[(#TRI{type,<:svptype:plugin_compteur_label:>,ajax})]</th>
-			<th class="id" scope="col">[(#TRI{id_mot,<:info_numero_abbreviation:>,ajax})]</th>
+			<th class="action" scope="col">&nbsp;</th>
 			<th class="action" scope="col">&nbsp;</th>
 		</tr>
 	</thead>
@@ -35,15 +35,14 @@
 				[(#PROFONDEUR|mostar_tabulation{&nbsp;})]
 				[(#ID_MOT|categorie_plugin_compter_affectations)]
 			</td>
-			<td class="id">[(#AUTORISER{modifier, mot, #ID_MOT}|?{
-				<a href="[(#URL_ECRIRE{mot_edit,id_mot=#ID_MOT})]" title="<:mots:icone_modifier_mot|attribut_html:>">#ID_MOT</a>,
-				#ID_MOT
-			})]</td>
-			<td class="action">
-			[(#AUTORISER{supprimer, mot, #ID_MOT}|oui)
+			<td class="id">[(#AUTORISER{modifier, mot, #ID_MOT}|oui)
+				<a href="[(#URL_ECRIRE{mot_edit}|parametre_url{id_mot, #ID_MOT})]" class="bouton-modifier" data-action="modifier" title="<:mots:icone_modifier_mot|attribut_html:>">
+					[(#CHEMIN_IMAGE{edit-16}|balise_img)]
+				</a>
+			]</td>
+			<td class="action">[(#AUTORISER{supprimer, mot, #ID_MOT}|oui)
 				[(#BOUTON_ACTION{supprimer,#URL_ACTION_AUTEUR{supprimer_mot,#ID_MOT,#SELF},ajax,'','','(function(me){$(me).parents("tr").animateRemove();return true;})(this)'})]
-			]
-			</td>
+			]</td>
 		</tr>
 	</BOUCLE_liste_categorie>
 	</tbody>
