@@ -160,6 +160,58 @@ function categorie_plugin_importer_liste($liste) {
 }
 
 
+/**
+ * Importe une liste d'affectation catégorie-plugin.
+ *
+ * @param array  $liste
+ *        Tableau des catégories présenté comme une arborescence.
+ *
+ * @return bool|int
+ *         Nombre d'affectations ajoutées.
+ */
+function categorie_plugin_importer_affectation($liste) {
+
+	// Initialisation du nombre d'affectations catégorie-plugin ajoutées.
+	$affectations_ajoutees = 0;
+
+	if ($liste) {
+		// Récupération de l'id du groupe
+		include_spip('inc/config');
+		if ($id_groupe = intval(lire_config("svptype/groupes/categorie/id_groupe", 0))) {
+			// Initialisation d'un enregistrement
+			$set = array(
+				'id_groupe' => $id_groupe
+			);
+
+			include_spip('inc/svptype_mot');
+			foreach ($liste as $_affectation) {
+				// On teste l'existence de la catégorie désignée par son identifiant en récupérant son id_mot.
+				if ($id_mot = mot_lire_id($_affectation['categorie'])) {
+					// On teste l'existence de l'affectation :
+					// - si elle n'existe pas on la rajoute,
+					// - sinon on ne fait rien car i ne peut y avoir qu'une seule affectation par préfixe.
+					$where = array(
+						'id_mot=' . $id_mot,
+						'prefixe=' . sql_quote($_affectation['prefixe'])
+					);
+					if (!sql_countsel('spip_plugins_typologies', $where)) {
+						$set['id_mot'] = $id_mot;
+						$set['prefixe'] = $_affectation['prefixe'];
+
+						if (sql_insertq('spip_plugins_typologies', $set)) {
+							// Enregistrement de la catégorie ajoutée
+							$affectations_ajoutees += 1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return $affectations_ajoutees;
+}
+
+
 function categorie_plugin_compter_affectations($categorie) {
 
 	// Initialisations statiques pour les performances.

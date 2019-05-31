@@ -1,0 +1,296 @@
+[
+  {
+    "identifiant": "activite",
+    "titre": "activite",
+    "categories": [
+      {
+        "identifiant": "activite/association",
+        "titre": "activite/association"
+      },
+      {
+        "identifiant": "activite/education",
+        "titre": "activite/education"
+      },
+      {
+        "identifiant": "activite/commerce",
+        "titre": "activite/commerce"
+      },
+      {
+        "identifiant": "activite/gestion",
+        "titre": "activite/gestion"
+      },
+      {
+        "identifiant": "activite/projet",
+        "titre": "activite/projet"
+      }
+    ]
+  },
+  {
+    "identifiant": "administration",
+    "titre": "administration",
+    "categories": [
+      {
+        "identifiant": "administration/espace-prive",
+        "titre": "administration/espace-prive"
+      },
+      {
+        "identifiant": "administration/maintenance",
+        "titre": "administration/maintenance"
+      },
+      {
+        "identifiant": "administration/performance",
+        "titre": "administration/performance"
+      },
+      {
+        "identifiant": "administration/referencement",
+        "titre": "administration/referencement"
+      },
+      {
+        "identifiant": "administration/securite",
+        "titre": "administration/securite"
+      },
+      {
+        "identifiant": "administration/statistique",
+        "titre": "administration/statistique"
+      }
+    ]
+  },
+  {
+    "identifiant": "auteur",
+    "titre": "auteur",
+    "categories": [
+      {
+        "identifiant": "auteur/authentification",
+        "titre": "auteur/authentification"
+      },
+      {
+        "identifiant": "auteur/autorisation",
+        "titre": "auteur/autorisation"
+      },
+      {
+        "identifiant": "auteur/connexion",
+        "titre": "auteur/connexion"
+      },
+      {
+        "identifiant": "auteur/extension",
+        "titre": "auteur/extension"
+      },
+      {
+        "identifiant": "auteur/inscription",
+        "titre": "auteur/inscription"
+      }
+    ]
+  },
+  {
+    "identifiant": "communication",
+    "titre": "communication",
+    "categories": [
+      {
+        "identifiant": "communication/annonce",
+        "titre": "communication/annonce"
+      },
+      {
+        "identifiant": "communication/antispam",
+        "titre": "communication/antispam"
+      },
+      {
+        "identifiant": "communication/chat",
+        "titre": "communication/chat"
+      },
+      {
+        "identifiant": "communication/messagerie",
+        "titre": "communication/messagerie"
+      },
+      {
+        "identifiant": "communication/syndication",
+        "titre": "communication/syndication"
+      }
+    ]
+  },
+  {
+    "identifiant": "contenu",
+    "titre": "contenu",
+    "categories": [
+      {
+        "identifiant": "contenu/affichage",
+        "titre": "contenu/affichage"
+      },
+      {
+        "identifiant": "contenu/bibliographie",
+        "titre": "contenu/bibliographie"
+      },
+      {
+        "identifiant": "contenu/extension",
+        "titre": "contenu/extension"
+      },
+      {
+        "identifiant": "contenu/geographie",
+        "titre": "contenu/geographie"
+      },
+      {
+        "identifiant": "contenu/impression",
+        "titre": "contenu/impression"
+      },
+      {
+        "identifiant": "contenu/redaction",
+        "titre": "contenu/redaction"
+      },
+      {
+        "identifiant": "contenu/sommaire",
+        "titre": "contenu/sommaire"
+      },
+      {
+        "identifiant": "contenu/traduction",
+        "titre": "contenu/traduction"
+      }
+    ]
+  },
+  {
+    "identifiant": "date",
+    "titre": "date",
+    "categories": [
+      {
+        "identifiant": "date/agenda",
+        "titre": "date/agenda"
+      },
+      {
+        "identifiant": "date/extension",
+        "titre": "date/extension"
+      }
+    ]
+  },
+  {
+    "identifiant": "developpement",
+    "titre": "developpement",
+    "categories": [
+      {
+        "identifiant": "developpement/api-php",
+        "titre": "developpement/api-php"
+      },
+      {
+        "identifiant": "developpement/framework-css",
+        "titre": "developpement/framework-css"
+      },
+      {
+        "identifiant": "developpement/outil",
+        "titre": "developpement/outil"
+      }
+    ]
+  },
+  {
+    "identifiant": "interactivite",
+    "titre": "interactivite",
+    "categories": [
+      {
+        "identifiant": "interactivite/evaluation",
+        "titre": "interactivite/evaluation"
+      },
+      {
+        "identifiant": "interactivite/formulaire",
+        "titre": "interactivite/formulaire"
+      },
+      {
+        "identifiant": "interactivite/forum",
+        "titre": "interactivite/forum"
+      },
+      {
+        "identifiant": "interactivite/jeux",
+        "titre": "interactivite/jeux"
+      },
+      {
+        "identifiant": "interactivite/reseau-social",
+        "titre": "interactivite/reseau-social"
+      }
+    ]
+  },
+  {
+    "identifiant": "interface-publique",
+    "titre": "interface-publique",
+    "categories": [
+      {
+        "identifiant": "interface-publique/noisette",
+        "titre": "interface-publique/noisette"
+      },
+      {
+        "identifiant": "interface-publique/outil",
+        "titre": "interface-publique/outil"
+      },
+      {
+        "identifiant": "interface-publique/squelette-blog",
+        "titre": "interface-publique/squelette-blog"
+      },
+      {
+        "identifiant": "interface-publique/squelette-editorial",
+        "titre": "interface-publique/squelette-editorial"
+      },
+      {
+        "identifiant": "interface-publique/squelette-generaliste",
+        "titre": "interface-publique/squelette-generaliste"
+      },
+      {
+        "identifiant": "interface-publique/squelette-special",
+        "titre": "interface-publique/squelette-special"
+      },
+      {
+        "identifiant": "interface-publique/theme",
+        "titre": "interface-publique/theme"
+      }
+    ]
+  },
+  {
+    "identifiant": "media",
+    "titre": "media",
+    "categories": [
+      {
+        "identifiant": "media/audiovideo",
+        "titre": "media/audiovideo"
+      },
+      {
+        "identifiant": "media/document",
+        "titre": "media/document"
+      },
+      {
+        "identifiant": "media/galerie",
+        "titre": "media/galerie"
+      },
+      {
+        "identifiant": "media/image",
+        "titre": "media/image"
+      }
+    ]
+  },
+  {
+    "identifiant": "navigation",
+    "titre": "navigation",
+    "categories": [
+      {
+        "identifiant": "navigation/lien",
+        "titre": "navigation/lien"
+      },
+      {
+        "identifiant": "navigation/motcle",
+        "titre": "navigation/motcle"
+      },
+      {
+        "identifiant": "navigation/menu",
+        "titre": "navigation/menu"
+      },
+      {
+        "identifiant": "navigation/multilinguisme",
+        "titre": "navigation/multilinguisme"
+      },
+      {
+        "identifiant": "navigation/pagination-tri",
+        "titre": "navigation/pagination-tri"
+      },
+      {
+        "identifiant": "navigation/recherche",
+        "titre": "navigation/recherche"
+      },
+      {
+        "identifiant": "navigation/transverse",
+        "titre": "navigation/transverse"
+      }
+    ]
+  }
+]
