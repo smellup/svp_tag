@@ -22,15 +22,12 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// I
 	'identifiant_label' => 'Identifiant',
-	'ieconfig_titre' => 'Typologie des plugins',
-	'ieconfig_export_label' => 'Inclure les catégories et les affectations de plugins dans l’export ?',
-	'ieconfig_export_explication' => 'Exporte la configuration du plugin, la liste des catégories et les affectations de catégorie-plugin.',
-	'importation_page_titre' => 'Importation d\'une typologie de plugin',
-	'importation_fichier_label' => 'Fichier à importer',
-	'importation_fichier_explication' => 'Choisissez un fichier JSON conforme au schéma autorisé. Seuls les données n\'existant pas encore dans la base seront ajoutées.',
-	'importation_message_ok' => 'Importation réussie : @nb@.',
-	'importation_message_nok' => 'Aucune donnée importée.',
-	'importation_message_fichier_non_json' => 'Le fichier choisi n\'est pas au format JSON.',
+	'import_page_titre' => 'Importation d\'une typologie de plugin',
+	'import_fichier_label' => 'Fichier à importer',
+	'import_fichier_explication' => 'Choisissez un fichier JSON conforme au schéma autorisé. Seuls les données n\'existant pas encore dans la base seront ajoutées.',
+	'import_message_ok' => 'Importation réussie : @nb@.',
+	'import_message_nok' => 'Aucune donnée importée.',
+	'import_message_fichier_non_json' => 'Le fichier choisi n\'est pas au format JSON.',
 
 	// P
 	'plugin_compteur_label' => 'Plugins',

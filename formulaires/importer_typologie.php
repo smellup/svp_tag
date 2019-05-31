@@ -61,7 +61,7 @@ function formulaires_importer_typologie_verifier($typologie, $type_import, $redi
 		// Le fichier choisi doit être un JSON
 		if (empty($_FILES[$champ]['type'])
 		or ($_FILES[$champ]['type'] != 'application/json')) {
-			$erreurs[$champ] = _T('svptype:importation_message_fichier_non_json');
+			$erreurs[$champ] = _T('svptype:import_message_fichier_non_json');
 		}
 	}
 
@@ -121,9 +121,9 @@ function formulaires_importer_typologie_traiter($typologie, $type_import, $redir
 
 	// Retour du formulaire.
 	if ($resultat_import) {
-		$retour['message_ok'] = _T('svptype:importation_message_ok', array('nb' => $resultat_import));
+		$retour['message_ok'] = _T('svptype:import_message_ok', array('nb' => $resultat_import));
 	} else {
-		$retour['message_nok'] = _T('svptype:importation_message_nok');
+		$retour['message_nok'] = _T('svptype:import_message_nok');
 	}
 	$retour['redirect'] = $redirect;
 	$retour['editable'] = true;

@@ -1,6 +1,6 @@
 [(#SET{defaut_tri,#ARRAY{
+	prefixe,1,
 	identifiant,1,
-	titre,1,
 	id_mot,1,
 	points,-1
 }})
@@ -11,26 +11,26 @@
 [<caption><strong class="caption">(#ENV*{titre})</strong></caption>]
 	<thead>
 		<tr class="first_row">
-			<th class="titre" scope="col">[(#TRI{titre,<:svptype:identifiant_label:>,ajax})]</th>
-			<th class="titre" scope="col">[(#TRI{type,<:svptype:plugin_compteur_label:>,ajax})]</th>
+			<th class="titre" scope="col">[(#TRI{titre,<:svptype:prefixe_label:>,ajax})]</th>
+			<th class="titre" scope="col">[(#TRI{type,<:svptype:identifiant_label:>,ajax})]</th>
 			<th class="action" scope="col">&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
-	<BOUCLE_liste_categorie(MOTS)
+	<BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES)
 		{id_groupe=#CONFIG{svptype/groupes/categorie/id_groupe}}
 		{where?}
 		{recherche?}
-		{tri #ENV{par, identifiant}, #GET{defaut_tri}}
+		{tri #ENV{par, prefixe}, #GET{defaut_tri}}
 		{pagination #ENV{nb,100}}>
-		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][(#PROFONDEUR|non) groupe-categories]">
+		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
 			<td class="titre principale">
 				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
 					[(#PROFONDEUR|mostar_tabulation)]
 					#IDENTIFIANT
 				</a>
 			</td>
-			<td class="nombre">
+			<td class="titre">
 				[(#PROFONDEUR|mostar_tabulation{&nbsp;})]
 				[(#ID_MOT|categorie_plugin_compter_affectations)]
 			</td>
