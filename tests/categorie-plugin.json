@@ -1,4 +1,4 @@
-﻿[
+[
 	{
 		"prefixe": "AMAP",
 		"categorie": "activite/association"
@@ -38,10 +38,6 @@
 	{
 		"prefixe": "ABONNEMENT",
 		"categorie": "activite/commerce"
-	},
-	{
-		"prefixe": "BOUQ",
-		"categorie": "contenu/extension"
 	},
 	{
 		"prefixe": "BOUTIQUE",
@@ -86,10 +82,6 @@
 	{
 		"prefixe": "FLATTR",
 		"categorie": "activite/commerce"
-	},
-	{
-		"prefixe": "IMMEUBLES",
-		"categorie": "contenu/extension"
 	},
 	{
 		"prefixe": "LOCATION_IMMEUBLES",
@@ -256,6 +248,14 @@
 		"categorie": "activite/projet"
 	},
 	{
+		"prefixe": "PREPROD",
+		"categorie": "activite/projet"
+	},
+	{
+		"prefixe": "PROJETS_ORGANISATIONS",
+		"categorie": "activite/projet"
+	},
+	{
 		"prefixe": "SPIPMINE",
 		"categorie": "activite/projet"
 	},
@@ -273,6 +273,10 @@
 	},
 	{
 		"prefixe": "COMPAGNON",
+		"categorie": "administration/espace-prive"
+	},
+	{
+		"prefixe": "AED",
 		"categorie": "administration/espace-prive"
 	},
 	{
@@ -308,6 +312,10 @@
 		"categorie": "administration/espace-prive"
 	},
 	{
+		"prefixe": "DUPLICATOR",
+		"categorie": "administration/espace-prive"
+	},
+	{
 		"prefixe": "EDITION_DIRECTE",
 		"categorie": "administration/espace-prive"
 	},
@@ -320,8 +328,8 @@
 		"categorie": "administration/espace-prive"
 	},
 	{
-		"prefixe": "INSERER_MODELES",
-		"categorie": "contenu/redaction"
+		"prefixe": "FORMATSPIP",
+		"categorie": "administration/espace-prive"
 	},
 	{
 		"prefixe": "MANUELSITE",
@@ -329,6 +337,10 @@
 	},
 	{
 		"prefixe": "MINIDOC",
+		"categorie": "administration/espace-prive"
+	},
+	{
+		"prefixe": "NEMEQUITTEPAS",
 		"categorie": "administration/espace-prive"
 	},
 	{
@@ -353,6 +365,10 @@
 	},
 	{
 		"prefixe": "STATUT_ARTICLES",
+		"categorie": "administration/espace-prive"
+	},
+	{
+		"prefixe": "VERSIONING",
 		"categorie": "administration/espace-prive"
 	},
 	{
@@ -396,6 +412,10 @@
 		"categorie": "administration/espace-prive"
 	},
 	{
+		"prefixe": "AFFICHER_OBJETS",
+		"categorie": "administration/espace-prive"
+	},
+	{
 		"prefixe": "BANDO",
 		"categorie": "administration/espace-prive"
 	},
@@ -430,6 +450,10 @@
 	{
 		"prefixe": "PRIVE_FLUIDE_PLUS",
 		"categorie": "administration/espace-prive"
+	},
+	{
+		"prefixe": "DEPUBLIE",
+		"categorie": "administration/maintenance"
 	},
 	{
 		"prefixe": "DOT2",
@@ -488,10 +512,6 @@
 		"categorie": "administration/maintenance"
 	},
 	{
-		"prefixe": "AUTEUR_AUTOMATIQUE",
-		"categorie": "auteur/inscription"
-	},
-	{
 		"prefixe": "BALAI",
 		"categorie": "administration/maintenance"
 	},
@@ -512,7 +532,15 @@
 		"categorie": "administration/maintenance"
 	},
 	{
+		"prefixe": "COUTEAU_SUISSE",
+		"categorie": "administration/maintenance"
+	},
+	{
 		"prefixe": "DD",
+		"categorie": "administration/maintenance"
+	},
+	{
+		"prefixe": "DEPUBLICATION",
 		"categorie": "administration/maintenance"
 	},
 	{
@@ -576,10 +604,6 @@
 		"categorie": "administration/maintenance"
 	},
 	{
-		"prefixe": "MULTIDOMAINES",
-		"categorie": "administration/referencement"
-	},
-	{
 		"prefixe": "MUTUALISATION",
 		"categorie": "administration/maintenance"
 	},
@@ -593,6 +617,10 @@
 	},
 	{
 		"prefixe": "SAVECFG",
+		"categorie": "administration/maintenance"
+	},
+	{
+		"prefixe": "SCEXTRAS",
 		"categorie": "administration/maintenance"
 	},
 	{
@@ -612,10 +640,6 @@
 		"categorie": "administration/maintenance"
 	},
 	{
-		"prefixe": "VACANCES",
-		"categorie": "communication/annonce"
-	},
-	{
 		"prefixe": "VERIFIE31",
 		"categorie": "administration/maintenance"
 	},
@@ -632,11 +656,27 @@
 		"categorie": "administration/maintenance"
 	},
 	{
+		"prefixe": "LIENSCONTENUS",
+		"categorie": "administration/maintenance"
+	},
+	{
+		"prefixe": "SPIP_400",
+		"categorie": "administration/maintenance"
+	},
+	{
 		"prefixe": "ADMINER",
 		"categorie": "administration/maintenance"
 	},
 	{
+		"prefixe": "CONSOLE",
+		"categorie": "administration/maintenance"
+	},
+	{
 		"prefixe": "EZSQL",
+		"categorie": "administration/maintenance"
+	},
+	{
+		"prefixe": "IE_EXTRAS",
 		"categorie": "administration/maintenance"
 	},
 	{
@@ -748,6 +788,14 @@
 		"categorie": "administration/referencement"
 	},
 	{
+		"prefixe": "SHORTCUT_URL",
+		"categorie": "administration/referencement"
+	},
+	{
+		"prefixe": "MULTIDOMAINES",
+		"categorie": "administration/referencement"
+	},
+	{
 		"prefixe": "SITEMAP",
 		"categorie": "administration/referencement"
 	},
@@ -828,6 +876,10 @@
 		"categorie": "administration/securite"
 	},
 	{
+		"prefixe": "GEO_VISITEURS",
+		"categorie": "administration/statistique"
+	},
+	{
 		"prefixe": "TRICHE",
 		"categorie": "administration/statistique"
 	},
@@ -853,6 +905,10 @@
 	},
 	{
 		"prefixe": "DW2",
+		"categorie": "administration/statistique"
+	},
+	{
+		"prefixe": "GEOIPCC",
 		"categorie": "administration/statistique"
 	},
 	{
@@ -1060,6 +1116,10 @@
 		"categorie": "auteur/extension"
 	},
 	{
+		"prefixe": "AUTEUR_EVENEMENT",
+		"categorie": "auteur/extension"
+	},
+	{
 		"prefixe": "PROFILPUBLIC",
 		"categorie": "auteur/extension"
 	},
@@ -1077,6 +1137,10 @@
 	},
 	{
 		"prefixe": "ROLES_AUTEURS",
+		"categorie": "auteur/extension"
+	},
+	{
+		"prefixe": "MES_PREFERENCES",
 		"categorie": "auteur/extension"
 	},
 	{
@@ -1128,6 +1192,14 @@
 		"categorie": "auteur/inscription"
 	},
 	{
+		"prefixe": "AUSU",
+		"categorie": "auteur/inscription"
+	},
+	{
+		"prefixe": "AUTEUR_AUTOMATIQUE",
+		"categorie": "auteur/inscription"
+	},
+	{
 		"prefixe": "BADGE_DON",
 		"categorie": "communication/annonce"
 	},
@@ -1144,11 +1216,23 @@
 		"categorie": "communication/annonce"
 	},
 	{
+		"prefixe": "AP",
+		"categorie": "communication/annonce"
+	},
+	{
 		"prefixe": "BANNIERES",
 		"categorie": "communication/annonce"
 	},
 	{
 		"prefixe": "ALERTE_URGENCE",
+		"categorie": "communication/annonce"
+	},
+	{
+		"prefixe": "VACANCES",
+		"categorie": "communication/annonce"
+	},
+	{
+		"prefixe": "PUBBAN",
 		"categorie": "communication/annonce"
 	},
 	{
@@ -1448,18 +1532,6 @@
 		"categorie": "contenu/affichage"
 	},
 	{
-		"prefixe": "FAQ",
-		"categorie": "contenu/redaction"
-	},
-	{
-		"prefixe": "FRIMOUSSES",
-		"categorie": "contenu/redaction"
-	},
-	{
-		"prefixe": "GVIEWER",
-		"categorie": "media/document"
-	},
-	{
 		"prefixe": "HAL",
 		"categorie": "contenu/affichage"
 	},
@@ -1504,24 +1576,12 @@
 		"categorie": "contenu/affichage"
 	},
 	{
-		"prefixe": "SMILEYS",
-		"categorie": "contenu/redaction"
-	},
-	{
-		"prefixe": "TABCSV",
-		"categorie": "contenu/redaction"
-	},
-	{
 		"prefixe": "TIMELINEME",
 		"categorie": "contenu/affichage"
 	},
 	{
 		"prefixe": "TITRES_TYPOGRAPHIES",
 		"categorie": "contenu/affichage"
-	},
-	{
-		"prefixe": "TODO",
-		"categorie": "contenu/redaction"
 	},
 	{
 		"prefixe": "TW",
@@ -1552,11 +1612,31 @@
 		"categorie": "contenu/affichage"
 	},
 	{
+		"prefixe": "CHARTJS",
+		"categorie": "contenu/affichage"
+	},
+	{
+		"prefixe": "CHARTS",
+		"categorie": "contenu/affichage"
+	},
+	{
+		"prefixe": "JPGRAPH",
+		"categorie": "contenu/affichage"
+	},
+	{
+		"prefixe": "TABLESORTER",
+		"categorie": "contenu/affichage"
+	},
+	{
 		"prefixe": "ACCORDION",
 		"categorie": "contenu/affichage"
 	},
 	{
 		"prefixe": "HAL_PUB",
+		"categorie": "contenu/bibliographie"
+	},
+	{
+		"prefixe": "PMB",
 		"categorie": "contenu/bibliographie"
 	},
 	{
@@ -1580,11 +1660,47 @@
 		"categorie": "contenu/bibliographie"
 	},
 	{
+		"prefixe": "BOOKSEARCH",
+		"categorie": "contenu/bibliographie"
+	},
+	{
 		"prefixe": "OBJETS_DISPONIBILITES",
 		"categorie": "contenu/extension"
 	},
 	{
+		"prefixe": "ARCHIVE",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "DATERUBRIQUES",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "BOUQ",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "DICTIONNAIRES",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "EMPLOIS",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "ESPACES",
+		"categorie": "contenu/extension"
+	},
+	{
 		"prefixe": "IDENTIFIANTS",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "IMMEUBLES",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "LICENCE",
 		"categorie": "contenu/extension"
 	},
 	{
@@ -1601,6 +1717,10 @@
 	},
 	{
 		"prefixe": "PARTENAIRES",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "SPIPERIPSUM",
 		"categorie": "contenu/extension"
 	},
 	{
@@ -1622,6 +1742,114 @@
 	{
 		"prefixe": "SITES",
 		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "PB_COULEUR_RUBRIQUE",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "MELUSINE_COULEURS_ARTICLE",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "RUBRIQUES_VIRTUELLES",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "COULEUR_OBJET",
+		"categorie": "contenu/extension"
+	},
+	{
+		"prefixe": "CODES_POSTAUX",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "COGGPS",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "COORDGMAP",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GEOGRAPHIE",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GEOMAP",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GEOPORTAIL",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GIS",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GISBAN",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GISGEOM",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GMAP",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GMAPMXN",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "GMAPS_V3",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "IMAPDEPART",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "PAYS",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "RAINETTE",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "SITRA",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "SPIP_MASHUP",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "SPIPCARTO",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "SVGMAP",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "CARTO_ITINERAIRE",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "VILLEBE",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "COG",
+		"categorie": "contenu/geographie"
+	},
+	{
+		"prefixe": "CONTINENTS",
+		"categorie": "contenu/geographie"
 	},
 	{
 		"prefixe": "FUSIONPDF",
@@ -1656,16 +1884,16 @@
 		"categorie": "contenu/impression"
 	},
 	{
-		"prefixe": "LICENCE",
-		"categorie": "contenu/extension"
+		"prefixe": "BIBLE",
+		"categorie": "contenu/redaction"
 	},
 	{
 		"prefixe": "RECHREMP",
 		"categorie": "contenu/redaction"
 	},
 	{
-		"prefixe": "AED",
-		"categorie": "administration/espace-prive"
+		"prefixe": "ACRONYMES",
+		"categorie": "contenu/redaction"
 	},
 	{
 		"prefixe": "BARRE_TYPO_GENERALISEE",
@@ -1700,12 +1928,24 @@
 		"categorie": "contenu/redaction"
 	},
 	{
+		"prefixe": "CURATOR",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "ENCARTS",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "FAQ",
+		"categorie": "contenu/redaction"
+	},
+	{
 		"prefixe": "FCKEDITOR",
 		"categorie": "contenu/redaction"
 	},
 	{
-		"prefixe": "FORMATSPIP",
-		"categorie": "administration/espace-prive"
+		"prefixe": "FRIMOUSSES",
+		"categorie": "contenu/redaction"
 	},
 	{
 		"prefixe": "GABARITS",
@@ -1724,6 +1964,10 @@
 		"categorie": "contenu/redaction"
 	},
 	{
+		"prefixe": "INSERER_MODELES",
+		"categorie": "contenu/redaction"
+	},
+	{
 		"prefixe": "LILYSPIP",
 		"categorie": "contenu/redaction"
 	},
@@ -1736,8 +1980,8 @@
 		"categorie": "contenu/redaction"
 	},
 	{
-		"prefixe": "NEMEQUITTEPAS",
-		"categorie": "administration/espace-prive"
+		"prefixe": "ODT2SPIP",
+		"categorie": "contenu/redaction"
 	},
 	{
 		"prefixe": "OP",
@@ -1804,7 +2048,19 @@
 		"categorie": "contenu/redaction"
 	},
 	{
+		"prefixe": "SMILEYS",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "TABCSV",
+		"categorie": "contenu/redaction"
+	},
+	{
 		"prefixe": "TINYMCE",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "TODO",
 		"categorie": "contenu/redaction"
 	},
 	{
@@ -1813,6 +2069,26 @@
 	},
 	{
 		"prefixe": "TYPOEQUATION",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "ARTICLES_VERS_RUBRIQUES",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "BREVES_VERS_ARTICLES",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "ACCESSIBILITE",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "DAME",
+		"categorie": "contenu/redaction"
+	},
+	{
+		"prefixe": "EXERGUE",
 		"categorie": "contenu/redaction"
 	},
 	{
@@ -1838,6 +2114,50 @@
 	{
 		"prefixe": "TABLEMATIERES",
 		"categorie": "contenu/sommaire"
+	},
+	{
+		"prefixe": "EXTENSIONMULTILINGUE",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "GTR",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "INTERFACE_TRADUCTION_OBJETS",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "NIHONGO",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "TAA",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "TOUTMULTI",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "TRAD_RUB",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "TRADAUTO",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "TRADRUB",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "TRADRUB_PROPOSEE",
+		"categorie": "contenu/traduction"
+	},
+	{
+		"prefixe": "LANGONET",
+		"categorie": "contenu/traduction"
 	},
 	{
 		"prefixe": "RESERVATIONS_MULTIPLES",
@@ -1920,10 +2240,6 @@
 		"categorie": "date/agenda"
 	},
 	{
-		"prefixe": "AP",
-		"categorie": "communication/annonce"
-	},
-	{
 		"prefixe": "ORR",
 		"categorie": "date/agenda"
 	},
@@ -1954,6 +2270,114 @@
 	{
 		"prefixe": "TIMEPICKER",
 		"categorie": "date/extension"
+	},
+	{
+		"prefixe": "ARCHIVISTE",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "CACHE",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "CEXTRAS",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "CFG",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "COLLECTIONJSON",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "COMPAT",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "CRUD",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "DATES_OUTILS",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "DECLARERPARENT",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "ROLES",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "YAML",
+		"categorie": "developpement/api"
+	},
+	{
+		"prefixe": "EZCSS",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "BASECSS",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "BOOTSTRAP",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "BOOTSTRAP3",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "BOOTSTRAP3_SASS",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "BOOTSTRAP4",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "COMPASS",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "CSS_IMBRIQUES",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "TINYTYPO",
+		"categorie": "developpement/framework"
+	},
+	{
+		"prefixe": "INHIBECACHE",
+		"categorie": "developpement/outil"
+	},
+	{
+		"prefixe": "AA",
+		"categorie": "developpement/outil"
+	},
+	{
+		"prefixe": "TROUVER_OBJET",
+		"categorie": "developpement/outil"
+	},
+	{
+		"prefixe": "DEV",
+		"categorie": "developpement/outil"
+	},
+	{
+		"prefixe": "DOC_TECH",
+		"categorie": "developpement/outil"
+	},
+	{
+		"prefixe": "FABRIQUE",
+		"categorie": "developpement/outil"
+	},
+	{
+		"prefixe": "SELECTEURGENERIQUE",
+		"categorie": "developpement/outil"
 	},
 	{
 		"prefixe": "BISOUS",
@@ -1990,10 +2414,6 @@
 	{
 		"prefixe": "QUICKVOTE",
 		"categorie": "interactivite/evaluation"
-	},
-	{
-		"prefixe": "SCRUT_PROP",
-		"categorie": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "SONDAGE",
@@ -2041,6 +2461,14 @@
 	},
 	{
 		"prefixe": "FORMS",
+		"categorie": "interactivite/formulaire"
+	},
+	{
+		"prefixe": "SCRUT_PROP",
+		"categorie": "interactivite/formulaire"
+	},
+	{
+		"prefixe": "AJAXFORMS",
 		"categorie": "interactivite/formulaire"
 	},
 	{
@@ -2176,6 +2604,14 @@
 		"categorie": "interface-publique/noisette"
 	},
 	{
+		"prefixe": "HERBIER",
+		"categorie": "interface-publique/noisette"
+	},
+	{
+		"prefixe": "ZGROUPEMOTS",
+		"categorie": "interface-publique/noisette"
+	},
+	{
 		"prefixe": "AVELINE",
 		"categorie": "interface-publique/noisette"
 	},
@@ -2220,12 +2656,24 @@
 		"categorie": "interface-publique/noisette"
 	},
 	{
-		"prefixe": "NOIZETIER",
+		"prefixe": "TIMECIRCLES",
+		"categorie": "interface-publique/noisette"
+	},
+	{
+		"prefixe": "ZEROCLIPBOARD",
 		"categorie": "interface-publique/outil"
 	},
 	{
-		"prefixe": "PB_COULEUR_RUBRIQUE",
-		"categorie": "contenu/extension"
+		"prefixe": "ACS",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ANIMATECSS",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "NOIZETIER",
+		"categorie": "interface-publique/outil"
 	},
 	{
 		"prefixe": "SKTHEME",
@@ -2241,6 +2689,10 @@
 	},
 	{
 		"prefixe": "ZENGARDEN",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "CREER_SPRITES",
 		"categorie": "interface-publique/outil"
 	},
 	{
@@ -2260,11 +2712,75 @@
 		"categorie": "interface-publique/outil"
 	},
 	{
+		"prefixe": "BARRAC",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "CELEMENTS",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "CHOSEN",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ELEMENTS",
+		"categorie": "interface-publique/outil"
+	},
+	{
 		"prefixe": "OUTILS_ARTICLE",
 		"categorie": "interface-publique/outil"
 	},
 	{
+		"prefixe": "TOOLTIP",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "VARIANTESARTICLES",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "CAMBIAR_ESQUELETO",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "COMPOSITIONS",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "FENFLO",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "VARICELLE",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ZCORE",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ZINIT",
+		"categorie": "interface-publique/outil"
+	},
+	{
 		"prefixe": "KNACSSPIP",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "PACK_MELUSINE",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SPIP_RESET",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ZPIP_RESET",
+		"categorie": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ZVIDE",
 		"categorie": "interface-publique/outil"
 	},
 	{
@@ -2292,6 +2808,10 @@
 		"categorie": "interface-publique/squelette-blog"
 	},
 	{
+		"prefixe": "SIGHT",
+		"categorie": "interface-publique/squelette-blog"
+	},
+	{
 		"prefixe": "SPIPCLEAR",
 		"categorie": "interface-publique/squelette-blog"
 	},
@@ -2301,6 +2821,10 @@
 	},
 	{
 		"prefixe": "SPIPRADIUS",
+		"categorie": "interface-publique/squelette-blog"
+	},
+	{
+		"prefixe": "SQUELETTE_BROMINERARY",
 		"categorie": "interface-publique/squelette-blog"
 	},
 	{
@@ -2340,7 +2864,15 @@
 		"categorie": "interface-publique/squelette-edito"
 	},
 	{
+		"prefixe": "CURALICIOUS",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
 		"prefixe": "DIST",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
+		"prefixe": "DOCUMENTATION",
 		"categorie": "interface-publique/squelette-edito"
 	},
 	{
@@ -2349,6 +2881,30 @@
 	},
 	{
 		"prefixe": "GLOBENEWS",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
+		"prefixe": "HTML5_LANDED",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
+		"prefixe": "HTML5UP_EDITORIAL",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
+		"prefixe": "HTML5UP_MASSIVELY",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
+		"prefixe": "HTML5UP_PHANTOM",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
+		"prefixe": "HTML5UP_STORY",
+		"categorie": "interface-publique/squelette-edito"
+	},
+	{
+		"prefixe": "HTML5UP_STRONGLY_TYPES",
 		"categorie": "interface-publique/squelette-edito"
 	},
 	{
@@ -2364,12 +2920,8 @@
 		"categorie": "interface-publique/squelette-edito"
 	},
 	{
-		"prefixe": "PFC",
-		"categorie": "interface-publique/squelette-special"
-	},
-	{
-		"prefixe": "SIGHT",
-		"categorie": "interface-publique/squelette-blog"
+		"prefixe": "R1R2",
+		"categorie": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "SPIPR_DOC",
@@ -2404,14 +2956,6 @@
 		"categorie": "interface-publique/squelette-gene"
 	},
 	{
-		"prefixe": "COLLECTION",
-		"categorie": "interface-publique/squelette-special"
-	},
-	{
-		"prefixe": "CURALICIOUS",
-		"categorie": "interface-publique/squelette-edito"
-	},
-	{
 		"prefixe": "ESCAL",
 		"categorie": "interface-publique/squelette-gene"
 	},
@@ -2426,14 +2970,6 @@
 	{
 		"prefixe": "MELUSINE",
 		"categorie": "interface-publique/squelette-gene"
-	},
-	{
-		"prefixe": "PACK_MELUSINE",
-		"categorie": "interface-publique/outil"
-	},
-	{
-		"prefixe": "R1R2",
-		"categorie": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "SARKASPIP",
@@ -2460,10 +2996,6 @@
 		"categorie": "interface-publique/squelette-gene"
 	},
 	{
-		"prefixe": "SQUELETTE_BROMINERARY",
-		"categorie": "interface-publique/squelette-blog"
-	},
-	{
 		"prefixe": "SQUELETTE_MEDIAN",
 		"categorie": "interface-publique/squelette-gene"
 	},
@@ -2484,10 +3016,6 @@
 		"categorie": "interface-publique/squelette-gene"
 	},
 	{
-		"prefixe": "ZVIDE",
-		"categorie": "interface-publique/outil"
-	},
-	{
 		"prefixe": "ALPHA",
 		"categorie": "interface-publique/squelette-special"
 	},
@@ -2496,8 +3024,8 @@
 		"categorie": "interface-publique/squelette-special"
 	},
 	{
-		"prefixe": "DOCUMENTATION",
-		"categorie": "interface-publique/squelette-edito"
+		"prefixe": "COLLECTION",
+		"categorie": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "FILDEMARIANNE",
@@ -2532,16 +3060,20 @@
 		"categorie": "interface-publique/squelette-special"
 	},
 	{
+		"prefixe": "PFC",
+		"categorie": "interface-publique/squelette-special"
+	},
+	{
+		"prefixe": "RERS",
+		"categorie": "interface-publique/squelette-special"
+	},
+	{
 		"prefixe": "RESSOURCOTHEQUE",
 		"categorie": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "SEDNA",
 		"categorie": "interface-publique/squelette-special"
-	},
-	{
-		"prefixe": "SPIP_RESET",
-		"categorie": "interface-publique/outil"
 	},
 	{
 		"prefixe": "SVPSKEL",
@@ -2558,10 +3090,6 @@
 	{
 		"prefixe": "ZANNUAIRE",
 		"categorie": "interface-publique/squelette-special"
-	},
-	{
-		"prefixe": "ZPIP_RESET",
-		"categorie": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ZPIPCOOP",
@@ -3108,102 +3636,6 @@
 		"categorie": "interface-publique/theme"
 	},
 	{
-		"prefixe": "HTML5_LANDED",
-		"categorie": "interface-publique/squelette-edito"
-	},
-	{
-		"prefixe": "HTML5UP_EDITORIAL",
-		"categorie": "interface-publique/squelette-edito"
-	},
-	{
-		"prefixe": "HTML5UP_MASSIVELY",
-		"categorie": "interface-publique/squelette-edito"
-	},
-	{
-		"prefixe": "HTML5UP_PHANTOM",
-		"categorie": "interface-publique/squelette-edito"
-	},
-	{
-		"prefixe": "HTML5UP_STORY",
-		"categorie": "interface-publique/squelette-edito"
-	},
-	{
-		"prefixe": "HTML5UP_STRONGLY_TYPES",
-		"categorie": "interface-publique/squelette-edito"
-	},
-	{
-		"prefixe": "MULTILANG",
-		"categorie": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "MULTILINGUE",
-		"categorie": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "AUTOLANG",
-		"categorie": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "DOMLANG",
-		"categorie": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "LANGUEPREFEREE",
-		"categorie": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "MLL",
-		"categorie": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "SECTEUR_LANGUE",
-		"categorie": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "EXTENSIONMULTILINGUE",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "GTR",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "INTERFACE_TRADUCTION_OBJETS",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "NIHONGO",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "TAA",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "TOUTMULTI",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "TRAD_RUB",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "TRADAUTO",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "TRADRUB",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "TRADRUB_PROPOSEE",
-		"categorie": "contenu/traduction"
-	},
-	{
-		"prefixe": "LANGONET",
-		"categorie": "contenu/traduction"
-	},
-	{
 		"prefixe": "DEWPLAYER",
 		"categorie": "media/audiovideo"
 	},
@@ -3300,6 +3732,10 @@
 		"categorie": "media/document"
 	},
 	{
+		"prefixe": "GVIEWER",
+		"categorie": "media/document"
+	},
+	{
 		"prefixe": "MEDIA",
 		"categorie": "media/document"
 	},
@@ -3328,6 +3764,10 @@
 		"categorie": "media/document"
 	},
 	{
+		"prefixe": "FIGURE",
+		"categorie": "media/document"
+	},
+	{
 		"prefixe": "GESTDOC",
 		"categorie": "media/document"
 	},
@@ -3337,6 +3777,14 @@
 	},
 	{
 		"prefixe": "MEDIAS",
+		"categorie": "media/document"
+	},
+	{
+		"prefixe": "MULTIMEDIAPORTFOLIO",
+		"categorie": "media/document"
+	},
+	{
+		"prefixe": "OCR",
 		"categorie": "media/document"
 	},
 	{
@@ -3365,6 +3813,10 @@
 	},
 	{
 		"prefixe": "ZIPPEUR",
+		"categorie": "media/document"
+	},
+	{
+		"prefixe": "DOCKER",
 		"categorie": "media/document"
 	},
 	{
@@ -3400,16 +3852,12 @@
 		"categorie": "media/galerie"
 	},
 	{
-		"prefixe": "FANCYBOX",
+		"prefixe": "EUDOCK",
 		"categorie": "media/galerie"
 	},
 	{
-		"prefixe": "FLICKR_CC",
-		"categorie": "media/image"
-	},
-	{
-		"prefixe": "FLICKR_RAND",
-		"categorie": "media/image"
+		"prefixe": "FANCYBOX",
+		"categorie": "media/galerie"
 	},
 	{
 		"prefixe": "FLUXSLIDER",
@@ -3464,10 +3912,6 @@
 		"categorie": "media/galerie"
 	},
 	{
-		"prefixe": "MULTIMEDIAPORTFOLIO",
-		"categorie": "media/document"
-	},
-	{
 		"prefixe": "NIVOSLIDER",
 		"categorie": "media/galerie"
 	},
@@ -3482,14 +3926,6 @@
 	{
 		"prefixe": "PANOLENS",
 		"categorie": "media/galerie"
-	},
-	{
-		"prefixe": "PANORAMAS",
-		"categorie": "media/image"
-	},
-	{
-		"prefixe": "PANOSALADOMODELE",
-		"categorie": "media/image"
 	},
 	{
 		"prefixe": "PHOTOSWIPE",
@@ -3516,10 +3952,6 @@
 		"categorie": "media/galerie"
 	},
 	{
-		"prefixe": "SPIPAGRAM",
-		"categorie": "media/image"
-	},
-	{
 		"prefixe": "SPIPIRIS",
 		"categorie": "media/galerie"
 	},
@@ -3544,16 +3976,8 @@
 		"categorie": "media/galerie"
 	},
 	{
-		"prefixe": "THUMBSITES",
-		"categorie": "media/image"
-	},
-	{
 		"prefixe": "WALMA",
 		"categorie": "media/galerie"
-	},
-	{
-		"prefixe": "ZOOMBOX",
-		"categorie": "media/image"
 	},
 	{
 		"prefixe": "ARTICLE_ALBUM_PHOTO",
@@ -3600,10 +4024,6 @@
 		"categorie": "media/image"
 	},
 	{
-		"prefixe": "EUDOCK",
-		"categorie": "media/galerie"
-	},
-	{
 		"prefixe": "EXIF",
 		"categorie": "media/image"
 	},
@@ -3616,8 +4036,12 @@
 		"categorie": "media/image"
 	},
 	{
-		"prefixe": "FIGURE",
-		"categorie": "media/document"
+		"prefixe": "FLICKR_CC",
+		"categorie": "media/image"
+	},
+	{
+		"prefixe": "FLICKR_RAND",
+		"categorie": "media/image"
 	},
 	{
 		"prefixe": "FONCTIONS_IMAGES",
@@ -3684,8 +4108,12 @@
 		"categorie": "media/image"
 	},
 	{
-		"prefixe": "OCR",
-		"categorie": "media/document"
+		"prefixe": "PANORAMAS",
+		"categorie": "media/image"
+	},
+	{
+		"prefixe": "PANOSALADOMODELE",
+		"categorie": "media/image"
 	},
 	{
 		"prefixe": "PHOTO_INFOS",
@@ -3700,7 +4128,19 @@
 		"categorie": "media/image"
 	},
 	{
+		"prefixe": "SPIPAGRAM",
+		"categorie": "media/image"
+	},
+	{
+		"prefixe": "THUMBSITES",
+		"categorie": "media/image"
+	},
+	{
 		"prefixe": "TJPZOOM",
+		"categorie": "media/image"
+	},
+	{
+		"prefixe": "ZOOMBOX",
 		"categorie": "media/image"
 	},
 	{
@@ -3708,8 +4148,8 @@
 		"categorie": "media/image"
 	},
 	{
-		"prefixe": "SHORTCUT_URL",
-		"categorie": "administration/referencement"
+		"prefixe": "BONUX_LOGO",
+		"categorie": "media/image"
 	},
 	{
 		"prefixe": "SOCIAUX",
@@ -3748,10 +4188,6 @@
 		"categorie": "navigation/lien"
 	},
 	{
-		"prefixe": "LIENSCONTENUS",
-		"categorie": "administration/maintenance"
-	},
-	{
 		"prefixe": "LINKS",
 		"categorie": "navigation/lien"
 	},
@@ -3784,16 +4220,16 @@
 		"categorie": "navigation/lien"
 	},
 	{
-		"prefixe": "SUIVANT_PRECEDENT",
-		"categorie": "navigation/pagination-tri"
+		"prefixe": "ARTICLE_ACCUEIL",
+		"categorie": "navigation/lien"
+	},
+	{
+		"prefixe": "COURTCIRCUIT",
+		"categorie": "navigation/lien"
 	},
 	{
 		"prefixe": "TITREPARENT",
 		"categorie": "navigation/lien"
-	},
-	{
-		"prefixe": "VARICELLE",
-		"categorie": "interface-publique/outil"
 	},
 	{
 		"prefixe": "BOUTONS_ADMIN_SUPP",
@@ -3920,7 +4356,43 @@
 		"categorie": "navigation/motcle"
 	},
 	{
+		"prefixe": "MULTILANG",
+		"categorie": "navigation/multilinguisme"
+	},
+	{
+		"prefixe": "MULTILINGUE",
+		"categorie": "navigation/multilinguisme"
+	},
+	{
+		"prefixe": "AUTOLANG",
+		"categorie": "navigation/multilinguisme"
+	},
+	{
+		"prefixe": "DOMLANG",
+		"categorie": "navigation/multilinguisme"
+	},
+	{
+		"prefixe": "LANGUEPREFEREE",
+		"categorie": "navigation/multilinguisme"
+	},
+	{
+		"prefixe": "MLL",
+		"categorie": "navigation/multilinguisme"
+	},
+	{
+		"prefixe": "SECTEUR_LANGUE",
+		"categorie": "navigation/multilinguisme"
+	},
+	{
 		"prefixe": "PSEUDO_HASARD",
+		"categorie": "navigation/pagination-tri"
+	},
+	{
+		"prefixe": "ORDOC",
+		"categorie": "navigation/pagination-tri"
+	},
+	{
+		"prefixe": "NUMERO",
 		"categorie": "navigation/pagination-tri"
 	},
 	{
@@ -3933,6 +4405,14 @@
 	},
 	{
 		"prefixe": "RANG",
+		"categorie": "navigation/pagination-tri"
+	},
+	{
+		"prefixe": "SUIVANT_PRECEDENT",
+		"categorie": "navigation/pagination-tri"
+	},
+	{
+		"prefixe": "TRIMOTS",
 		"categorie": "navigation/pagination-tri"
 	},
 	{
@@ -3996,6 +4476,18 @@
 		"categorie": "navigation/recherche"
 	},
 	{
+		"prefixe": "AJAXFILTRE",
+		"categorie": "navigation/recherche"
+	},
+	{
+		"prefixe": "GRAPPES",
+		"categorie": "navigation/transverse"
+	},
+	{
+		"prefixe": "LIAISON_OBJET",
+		"categorie": "navigation/transverse"
+	},
+	{
 		"prefixe": "ROLES_SELECTIONS",
 		"categorie": "navigation/transverse"
 	},
@@ -4020,6 +4512,10 @@
 		"categorie": "navigation/transverse"
 	},
 	{
+		"prefixe": "MASQUER",
+		"categorie": "navigation/transverse"
+	},
+	{
 		"prefixe": "PB_SELECTION",
 		"categorie": "navigation/transverse"
 	},
@@ -4032,866 +4528,7 @@
 		"categorie": "navigation/transverse"
 	},
 	{
-		"prefixe": "CODES_POSTAUX",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "COGGPS",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "COORDGMAP",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GEOGRAPHIE",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GEOMAP",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GEOPORTAIL",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GIS",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GISBAN",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GISGEOM",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GMAP",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GMAPMXN",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "GMAPS_V3",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "IMAPDEPART",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "PAYS",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "RAINETTE",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "SITRA",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "SPIP_MASHUP",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "SPIPCARTO",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "SVGMAP",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "CARTO_ITINERAIRE",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "VILLEBE",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "ACTUNITE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "EVAMENTIONS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "QRCODE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SPIP_PROPRIO",
-		"categorie": ""
-	},
-	{
-		"prefixe": "ARCHIVE",
-		"categorie": "contenu/extension"
-	},
-	{
-		"prefixe": "AUTEUR_EVENEMENT",
-		"categorie": "auteur/extension"
-	},
-	{
-		"prefixe": "DATERUBRIQUES",
-		"categorie": "contenu/extension"
-	},
-	{
-		"prefixe": "BIBLE",
-		"categorie": "contenu/redaction"
-	},
-	{
-		"prefixe": "DEPUBLIE",
-		"categorie": "administration/maintenance"
-	},
-	{
-		"prefixe": "DICTIONNAIRES",
-		"categorie": "contenu/extension"
-	},
-	{
-		"prefixe": "EMPLOIS",
-		"categorie": "contenu/extension"
-	},
-	{
-		"prefixe": "ESPACES",
-		"categorie": ""
-	},
-	{
-		"prefixe": "GEO_VISITEURS",
-		"categorie": "administration/statistique"
-	},
-	{
-		"prefixe": "GRAPPES",
+		"prefixe": "MAGNET",
 		"categorie": "navigation/transverse"
-	},
-	{
-		"prefixe": "HERBIER",
-		"categorie": ""
-	},
-	{
-		"prefixe": "PAGES",
-		"categorie": ""
-	},
-	{
-		"prefixe": "PLOM",
-		"categorie": ""
-	},
-	{
-		"prefixe": "PMB",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SLOGAN",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SPIPERIPSUM",
-		"categorie": "contenu/extension"
-	},
-	{
-		"prefixe": "VOCABULAIRE",
-		"categorie": "contenu/extension"
-	},
-	{
-		"prefixe": "ZEROCLIPBOARD",
-		"categorie": ""
-	},
-	{
-		"prefixe": "ACRONYMES",
-		"categorie": ""
-	},
-	{
-		"prefixe": "ACS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "ANIMATECSS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "CURATOR",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DISPOSITION"
-	},
-	{
-		"prefixe": "DUPLICATOR"
-	},
-	{
-		"prefixe": "ENCARTS"
-	},
-	{
-		"prefixe": "GLOSSAIRE"
-	},
-	{
-		"prefixe": "LIAISON_OBJET"
-	},
-	{
-		"prefixe": "ODT2SPIP"
-	},
-	{
-		"prefixe": "ORDOC"
-	},
-	{
-		"prefixe": "PROTECTION_FORMULAIRES"
-	},
-	{
-		"prefixe": "RSSARTICLE"
-	},
-	{
-		"prefixe": "RUBRIQUEUR"
-	},
-	{
-		"prefixe": "STORIFY"
-	},
-	{
-		"prefixe": "VERSIONING"
-	},
-	{
-		"prefixe": "ARTICLES_VERS_RUBRIQUES"
-	},
-	{
-		"prefixe": "AUSU"
-	},
-	{
-		"prefixe": "BREVES_VERS_ARTICLES"
-	},
-	{
-		"prefixe": "COLORIAGEDIST"
-	},
-	{
-		"prefixe": "COUTEAU_SUISSE"
-	},
-	{
-		"prefixe": "DEPUBLICATION"
-	},
-	{
-		"prefixe": "INHIBECACHE"
-	},
-	{
-		"prefixe": "MES_PREFERENCES"
-	},
-	{
-		"prefixe": "SCEXTRAS"
-	},
-	{
-		"prefixe": "CHARTJS"
-	},
-	{
-		"prefixe": "CHARTS"
-	},
-	{
-		"prefixe": "CREER_SPRITES"
-	},
-	{
-		"prefixe": "JPGRAPH"
-	},
-	{
-		"prefixe": "MELUSINE_COULEURS_ARTICLE"
-	},
-	{
-		"prefixe": "PUBBAN"
-	},
-	{
-		"prefixe": "VIGNETTES_OXYGEN"
-	},
-	{
-		"prefixe": "VIGNETTES_OXYGEN52"
-	},
-	{
-		"prefixe": "AA"
-	},
-	{
-		"prefixe": "ACCESSIBILITE"
-	},
-	{
-		"prefixe": "AFFICHER_OBJETS"
-	},
-	{
-		"prefixe": "BARRAC"
-	},
-	{
-		"prefixe": "CELEMENTS"
-	},
-	{
-		"prefixe": "CHOSEN"
-	},
-	{
-		"prefixe": "ELEMENTS"
-	},
-	{
-		"prefixe": "EZCSS"
-	},
-	{
-		"prefixe": "MASQUER"
-	},
-	{
-		"prefixe": "NUMERO"
-	},
-	{
-		"prefixe": "PAGES_MOBILES"
-	},
-	{
-		"prefixe": "RUBRIQUES_VIRTUELLES"
-	},
-	{
-		"prefixe": "SIA"
-	},
-	{
-		"prefixe": "SPIP_400"
-	},
-	{
-		"prefixe": "TABLESORTER"
-	},
-	{
-		"prefixe": "TOOLTIP"
-	},
-	{
-		"prefixe": "TRIMOTS"
-	},
-	{
-		"prefixe": "TROUVER_OBJET"
-	},
-	{
-		"prefixe": "VARIANTESARTICLES"
-	},
-	{
-		"prefixe": "ZGROUPEMOTS"
-	},
-	{
-		"prefixe": "CEXTRAS"
-	},
-	{
-		"prefixe": "FACD"
-	},
-	{
-		"prefixe": "FENFLO"
-	},
-	{
-		"prefixe": "FORMULAIREUPLOAD"
-	},
-	{
-		"prefixe": "IE_EXTRAS"
-	},
-	{
-		"prefixe": "IEXTRAS"
-	},
-	{
-		"prefixe": "MAGNET"
-	},
-	{
-		"prefixe": "ROLES"
-	},
-	{
-		"prefixe": "SELECTEURGENERIQUE"
-	},
-	{
-		"prefixe": "EVA_HABILLAGE"
-	},
-	{
-		"prefixe": "EVA_INSTALL"
-	},
-	{
-		"prefixe": "RERS"
-	},
-	{
-		"prefixe": "TIMECIRCLES"
-	},
-	{
-		"prefixe": "GEOIPCC"
-	},
-	{
-		"prefixe": "AJAXFILTRE"
-	},
-	{
-		"prefixe": "AJAXFORMS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "ARCHIVISTE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "ARTICLE_ACCUEIL",
-		"categorie": ""
-	},
-	{
-		"prefixe": "BASECSS",
-		"categorie": "developpement/framework-css"
-	},
-	{
-		"prefixe": "BONUX_LOGO",
-		"categorie": ""
-	},
-	{
-		"prefixe": "BOOKSEARCH",
-		"categorie": ""
-	},
-	{
-		"prefixe": "BOOTSTRAP",
-		"categorie": "developpement/framework-css"
-	},
-	{
-		"prefixe": "BOOTSTRAP3",
-		"categorie": "developpement/framework-css"
-	},
-	{
-		"prefixe": "BOOTSTRAP3_SASS",
-		"categorie": "developpement/framework-css"
-	},
-	{
-		"prefixe": "BOOTSTRAP4",
-		"categorie": "developpement/framework-css"
-	},
-	{
-		"prefixe": "CACHE",
-		"categorie": "developpement/api-php"
-	},
-	{
-		"prefixe": "CAMBIAR_ESQUELETO",
-		"categorie": ""
-	},
-	{
-		"prefixe": "CFG",
-		"categorie": ""
-	},
-	{
-		"prefixe": "COG",
-		"categorie": ""
-	},
-	{
-		"prefixe": "COLLECTIONJSON",
-		"categorie": "developpement/api-php"
-	},
-	{
-		"prefixe": "COMPASS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "COMPAT",
-		"categorie": ""
-	},
-	{
-		"prefixe": "COMPOSITIONS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "CONSOLE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "CONTINENTS",
-		"categorie": "contenu/geographie"
-	},
-	{
-		"prefixe": "COULEUR_OBJET",
-		"categorie": "contenu/extension"
-	},
-	{
-		"prefixe": "COURTCIRCUIT",
-		"categorie": "navigation/lien"
-	},
-	{
-		"prefixe": "CRUD",
-		"categorie": "developpement/api-php"
-	},
-	{
-		"prefixe": "CSS_IMBRIQUES",
-		"categorie": "developpement/framework-css"
-	},
-	{
-		"prefixe": "CVTM",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DAME",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DATES_OUTILS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DECLARERPARENT",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DEV",
-		"categorie": "developpement/outil"
-	},
-	{
-		"prefixe": "DOC_TECH",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DOCKER",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DOCS_LOGOS_AGENDA2",
-		"categorie": ""
-	},
-	{
-		"prefixe": "DOMPDF"
-	},
-	{
-		"prefixe": "DUMP_XML"
-	},
-	{
-		"prefixe": "EDITER_LIENS_SIMPLES"
-	},
-	{
-		"prefixe": "EMOGRIFIER"
-	},
-	{
-		"prefixe": "EXCLURE_SECT"
-	},
-	{
-		"prefixe": "EXERGUE"
-	},
-	{
-		"prefixe": "EXPLICATIONS"
-	},
-	{
-		"prefixe": "EXTRAIREDOC"
-	},
-	{
-		"prefixe": "EXTRAS"
-	},
-	{
-		"prefixe": "FABRIQUE"
-	},
-	{
-		"prefixe": "FOND_ESPACE_PRIVE"
-	},
-	{
-		"prefixe": "FONDS"
-	},
-	{
-		"prefixe": "FONI"
-	},
-	{
-		"prefixe": "FORM_UNIFORM"
-	},
-	{
-		"prefixe": "FOUNDATION"
-	},
-	{
-		"prefixe": "FOUNDATION_6"
-	},
-	{
-		"prefixe": "GDATA"
-	},
-	{
-		"prefixe": "GEOIP"
-	},
-	{
-		"prefixe": "GRENIER"
-	},
-	{
-		"prefixe": "HOMONYMES"
-	},
-	{
-		"prefixe": "HTML5"
-	},
-	{
-		"prefixe": "HTML5_RESPONSIVE"
-	},
-	{
-		"prefixe": "HTTP"
-	},
-	{
-		"prefixe": "IMAGE_PAR_DEFAUT"
-	},
-	{
-		"prefixe": "IMGABO"
-	},
-	{
-		"prefixe": "INCARNER"
-	},
-	{
-		"prefixe": "INCLUREAJAXLOAD"
-	},
-	{
-		"prefixe": "IND_TAB_AGG"
-	},
-	{
-		"prefixe": "INFO_SITES"
-	},
-	{
-		"prefixe": "INFO_SPIP"
-	},
-	{
-		"prefixe": "INFOBOX"
-	},
-	{
-		"prefixe": "INTRODUCTION_DISTINGUANTE"
-	},
-	{
-		"prefixe": "ITERATEUR_XLS"
-	},
-	{
-		"prefixe": "ITERATEURS"
-	},
-	{
-		"prefixe": "ITERDEMOS"
-	},
-	{
-		"prefixe": "ITERSIMPLEXML"
-	},
-	{
-		"prefixe": "JFU"
-	},
-	{
-		"prefixe": "JQUERY"
-	},
-	{
-		"prefixe": "JQUERY192"
-	},
-	{
-		"prefixe": "JQUERYP"
-	},
-	{
-		"prefixe": "JQUERYUI"
-	},
-	{
-		"prefixe": "JS_LOG"
-	},
-	{
-		"prefixe": "LAZYSIZES"
-	},
-	{
-		"prefixe": "LESSCSS"
-	},
-	{
-		"prefixe": "LESSPIP"
-	},
-	{
-		"prefixe": "MACROS"
-	},
-	{
-		"prefixe": "MATHJAX_SPIP"
-	},
-	{
-		"prefixe": "MEDIAS_RESPONSIVE"
-	},
-	{
-		"prefixe": "MIGRATION"
-	},
-	{
-		"prefixe": "MSIE_COMPAT"
-	},
-	{
-		"prefixe": "NCORE"
-	},
-	{
-		"prefixe": "NOCACHE"
-	},
-	{
-		"prefixe": "NOIZETIER_DOC"
-	},
-	{
-		"prefixe": "ORIENTATION"
-	},
-	{
-		"prefixe": "PAGINATION"
-	},
-	{
-		"prefixe": "PALETTE"
-	},
-	{
-		"prefixe": "PERIODES"
-	},
-	{
-		"prefixe": "PETRONILLE"
-	},
-	{
-		"prefixe": "PHPCURL"
-	},
-	{
-		"prefixe": "PI"
-	},
-	{
-		"prefixe": "PIECON"
-	},
-	{
-		"prefixe": "PIPELINE_AD"
-	},
-	{
-		"prefixe": "PLUGONET"
-	},
-	{
-		"prefixe": "PREFIXFREE"
-	},
-	{
-		"prefixe": "PREPROD",
-		"categorie": "activite/projet"
-	},
-	{
-		"prefixe": "PROJETS_ORGANISATIONS",
-		"categorie": "activite/projet"
-	},
-	{
-		"prefixe": "QUERYPATH",
-		"categorie": ""
-	},
-	{
-		"prefixe": "RAPER",
-		"categorie": ""
-	},
-	{
-		"prefixe": "READABILITY",
-		"categorie": ""
-	},
-	{
-		"prefixe": "RECHERCHE_STI",
-		"categorie": ""
-	},
-	{
-		"prefixe": "REDACREST",
-		"categorie": ""
-	},
-	{
-		"prefixe": "REPERES",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SAISIE_CHOIX_COULEUR",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SAISIE_LISTE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SAISIES",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SALE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SCSSPHP",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SHORTCODES",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SITRA_SELECT",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SKELEDITOR",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SPIP_BONUX",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SPIPSERVICE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SQUELETTES_PAR_RUBRIQUE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SQUELETTESMOTS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SQUELETTESPROFILS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SVN_UPDATE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SVPAPI",
-		"categorie": ""
-	},
-	{
-		"prefixe": "SWITCHCASE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "TB",
-		"categorie": ""
-	},
-	{
-		"prefixe": "THEMES",
-		"categorie": ""
-	},
-	{
-		"prefixe": "TIDY",
-		"categorie": ""
-	},
-	{
-		"prefixe": "TINYTYPO",
-		"categorie": "developpement/framework-css"
-	},
-	{
-		"prefixe": "TRADUIRETEXTE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "VARNISH",
-		"categorie": ""
-	},
-	{
-		"prefixe": "VERIFIER",
-		"categorie": ""
-	},
-	{
-		"prefixe": "W3CGH",
-		"categorie": ""
-	},
-	{
-		"prefixe": "W3CSS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "WEBFONTS",
-		"categorie": ""
-	},
-	{
-		"prefixe": "XML",
-		"categorie": ""
-	},
-	{
-		"prefixe": "XMLRPC",
-		"categorie": ""
-	},
-	{
-		"prefixe": "YAML",
-		"categorie": "developpement/api-php"
-	},
-	{
-		"prefixe": "ZCORE",
-		"categorie": ""
-	},
-	{
-		"prefixe": "ZINIT",
-		"categorie": "interface-publique/outil"
-	},
-	{
-		"prefixe": "ZIPTEX",
-		"categorie": ""
-	},
-	{
-		"prefixe": ""
 	}
 ]

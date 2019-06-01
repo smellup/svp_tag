@@ -186,7 +186,9 @@ function categorie_plugin_importer_affectation($liste) {
 			include_spip('inc/svptype_mot');
 			foreach ($liste as $_affectation) {
 				// On teste l'existence de la catégorie désignée par son identifiant en récupérant son id_mot.
-				if ($id_mot = mot_lire_id($_affectation['categorie'])) {
+				if (!empty($_affectation['categorie'])
+				and !empty($_affectation['prefixe'])
+				and ($id_mot = mot_lire_id($_affectation['categorie']))) {
 					// On teste l'existence de l'affectation :
 					// - si elle n'existe pas on la rajoute,
 					// - sinon on ne fait rien car i ne peut y avoir qu'une seule affectation par préfixe.
