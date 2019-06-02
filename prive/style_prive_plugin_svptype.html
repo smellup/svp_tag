@@ -1,0 +1,18 @@
+[(#REM)
+
+	Ce squelette definit les styles de l'espace prive
+
+	Note: l'entete "Vary:" sert a repousser l'entete par
+	defaut "Vary: Cookie,Accept-Encoding", qui est (un peu)
+	genant en cas de "rotation du cookie de session" apres
+	un changement d'IP (effet de clignotement).
+	<style>
+]
+#CACHE{3600*100,cache-client}
+#HTTP_HEADER{Content-Type: text/css; charset=utf-8}
+#HTTP_HEADER{Vary: Accept-Encoding}
+
+/* Liste des affectations type-plugin */
+/* -- Positionnement du filtre des catégories dans la caption */
+.liste-objets.categories-plugins strong.caption {display: inline-block;}
+.liste-objets.categories-plugins div.filtre {display: inline-block; float: right; padding-top: 4px;}
