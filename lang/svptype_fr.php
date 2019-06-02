@@ -19,6 +19,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_liste_titre' => 'Liste des catégories',
 	'categorie_menu_titre' => 'Catégories',
 	'categorie_page_titre' => 'Gestion des catégories de plugin',
+	'categorie_selection_option_tout' => 'Toutes les catégories',
 
 	// I
 	'identifiant_label' => 'Identifiant',

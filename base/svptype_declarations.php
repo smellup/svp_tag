@@ -55,8 +55,9 @@ function svptype_declarer_tables_interfaces($interface) {
 	$interface['table_des_tables']['plugins_typologies'] = 'plugins_typologies';
 
 	// Les jointures
-	// -- Entre spip_plugins_stats et spip_plugins
-	$interface['tables_jointures']['spip_plugins'][] = 'plugins_typologies';
+	// -- Entre spip_plugins_typologies et spip_plugins
+	$interface['tables_jointures']['spip_plugins']['prefixe'] = 'plugins_typologies';
+	$interface['tables_jointures']['spip_mots']['id_mot'] = 'plugins_typologies';
 
 	return $interface;
 }

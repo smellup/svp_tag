@@ -16,8 +16,10 @@
 
 [(#ENV{vue, liste}|=={affectation}|oui)
 	[(#REM) <!-- Affectation des types aux plugins --> ]
+	[(#SET{filtre, #ENV{type}|type_plugin_construire_filtre})]
 	<INCLURE{fond=prive/squelettes/affectation/#GET{fond},
 		titre=#GET{fond_titre},
+		where=#GET{filtre},
 		env, ajax} />
 ]
 

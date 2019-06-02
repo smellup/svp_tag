@@ -8,32 +8,56 @@
 #ANCRE_PAGINATION
 <div class="liste-objets categories-plugins">
 <table class="spip liste">
-[<caption><strong class="caption">(#ENV*{titre})</strong></caption>]
+[<caption>
+	<strong class="caption">(#ENV*{titre})</strong>
+	<div class="filtre">
+		<form method="GET" action="#SELF" onChange="this.submit(); return true;">
+			[(#SELF|parametre_url{type,''}|form_hidden)]
+			[(#SAISIE{selection_categorie_plugin, type,
+				niveau_affiche='',
+				titre_affiche='',
+				optgroup='',
+				option_intro=<:svptype:categorie_selection_option_tout:>
+			})]
+		</form>
+	</div>
+</caption>]
 	<thead>
 		<tr class="first_row">
-			<th class="titre" scope="col">[(#TRI{titre,<:svptype:prefixe_label:>,ajax})]</th>
-			<th class="titre" scope="col">[(#TRI{type,<:svptype:identifiant_label:>,ajax})]</th>
+			<th class="titre" scope="col">[(#TRI{prefixe,<:svp:label_prefixe:>,ajax})]</th>
+			<th class="titre" scope="col">[(#TRI{identifiant,<:svptype:identifiant_label:>,ajax})]</th>
 			<th class="action" scope="col">&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
-	<BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES)
+	<BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES mots plugins)
 		{id_groupe=#CONFIG{svptype/groupes/categorie/id_groupe}}
 		{where?}
 		{tri #ENV{par, prefixe}, #GET{defaut_tri}}
 		{pagination #ENV{nb,100}}>
 		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
 			<td class="titre principale">
-				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
-					#PREFIXE
+				<a href="[(#ID_PLUGIN|generer_url_entite{plugin})]" title="[(#NOM|attribut_html)]">
+					[(#PREFIXE)]
 				</a>
 			</td>
 			<td class="titre">
-				[(#IDENTIFIANT)]
+				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
+					[(#IDENTIFIANT)]
+				</a>
 			</td>
 			<td class="action">
 			[(#AUTORISER{modifier_affectation}|oui)
-				[(#BOUTON_ACTION{supprimer,#URL_ACTION_AUTEUR{supprimer_mot,#ID_MOT,#SELF},ajax,'','','(function(me){$(me).parents("tr").animateRemove();return true;})(this)'})]
+				<a
+					href="[(#URL_ECRIRE{editer_affectation}
+							|parametre_url{id_groupe, #ID_GROUPE}
+							|parametre_url{id_mot, #ID_MOT}
+							|parametre_url{prefixe, #PREFIXE}
+					)]"
+					class="bouton-modifier"
+					data-action="modifier">
+					\[<:bouton_modifier:>\]
+				</a>
 			]
 			</td>
 		</tr>
@@ -43,5 +67,7 @@
 [<p class="pagination">(#PAGINATION{prive})</p>]
 </div>
 </B_liste_categorie>[
-<div class="liste-objets categories-plugins caption-wrap"><strong class="caption">(#ENV*{sinon,''})</strong></div>
+<div class="liste-objets categories-plugins caption-wrap">
+	<strong class="caption">(#ENV*{sinon,''})</strong>
+</div>
 ]<//B_liste_categorie>

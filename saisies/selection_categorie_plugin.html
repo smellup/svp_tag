@@ -1,0 +1,60 @@
+[(#REM) 
+
+	### selection_categorie_plugin ###
+
+	Parametres spécifiques de la sélection d'une catégorie de plugin :
+	- niveau_affiche : définir le ou les niveaux de catégories affichés : "groupe" (profondeur 0),
+	                   categorie (profondeur 1) ou "" pour groupe+catégorie (defaut).
+	- titre_affiche  : afficher le titre de la catégorie plutot que son identifiant (defaut:"")
+	- optgroup       : utiliser les groupe de catégories (profondeur 0) comme optgroup non sélectionnable
+					   (si elles sont affichées bien sur, defaut:"")
+
+	Parametres de la saisie standard d'une selection :
+	- option_intro : chaine de langue de la premiere ligne vide ? (defaut:"")
+	- cacher_option_intro : pas de premier option vide  (defaut:"")
+	- class : classe(s) css ajoutes au select
+	- defaut : valeur par defaut si pas présente dans l'environnement
+	- valeur_forcee : valeur utilisee meme si une valeur est dans l'environnement
+	- disable_choix : liste de valeurs à désactiver, séparées par des virgules
+	
+	Exemples d'appels
+	pour une liste simple :
+	[(#SAISIE{selection_categorie_plugin, categorie,
+		label=<:svptype:categorie_label:>,
+		niveau_affiche=categorie,
+		option_intro="aucune catégorie",
+	})]
+]
+
+[(#REM) Effacer option_groupe si tous les niveaux ne sont pas affichés ]
+#SET{optgroup, #ENV{niveau_affiche}|?{'', #ENV{optgroup}}}
+
+[(#REM) On constitue le tableau des options pour la fonction PHP de construction du tableau des data ]
+#SET{options,
+	#ARRAY{
+		niveau_affiche, #ENV{niveau_affiche},
+		titre_affiche, #ENV{titre_affiche},
+		optgroup, #GET{optgroup},
+	}
+}
+
+[(#REM) On calcule le tableau des data ]
+#SET{data, #VAL{categorie}|type_plugin_construire_selection{#GET{options}}}
+
+[(#INCLURE{fond=saisies/selection,
+	nom,
+	data=#GET{data},
+	option_intro,
+	cacher_option_intro,
+	disable_choix,
+	valeur,
+	defaut,
+	valeur_forcee,
+	obligatoire,
+	class,
+	disable,
+	id,
+	size,
+	attributs,
+	env
+})]

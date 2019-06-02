@@ -3,8 +3,9 @@
  * Gestion du formulaire d'importation d'une typologie de plugin
  * (liste des types ou liste des affectations type-plugin).
  */
-
-if (!defined("_ECRIRE_INC_VERSION")) return;
+if (!defined("_ECRIRE_INC_VERSION")) {
+	return;
+}
 
 /**
  * Chargement des données : le formulaire sert à tout type d'importation. Il est donc nécessaire de construire le

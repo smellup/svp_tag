@@ -259,3 +259,105 @@ function categorie_plugin_compter_affectations($categorie) {
 
 	return $compteurs[$id_mot];
 }
+
+
+function type_plugin_construire_selection($typologie, $options = array()) {
+
+	// Vérification des options.
+	if ($typologie == 'tag') {
+		// Seule l'option du titre est acceptée pour les tags car il ne sont pas arborescents.
+		$options['niveau_affiche'] = '';
+		$options['optgroup'] = '';
+	} else {
+		// Pour les catégories, il faut absolument sélectionner les deux niveaux pour que l'option optgroup
+		// ait un sens.
+		if (!empty($options['niveau_affiche'])) {
+			$options['optgroup'] = '';
+		}
+	}
+
+	// Récupération de l'id du groupe pour le type précisé (categorie, tag).
+	include_spip('inc/config');
+	$id_groupe = lire_config("svptype/groupes/${typologie}/id_groupe", 0);
+
+	// Calcul du where en fonction des options :
+	// - 'niveau_affiche' : si vide, on affiche tout, sinon on affiche un niveau donné.
+	$where = array('id_groupe=' . $id_groupe);
+	if (!empty($options['niveau_affiche'])) {
+		$where[] = 'profondeur=' . ($options['niveau_affiche'] == 'groupe' ? 0 : 1);
+	}
+
+	// Calcul du select en fonction des options :
+	// - 'option_titre' : si vide on affiche l'identifiant, sinon le titre du type.
+	$select = array('identifiant', 'profondeur');
+	if (!empty($options['titre_affiche'])) {
+		$select[] = 'titre';
+	}
+
+	// On récupère l'identifiant et éventuellement le titre des catégories de plugin requises uniquement.
+	$from = array('spip_mots');
+	$order_by = array('identifiant');
+	$types = sql_allfetsel($select, $from, $where, '', $order_by);
+
+	// On formate le tableau en fonction des options.
+	// -- L'option optgroup a déjà été vérifiée : si elle est encore active, on est en présence
+	//    d'une arborescence de types à présenter avec optgroup.
+	//    Sinon, on veut une liste aplatie classée alphabétiquement.
+	if (!empty($options['optgroup'])) {
+		// On retraite le tableau en arborescence conformément à ce qui est attendu par la saisie selection avec
+		// optgroup.
+		$data = $groupes = array();
+		// On initialise les groupes et on réserve l'index afin de pouvoir les reconnaitre lors de la prochaine boucle.
+		foreach ($types as $_type) {
+			if ($_type['profondeur'] == 0) {
+				$index = empty($options['titre_affiche']) ? $_type['identifiant'] : $_type['titre'];
+				$data[$index] = array();
+				$groupes[$_type['identifiant']] = $index;
+			}
+		}
+		// On ajoute ensuite les enfants dans le groupe parent.
+		foreach ($types as $_type) {
+			if ($_type['profondeur'] == 1) {
+				// Extraction de l'identifiant du groupe (groupe/xxxx)
+				$identifiants = explode('/', $_type['identifiant']);
+				$index = $groupes[$identifiants[0]];
+				$data[$index][$_type['identifiant']] = empty($options['titre_affiche'])
+					? $_type['identifiant']
+					: $_type['titre'];
+			}
+		}
+	} else {
+		// Si on ne veut pas de optgroup, on liste les types dans l'ordre alphabétique.
+		// Seule l'option du titre est à considérer.
+		$data = !empty($options['titre_affiche'])
+			? array_column($types, 'titre', 'identifiant')
+			: array_column($types, 'identifiant', 'identifiant');
+	}
+
+    return $data;
+}
+
+
+function type_plugin_construire_filtre($type) {
+
+	$filtre = '';
+
+	if ($type) {
+		// On détermine l'id et la profondeur du type.
+		include_spip('inc/svptype_mot');
+		if ($id = mot_lire_id($type)) {
+			// On détermine la profondeur du type qui est plus fiable que de tester l'existence d'un "/".
+			$profondeur = mot_lire_profondeur($id);
+
+			if ($profondeur == 1) {
+				// Le type est un enfant, on filtre sur son id.
+				$filtre = 'plugins_typologies.id_mot=' . $id;
+			} else {
+				// Le type est une racine, on filtre en utilisant son id comme un parent.
+				$filtre = 'id_parent=' . $id;
+			}
+		}
+	}
+
+	return $filtre;
+}
