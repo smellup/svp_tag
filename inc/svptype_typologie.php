@@ -214,43 +214,47 @@ function categorie_plugin_importer_affectation($liste) {
 }
 
 
-function categorie_plugin_compter_affectations($categorie) {
+function type_plugin_compter_affectations($typologie, $type) {
 
 	// Initialisations statiques pour les performances.
 	static $compteurs = array();
-	static $id_groupe = null;
+	static $groupes = array();
 
-	// Déterminer l'id du groupe des catégories si il n'est pas encore stocké.
-	if ($id_groupe === null) {
+	// Déterminer les informations du groupe typologique si il n'est pas encore stocké.
+	if (!isset($groupes[$typologie])) {
 		include_spip('inc/config');
-		$id_groupe = intval(lire_config('svptype/groupes/categories/id_groupe', 0));
+		$groupes[$typologie] = lire_config("svptype/groupes/${typologie}", array());
 	}
 
-	// l'id du mot reflétant la catégorie si c'est une feuille ou la liste des
-	// ids si c'est une catégorie de regroupement.
+	// Le type est fourni soit sous forme de son identifiant soit de son id.
+	// On calcule dans tous les cas l'id.
 	include_spip('inc/svptype_mot');
-	if (is_string($categorie)) {
+	if (!$id_mot = intval($type)) {
 		// On a passé l'identifiant, il faut déterminer l'id du mot.
-		$id_mot = mot_lire_id($categorie);
-	} else {
-		// On a passé l'id du mot.
-		$id_mot = intval($categorie);
+		$id_mot = mot_lire_id($type);
 	}
 
-	// Recherche des affectations de plugin. Il faut distinguer :
+	// Recherche des affectations de plugin. Pour les catégories qui sont arborescentes, il faut distinguer :
 	// -- les catégories de regroupement comme auteur
 	// -- et les catégories feuille auxquelles sont attachés les plugins (auteur/extension)
 	if (!isset($compteurs[$id_mot])) {
-		// Initialisation de la condition sur le groupe
-		$where = array('id_groupe=' . $id_groupe);
+		// Initialisation de la condition sur le groupe de mots.
+		$where = array('id_groupe=' . intval($groupes[$typologie]['id_groupe']));
 
-		// Déterminer le mode de recherche suivant que la catégorie est un regroupement ou une feuille.
+		// Déterminer le mode de recherche suivant que :
+		// - la typologie est arborescente ou pas
+		// - le type est une racine ou une feuille.
 		$profondeur = mot_lire_profondeur($id_mot);
-		if (!$profondeur) {
-			// La catégorie est un regroupement, il faut établir la condition sur le parent.
-			$where[] = 'id_parent=' . $id_mot;
+		if (($groupes[$typologie]['mots_arborescents'] == 'oui')
+		and ($profondeur == 0)) {
+			// La typologie est arborescente et le type est une racine, il faut établir la condition sur les mots
+			// feuille de cette racine.
+			// -- On recherche les id_mot des feuilles de la racine
+			$ids_enfant = mot_lire_enfants($id_mot);
+			$where[] = sql_in('id_mot', $ids_enfant);
 		} else {
-			// La profondeur est > 0 (forcément 1), c'est donc une feuille qui peut être affectée à un plugin.
+			// La profondeur est > 0, c'est donc une feuille qui peut être affectée à un plugin : on étabit la condition
+			// sur le mot lui-même.
 			$where[] = 'id_mot=' . $id_mot;
 		}
 
@@ -263,28 +267,28 @@ function categorie_plugin_compter_affectations($categorie) {
 
 function type_plugin_construire_selection($typologie, $options = array()) {
 
+	// Déterminer les informations du groupe typologique.
+	include_spip('inc/config');
+	$groupe = lire_config("svptype/groupes/${typologie}", array());
+
 	// Vérification des options.
-	if ($typologie == 'tag') {
-		// Seule l'option du titre est acceptée pour les tags car il ne sont pas arborescents.
+	if ($groupe['mots_arborescents'] == 'non') {
+		// Seule l'option du titre est acceptée pour cette typologie car les types ne sont pas arborescents.
 		$options['niveau_affiche'] = '';
 		$options['optgroup'] = '';
 	} else {
-		// Pour les catégories, il faut absolument sélectionner les deux niveaux pour que l'option optgroup
+		// Pour les typologies arborescentes, il faut sélectionner les deux niveaux pour que l'option optgroup
 		// ait un sens.
 		if (!empty($options['niveau_affiche'])) {
 			$options['optgroup'] = '';
 		}
 	}
 
-	// Récupération de l'id du groupe pour le type précisé (categorie, tag).
-	include_spip('inc/config');
-	$id_groupe = lire_config("svptype/groupes/${typologie}/id_groupe", 0);
-
 	// Calcul du where en fonction des options :
 	// - 'niveau_affiche' : si vide, on affiche tout, sinon on affiche un niveau donné.
-	$where = array('id_groupe=' . $id_groupe);
+	$where = array('id_groupe=' . intval($groupe['id_groupe']));
 	if (!empty($options['niveau_affiche'])) {
-		$where[] = 'profondeur=' . ($options['niveau_affiche'] == 'groupe' ? 0 : 1);
+		$where[] = 'profondeur=' . ($options['niveau_affiche'] == 'racine' ? 0 : 1);
 	}
 
 	// Calcul du select en fonction des options :

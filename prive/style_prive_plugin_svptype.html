@@ -13,6 +13,16 @@
 #HTTP_HEADER{Vary: Accept-Encoding}
 
 /* Liste des affectations type-plugin */
+/* -- Mise en exergue des racines pour les typologies arborescentes */
+.liste-objets.types_plugins tr.racine {font-weight: bold;}
+
+/* -- Mise en exergue du footer */
+.liste-objets.types_plugins tfoot tr {font-weight: bold; background:#eee;}
+
+/* -- Alignement à droite des compteurs et décalage de la racine */
+.liste-objets.types_plugins .nombre {text-align: right;}
+.liste-objets.types_plugins .racine .nombre {padding-right: 1em;}
+
 /* -- Positionnement du filtre des catégories dans la caption */
-.liste-objets.categories-plugins strong.caption {display: inline-block;}
-.liste-objets.categories-plugins div.filtre {display: inline-block; float: right; padding-top: 4px;}
+.liste-objets.types_plugins strong.caption {display: inline-block;}
+.liste-objets.types_plugins div.filtre {display: inline-block; float: right; padding-top: 4px;}

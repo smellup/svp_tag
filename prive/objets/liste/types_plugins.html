@@ -4,12 +4,28 @@
 	id_mot, 1,
 	points, -1
 }})
-]<B_liste_categorie>
+]
+#SET{typologie_arbo, ''}
+[(#CONFIG{svptype/groupes/#ENV{typologie}/mots_arborescents}|=={oui}|oui)
+	#SET{typologie_arbo, oui}
+]
+<B_liste_types>
 #ANCRE_PAGINATION
-<div class="liste-objets categories">
+<div class="liste-objets types_plugins[ (#ENV{typologie})]">
 <table class="spip liste">
 	[<caption>
 		<strong class="caption">(#ENV*{titre})</strong>
+		[(#GET{typologie_arbo}|oui)
+		<div class="filtre">
+			<form method="GET" action="#SELF" onChange="this.submit(); return true;">
+				[(#SELF|parametre_url{type,''}|form_hidden)]
+				[(#SAISIE{selection_type_plugin, type,
+					typologie=#ENV{typologie},
+					niveau_affiche=racine,
+					option_intro=#ENV{option_intro}
+				})]
+			</form>
+		</div>]
 	</caption>]
 	<thead>
 		<tr class="first_row">
@@ -20,22 +36,23 @@
 		</tr>
 	</thead>
 	<tbody>
-	<BOUCLE_liste_categorie(MOTS)
-		{id_groupe=#CONFIG{svptype/groupes/categorie/id_groupe}}
+	<BOUCLE_liste_types(MOTS)
+		{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
 		{where?}
 		{recherche?}
 		{tri #ENV{par, identifiant}, #GET{defaut_tri}}
 		{pagination #ENV{nb,100}}>
-		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][(#PROFONDEUR|non) groupe-categories]">
+		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][(#GET{typologie_arbo}|et{#PROFONDEUR|=={0}}|oui) racine]">
 			<td class="titre principale">
 				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
+				[(#GET{typologie_arbo}|et{#ENV{type}|non}|oui)
 					[(#PROFONDEUR|mostar_tabulation)]
+				]
 					#IDENTIFIANT
 				</a>
 			</td>
 			<td class="nombre">
-				[(#PROFONDEUR|mostar_tabulation{&nbsp;})]
-				[(#ID_MOT|categorie_plugin_compter_affectations)]
+				[(#ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|})]
 			</td>
 			<td class="id">
 			[(#AUTORISER{modifier,mot,#ID_MOT}|?{
@@ -49,13 +66,21 @@
 			]
 			</td>
 		</tr>
-	</BOUCLE_liste_categorie>
-	</tbody>
-</table>
+	</BOUCLE_liste_types>
+	</tbody>[(#ENV{typologie}|=={categorie}|oui)
+	<tfoot>
+		<tr class="first_row">
+			<th class="titre" scope="col">&nbsp;</th>
+			<th class="nombre" scope="col"></th>
+			<th class="id" scope="col">&nbsp;</th>
+			<th class="action" scope="col">&nbsp;</th>
+		</tr>
+	</tfoot>
+]</table>
 [<p class="pagination">(#PAGINATION{prive})</p>]
 </div>
-</B_liste_categorie>[
-<div class="liste-objets categories caption-wrap">
+</B_liste_types>[
+<div class="liste-objets types_plugins[ (#ENV{typologie})] caption-wrap">
 	<strong class="caption">(#ENV*{sinon,''})</strong>
 </div>
-]<//B_liste_categorie>
+]<//B_liste_types>

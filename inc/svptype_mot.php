@@ -130,3 +130,22 @@ function mot_lire_id($identifiant) {
 
 	return $ids_mot[$identifiant];
 }
+
+
+function mot_lire_enfants($id_mot) {
+
+	static $ids_enfant = array();
+
+	if (!isset($ids_enfant[$id_mot])) {
+		$ids_enfant[$id_mot] = array();
+
+		$from = 'spip_mots';
+		$where = array('id_parent=' . intval($id_mot));
+		$ids = sql_allfetsel('id_mot', $from, $where);
+		if ($ids) {
+			$ids_enfant[$id_mot] = array_column($ids, 'id_mot');
+		}
+	}
+
+	return $ids_enfant[$id_mot];
+}

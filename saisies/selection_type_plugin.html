@@ -1,13 +1,14 @@
 [(#REM) 
 
-	### selection_categorie_plugin ###
+	### selection_type_plugin ###
 
-	Parametres spécifiques de la sélection d'une catégorie de plugin :
-	- niveau_affiche : définir le ou les niveaux de catégories affichés : "groupe" (profondeur 0),
-	                   categorie (profondeur 1) ou "" pour groupe+catégorie (defaut).
-	- titre_affiche  : afficher le titre de la catégorie plutot que son identifiant (defaut:"")
+	Parametres spécifiques de la sélection d'un type de plugin :
+	- typologie      : typologie concernée, categorie (defaut) ou tag.
+	- niveau_affiche : définir le ou les niveaux de catégories affichés si la typologie est arborescente :
+	                   "racine"(profondeur 0), "feuille" (profondeur 1) ou "" pour groupe+catégorie (defaut).
+	- titre_affiche  : afficher le titre de la catégorie plutot que son identifiant (defaut:"").
 	- optgroup       : utiliser les groupe de catégories (profondeur 0) comme optgroup non sélectionnable
-					   (si elles sont affichées bien sur, defaut:"")
+					   (si elles sont affichées bien sur, defaut:"").
 
 	Parametres de la saisie standard d'une selection :
 	- option_intro : chaine de langue de la premiere ligne vide ? (defaut:"")
@@ -19,10 +20,11 @@
 	
 	Exemples d'appels
 	pour une liste simple :
-	[(#SAISIE{selection_categorie_plugin, categorie,
+	[(#SAISIE{selection_type_plugin, categorie,
+		typologie=categorie,
 		label=<:svptype:categorie_label:>,
-		niveau_affiche=categorie,
-		option_intro="aucune catégorie",
+		niveau_affiche=feuille,
+		option_intro="toutes les catégories",
 	})]
 ]
 
@@ -39,7 +41,7 @@
 }
 
 [(#REM) On calcule le tableau des data ]
-#SET{data, #VAL{categorie}|type_plugin_construire_selection{#GET{options}}}
+#SET{data, #ENV{typologie, categorie}|type_plugin_construire_selection{#GET{options}}}
 
 [(#INCLURE{fond=saisies/selection,
 	nom,
