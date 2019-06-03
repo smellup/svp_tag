@@ -33,7 +33,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'import_message_fichier_non_json' => 'Le fichier choisi n\'est pas au format JSON.',
 
 	// P
-	'plugin_compteur_label' => 'Plugins',
+	'plugin_compteur_label' => 'Affectations',
 
 	// S
 	'svptype_menu_titre' => 'Catégories et tags des plugins',

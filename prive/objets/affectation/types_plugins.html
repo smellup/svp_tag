@@ -28,11 +28,11 @@
 		</tr>
 	</thead>
 	<tbody>
-	<BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES mots plugins)
-		{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
-		{where?}
-		{tri #ENV{par, prefixe}, #GET{defaut_tri}}
-		{pagination #ENV{nb,100}}>
+<BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES mots plugins)
+	{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
+	{where?}
+	{tri #ENV{par, prefixe}, #GET{defaut_tri}}
+	{pagination #ENV{nb,100}}>
 		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
 			<td class="titre principale">
 				<a href="[(#ID_PLUGIN|generer_url_entite{plugin})]" title="[(#NOM|attribut_html)]">
@@ -59,7 +59,7 @@
 			]
 			</td>
 		</tr>
-	</BOUCLE_liste_categorie>
+</BOUCLE_liste_categorie>
 	</tbody>
 </table>
 [<p class="pagination">(#PAGINATION{prive})</p>]

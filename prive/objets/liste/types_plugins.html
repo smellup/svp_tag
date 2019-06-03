@@ -9,6 +9,8 @@
 [(#CONFIG{svptype/groupes/#ENV{typologie}/mots_arborescents}|=={oui}|oui)
 	#SET{typologie_arbo, oui}
 ]
+#SET{affectations, 0}
+
 <B_liste_types>
 #ANCRE_PAGINATION
 <div class="liste-objets types_plugins[ (#ENV{typologie})]">
@@ -36,12 +38,12 @@
 		</tr>
 	</thead>
 	<tbody>
-	<BOUCLE_liste_types(MOTS)
-		{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
-		{where?}
-		{recherche?}
-		{tri #ENV{par, identifiant}, #GET{defaut_tri}}
-		{pagination #ENV{nb,100}}>
+<BOUCLE_liste_types(MOTS)
+	{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
+	{where?}
+	{recherche?}
+	{tri #ENV{par, identifiant}, #GET{defaut_tri}}
+	{pagination #ENV{nb,100}}>
 		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][(#GET{typologie_arbo}|et{#PROFONDEUR|=={0}}|oui) racine]">
 			<td class="titre principale">
 				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
@@ -52,7 +54,8 @@
 				</a>
 			</td>
 			<td class="nombre">
-				[(#ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|})]
+				#SET{affectations_mot, #ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|}}
+				[(#GET{affectations_mot})]
 			</td>
 			<td class="id">
 			[(#AUTORISER{modifier,mot,#ID_MOT}|?{
@@ -66,17 +69,20 @@
 			]
 			</td>
 		</tr>
-	</BOUCLE_liste_types>
-	</tbody>[(#ENV{typologie}|=={categorie}|oui)
+		[(#GET{typologie_arbo}|non|ou{#GET{typologie_arbo}|et{#PROFONDEUR|=={0}}}|oui)
+			#SET{affectations, #GET{affectations}|plus{#GET{affectations_mot}}}
+		]
+</BOUCLE_liste_types>
+	</tbody>
 	<tfoot>
-		<tr class="first_row">
-			<th class="titre" scope="col">&nbsp;</th>
-			<th class="nombre" scope="col"></th>
+		<tr class="first_row racine">
+			<th class="titre" scope="col"><:info_total|ucfirst:></th>
+			<th class="nombre" scope="col">#GET{affectations}</th>
 			<th class="id" scope="col">&nbsp;</th>
 			<th class="action" scope="col">&nbsp;</th>
 		</tr>
 	</tfoot>
-]</table>
+</table>
 [<p class="pagination">(#PAGINATION{prive})</p>]
 </div>
 </B_liste_types>[
