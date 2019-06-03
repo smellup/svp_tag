@@ -5,25 +5,17 @@
 <h1>[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_page_titre}|_T)]</h1>
 
 [(#SET{fond_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_titre}|_T)]})]
+[(#SET{liste_vide, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_erreur_vide}|_T)]})]
 [(#SET{option_tout, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_selection_option_tout}|_T)]})]
 [(#SET{filtre, #ENV{type}|type_plugin_construire_filtre})]
 
-[(#ENV{vue, liste}|=={liste}|oui)
-	[(#REM) <!-- Liste des types pour la typologie concernée (catégorie, tag...) --> ]
-	<INCLURE{fond=prive/objets/liste/types_plugins,
-		typologie=#GET{typologie},
-		titre=#GET{fond_titre},
-		where=#GET{filtre},
-		option_intro=#GET{option_tout},
-		env, ajax} />
-]
-
-[(#ENV{vue, liste}|=={affectation}|oui)
-	[(#REM) <!-- Affectation des types aux plugins --> ]
-	<INCLURE{fond=prive/objets/affectation/types_plugins,
-		titre=#GET{fond_titre},
-		where=#GET{filtre},
-		env, ajax} />
-]
+[(#REM) <!-- Liste des types pour la typologie concernée (catégorie, tag...) --> ]
+<INCLURE{fond=prive/objets/#GET{vue}/types_plugins,
+	typologie=#GET{typologie},
+	titre=#GET{fond_titre},
+	where=#GET{filtre},
+	option_intro=#GET{option_tout},
+	sinon=#GET{liste_vide},
+	env, ajax} />
 
 [<script src="(#PRODUIRE{fond=javascript/svptype_typologie.js}|compacte{js}|timestamp)" type="text/javascript"></script>]

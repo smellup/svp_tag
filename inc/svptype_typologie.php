@@ -98,8 +98,11 @@ function type_plugin_lister_affectation($typologie) {
 
 
 /**
- * Importe une liste de catégories.
+ * Importe une liste de types appartenant à la même typologie.
  *
+ *
+ * @param string $typologie
+ *        Typologie concernée : categorie ou tag.
  * @param array  $liste
  *        Tableau des catégories présenté comme une arborescence.
  *

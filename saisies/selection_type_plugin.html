@@ -43,20 +43,7 @@
 [(#REM) On calcule le tableau des data ]
 #SET{data, #ENV{typologie, categorie}|type_plugin_construire_selection{#GET{options}}}
 
-[(#INCLURE{fond=saisies/selection,
-	nom,
-	data=#GET{data},
-	option_intro,
-	cacher_option_intro,
-	disable_choix,
-	valeur,
-	defaut,
-	valeur_forcee,
-	obligatoire,
-	class,
-	disable,
-	id,
-	size,
-	attributs,
-	env
-})]
+[(#REM) On appelle la saisie sélection avec les data et le env qui contient les autres paramètres possibles
+        -- attention à ne pas avoir de caractère autre que , ou } avec le env !!!
+]
+[(#INCLURE{fond=saisies/selection, data=#GET{data}, env})]

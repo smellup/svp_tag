@@ -6,18 +6,16 @@
 }})
 ]<B_liste_categorie>
 #ANCRE_PAGINATION
-<div class="liste-objets categories">
+<div class="liste-objets types_plugins[ (#ENV{typologie})]">
 <table class="spip liste affectation">
 [<caption>
 	<strong class="caption">(#ENV*{titre})</strong>
 	<div class="filtre">
 		<form method="GET" action="#SELF" onChange="this.submit(); return true;">
 			[(#SELF|parametre_url{type,''}|form_hidden)]
-			[(#SAISIE{selection_categorie_plugin, type,
-				niveau_affiche='',
-				titre_affiche='',
-				optgroup='',
-				option_intro=<:svptype:categorie_selection_option_tout:>
+			[(#SAISIE{selection_type_plugin, type,
+				typologie=#ENV{typologie},
+				option_intro=#ENV{option_intro}
 			})]
 		</form>
 	</div>
@@ -31,7 +29,7 @@
 	</thead>
 	<tbody>
 	<BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES mots plugins)
-		{id_groupe=#CONFIG{svptype/groupes/categorie/id_groupe}}
+		{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
 		{where?}
 		{tri #ENV{par, prefixe}, #GET{defaut_tri}}
 		{pagination #ENV{nb,100}}>
@@ -67,7 +65,7 @@
 [<p class="pagination">(#PAGINATION{prive})</p>]
 </div>
 </B_liste_categorie>[
-<div class="liste-objets categories-plugins caption-wrap">
+<div class="liste-objets types_plugins[ (#ENV{typologie})] caption-wrap">
 	<strong class="caption">(#ENV*{sinon,''})</strong>
 </div>
 ]<//B_liste_categorie>
