@@ -85,16 +85,18 @@ function svptype_vider_tables($nom_meta_base_version) {
 function configurer_svptype() {
 
 	$config = array(
-		'groupes' => array(
+		'typologies' => array(
 			'categorie' => array(
 				'identifiant'       => 'plugin-categories',
 				'mots_arborescents' => 'oui',
-				'id_groupe'         => 0
+				'id_groupe'         => 0,
+				'max_affectations'  => 1
 			),
 			'tag'       => array(
 				'identifiant'       => 'plugin-tags',
 				'mots_arborescents' => 'non',
-				'id_groupe'         => 0
+				'id_groupe'         => 0,
+				'max_affectations'  => 0
 			),
 		),
 	);

@@ -6,7 +6,7 @@
 }})
 ]
 #SET{typologie_arbo, ''}
-[(#CONFIG{svptype/groupes/#ENV{typologie}/mots_arborescents}|=={oui}|oui)
+[(#CONFIG{svptype/typologies/#ENV{typologie}/mots_arborescents}|=={oui}|oui)
 	#SET{typologie_arbo, oui}
 ]
 #SET{affectations, 0}
@@ -39,7 +39,7 @@
 	</thead>
 	<tbody>
 <BOUCLE_liste_types(MOTS)
-	{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
+	{id_groupe=#CONFIG{svptype/typologies/#ENV{typologie}/id_groupe}}
 	{where?}
 	{recherche?}
 	{tri #ENV{par, identifiant}, #GET{defaut_tri}}

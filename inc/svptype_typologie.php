@@ -31,7 +31,7 @@ function type_plugin_repertorier($typologie, $filtres = array(), $information = 
 	if (!isset($types[$typologie])) {
 		// On récupère l'id du groupe pour le type précisé (categorie, tag).
 		include_spip('inc/config');
-		$id_groupe = lire_config("svptype/groupes/${typologie}/id_groupe", 0);
+		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
 
 		// On récupère la description complète de toutes les catégories de plugin
 		$from = array('spip_mots');
@@ -84,7 +84,7 @@ function type_plugin_lister_affectation($typologie) {
 	if (!isset($affectations[$typologie])) {
 		// On récupère l'id du groupe pour le type précisé (categorie, tag).
 		include_spip('inc/config');
-		$id_groupe = lire_config("svptype/groupes/${typologie}/id_groupe", 0);
+		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
 
 		// On récupère la description complète de toutes les catégories de plugin
 		$from = array('spip_plugins_typologies');
@@ -117,7 +117,7 @@ function categorie_plugin_importer_liste($liste) {
 	if ($liste) {
 		// Récupération de l'id du groupe
 		include_spip('inc/config');
-		if ($id_groupe = intval(lire_config("svptype/groupes/categorie/id_groupe", 0))) {
+		if ($id_groupe = intval(lire_config("svptype/typologies/categorie/id_groupe", 0))) {
 			// Identification des champs acceptables pour une catégorie
 			include_spip('base/objets');
 			$description_table = lister_tables_objets_sql('spip_mots');
@@ -143,7 +143,7 @@ function categorie_plugin_importer_liste($liste) {
 					$categories_ajoutees += 1;
 
 					// On insère les catégories si elles ne sont pas déjà présentes dans la base.
-					foreach ($_regroupement['categories'] as $_categorie) {
+					foreach ($_regroupement['sous-types'] as $_categorie) {
 						if (!mot_lire_id($_categorie['identifiant'])) {
 							// On insère la catégorie feuille sous son parent.
 							$set = array_intersect_key($_categorie, $champs);
@@ -164,48 +164,60 @@ function categorie_plugin_importer_liste($liste) {
 
 
 /**
- * Importe une liste d'affectation catégorie-plugin.
+ * Importe une liste d'affectation type-plugin pour une typologie donnée.
+ * Le format du fichier est indépendant de la typologie.
  *
- * @param array  $liste
- *        Tableau des catégories présenté comme une arborescence.
+ * @param array  $affectations
+ *        Tableau des affectations type-plugin (agnostique vis-à-vis de la typologie).
  *
- * @return bool|int
+ * @return int
  *         Nombre d'affectations ajoutées.
  */
-function categorie_plugin_importer_affectation($liste) {
+function type_plugin_importer_affectation($typologie, $affectations) {
 
 	// Initialisation du nombre d'affectations catégorie-plugin ajoutées.
-	$affectations_ajoutees = 0;
+	$nb_affectations_ajoutees = 0;
 
-	if ($liste) {
-		// Récupération de l'id du groupe
+	if ($affectations) {
+		// Déterminer les informations du groupe typologique.
 		include_spip('inc/config');
-		if ($id_groupe = intval(lire_config("svptype/groupes/categorie/id_groupe", 0))) {
-			// Initialisation d'un enregistrement
+		$groupe = lire_config("svptype/typologies/${typologie}", array());
+
+		if ($id_groupe = intval($groupe['id_groupe'])) {
+			// Initialisation d'un enregistrement d'affectation.
 			$set = array(
 				'id_groupe' => $id_groupe
 			);
 
 			include_spip('inc/svptype_mot');
-			foreach ($liste as $_affectation) {
-				// On teste l'existence de la catégorie désignée par son identifiant en récupérant son id_mot.
-				if (!empty($_affectation['categorie'])
+			foreach ($affectations as $_affectation) {
+				// On contrôle tout d'abord que l'affectation est correcte :
+				// -- type et préfixe sont renseignés,
+				// -- le type existe dans la base.
+				if (!empty($_affectation['type'])
 				and !empty($_affectation['prefixe'])
-				and ($id_mot = mot_lire_id($_affectation['categorie']))) {
-					// On teste l'existence de l'affectation :
-					// - si elle n'existe pas on la rajoute,
-					// - sinon on ne fait rien car i ne peut y avoir qu'une seule affectation par préfixe.
+				and ($id_mot = mot_lire_id($_affectation['type']))) {
+					// On vérifie que l'affectation n'existe pas déjà pour la typologie.
 					$where = array(
 						'id_mot=' . $id_mot,
 						'prefixe=' . sql_quote($_affectation['prefixe'])
 					);
 					if (!sql_countsel('spip_plugins_typologies', $where)) {
-						$set['id_mot'] = $id_mot;
-						$set['prefixe'] = $_affectation['prefixe'];
-
-						if (sql_insertq('spip_plugins_typologies', $set)) {
-							// Enregistrement de la catégorie ajoutée
-							$affectations_ajoutees += 1;
+						// In fine, on vérifie que le nombre maximal d'affectations pour un plugin n'est pas atteint
+						// pour la typologie.
+						$where = array(
+							'prefixe=' . sql_quote($_affectation['prefixe']),
+							'id_groupe=' . $id_groupe
+						);
+						if (!$groupe['max_affectations']
+						or (sql_countsel('spip_plugins_typologies', $where) < $groupe['max_affectations'])) {
+							// On peut insérer la nouvelle affectation
+							$set['id_mot'] = $id_mot;
+							$set['prefixe'] = $_affectation['prefixe'];
+							if (sql_insertq('spip_plugins_typologies', $set)) {
+								// Enregistrement de l'ajout de l'affectation.
+								$nb_affectations_ajoutees += 1;
+							}
 						}
 					}
 				}
@@ -213,7 +225,7 @@ function categorie_plugin_importer_affectation($liste) {
 		}
 	}
 
-	return $affectations_ajoutees;
+	return $nb_affectations_ajoutees;
 }
 
 
@@ -226,7 +238,7 @@ function type_plugin_compter_affectations($typologie, $type) {
 	// Déterminer les informations du groupe typologique si il n'est pas encore stocké.
 	if (!isset($groupes[$typologie])) {
 		include_spip('inc/config');
-		$groupes[$typologie] = lire_config("svptype/groupes/${typologie}", array());
+		$groupes[$typologie] = lire_config("svptype/typologies/${typologie}", array());
 	}
 
 	// Le type est fourni soit sous forme de son identifiant soit de son id.
@@ -272,7 +284,7 @@ function type_plugin_construire_selection($typologie, $options = array()) {
 
 	// Déterminer les informations du groupe typologique.
 	include_spip('inc/config');
-	$groupe = lire_config("svptype/groupes/${typologie}", array());
+	$groupe = lire_config("svptype/typologies/${typologie}", array());
 
 	// Vérification des options.
 	if ($groupe['mots_arborescents'] == 'non') {

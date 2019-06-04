@@ -29,7 +29,7 @@
 	</thead>
 	<tbody>
 <BOUCLE_liste_categorie(PLUGINS_TYPOLOGIES mots plugins)
-	{id_groupe=#CONFIG{svptype/groupes/#ENV{typologie}/id_groupe}}
+	{id_groupe=#CONFIG{svptype/typologies/#ENV{typologie}/id_groupe}}
 	{where?}
 	{tri #ENV{par, prefixe}, #GET{defaut_tri}}
 	{pagination #ENV{nb,100}}>

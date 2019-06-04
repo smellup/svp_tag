@@ -3,7 +3,7 @@
 #SET{typologie, #ENV{typologie, categorie}}
 #SET{vue, #ENV{vue, liste}}
 
-<BOUCLE_typologies(DATA){source table, #CONFIG{svptype/groupes}|array_keys}>
+<BOUCLE_typologies(DATA){source table, #CONFIG{svptype/typologies}|array_keys}>
 <h3>[(#VAL{svptype:}|concat{#VALEUR}|concat{_menu_titre}|_T)]</h3>
 <ul class="liste-items sous_navigation">
 	[<li class="item">

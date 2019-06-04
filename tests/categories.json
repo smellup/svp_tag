@@ -2,7 +2,7 @@
   {
     "identifiant": "activite",
     "titre": "activite",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "activite/association",
         "titre": "activite/association"
@@ -28,7 +28,7 @@
   {
     "identifiant": "administration",
     "titre": "administration",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "administration/espace-prive",
         "titre": "administration/espace-prive"
@@ -58,7 +58,7 @@
   {
     "identifiant": "auteur",
     "titre": "auteur",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "auteur/authentification",
         "titre": "auteur/authentification"
@@ -84,7 +84,7 @@
   {
     "identifiant": "communication",
     "titre": "communication",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "communication/annonce",
         "titre": "communication/annonce"
@@ -110,7 +110,7 @@
   {
     "identifiant": "contenu",
     "titre": "contenu",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "contenu/affichage",
         "titre": "contenu/affichage"
@@ -148,7 +148,7 @@
   {
     "identifiant": "date",
     "titre": "date",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "date/agenda",
         "titre": "date/agenda"
@@ -162,7 +162,7 @@
   {
     "identifiant": "developpement",
     "titre": "developpement",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "developpement/api",
         "titre": "developpement/api"
@@ -180,7 +180,7 @@
   {
     "identifiant": "interactivite",
     "titre": "interactivite",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "interactivite/evaluation",
         "titre": "interactivite/evaluation"
@@ -206,7 +206,7 @@
   {
     "identifiant": "interface-publique",
     "titre": "interface-publique",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "interface-publique/noisette",
         "titre": "interface-publique/noisette"
@@ -240,7 +240,7 @@
   {
     "identifiant": "media",
     "titre": "media",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "media/audiovideo",
         "titre": "media/audiovideo"
@@ -262,7 +262,7 @@
   {
     "identifiant": "navigation",
     "titre": "navigation",
-    "categories": [
+    "sous-types": [
       {
         "identifiant": "navigation/lien",
         "titre": "navigation/lien"

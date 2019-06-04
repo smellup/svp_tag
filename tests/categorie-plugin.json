@@ -1,4534 +1,4534 @@
 [
 	{
 		"prefixe": "AMAP",
-		"categorie": "activite/association"
+		"type": "activite/association"
 	},
 	{
 		"prefixe": "ASSOCIATION",
-		"categorie": "activite/association"
+		"type": "activite/association"
 	},
 	{
 		"prefixe": "ADHCLUB",
-		"categorie": "activite/association"
+		"type": "activite/association"
 	},
 	{
 		"prefixe": "DECLINAISONS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "FORMIDABLEPAIEMENT",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "LIVRAISON",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "SOUSCRIPTION",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "TRANSACTION",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "RESERVATIONS_CREDITS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "ABONNEMENT",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "BOUTIQUE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "CATALOGUE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "CLIL",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "COMMANDES",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "COMMANDES_ABONNEMENTS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "COMMANDES_PAYPAL",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "COUPONS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "DEVISE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "ECHOPPE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "FACTURES",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "FLATTR",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "LOCATION_IMMEUBLES",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "LOCATION_OBJETS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "LOCATION_OBJETS_BANK",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "LOCATIONS_OBJETS_RESTRICTIONS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "MONTANTS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "OPTIONSPRODUITS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PANIER2COMMANDE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PANIERS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PRIX_OBJETS_PERIODES",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PRODUITS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "REGLEMENTS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "SPIP_THELIA",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "SPIPAL",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "STOCKS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "TUTOCOMMERCE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "ZABOARTICLE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "ZCOMMERCE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PRIX_OBJETS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "BANK",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PAYPAL",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PRIX",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PRODUITS_LIENS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "RELANCE",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "RESERVATION_BANK",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PANIER_OPTIONS",
-		"categorie": "activite/commerce"
+		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "BONBON",
-		"categorie": "activite/education"
+		"type": "activite/education"
 	},
 	{
 		"prefixe": "ELEARNING",
-		"categorie": "activite/education"
+		"type": "activite/education"
 	},
 	{
 		"prefixe": "HYDRAULIC",
-		"categorie": "activite/education"
+		"type": "activite/education"
 	},
 	{
 		"prefixe": "KAYE",
-		"categorie": "activite/education"
+		"type": "activite/education"
 	},
 	{
 		"prefixe": "ACTES_ETAT_CIVIL",
-		"categorie": "activite/gestion"
+		"type": "activite/gestion"
 	},
 	{
 		"prefixe": "AGESSA",
-		"categorie": "activite/gestion"
+		"type": "activite/gestion"
 	},
 	{
 		"prefixe": "DAYFILL",
-		"categorie": "activite/gestion"
+		"type": "activite/gestion"
 	},
 	{
 		"prefixe": "DAYFILL_FACTURES",
-		"categorie": "activite/gestion"
+		"type": "activite/gestion"
 	},
 	{
 		"prefixe": "FRAISDON",
-		"categorie": "activite/gestion"
+		"type": "activite/gestion"
 	},
 	{
 		"prefixe": "ATELIER",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "LIVRABLES",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "PROJETS",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "PROJETS_SITES",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "RSS_COMMITS",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "TICKETS",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "TICKETSKISS",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "PREPROD",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "PROJETS_ORGANISATIONS",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "SPIPMINE",
-		"categorie": "activite/projet"
+		"type": "activite/projet"
 	},
 	{
 		"prefixe": "BOUTON_PROPOSER",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "IDENTITE_EXTRA",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "AIDE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "COMPAGNON",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "AED",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "CMOTS",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DIOGENE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DIOGENE_GEO",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DIOGENE_GERER_AUTEURS",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DIOGENE_LICENCE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DIOGENE_MOTS",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DIOGENE_NOTATION",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DIOGENE_SPIPICIOUS",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DUPLICATOR",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "EDITION_DIRECTE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "EDITION_PLEIN_ECRAN",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "FORCER_CHOIX_RUBRIQUE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "FORMATSPIP",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "MANUELSITE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "MINIDOC",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "NEMEQUITTEPAS",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "PRIVE_AFFICHE_CONNEXE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "PRIVE_FLUIDE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "PRIVE_FLUIDE_REMIX",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "SELECTEUR-RUBRIQUES-TRIALPHA",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "SPIP_HOP",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "STATUT_ARTICLES",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "VERSIONING",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "INTERFACE_ADOUCIE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "INTERFACE_BABIES",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "INTERFACE_COULEURS_ACIDULEES",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "INTERFACE_COULEURS_VIVES",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "INTERFACE_ETEINTES",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "INTERFACE_NUIT",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "LIM",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "POLPRIV",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "PRIVEPERSO",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "THEMES_INTERFACE_PRIVEE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "AFFICHER_OBJETS",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "BANDO",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "MENUALPHAPRIVE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "PLAN",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "CHANGESTATUT",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "BASICONE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "GRISEUSICO",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "GRISEUSICOBARRE",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "GRISEUSVIGNETTES",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "PRIVE_FLUIDE_PLUS",
-		"categorie": "administration/espace-prive"
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "DEPUBLIE",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "DOT2",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "REQUETEURSQL",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "WP_IMPORT",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "WP2SPIP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "ACTIVITE_EDITORIALE",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "CSVIMPORT",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "EMAILTOSPIP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "EXPORTCSV",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MULTI_BLOC",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "PARTAGEUR",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SNIPPETS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SPIP2SPIP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "VIDER_RUBRIQUE",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "ALIS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "BALAI",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "BILANCONTRIB",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "CHARGEUR",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "CK",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "CORBEILLE",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "COUTEAU_SUISSE",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "DD",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "DEPUBLICATION",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "DUMP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "ELFINDER",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "ENTRAVAUX",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "FACTEURMONITORING",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "FUSION_SPIP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "GINS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "IECONFIG",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "IECONFIGPLUS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "INFOPHP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "JOOMLA2SPIP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LINKCHECK",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MAINTENANCEKIT",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MES_FICHIERS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MIGRESTATIC",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MOSAIQUE_ORDOC",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MUTUALISATION",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "PARAVENT",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SAVEAUTO",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SAVECFG",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SCEXTRAS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SIMPLOG",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SPIXPLORER",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "STEP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SVP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "VERIFIE31",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "VERIFIER_PLUGINS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_DOSSIERS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_LOGOS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LIENSCONTENUS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "SPIP_400",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "ADMINER",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "CONSOLE",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "EZSQL",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "IE_EXTRAS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_CONFIG",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_CONSTANTES",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_EXEC",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_EXTENSIONS_PHP",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_FONCTIONS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_OBJETS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "LISTER_PLUGINS",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MEDIAS_NETTOYAGE",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "MIGRATEUR",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "VERTEBRES",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "TESTURL",
-		"categorie": "administration/maintenance"
+		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "CACHEFIX",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "CACHELAB",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "MACROSESSION",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "REFRESHER",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "XRAY",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "CACHE_COOL",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "COMPRESSEUR",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "FASTCACHE",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "HASHER",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "HTMLMINIFIER",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "MEMOIZATION",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "MICROCACHE",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "NOIE",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "QUEUE",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "SMUSH",
-		"categorie": "administration/performance"
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "METASPLUS",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "SHORTCUT_URL",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "MULTIDOMAINES",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "SITEMAP",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "SITEMAP_NEWS",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "METAS",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "URLEDIT",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "DUBLIN_CORE",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "MEDIAS_DEREFERENCER",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "PAGE_TITLE",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "PB_PAGERANK",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "SEO",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "SITEMAP_IMAGES",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "URLS",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "URLS_PAGES",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "URLS_PAR_NUMERO",
-		"categorie": "administration/referencement"
+		"type": "administration/referencement"
 	},
 	{
 		"prefixe": "HTMLPURIFIER",
-		"categorie": "administration/securite"
+		"type": "administration/securite"
 	},
 	{
 		"prefixe": "CSP",
-		"categorie": "administration/securite"
+		"type": "administration/securite"
 	},
 	{
 		"prefixe": "PATCH2024",
-		"categorie": "administration/securite"
+		"type": "administration/securite"
 	},
 	{
 		"prefixe": "PATCH2125",
-		"categorie": "administration/securite"
+		"type": "administration/securite"
 	},
 	{
 		"prefixe": "REDIRHTTPS",
-		"categorie": "administration/securite"
+		"type": "administration/securite"
 	},
 	{
 		"prefixe": "SAFEHTML",
-		"categorie": "administration/securite"
+		"type": "administration/securite"
 	},
 	{
 		"prefixe": "UPDATEHEADERS",
-		"categorie": "administration/securite"
+		"type": "administration/securite"
 	},
 	{
 		"prefixe": "GEO_VISITEURS",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "TRICHE",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "ACTIJOUR",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "ANACLIC",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "BIGBROTHER",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "COMPTECLICS",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "COMPTEURGRAPHIQUE",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "DW2",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "GEOIPCC",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "GOOGLEANALYTICS",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "GTM",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "LOGAHOLIC",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "MARQSTAT",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "PHPMV",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "PIWIK",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "REFERER_SPAM",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "STATS",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "STATSJS",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "STATSOBJETS",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "SVPSTATS",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "VISITEURS_CONNECTES",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "WOOPRA",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "XITI",
-		"categorie": "administration/statistique"
+		"type": "administration/statistique"
 	},
 	{
 		"prefixe": "AUTHOPENID",
-		"categorie": "auteur/authentification"
+		"type": "auteur/authentification"
 	},
 	{
 		"prefixe": "LDAPLUS",
-		"categorie": "auteur/authentification"
+		"type": "auteur/authentification"
 	},
 	{
 		"prefixe": "OPENID",
-		"categorie": "auteur/authentification"
+		"type": "auteur/authentification"
 	},
 	{
 		"prefixe": "PERSONA",
-		"categorie": "auteur/authentification"
+		"type": "auteur/authentification"
 	},
 	{
 		"prefixe": "PEUPLEMENTLDAP",
-		"categorie": "auteur/authentification"
+		"type": "auteur/authentification"
 	},
 	{
 		"prefixe": "ABONNEMENTS",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "ABOZONES",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "ACCESGROUPES",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "ACCESRESTREINT",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "AUTORITE",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "JAZ",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "ARP",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "INTRANET",
-		"categorie": "auteur/autorisation"
+		"type": "auteur/autorisation"
 	},
 	{
 		"prefixe": "AULA",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "CONNECTEUR",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "DECOAUTO",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "INFORMERPREMIERECONNEXION",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "LILO",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "MOTPASSECOMPLEXE",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "MOTPASSEEXPIRABLE",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "COOKIEBAR",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "COOKIECHOICES",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "PASSE_COMPLEXE",
-		"categorie": "auteur/connexion"
+		"type": "auteur/connexion"
 	},
 	{
 		"prefixe": "AUTEURS_SYNDIC",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "CONTACTS",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "COORDONNEES",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "EXAU",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "GROUPES",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "JABBERID",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "MAFIA",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "OMNIPRESENCE",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "PROFILS",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "RAO",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "SIGNATURE",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "TRIAUTEURS",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "GRAVATAR",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "HAVATAR",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "AUTEUR_EVENEMENT",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "PROFILPUBLIC",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "AUTEURSPARTOUT",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "CSV2SPIP",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "HAL_AUTEURS",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "ROLES_AUTEURS",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "MES_PREFERENCES",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "AVATAR_VOKI",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "RUBRIQUEPREFEREE",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "CSV2AUTEURS",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "IMPORTATEUR_CONTACTS",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "OPENINVITER",
-		"categorie": "auteur/extension"
+		"type": "auteur/extension"
 	},
 	{
 		"prefixe": "DATE_INSCRIPTION",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "INSCRIPTION2",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "INSCRIPTION3",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "INSCRIPTIONCONNEXION",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "INSCRIPTIONMOTDEPASSE",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "RUBRIQUE_A_LINSCRIPTION",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "PARRAINAGE",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "AUSU",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "AUTEUR_AUTOMATIQUE",
-		"categorie": "auteur/inscription"
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "BADGE_DON",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "FEUILLEDEROUTE",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "GREVES",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "BONNE_ANNEE",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "AP",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "BANNIERES",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "ALERTE_URGENCE",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "VACANCES",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "PUBBAN",
-		"categorie": "communication/annonce"
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "AKISMET",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "ANTISPAM",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "CAPTCHA2",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "FBANTISPAM",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "HONEYPOT",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "MAILCRYPT",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "NOSPAM",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "RECAPTCHA",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "RSPIPCM",
-		"categorie": "communication/antispam"
+		"type": "communication/antispam"
 	},
 	{
 		"prefixe": "CHATBOX",
-		"categorie": "communication/chat"
+		"type": "communication/chat"
 	},
 	{
 		"prefixe": "JAPPIX_MINI",
-		"categorie": "communication/chat"
+		"type": "communication/chat"
 	},
 	{
 		"prefixe": "MERCURE",
-		"categorie": "communication/chat"
+		"type": "communication/chat"
 	},
 	{
 		"prefixe": "SHOUTBOX",
-		"categorie": "communication/chat"
+		"type": "communication/chat"
 	},
 	{
 		"prefixe": "SPIPCATCHAT",
-		"categorie": "communication/chat"
+		"type": "communication/chat"
 	},
 	{
 		"prefixe": "ABOMAILMANS",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "ALERTES",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "CASEACOCHER_ML",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "CLEVERMAIL",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "ECARD",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "FACTEUR",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "FEEDBURNER",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "GESTIONML",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "LETTRES",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "MAILJET",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "MAILSHOT",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "MAILSUBSCRIBERS",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "MALETTRE",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "MESABONNES",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "MESSAGERIE",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "NEWSLETTERS",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "NOTIFICATIONS",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "NOTIFICATIONS_ARCHIVE",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "PROPAGANDA",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "RECOMMANDER",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "RESERVATION_COMMUNICATION",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SCLP",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SMS",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SMTP",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SOAPSYMPA",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SPIPLISTES",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SPIPLISTESCLEANER",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SQUIRREL_CHIMP",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SQUIRREL_CHIMP_CAMPAIGNS",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SQUIRREL_CHIMP_LISTS",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "SYMPATIC",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "TIPAFRIEND",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "NOTIFAVANCEES",
-		"categorie": "communication/messagerie"
+		"type": "communication/messagerie"
 	},
 	{
 		"prefixe": "PIVOTSYNDIC",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "RSSCONFIG",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "RSSJS",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "RSSPROPOSE",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "SPEEDSYNDIC",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "WEBMENTION",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "AFF_ZONE",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "COMARQUAGE",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "JSONP",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "JSONPGIS",
-		"categorie": "communication/syndication"
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "FORMAT_PHONE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "APROPOS",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "BIGFOOT",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "CTAN",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "JCLICMODELE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "BBCODE_PROPRE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "BELLESPUCES",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "BLOCSDEPLIABLES",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "BOUTONSTEXTE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "CHOIX_POLICE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "CITAL",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "CITATIONS_BB",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "COLORATION_CODE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "COLORSCOPE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "CORRECTION_LIENS_INTERNES",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "DECOUPER",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "EMB_PDF",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "HAL",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "LATEXWHEEL",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "MODELEXERGUE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "NO_BR",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "NORMALISATION_UNICODE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "ONGLETS_TEXTE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "ORTHOTYPO",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "PB_CESURE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "PRECODE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "PREVISU_REDAC",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "RETOURSIMPLE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TIMELINEME",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TITRES_TYPOGRAPHIES",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TW",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TYPO_AVANCEE",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TYPO_CAPS",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TYPO_EXPOSANTS",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TYPO_GUILLEMETS",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TYPO_MOIS",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "SUPPRIMER_ENVELOPPE_MAILTO",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "CHARTJS",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "CHARTS",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "JPGRAPH",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "TABLESORTER",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "ACCORDION",
-		"categorie": "contenu/affichage"
+		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "HAL_PUB",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "PMB",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "AERES",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "BIBLIOCHECK",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "CITE",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "REFBASE",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "ZOTSPIP",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "BOOKSEARCH",
-		"categorie": "contenu/bibliographie"
+		"type": "contenu/bibliographie"
 	},
 	{
 		"prefixe": "OBJETS_DISPONIBILITES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "ARCHIVE",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "DATERUBRIQUES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "BOUQ",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "DICTIONNAIRES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "EMPLOIS",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "ESPACES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "IDENTIFIANTS",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "IMMEUBLES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "LICENCE",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "OBJETS_INFOS_EXTRAS",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "OBJETS_RESTRICTIONS_PERIODES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "OBJETS_SERVICES_EXTRAS",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "PARTENAIRES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "SPIPERIPSUM",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "VU",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "BREVES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "CHANTS",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "INGREDIENT",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "SITES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "PB_COULEUR_RUBRIQUE",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "MELUSINE_COULEURS_ARTICLE",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "RUBRIQUES_VIRTUELLES",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "COULEUR_OBJET",
-		"categorie": "contenu/extension"
+		"type": "contenu/extension"
 	},
 	{
 		"prefixe": "CODES_POSTAUX",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "COGGPS",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "COORDGMAP",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GEOGRAPHIE",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GEOMAP",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GEOPORTAIL",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GIS",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GISBAN",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GISGEOM",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GMAP",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GMAPMXN",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "GMAPS_V3",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "IMAPDEPART",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "PAYS",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "RAINETTE",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "SITRA",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "SPIP_MASHUP",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "SPIPCARTO",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "SVGMAP",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "CARTO_ITINERAIRE",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "VILLEBE",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "COG",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "CONTINENTS",
-		"categorie": "contenu/geographie"
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "FUSIONPDF",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "ARTICLE_PDF",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "CHMLATEX",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "DOCUMENTATION2LATEX",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "IMPRIMIR_DOCUMENTO",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "SPIPDF",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "SPIPODF",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "FPDF",
-		"categorie": "contenu/impression"
+		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "BIBLE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "RECHREMP",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ACRONYMES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "BARRE_TYPO_GENERALISEE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "BARRETYPOENRICHIE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "BOLO",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "CKEDITOR",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "COMMHTML",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "CONVERTISSEUR",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "COULEURS_SPIP",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "CRAYONS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "CURATOR",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ENCARTS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "FAQ",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "FCKEDITOR",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "FRIMOUSSES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "GABARITS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "HASHTAGS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ICONES_SEMANTIQUES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ICONESPEDAGO",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "INSERER_MODELES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "LILYSPIP",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "MARKDOWN",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "MINUS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ODT2SPIP",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "OP",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ORTHO",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ORTHOGOOGLE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PICTO",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PORTE_PLUME",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PORTE_PLUME_INTERTITRES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PP_CHGT_LG",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PP_CODES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PP_GBE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PP_LATEX",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PP_LOREMIPSUM",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "PPP",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "REVISIONNBSP",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "REVISIONS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "SCENARI",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "SMALLCAPS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "SMILEYS",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "TABCSV",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "TINYMCE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "TODO",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "TYPOENLUMINEE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "TYPOEQUATION",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ARTICLES_VERS_RUBRIQUES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "BREVES_VERS_ARTICLES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ACCESSIBILITE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "DAME",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "EXERGUE",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "MATHJAX",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "MATHJAX_LATEX",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "EVABINETTES",
-		"categorie": "contenu/redaction"
+		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "INTERTITRESTDM",
-		"categorie": "contenu/sommaire"
+		"type": "contenu/sommaire"
 	},
 	{
 		"prefixe": "SOMMAIRE",
-		"categorie": "contenu/sommaire"
+		"type": "contenu/sommaire"
 	},
 	{
 		"prefixe": "TABLEMATIERES",
-		"categorie": "contenu/sommaire"
+		"type": "contenu/sommaire"
 	},
 	{
 		"prefixe": "EXTENSIONMULTILINGUE",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "GTR",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "INTERFACE_TRADUCTION_OBJETS",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "NIHONGO",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "TAA",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "TOUTMULTI",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "TRAD_RUB",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "TRADAUTO",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "TRADRUB",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "TRADRUB_PROPOSEE",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "LANGONET",
-		"categorie": "contenu/traduction"
+		"type": "contenu/traduction"
 	},
 	{
 		"prefixe": "RESERVATIONS_MULTIPLES",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "ABCALENDRIER",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "AGENDA",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "CALALTER",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "CALENDRIER",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "CALENDRIERMINI",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "DEBUT_FIN",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "FULLCALENDAR",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "FULLCALENDAR_FACILE",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "GCALENDAR",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "ICALENDAR",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "ICPE",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "IMPORT_ICS",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "ORGANISEUR",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "PIMAGENDA",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "RESERVATION_EVENEMENT",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "SEANCES",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "SEMINAIRE",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "SIMPLECAL",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "TIMELINE",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "ORR",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "PLANNING_SIMPLE",
-		"categorie": "date/agenda"
+		"type": "date/agenda"
 	},
 	{
 		"prefixe": "DATE_CREATION",
-		"categorie": "date/extension"
+		"type": "date/extension"
 	},
 	{
 		"prefixe": "DATE_MODIF_MANUELLE",
-		"categorie": "date/extension"
+		"type": "date/extension"
 	},
 	{
 		"prefixe": "GERER_DATE",
-		"categorie": "date/extension"
+		"type": "date/extension"
 	},
 	{
 		"prefixe": "TIMEZONE",
-		"categorie": "date/extension"
+		"type": "date/extension"
 	},
 	{
 		"prefixe": "WCALENDAR",
-		"categorie": "date/extension"
+		"type": "date/extension"
 	},
 	{
 		"prefixe": "TIMEPICKER",
-		"categorie": "date/extension"
+		"type": "date/extension"
 	},
 	{
 		"prefixe": "ARCHIVISTE",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "CACHE",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "CEXTRAS",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "CFG",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "COLLECTIONJSON",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "COMPAT",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "CRUD",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "DATES_OUTILS",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "DECLARERPARENT",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "ROLES",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "YAML",
-		"categorie": "developpement/api"
+		"type": "developpement/api"
 	},
 	{
 		"prefixe": "EZCSS",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "BASECSS",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "BOOTSTRAP",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "BOOTSTRAP3",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "BOOTSTRAP3_SASS",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "BOOTSTRAP4",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "COMPASS",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "CSS_IMBRIQUES",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "TINYTYPO",
-		"categorie": "developpement/framework"
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "INHIBECACHE",
-		"categorie": "developpement/outil"
+		"type": "developpement/outil"
 	},
 	{
 		"prefixe": "AA",
-		"categorie": "developpement/outil"
+		"type": "developpement/outil"
 	},
 	{
 		"prefixe": "TROUVER_OBJET",
-		"categorie": "developpement/outil"
+		"type": "developpement/outil"
 	},
 	{
 		"prefixe": "DEV",
-		"categorie": "developpement/outil"
+		"type": "developpement/outil"
 	},
 	{
 		"prefixe": "DOC_TECH",
-		"categorie": "developpement/outil"
+		"type": "developpement/outil"
 	},
 	{
 		"prefixe": "FABRIQUE",
-		"categorie": "developpement/outil"
+		"type": "developpement/outil"
 	},
 	{
 		"prefixe": "SELECTEURGENERIQUE",
-		"categorie": "developpement/outil"
+		"type": "developpement/outil"
 	},
 	{
 		"prefixe": "BISOUS",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "EVAL",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "EVALUATIONS",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "FEEDBACK",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "GUESTBOOK",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "LIDO",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "NOTATION",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "PETITIONS",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "QUICKVOTE",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "SONDAGE",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "SIGNALEMENT",
-		"categorie": "interactivite/evaluation"
+		"type": "interactivite/evaluation"
 	},
 	{
 		"prefixe": "CONTACT",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "CONTACT_LIBRE",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "EMPECHER_DOUBLE_CLIC",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "FORMIDABLE",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "FORMIDABLE_MAILSUBSCRIBERS",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "FORMIDABLE_REPONSES_COMMENTEES",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "FORMIDABLEPARTICIPATION",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "FORMIFUSION",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "FORMITABLE",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "FORMS",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "SCRUT_PROP",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "AJAXFORMS",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "CVTUPLOAD",
-		"categorie": "interactivite/formulaire"
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "ABPFORUM",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "COCOMMENT",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "COMMENTS",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "COMMENTS_PHPBB",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "DISQUS",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "FORUM",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "FORUM_PERIME",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "FORUM_SANS_PREVISU",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "FORUM_URBAGORA",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "FORUMSECTORISE",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "MODERATION",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "SPIPBB",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "ZFORUMART",
-		"categorie": "interactivite/forum"
+		"type": "interactivite/forum"
 	},
 	{
 		"prefixe": "CHESS",
-		"categorie": "interactivite/jeux"
+		"type": "interactivite/jeux"
 	},
 	{
 		"prefixe": "FFEDATA",
-		"categorie": "interactivite/jeux"
+		"type": "interactivite/jeux"
 	},
 	{
 		"prefixe": "JEUX",
-		"categorie": "interactivite/jeux"
+		"type": "interactivite/jeux"
 	},
 	{
 		"prefixe": "PGN4SPIP",
-		"categorie": "interactivite/jeux"
+		"type": "interactivite/jeux"
 	},
 	{
 		"prefixe": "QUIZ",
-		"categorie": "interactivite/jeux"
+		"type": "interactivite/jeux"
 	},
 	{
 		"prefixe": "MAXIGOS",
-		"categorie": "interactivite/jeux"
+		"type": "interactivite/jeux"
 	},
 	{
 		"prefixe": "AMIS",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "FACEBOOK",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "GOOGLEPLUS1",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "MASTODON",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "MICROBLOG",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "SOCIALTAGS",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "TWEETNSPIP",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "TWIDGET",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "TWITTER",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "REZOSOCIOS",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "FB_MODELES",
-		"categorie": "interactivite/reseau-social"
+		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "EVANEWS",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "GAZETTE",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "HERBIER",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "ZGROUPEMOTS",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "AVELINE",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "EVA_AGENDA",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "EVA_CALENDRIER",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "EVABONUS",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "EVAL_BENCHMARK",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "EVAL_CONCOURS",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "EVAL_CRITIQUE",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "LIVRE_2",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "MELUSINE_MOBILE",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "MELUSINE_SOCIALTAGS",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "MINI_CALENDRIER",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "TIMECIRCLES",
-		"categorie": "interface-publique/noisette"
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "ZEROCLIPBOARD",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ACS",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ANIMATECSS",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "NOIZETIER",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "SKTHEME",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "SWITCHER",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "TSWITCHER",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ZENGARDEN",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "CREER_SPRITES",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "JQUERYCORNER",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "JQUERYMASONRY",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "JS_SCROLLER",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "SPIPOPUP",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "BARRAC",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "CELEMENTS",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "CHOSEN",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ELEMENTS",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "OUTILS_ARTICLE",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "TOOLTIP",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "VARIANTESARTICLES",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "CAMBIAR_ESQUELETO",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "COMPOSITIONS",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "FENFLO",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "VARICELLE",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ZCORE",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ZINIT",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "KNACSSPIP",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "PACK_MELUSINE",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "SPIP_RESET",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ZPIP_RESET",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "ZVIDE",
-		"categorie": "interface-publique/outil"
+		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "BALLOONS",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "BLOGNGLOP",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "BONES",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "ESSENTIALCLAIR",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "HABILLAGE",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "JAPIBAS",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SIGHT",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SPIPCLEAR",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SPIPR_BLOG",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SPIPRADIUS",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SQUELETTE_BROMINERARY",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SQUELETTE_CALIFORNIUMITE",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SQUELETTE_DARMSTADTIUMOID",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SQUELETTE_EINSTEINIUMIST",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SQUELETTE_LEADESCENT",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "SQUELETTE_MAPARAAN",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "THE_MORNING_AFTER",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "TIMELINEBLOG",
-		"categorie": "interface-publique/squelette-blog"
+		"type": "interface-publique/squelette-blog"
 	},
 	{
 		"prefixe": "ADL",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "CHEZNOUS",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "CURALICIOUS",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "DIST",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "DOCUMENTATION",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "EGT",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "GLOBENEWS",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "HTML5_LANDED",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "HTML5UP_EDITORIAL",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "HTML5UP_MASSIVELY",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "HTML5UP_PHANTOM",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "HTML5UP_STORY",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "HTML5UP_STRONGLY_TYPES",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "IENSPACLYON",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "INFINITY",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "MINIGRISPIP",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "R1R2",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "SPIPR_DOC",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "Z",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "Z5",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "ZESTY",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "ZOUNDATION",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "ZPIP_HTML5",
-		"categorie": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-edito"
 	},
 	{
 		"prefixe": "AHUNTSIC",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "BAZAR",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "ESCAL",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "EVASQUELETTES",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "MEDIAN",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "MELUSINE",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SARKASPIP",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SARKASPIPR",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SCOLASPIP",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SOYEZCREATEURS",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SOYEZCREATEURS_INSTALLATEUR",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SPIPR_DIST",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SQUELETTE_MEDIAN",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SQUELETTE_MULTIFLEX",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "SQUELETTE_SUNNY",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "TYPOMANIAC",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "VITTORY",
-		"categorie": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-gene"
 	},
 	{
 		"prefixe": "ALPHA",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "ANNUAIRE",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "COLLECTION",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "FILDEMARIANNE",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "FSGTF",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "GRIBOUILLE",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "ISPIP",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "ITWX_2_3_7_CLASSIC",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "MOODBOARD",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "MOULINETTE",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "PARALLELISM",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "PFC",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "RERS",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "RESSOURCOTHEQUE",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "SEDNA",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "SVPSKEL",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "TNG",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "WEBTV",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "ZANNUAIRE",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "ZPIPCOOP",
-		"categorie": "interface-publique/squelette-special"
+		"type": "interface-publique/squelette-special"
 	},
 	{
 		"prefixe": "DIST_THEME_DEBUG",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DIST_THEME_DISTYLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DIST_THEME_PALATINESQUE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DIST_THEME_PENSCRATCH",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DIST_THEME_ROUBAIX",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DIST_THEME_TONTON",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DIST_THEME_VIOLETTE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DIST_THEME_WAZ",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_AASTUDIO_CLOCKWORK",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ANDREAS09_BLACK",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ANDREAS09_BLUE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ANDREAS09_GREEN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ANDREAS09_ORANGE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ANDREAS09_PURPLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ANDREAS09_RED",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ANDREAS1024",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ARCLITE_BLUE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ARCLITE_BROWN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ARCLITE_GREEN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ARCLITE_RED",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BLACK",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BLUEBUSINESS",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BLUEPIGMENT",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BLUEPRINT",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BROMINERARY",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BROWNIE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BROWNIE_V1",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BROWNYGREEN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSAMELIA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSBLOG",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSBOOTPLUS",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSCERULEAN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSCOSMO",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSCYBORG",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSFLATLY",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSJOURNAL",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSREADABLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSROSA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSSIMPLEX",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSSLATE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSSPACELAB",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSSPRUCE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSSUPERHERO",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_BSUNITED",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_CALIFORNIUMITE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_CISTICOLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_CLEARBREEZE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_COLLEZION",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_COLOURISE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_COMPONENT",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_COOLWATER",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_CORPORATE_OFFICE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_CUBISMO",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_DARMSADTIUMOID",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_DETACHABLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_EASYBREEZE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_EINSTEINIUMIST",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ELEGANT_GRUNGE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ENVISION",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ESSENTIAL",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ESSENTIAL2COL",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_FRESHMEDIA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_GENERIC",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_GREENY",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_GUMAMELA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_HARVESTFIELD",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_HIGHERGROUND",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_INITIALIZR",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_IPAD_CSSLAYOUT",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_JQTOUCH",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_JUNGLELAND",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_KARLITO",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_KEEPITSIMPLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_LEADESCENT",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_LESS_IS_MORE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_LIQUORICE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_LOGISTIX",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_MAPARAAN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_MARGUERITE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_MARKETPLACE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_MARYLOU",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_MERCURABLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_MOZAIC",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_NEWHORIZON",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_NUAGE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_OOCSS",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_OUTDOOR",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_PIXEL",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_POPDEV",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_RIAM",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ROCK",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SANDY",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_ARCLITE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_AUTOMN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_BLUEBLUR",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_BLUECHRISTMAS",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_BLUENIGHT",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_EASTER",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_ECOLOGY",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_FARFALLA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_HALLOWEEN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_HEADLINES_BLUE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_HEADLINES_GREEN",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_HEADLINES_PURPLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_HEADLINES_RED",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_HEADLINES_YELLOW",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_NAUTICA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_ROSEBYRA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_ROUGENOIR",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_SLEO",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_SPRING",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_SUMMER",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_VITAMINE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SARKA_WINTER",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SLEEK",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SNOWBLIND1024",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SNOWBLIND800",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_SURREAL",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_TECHJUNKIE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_THEMORNINGAFTER",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_TINCREDIBLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_TREFLE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_TRIPOLI",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_UNBOUND",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_URBANARTIST",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_VECTORLOVER11",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_VERSATILITY",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_WELSH2_2COL",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_WELSH2_3COL",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_WP2010",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_WUWEI",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_WUWEI_BLACK",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_XAYONA",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ZFUSION",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "THEME_ZPRESSE",
-		"categorie": "interface-publique/theme"
+		"type": "interface-publique/theme"
 	},
 	{
 		"prefixe": "DEWPLAYER",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "FMP3",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "FREERADIO",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "GETID3",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "HTML5_MEDIAS",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "HTML5_VIDEO",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "MEDIASPIP_PLAYER",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "MEJS",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "PLAYER",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "PODCAST",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "PODCASTCLIENT",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "SM",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "SPIPMOTION",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "VA",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "VIDEOS",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "VIMEO",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "XSPF",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "YMEDIAPLAYER",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "BALADO",
-		"categorie": "media/audiovideo"
+		"type": "media/audiovideo"
 	},
 	{
 		"prefixe": "EVA_FREEMIND",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "EVA_GEOMETRIE",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "COLLECTIONS",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "DOCUMENTS_DISTANTS",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "EMBALLE_MEDIAS",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "GVIEWER",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "MEDIA",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "MEDOC",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "RESSOURCE",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "ROLES_DOCUMENTS",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "STOCKAGES3",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "EMBED_CODE",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "EPUBREADER",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "FIGURE",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "GESTDOC",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "GESTIONDOCUMENTS",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "MEDIAS",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "MULTIMEDIAPORTFOLIO",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "OCR",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "OEMBED",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "OWNCLOUD",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "PDFJS",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "SUPLOADHTML5",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "UPLOADHTML5",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "UPLOADIFY",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "ZIPPEUR",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "DOCKER",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "SWFUPLOAD",
-		"categorie": "media/document"
+		"type": "media/document"
 	},
 	{
 		"prefixe": "DIDA",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "DECKJS",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "ALBUM",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "ALBUMS",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "ANYTHINGSLIDER",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "DIAPO",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "DIAPOS",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "EUDOCK",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "FANCYBOX",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "FLUXSLIDER",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "FPIPR",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "G2",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "GALCARO",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "GALLERIA",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "IMAGECYCLE",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "IMAGEFLOW",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "IMAGEROTATOR",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "JFLIPBOOK",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "LAZYLOAD",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "MEDIABOX",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "MEDIABOXAVECTEXTE",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "MOSAIQUE",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "NIVOSLIDER",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "NYRO",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "OWLCAROUSEL",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "PANOLENS",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "PHOTOSWIPE",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "PORFOLIO_SIMPLE",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "PORTFOLIO_SIMPLE_V2",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "SJCYCLE",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "SLICK",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "SMOOTHGALLERY",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "SPIPIRIS",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "SPLICKR",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "SUPERSIZED",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "SWIPER",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "THICKBOX",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "THICKBOX1",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "WALMA",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "ARTICLE_ALBUM_PHOTO",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "ARTICLE_DIAPORAMA",
-		"categorie": "media/galerie"
+		"type": "media/galerie"
 	},
 	{
 		"prefixe": "DOC2IMG",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "LOGO_SVG",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "LOGOS_MULTIPLES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "SPIP_VISUELS",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "TITRE_LOGO",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "ADAPTIVE_IMAGES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "AFFICHER_LOGO",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "CENTRE_IMAGE",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "CLOUDZOOM",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "EXIF",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "FADINGROLLOVER",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "FAVICON",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "FLICKR_CC",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "FLICKR_RAND",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "FONCTIONS_IMAGES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "IMAGE_CLIQUABLE",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "IMAGE_RAGGED",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "IMAGE_RESPONSIVE",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "IMAGE_SPLIT",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "IMAGES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "IMAGESACTIVES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "IMGCOMPARE",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "JQVMAP",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "LEGENDES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "LOGO_SPIP",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "LOGOS_ROLES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "MASSICOT",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "MEDIAS_LOGOS",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "MEDIAS_METAS",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "MEDIAS_RESPONSIVE_MOD",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "PANORAMAS",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "PANOSALADOMODELE",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "PHOTO_INFOS",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "PHOTOSPIP",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "QUICKFLIP",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "SPIPAGRAM",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "THUMBSITES",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "TJPZOOM",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "ZOOMBOX",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "ZOOMER",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "BONUX_LOGO",
-		"categorie": "media/image"
+		"type": "media/image"
 	},
 	{
 		"prefixe": "SOCIAUX",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "SOCICON",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "AJAX_NAV",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "ANCRESDOUCES",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "COURTJUS",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "DEFILEMENT_INFINI",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "FAVOTEXTE",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "FIL_ARIANE",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "LIENS_SORTANTS_OUVRANTS",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "LINKS",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "MARQUEPAGES",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "MEMOBOX",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "MESFAVORIS",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "NICETITLE",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "OBJETS_VIRTUELS",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "SKIPLINK",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "SPIP_OUT_OUVRANTS",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "ARTICLE_ACCUEIL",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "COURTCIRCUIT",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "TITREPARENT",
-		"categorie": "navigation/lien"
+		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "BOUTONS_ADMIN_SUPP",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "SIDR",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "ACCORDEON",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "ADXMENU",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "BABBI",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "JQUERYSUPERFISH",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "MENU_ANIME",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "MENUACCORDEON",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "MENUDEP",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "MENUDER",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "MENUS",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "MINIBANDO",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "RESPONSIVENAV",
-		"categorie": "navigation/menu"
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "SPIPICIOUS",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTS",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTS_OBLIGATOIRES",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTSCREER",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTUS",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "CRITERE_MOTS",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "DEFINITIONS",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "ETIQUETTES",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "FUSIONMOTS",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "GMA",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOMO",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTS_OBJETS",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTSAR",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTSPARTOUT",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "NUAGE",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "TAG-MACHINE",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "TAGSPHERE",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MOTS_TECHNIQUES",
-		"categorie": "navigation/motcle"
+		"type": "navigation/motcle"
 	},
 	{
 		"prefixe": "MULTILANG",
-		"categorie": "navigation/multilinguisme"
+		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "MULTILINGUE",
-		"categorie": "navigation/multilinguisme"
+		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "AUTOLANG",
-		"categorie": "navigation/multilinguisme"
+		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "DOMLANG",
-		"categorie": "navigation/multilinguisme"
+		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "LANGUEPREFEREE",
-		"categorie": "navigation/multilinguisme"
+		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "MLL",
-		"categorie": "navigation/multilinguisme"
+		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "SECTEUR_LANGUE",
-		"categorie": "navigation/multilinguisme"
+		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "PSEUDO_HASARD",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "ORDOC",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "NUMERO",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "PAGINART3",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "PAGINATIONSIMPLE",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "RANG",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "SUIVANT_PRECEDENT",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "TRIMOTS",
-		"categorie": "navigation/pagination-tri"
+		"type": "navigation/pagination-tri"
 	},
 	{
 		"prefixe": "OAI",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "SPHINX",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "GOOGLEAJAXSEARCH",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "ELASTICSEARCH",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "FULLTEXT",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "INDEXATION",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "INDEXER",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "INDEXERDOC",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "LEVENSHTEIN",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "OPENSEARCH",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "REC_MC",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "RECHERCHE",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "RECHERCHE_AVANCEE",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "RECHERCHEETENDUE",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "SPIP_SUGGEST",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "AJAXFILTRE",
-		"categorie": "navigation/recherche"
+		"type": "navigation/recherche"
 	},
 	{
 		"prefixe": "GRAPPES",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "LIAISON_OBJET",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "ROLES_SELECTIONS",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "A2A",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "ALIAS",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "BOUSPIP",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "BOUSSOLE",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "LIRE_AUSSI",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "MASQUER",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "PB_SELECTION",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "POLYHIER",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "SELECTIONS_EDITORIALES",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	},
 	{
 		"prefixe": "MAGNET",
-		"categorie": "navigation/transverse"
+		"type": "navigation/transverse"
 	}
 ]
