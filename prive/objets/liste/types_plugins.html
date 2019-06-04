@@ -69,7 +69,7 @@
 			]
 			</td>
 		</tr>
-		[(#GET{typologie_arbo}|non|ou{#GET{typologie_arbo}|et{#PROFONDEUR|=={0}}}|oui)
+		[(#GET{typologie_arbo}|non|ou{#GET{typologie_arbo}|et{#PROFONDEUR|>{0}}}|oui)
 			#SET{affectations, #GET{affectations}|plus{#GET{affectations_mot}}}
 		]
 </BOUCLE_liste_types>
