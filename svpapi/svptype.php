@@ -91,24 +91,36 @@ function affectations_collectionner($filtres) {
 	// Initialisation de la collection
 	$affectations = array();
 
-	// Vérifier si un filtre de typologie est fourni sinon on le fixe par défaut à catégorie.
-	// Récupérer la liste des dépôts (filtrée ou pas).
-	$from = array('spip_plugins_affectations');
-	// -- Tous le champs sauf maj et id_depot.
-	$description_table = lister_tables_objets_sql('spip_depots');
-	$select = array_keys($description_table['field']);
-	$select = array_diff($select, array('id_depot', 'maj'));
+	// Vérifier si un filtre de typologie est fourni et si oui récupérer les informations associées.
+	$typologie = '';
+	if (isset($filtres['typologie'])) {
+		// Initialisation de la typologie
+		$typologie = $filtres['typologie'];
 
-	// -- Initialisation du where avec les conditions sur la table des dépots.
-	$where = array();
-	// -- Si il y a des critères additionnels on complète le where en conséquence.
-	if ($filtres) {
-		foreach ($filtres as $_critere => $_valeur) {
-			$where[] = "${_critere}=" . sql_quote($_valeur);
-		}
+		// Récupérer les informations sur le groupe de mots matérialisant cette typologie.
+		include_spip('inc/config');
+		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
+		$select = array('titre', 'identifiant');
+		$where = array('id_groupe=' . intval($id_groupe));
+		$affectations['groupe'] = sql_fetsel($select, 'spip_groupes_mots', $where);
+
+		// On supprime la typologie des filtres car le traitement est particulier
+		unset($filtres['typologie']);
 	}
 
-	$depots = sql_allfetsel($select, $from, $where);
+	// Récupération du couple (identifiant du type, préfixe du plugin) de chaque affectation.
+	// -- Initialisation de la jointure avec spip_mots
+	$from = array('spip_plugins_typologies', 'spip_mots');
+	$select = array('spip_plugins_typologies.prefixe as prefixe', 'spip_mots.identifiant as type');
+
+	// -- Initialisation du where avec la conditions sur la jointure.
+	$where = array('spip_plugins_typologies.id_mot=spip_mots.id_mot');
+	// -- Traitement de la typologie si elle est définie.
+	if ($typologie) {
+		$where[] = 'spip_plugins_typologies.id_groupe=' . intval($id_groupe);
+	}
+	$affectations['affectations'] = sql_allfetsel($select, $from, $where);
+	$affectations['affectations'] = array_column($affectations['affectations'], 'type', 'prefixe');
 
 	return $affectations;
 }
@@ -128,10 +140,16 @@ function plugins_verifier_critere_categorie($valeur, &$extra) {
 
 	$est_valide = true;
 
-	include_spip('inc/svp_phraser');
-	if (!in_array($valeur, $GLOBALS['categories_plugin'])) {
+	// Acquisition de la liste des catégories affectables.
+	include_spip('inc/svptype_typologie');
+	$filtres = array('profondeur' => 1);
+	$informations = array('identifiant');
+	$categories = type_plugin_repertorier('categorie', $filtres, $informations);
+
+	// Test de validité
+	if (!in_array($valeur, array_column($categories, 'identifiant'))) {
 		$est_valide = false;
-		$extra = implode(', ', $GLOBALS['categories_plugin']);
+		$extra = 'voir la liste à URL xxx';
 	}
 
 	return $est_valide;
