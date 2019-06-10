@@ -132,6 +132,25 @@ function mot_lire_id($identifiant) {
 }
 
 
+function mot_lire_identifiant($id_mot) {
+
+	static $identifiants = array();
+
+	if (!isset($identifiants[$id_mot])) {
+		$identifiants[$id_mot] = '';
+
+		$from = 'spip_mots';
+		$where = array('id_mot=' . intval($id_mot));
+		$identifiant = sql_getfetsel('identifiant', $from, $where);
+		if ($identifiant !== null) {
+			$identifiants[$id_mot] = $identifiant;
+		}
+	}
+
+	return $identifiants[$id_mot];
+}
+
+
 function mot_lire_enfants($id_mot) {
 
 	static $ids_enfant = array();

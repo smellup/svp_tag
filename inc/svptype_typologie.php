@@ -15,15 +15,14 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *        Typologie concernée : categorie ou tag.
  * @param array  $filtres
  *        Identifiant d'un champ de la description d'un contrôle.
- * @param string $information
- *        Identifiant d'un champ de la description d'un contrôle.
- *        Si l'argument est vide, la fonction renvoie les descriptions complètes et si l'argument est
- *        un champ invalide la fonction renvoie un tableau vide.
+ * @param array  $informations
+ *        Identifiant d'un champ ou plusieurs champs de la description d'un type de plugin.
+ *        Si l'argument est vide, la fonction renvoie les descriptions complètes.
  *
  * @return array
  *        Tableau de la forme `[type_controle]  information ou description complète`.
  */
-function type_plugin_repertorier($typologie, $filtres = array(), $information = '') {
+function type_plugin_repertorier($typologie, $filtres = array(), $informations = array()) {
 
 	// Utilisation d'une statique pour éviter les requêtes multiples sur le même hit.
 	static $types = array();
@@ -40,21 +39,25 @@ function type_plugin_repertorier($typologie, $filtres = array(), $information = 
 		$types[$typologie] = sql_allfetsel('*', $from, $where, '', $order_by);
 	}
 
-	// Application des filtres éventuellement demandés en argument de la fonction
-	$types_filtrees = $types[$typologie];
-	if ($filtres) {
-		foreach ($types_filtrees as $_categorie) {
-			foreach ($filtres as $_critere => $_valeur) {
-				if (isset($_description[$_critere]) and ($_categorie[$_critere] != $_valeur)) {
-					unset($types_filtrees[$_categorie]);
-					break;
-				}
+	// Refactoring du tableau suivant les champs demandés et application des filtres.
+	$types_filtrees = array();
+	$informations = $informations ? array_flip($informations) : array();
+	foreach ($types[$typologie] as $_cle => $_type) {
+		// On détermine si on retient ou pas le type.
+		$filtre_ok = true;
+		foreach ($filtres as $_critere => $_valeur) {
+			if (isset($_type[$_critere]) and ($_type[$_critere] != $_valeur)) {
+				$filtre_ok = false;
+				break;
 			}
 		}
-	}
 
-	if ($information) {
-		$types_filtrees = array_column($types_filtrees, $information);
+		// Ajout du type si le filtre est ok.
+		if ($filtre_ok) {
+			$types_filtrees[] = $informations
+				? array_intersect_key($types[$typologie][$_cle], $informations)
+				: $types[$typologie][$_cle];
+		}
 	}
 
     return $types_filtrees;
@@ -62,21 +65,16 @@ function type_plugin_repertorier($typologie, $filtres = array(), $information = 
 
 
 /**
- * Renvoie l'information brute demandée pour l'ensemble des contrôles utilisés
- * ou toute les descriptions si aucune information n'est explicitement demandée.
+ * Renvoie les affectations aux plugins pour une typologie donnée.
  *
- * @param array  $filtres
- *        Identifiant d'un champ de la description d'un contrôle.
- * @param string $information
- *        Identifiant d'un champ de la description d'un contrôle.
- *        Si l'argument est vide, la fonction renvoie les descriptions complètes et si l'argument est
- *        un champ invalide la fonction renvoie un tableau vide.
+ * @param string $typologie
+ *        Typologie concernée : categorie ou tag.
+ * @param string $type
+ *        Valeur d'un type donné pour la typologie concernée.
  *
  * @return array
- *        Tableau de la forme `[type_controle]  information ou description complète`. Les champs textuels
- *        sont retournés en l'état, le timestamp `maj n'est pas fourni.
  */
-function type_plugin_lister_affectation($typologie) {
+function type_plugin_lister_affectation($typologie, $type = '') {
 
 	// Utilisation d'une statique pour éviter les requêtes multiples sur le même hit.
 	static $affectations = array();
@@ -93,16 +91,30 @@ function type_plugin_lister_affectation($typologie) {
 		$affectations[$typologie] = sql_allfetsel('*', $from, $where, '', $order_by);
 	}
 
-    return $affectations[$typologie];
+	// Filtrer sur le type souhaité si il existe.
+	if (!$type) {
+		$affectations_filtrees = $affectations[$typologie];
+	} else {
+		// Récupération de l'id du type
+		include_spip('inc/svptype_mot');
+		$id_type = mot_lire_id($type);
+
+		// Extraction des seules affectations au type.
+		$affectations_filtrees = array();
+		foreach ($affectations[$typologie] as $_affectation) {
+			if ($_affectation['id_mot'] == $id_type) {
+				$affectations_filtrees[] = $_affectation;
+			}
+		}
+	}
+
+    return $affectations_filtrees;
 }
 
 
 /**
  * Importe une liste de types appartenant à la même typologie.
  *
- *
- * @param string $typologie
- *        Typologie concernée : categorie ou tag.
  * @param array  $liste
  *        Tableau des catégories présenté comme une arborescence.
  *
@@ -117,7 +129,7 @@ function categorie_plugin_importer_liste($liste) {
 	if ($liste) {
 		// Récupération de l'id du groupe
 		include_spip('inc/config');
-		if ($id_groupe = intval(lire_config("svptype/typologies/categorie/id_groupe", 0))) {
+		if ($id_groupe = intval(lire_config('svptype/typologies/categorie/id_groupe', 0))) {
 			// Identification des champs acceptables pour une catégorie
 			include_spip('base/objets');
 			$description_table = lister_tables_objets_sql('spip_mots');
@@ -140,7 +152,7 @@ function categorie_plugin_importer_liste($liste) {
 				// On traite maintenant les sous-catégories si on est sur que la catégorie de regroupement existe
 				if ($id_regroupement) {
 					// Enregistrement de la catégorie ajoutée
-					$categories_ajoutees += 1;
+					++$categories_ajoutees;
 
 					// On insère les catégories si elles ne sont pas déjà présentes dans la base.
 					foreach ($_regroupement['sous-types'] as $_categorie) {
@@ -150,7 +162,7 @@ function categorie_plugin_importer_liste($liste) {
 							$set['id_parent'] = $id_regroupement;
 							if (objet_inserer('mot', $id_groupe, $set)) {
 								// Enregistrement de la catégorie ajoutée
-								$categories_ajoutees += 1;
+								++$categories_ajoutees;
 							}
 						}
 					}
@@ -167,6 +179,8 @@ function categorie_plugin_importer_liste($liste) {
  * Importe une liste d'affectation type-plugin pour une typologie donnée.
  * Le format du fichier est indépendant de la typologie.
  *
+ * @param string $typologie
+ *        Typologie concernée : categorie ou tag.
  * @param array  $affectations
  *        Tableau des affectations type-plugin (agnostique vis-à-vis de la typologie).
  *
@@ -216,7 +230,7 @@ function type_plugin_importer_affectation($typologie, $affectations) {
 							$set['prefixe'] = $_affectation['prefixe'];
 							if (sql_insertq('spip_plugins_typologies', $set)) {
 								// Enregistrement de l'ajout de l'affectation.
-								$nb_affectations_ajoutees += 1;
+								++$nb_affectations_ajoutees;
 							}
 						}
 					}

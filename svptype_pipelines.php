@@ -181,3 +181,43 @@ function svptype_afficher_contenu_objet($flux){
 
 	return $flux;
 }
+
+
+function svptype_declarer_collections_svp($collections) {
+
+	// Les index désignent les collections.
+	// -- SVP Typologie rajoute les collections, catégories, tags et les affectations de types.
+	$collections['categories'] = array(
+		'module'    => 'svptype',
+		'filtres'   => array(
+			array(
+				'critere' => 'profondeur'
+			)
+		)
+	);
+
+	$collections['tags'] = array(
+		'module'    => 'svptype',
+		'filtres'   => array()
+	);
+
+	$collections['affectations'] = array(
+		'module'    => 'svptype',
+		'filtres'   => array(
+			array(
+				'critere' => 'typologie'
+			),
+			array(
+				'critere' => 'type'
+			)
+		)
+	);
+
+	// -- SVP Typologie rajoute le filtre de catégorie dans la collection plugins.
+	$collections['plugins']['filtres'][] = array(
+		'critere' => 'categorie',
+		'module'  => 'svptype'
+	);
+
+	return $collections;
+}
