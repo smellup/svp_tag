@@ -28,7 +28,7 @@ function categories_collectionner($filtres) {
 
 	// Récupérer les informations sur le groupe de mots.
 	include_spip('inc/config');
-	$id_groupe = lire_config('svptype/typologies/categorie/id_groupe', 0);
+	$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
 	$select = array('titre', 'identifiant');
 	$where = array('id_groupe=' . intval($id_groupe));
 	$categories['groupe'] = sql_fetsel($select, 'spip_groupes_mots', $where);
@@ -51,6 +51,7 @@ function categories_collectionner($filtres) {
 		$categories['categories'] = array();
 		foreach ($collection as $_categorie) {
 			$categorie = $_categorie;
+
 			// Identification du parent et suppression de l'id_parent qui devient inutile.
 			$categorie['parent'] = $_categorie['id_parent']
 				? mot_lire_identifiant($_categorie['id_parent'])
