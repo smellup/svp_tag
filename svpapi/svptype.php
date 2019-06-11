@@ -149,7 +149,7 @@ function plugins_verifier_critere_categorie($valeur, &$extra) {
 	// Test de validité
 	if (!in_array($valeur, array_column($categories, 'identifiant'))) {
 		$est_valide = false;
-		$extra = 'voir la liste à URL xxx';
+		$extra = _T('svpapi:extra_url_liste_categories');
 	}
 
 	return $est_valide;
