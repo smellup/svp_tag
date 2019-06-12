@@ -9,8 +9,6 @@
 	- titre_affiche  : afficher le titre de la catégorie plutot que son identifiant (defaut:"").
 	- optgroup       : utiliser les groupe de catégories (profondeur 0) comme optgroup non sélectionnable
 					   (si elles sont affichées bien sur, defaut:"").
-	- parent         : identifiant du type parent pour filtrer uniquement ses enfants (defaut "").
-                       Nécessite un niveau_affiche "feuille"
 
 	Parametres de la saisie standard d'une selection :
 	- option_intro : chaine de langue de la premiere ligne vide ? (defaut:"")
@@ -33,16 +31,12 @@
 [(#REM) Effacer option_groupe si tous les niveaux ne sont pas affichés ]
 #SET{optgroup, #ENV{niveau_affiche}|?{'', #ENV{optgroup}}}
 
-[(#REM) Effacer parent si le niveau affiché est racine ]
-#SET{parent, #ENV{niveau_affiche}|=={feuille}|?{#ENV{parent}, ''}}
-
 [(#REM) On constitue le tableau des options pour la fonction PHP de construction du tableau des data ]
 #SET{options,
 	#ARRAY{
 		niveau_affiche, #ENV{niveau_affiche},
 		titre_affiche, #ENV{titre_affiche},
 		optgroup, #GET{optgroup},
-		parent, #GET{parent}
 	}
 }
 
