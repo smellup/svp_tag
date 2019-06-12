@@ -41,7 +41,7 @@ function svptype_upgrade($nom_meta_base_version, $version_cible){
 
 	// Création des groupes de mots nécessaires à la typologie des plugins
 	// -- la configuration a déjà été mise à jour en BDD.
-	creer_groupes_svptype();
+	creer_groupes_typologie();
 }
 
 
@@ -114,7 +114,7 @@ function configurer_svptype() {
  *
  * @return void
  */
-function creer_groupes_svptype() {
+function creer_groupes_typologie() {
 
 	// Les groupes plugin ont les caractéristiques communes suivantes :
 	// - groupe technique
@@ -128,10 +128,10 @@ function creer_groupes_svptype() {
 	include_spip('inc/config');
 	$config = lire_config('svptype', array());
 
-	if (!empty($config['groupes'])) {
+	if (!empty($config['typologies'])) {
 		include_spip('action/editer_objet');
 		$config_modifiee = false;
-		foreach ($config['groupes'] as $_type => $_groupe) {
+		foreach ($config['typologies'] as $_type => $_groupe) {
 			// On vérifie d'abord si le groupe existe déjà. Si oui, on ne fait rien.
 			if (!sql_countsel('spip_groupes_mots', array('identifiant=' . sql_quote($_groupe['identifiant'])))) {
 				$groupe = array(
@@ -145,7 +145,7 @@ function creer_groupes_svptype() {
 					'forum'             => 'non',
 				);
 				if ($id_groupe = objet_inserer('groupe_mots', null, $groupe)) {
-					$config['groupes'][$_type]['id_groupe'] = $id_groupe;
+					$config['typologies'][$_type]['id_groupe'] = $id_groupe;
 					$config_modifiee = true;
 				} else {
 					spip_log("Erreur lors de l'ajout du groupe {$_groupe['identifiant']}", 'svptype' . _LOG_ERREUR);
