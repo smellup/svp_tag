@@ -114,14 +114,9 @@ function formulaires_importer_typologie_traiter($typologie, $type_import, $redir
 			// -- Importation du tableau représentant la typologie.
 			if ($liste) {
 				include_spip('inc/svptype_typologie');
-				$importer = "${typologie}_plugin_importer_${type_import}";
+				$importer = "type_plugin_importer_${type_import}";
 				if (function_exists($importer)) {
 					$resultat_import = $importer($liste);
-				} else {
-					$importer = "type_plugin_importer_${type_import}";
-					if (function_exists($importer)) {
-						$resultat_import = $importer($typologie, $liste);
-					}
 				}
 			}
 		}

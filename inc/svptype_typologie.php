@@ -121,48 +121,55 @@ function type_plugin_lister_affectation($typologie, $type = '') {
  * @return bool|int
  *         Nombre de catégories ajoutées.
  */
-function categorie_plugin_importer_liste($liste) {
+function type_plugin_importer_liste($typologie, $liste) {
 
-	// Initialisation du nombre de catégories ajoutées.
-	$categories_ajoutees = 0;
+	// Initialisation du nombre de types ajoutés.
+	$types_ajoutes = 0;
 
 	if ($liste) {
-		// Récupération de l'id du groupe
+		// Déterminer les informations du groupe typologique.
 		include_spip('inc/config');
-		if ($id_groupe = intval(lire_config('svptype/typologies/categorie/id_groupe', 0))) {
-			// Identification des champs acceptables pour une catégorie
+		$groupe = lire_config("svptype/typologies/${typologie}", array());
+
+		if ($id_groupe = intval($groupe['id_groupe'])) {
+			// Identification des champs acceptables pour un type.
 			include_spip('base/objets');
 			$description_table = lister_tables_objets_sql('spip_mots');
 			$champs = $description_table['field'];
 
 			include_spip('action/editer_objet');
 			include_spip('inc/svptype_mot');
-			foreach ($liste as $_regroupement) {
-				// On teste l'existence de la catégorie de regroupement :
-				// - si elle n'existe pas on la rajoute,
+			foreach ($liste as $_type) {
+				// On teste l'existence du type racine :
+				// - si il n'existe pas on le rajoute,
 				// - sinon on ne fait rien.
 				// Dans tous les cas, on réserve l'id.
-				if (!$id_regroupement = mot_lire_id($_regroupement['identifiant'])) {
-					// On insère la catégorie de regroupement qui est une racine (id_parent à 0).
-					$set = array_intersect_key($_regroupement, $champs);
+				if (!$id_type = mot_lire_id($_type['identifiant'])) {
+					// On insère le type racine (id_parent à 0).
+					$set = array_intersect_key($_type, $champs);
 					$set['id_parent'] = 0;
-					$id_regroupement = objet_inserer('mot', $id_groupe, $set);
+					$id_type = objet_inserer('mot', $id_groupe, $set);
+
+					// Enregistrement du type ajouté.
+					++$types_ajoutes;
 				}
 
-				// On traite maintenant les sous-catégories si on est sur que la catégorie de regroupement existe
-				if ($id_regroupement) {
-					// Enregistrement de la catégorie ajoutée
-					++$categories_ajoutees;
-
-					// On insère les catégories si elles ne sont pas déjà présentes dans la base.
-					foreach ($_regroupement['sous-types'] as $_categorie) {
-						if (!mot_lire_id($_categorie['identifiant'])) {
-							// On insère la catégorie feuille sous son parent.
-							$set = array_intersect_key($_categorie, $champs);
-							$set['id_parent'] = $id_regroupement;
+				// On traite maintenant les sous-types si :
+				// -- le groupe est arborescent
+				// -- il existe des sous-types dans le fichier pour le type racine
+				// -- on est sur que le type racine existe
+				if (($groupe['mots_arborescents'] == 'oui')
+				and isset($_type['sous-types'])
+				and	$id_type) {
+					// On insère les sous-types si ils ne sont pas déjà présentes dans la base.
+					foreach ($_type['sous-types'] as $_sous_type) {
+						if (!mot_lire_id($_sous_type['identifiant'])) {
+							// On insère le sous-type feuille sous son parent (un seul niveau permis).
+							$set = array_intersect_key($_sous_type, $champs);
+							$set['id_parent'] = $id_type;
 							if (objet_inserer('mot', $id_groupe, $set)) {
-								// Enregistrement de la catégorie ajoutée
-								++$categories_ajoutees;
+								// Enregistrement du type ajouté.
+								++$types_ajoutes;
 							}
 						}
 					}
@@ -171,7 +178,7 @@ function categorie_plugin_importer_liste($liste) {
 		}
 	}
 
-	return $categories_ajoutees;
+	return $types_ajoutes;
 }
 
 
