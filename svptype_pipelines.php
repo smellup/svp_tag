@@ -11,8 +11,10 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * - ajouter la saisie de l'identifiant
  *
  * @pipeline formulaire_fond
+ *
  * @param array $flux
  * 		Données du pipeline
+ *
  * @return array
  * 		Données du pipeline complétées
 **/
@@ -51,8 +53,10 @@ function svptype_formulaire_fond($flux) {
  * - l'identifiant doit être non vide et pas déjà utilisé
  *
  * @pipeline formulaire_verifier
+ *
  * @param array $flux
  * 		Données du pipeline
+ *
  * @return array
  * 		Données du pipeline complétées
 **/
@@ -69,7 +73,7 @@ function svptype_formulaire_verifier($flux) {
 				if (!$identifiant) {
 					$flux['data']['identifiant'] = _T('info_obligatoire');
 				} else {
-					$from ='spip_mots';
+					$from = 'spip_mots';
 					$where = array('id_groupe=' . $id_groupe);
 					if ($id_mot = intval(_request('id_mot'))) {
 						// il faut exclure de la liste le mot lui-même si il existe déjà.
@@ -95,8 +99,10 @@ function svptype_formulaire_verifier($flux) {
  * - Ajoute l'identifiant du mot.
  *
  * @pipeline pre_insertion
+ *
  * @param array $flux
  *     Données du pipeline
+ *
  * @return array
  *     Données du pipeline complétées
  **/
@@ -126,8 +132,10 @@ function svptype_pre_insertion($flux) {
  * - Ajoute la modification de l'identifiant
  *
  * @pipeline pre_edition
+ *
  * @param array $flux
  *     Données du pipeline
+ *
  * @return array
  *     Données du pipeline complétées
 **/
@@ -155,10 +163,12 @@ function svptype_pre_edition($flux) {
  * Ajouter le champs identifiant dans l'affichage d'un mot plugin.
  *
  * @pipeline afficher_contenu_objet
+ *
  * @param array $flux Données du pipeline
+ *
  * @return array      Données du pipeline
 **/
-function svptype_afficher_contenu_objet($flux){
+function svptype_afficher_contenu_objet($flux) {
 
 	if (isset($flux['args']['type'], $flux['args']['id_objet'])) {
 		// Détermination de l'objet affiché

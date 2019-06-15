@@ -14,11 +14,14 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @param array $filtres
  *      Tableau des critères de filtrage additionnels.
+ * @param array $configuration
+ *      Configuration de la collection catégories utile pour savoir quelle fonction appeler pour construire
+ *      chaque filtre.
  *
  * @return array
  *      Tableau des catégories.
  */
-function categories_collectionner($filtres) {
+function categories_collectionner($filtres, $configuration) {
 
 	// Initialisation de la collection
 	$categories = array();
@@ -73,7 +76,7 @@ function categories_collectionner($filtres) {
 }
 
 
-function tags_collectionner($filtres) {
+function tags_collectionner($filtres, $configuration) {
 }
 
 
@@ -82,11 +85,14 @@ function tags_collectionner($filtres) {
  *
  * @param array $filtres
  *      Tableau des critères : permet en particulier de choisir les affectations pour une typologie donnée.
+ * @param array $configuration
+ *      Configuration de la collection affectations utile pour savoir quelle fonction appeler pour construire
+ *      chaque filtre (pas utilisée aujourd'hui).
  *
  * @return array
  *      Tableau des affectations.
  */
-function affectations_collectionner($filtres) {
+function affectations_collectionner($filtres, $configuration) {
 
 	// Initialisation de la collection
 	$affectations = array();
@@ -128,15 +134,15 @@ function affectations_collectionner($filtres) {
 
 /**
  * Détermine si la valeur de la catégorie est valide.
- * La fonction récupère dans le plugin SVP la liste des catégories autorisées.
+ * La fonction récupère via l'API du plugin la liste des catégories autorisées.
  *
- * @param string $valeur
+ * @param string $categorie
  *        La valeur du critère catégorie
  *
  * @return bool
  *        `true` si la valeur est valide, `false` sinon.
  */
-function plugins_verifier_critere_categorie($valeur, &$extra) {
+function plugins_verifier_critere_categorie($categorie, &$extra) {
 
 	$est_valide = true;
 
@@ -147,10 +153,38 @@ function plugins_verifier_critere_categorie($valeur, &$extra) {
 	$categories = type_plugin_repertorier('categorie', $filtres, $informations);
 
 	// Test de validité
-	if (!in_array($valeur, array_column($categories, 'identifiant'))) {
+	if (!in_array($categorie, array_column($categories, 'identifiant'))) {
 		$est_valide = false;
 		$extra = _T('svpapi:extra_url_liste_categories');
 	}
 
 	return $est_valide;
+}
+
+
+/**
+ * Construit le critère applicable sur la table spip_plugins pour filtrer la collection sur le
+ * critère categorie.
+ *
+ * @param string $categorie
+ *        La valeur du critère catégorie
+ *
+ * @return string
+ *        Chaine représentant le critère sur la catégorie appliqué à la table spip_plugins.
+ */
+function plugins_construire_critere_categorie($categorie) {
+
+	// On initialise le critère avec une condition toujours fausse.
+	$condition = '0=1';
+
+	// On récupère les affectations de plugins pour la catégorie demandée
+	$affectations = type_plugin_lister_affectation('categorie', $categorie);
+
+	// Construction de la condition sur les préfixes
+	if ($affectations) {
+		$plugins = array_column($affectations, 'prefixe');
+		$condition = sql_in('prefixe', $plugins);
+	}
+
+	return $condition;
 }

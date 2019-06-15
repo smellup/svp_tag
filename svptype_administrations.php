@@ -23,7 +23,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @return void
  */
-function svptype_upgrade($nom_meta_base_version, $version_cible){
+function svptype_upgrade($nom_meta_base_version, $version_cible) {
 
 	$maj = array();
 
@@ -59,13 +59,22 @@ function svptype_upgrade($nom_meta_base_version, $version_cible){
 function svptype_vider_tables($nom_meta_base_version) {
 
 	// on supprime les groupes et les mots-clés créés
-//	sql_delete('spip_groupes_mots', array('identifiant=' . sql_quote('plugin-categories')));
+	include_spip('inc/config');
+	$typologies = lire_config('svptype/typologies', array());
+	if ($typologies) {
+		foreach ($typologies as $_typologie => $_config) {
+			// suppression du groupe pour la typologie
+			sql_delete('spip_groupes_mots', array('id_groupe=' . intval($_config['id_groupe'])));
+			// suppression des mots-clés du groupe
+			sql_delete('spip_mots', array('id_groupe=' . intval($_config['id_groupe'])));
+		}
+	}
 
 	// on supprime les champs additionnels des tables existantes
-	sql_alter("TABLE spip_groupes_mots DROP COLUMN identifiant");
-	sql_alter("TABLE spip_mots DROP COLUMN identifiant");
+	sql_alter('TABLE spip_groupes_mots DROP COLUMN identifiant');
+	sql_alter('TABLE spip_mots DROP COLUMN identifiant');
 
-	// on efface les tables
+	// on efface les tables créées par le plugin
 	sql_drop_table('spip_plugins_typologies');
 
 	// Effacer la meta de configuration du plugin
