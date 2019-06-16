@@ -47,7 +47,7 @@
 }
 
 [(#REM) On calcule le tableau des data ]
-#SET{data, #ENV{typologie, categorie}|type_plugin_construire_selection{#GET{options}}}
+#SET{data, #ENV{typologie, categorie}|selection_type_plugin_peupler{#GET{options}}}
 
 [(#REM) On appelle la saisie sélection avec les data et le env qui contient les autres paramètres possibles
         -- attention à ne pas avoir de caractère autre que , ou } avec le env !!!
