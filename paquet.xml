@@ -25,6 +25,8 @@
 	<pipeline nom="pre_edition" inclure="svptype_pipelines.php" />
 	<pipeline nom="afficher_contenu_objet" inclure="svptype_pipelines.php" />
 	<pipeline nom="declarer_collections_svp" inclure="svptype_pipelines.php" />
+	<pipeline nom="post_collection_svp" inclure="svptype_pipelines.php" />
+	<pipeline nom="post_ressource_svp" inclure="svptype_pipelines.php" />
 
 	<necessite nom="svp" compatibilite="[1.6.0;[" />
 	<necessite nom="mots" compatibilite="[2.11.0;[" />

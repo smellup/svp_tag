@@ -31,9 +31,9 @@ function svptype_declarer_tables_auxiliaires($tables_auxiliaires) {
 
 	// Tables de liens entre plugins et les types de plugins : spip_plugins_typologies
 	$plugins_typologies = array(
-		'id_groupe' => "bigint(21) DEFAULT 0 NOT NULL",
-		'id_mot'    => "bigint(21) DEFAULT 0 NOT NULL",
-		'prefixe'   => "varchar(30) DEFAULT '' NOT NULL",
+		'id_groupe' => 'bigint(21) DEFAULT 0 NOT NULL',
+		'id_mot'    => 'bigint(21) DEFAULT 0 NOT NULL',
+		'prefixe'   => "varchar(30) DEFAULT '' NOT NULL"
 	);
 
 	$plugins_typologies_key = array(

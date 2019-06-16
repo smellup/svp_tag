@@ -63,7 +63,7 @@ function groupe_est_plugin($id_groupe) {
 		$est_plugin[$id_groupe] = false;
 
 		include_spip('inc/config');
-		if ($groupes = lire_config('svptype/groupes', array())) {
+		if ($groupes = lire_config('svptype/typologies', array())) {
 			$groupes = array_column($groupes, 'identifiant');
 			if (in_array(groupe_lire_identifiant($id_groupe), $groupes)) {
 				$est_plugin[$id_groupe] = true;

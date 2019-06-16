@@ -231,3 +231,81 @@ function svptype_declarer_collections_svp($collections) {
 
 	return $collections;
 }
+
+
+/**
+ * Complète la collection après son calcul standard.
+ *
+ * Pour la collection `plugins` :
+ * - Ajoute pour chaque élément les champs de typologie comme categorie et tag.
+ *
+ * @pipeline post_collection_svp
+ *
+ * @param array $flux
+ *     Données du pipeline
+ *
+ * @return array
+ *     Données du pipeline complétées
+**/
+function svptype_post_collection_svp($flux) {
+
+	// Extraction des informations sur la collection.
+	// La collection et la configuration existent toujours.
+	$collection = $flux['args']['collection'];
+
+	// Seule la collection plugins nécessite des compléments, à savoir, les typologies.
+	if ($collection == 'plugins') {
+		// On récupère les typologies supportées.
+		include_spip('inc/config');
+		$typologies = lire_config('svptype/typologies', array());
+
+		// Pour chaque typologie, on rajoute le champ nécessaire à tous les plugins de la collection.
+		include_spip('inc/svptype_plugin');
+		foreach ($typologies as $_typologie => $_configuration) {
+			foreach ($flux['data'] as $_prefixe => $_plugin) {
+				$flux['data'][$_prefixe][$_typologie] = plugin_lire_type($_prefixe, $_typologie);
+			}
+		}
+	}
+
+	return $flux;
+}
+
+
+/**
+ * Complète la collection après son calcul standard.
+ *
+ * Pour la collection `plugins` :
+ * - Ajoute pour chaque élément les champs de typologie comme categorie et tag.
+ *
+ * @pipeline post_collection_svp
+ *
+ * @param array $flux
+ *     Données du pipeline
+ *
+ * @return array
+ *     Données du pipeline complétées
+**/
+function svptype_post_ressource_svp($flux) {
+
+	// Extraction des informations sur la collection.
+	// La collection et la configuration existent toujours.
+	$collection = $flux['args']['collection'];
+
+	// Seule la collection plugins nécessite des compléments, à savoir, les typologies.
+	if ($collection == 'plugins') {
+		// On récupère les typologies supportées.
+		include_spip('inc/config');
+		$typologies = array_keys(lire_config('svptype/typologies', array()));
+
+		// Pour chaque typologie, on rajoute le champ nécessaire soit au plugin concerné, soit à tous les
+		// plugins de la collection.
+		include_spip('inc/svptype_plugin');
+		foreach ($typologies as $_typologie) {
+			// C'est une requête de type ressource, la ressource désigne le préfixe.
+			$flux['data']['plugin'][$_typologie] = plugin_lire_type($flux['args']['ressource'], $_typologie);
+		}
+	}
+
+	return $flux;
+}

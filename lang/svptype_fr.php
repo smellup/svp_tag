@@ -49,7 +49,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'tag_liste_titre' => 'Liste des tags',
 	'tag_menu_titre' => 'Tags',
 	'tag_page_titre' => 'Gestion des tags de plugin',
-
+	'tag_selection_option_tout' => 'Tous les tags',
 	'typologie_menu_liste_titre' => 'Gérer la liste',
 	'typologie_menu_affectation_titre' => 'Gérer l\'affectation des plugins',
 

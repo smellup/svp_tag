@@ -85,10 +85,19 @@ function type_plugin_lister_affectation($typologie, $type = '') {
 		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
 
 		// On récupère la description complète de toutes les catégories de plugin
-		$from = array('spip_plugins_typologies');
-		$where = array('id_groupe=' . $id_groupe);
-		$order_by = array('id_mot', 'prefixe');
-		$affectations[$typologie] = sql_allfetsel('*', $from, $where, '', $order_by);
+		$from = array('spip_plugins_typologies', 'spip_mots');
+		$select = array(
+			'spip_plugins_typologies.id_groupe',
+			'spip_plugins_typologies.id_mot',
+			'spip_mots.identifiant as identifiant_mot',
+			'spip_plugins_typologies.prefixe'
+		);
+		$where = array(
+			'spip_plugins_typologies.id_groupe=' . $id_groupe,
+			'spip_plugins_typologies.id_mot=spip_mots.id_mot'
+		);
+		$order_by = array('spip_plugins_typologies.id_mot', 'spip_plugins_typologies.prefixe');
+		$affectations[$typologie] = sql_allfetsel($select, $from, $where, '', $order_by);
 	}
 
 	// Filtrer sur le type souhaité si il existe.

@@ -1,0 +1,10 @@
+[
+	{
+		"prefixe": "FORUM",
+		"type": "groupe"
+	},
+	{
+		"prefixe": "FORUM",
+		"type": "collaboration"
+	}
+]

@@ -1,6 +1,6 @@
 <?php
 /**
- * Ce fichier contient l'ensemble des fonctions de service spécifiques à une collection ou une ressource.
+ * Ce fichier contient l'ensemble des fonctions de service spécifiques à une collection.
  *
  * @package SPIP\SVPAPI\SERVICE
  */
@@ -8,6 +8,10 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
+
+// -----------------------------------------------------------------------
+// ---------------------------- CATEGORIES -------------------------------
+// -----------------------------------------------------------------------
 
 /**
  * Récupère la liste des catégories de la table spip_mots éventuellement filtrée par profondeur.
@@ -76,9 +80,17 @@ function categories_collectionner($filtres, $configuration) {
 }
 
 
+// -----------------------------------------------------------------------
+// ------------------------------- TAGS ----------------------------------
+// -----------------------------------------------------------------------
+
 function tags_collectionner($filtres, $configuration) {
 }
 
+
+// -----------------------------------------------------------------------
+// --------------------------- AFFECTATIONS ------------------------------
+// -----------------------------------------------------------------------
 
 /**
  * Récupère la liste des affectations pour une typologie donnée.
@@ -131,6 +143,10 @@ function affectations_collectionner($filtres, $configuration) {
 	return $affectations;
 }
 
+
+// -----------------------------------------------------------------------
+// ----------------------------- PLUGINS ---------------------------------
+// -----------------------------------------------------------------------
 
 /**
  * Détermine si la valeur de la catégorie est valide.
