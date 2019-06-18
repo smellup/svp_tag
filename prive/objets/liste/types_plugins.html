@@ -10,6 +10,7 @@
 	#SET{typologie_arbo, oui}
 ]
 #SET{affectations, 0}
+#SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_modifier_title}|_T}
 
 <B_liste_types>
 #ANCRE_PAGINATION
@@ -58,13 +59,18 @@
 				[(#GET{affectations_mot})]
 			</td>
 			<td class="id">
-			[(#AUTORISER{modifier,mot,#ID_MOT}|?{
-				<a href="[(#URL_ECRIRE{mot_edit,id_mot=#ID_MOT})]" class="bouton-modifier" data-action="modifier" title="<:mots:icone_modifier_mot|attribut_html:>">#ID_MOT</a>,
+			[(#AUTORISER{modifier, typeplugin, #ID_MOT}|?{
+				<a href="[(#URL_ECRIRE{type_plugin_edit}|parametre_url{id_mot, #ID_MOT})]"
+				   class="bouton-modifier"
+				   data-action="modifier"[
+				   title="(#GET{title_modifier}|attribut_html)"]>
+					#ID_MOT
+				</a>,
 				#ID_MOT
 			})]
 			</td>
 			<td class="action">
-			[(#AUTORISER{supprimer, mot, #ID_MOT}|oui)
+			[(#AUTORISER{supprimer, typeplugin, #ID_MOT}|oui)
 				[(#BOUTON_ACTION{supprimer,#URL_ACTION_AUTEUR{supprimer_mot,#ID_MOT,#SELF},ajax,'','','(function(me){$(me).parents("tr").animateRemove();return true;})(this)'})]
 			]
 			</td>

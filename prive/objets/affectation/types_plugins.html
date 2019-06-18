@@ -21,9 +21,10 @@
 	</div>
 </caption>]
 	<thead>
+		[(#SET{label_identifiant, #VAL{svptype:}|concat{#ENV{typologie}_identifiant_label}|_T})]
 		<tr class="first_row">
 			<th class="titre" scope="col">[(#TRI{prefixe,<:svp:label_prefixe:>,ajax})]</th>
-			<th class="titre" scope="col">[(#TRI{identifiant,<:svptype:identifiant_label:>,ajax})]</th>
+			<th class="titre" scope="col">[(#TRI{identifiant, #GET{label_identifiant},ajax})]</th>
 			<th class="action" scope="col">&nbsp;</th>
 		</tr>
 	</thead>

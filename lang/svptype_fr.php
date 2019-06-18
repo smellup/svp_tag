@@ -11,6 +11,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	Pour chaque typologie, une vue permet de consulter et de modifier la liste des types et une autre de consulter et de modifier les affectations aux plugins.',
 
 	// C
+	'categorie_identifiant_label' => 'Catégorie',
 	'categorie_import_affectation_bouton_titre' => 'Importer des affectations catégorie-plugin',
 	'categorie_import_affectation_form_titre' => 'Importation d\'une liste d\'affectation catégorie-plugin',
 	'categorie_import_liste_bouton_titre' => 'Importer une liste de catégories',
@@ -20,6 +21,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_liste_erreur_vide' => 'Aucune catégorie disponible',
 	'categorie_liste_titre' => 'Liste des catégories',
 	'categorie_menu_titre' => 'Catégories',
+	'categorie_modifier_title' => 'Modifier cette catégorie',
 	'categorie_page_titre' => 'Gestion des catégories de plugin',
 	'categorie_selection_option_tout' => 'Toutes les catégories',
 
@@ -39,6 +41,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'svptype_menu_titre' => 'Catégories et tags des plugins',
 
 	// T
+	'tag_identifiant_label' => 'Tags',
 	'tag_import_affectation_bouton_titre' => 'Importer une liste d\'affectation tag-plugin',
 	'tag_import_affectation_form_titre' => 'Importation d\'une liste d\'affectation tag-plugin',
 	'tag_import_liste_bouton_titre' => 'Importer une liste de tags',
@@ -48,6 +51,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'tag_affectation_titre' => 'Affectations tag-plugin',
 	'tag_liste_titre' => 'Liste des tags',
 	'tag_menu_titre' => 'Tags',
+	'tag_modifier_title' => 'Modifier ce tag',
 	'tag_page_titre' => 'Gestion des tags de plugin',
 	'tag_selection_option_tout' => 'Tous les tags',
 	'typologie_menu_liste_titre' => 'Gérer la liste',

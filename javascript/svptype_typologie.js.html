@@ -2,20 +2,22 @@
 /**
  * SVP Typologie
  *
- * => Import des typologies
- * => Edition des mots-clés
+ * => Edition des types de plugin
  */
-;jQuery(function($){
+jQuery(function($){
 	/**
-	 * Importer des typologies dans une modale
+	 * Editer dans une modale un type de plugin
 	 */
-	$('.typologie-import x').click(function(){
+	$('a.bouton-modifier').click(function(){
 		var contenu = $(this).parents('.liste-objets').eq(0);
 		$(contenu).animateLoading();
 		$.modalboxload(parametre_url(parametre_url(parametre_url($(this).attr('href'),'popin','oui'),'var_zajax','contenu'), 'redirect',''),{
-			onClose: function (dialog) {$(contenu).ajaxReload()}
+			onClose: function (dialog) {$(contenu).ajaxReload()},
+            onComplete: function() {
+			    $('.formulaire_editer_mot .editer.editer_groupe_mot').hide();
+                $('.formulaire_editer_mot .editer.editer_texte').hide();
+			}
 		});
 		return false;
 	});
-
 });
