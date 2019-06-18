@@ -25,7 +25,7 @@
 				[(#SAISIE{selection_type_plugin, type,
 					typologie=#ENV{typologie},
 					niveau_affiche=racine,
-					option_intro=#ENV{option_intro}, class='toto'
+					option_intro=#ENV{option_intro}
 				})]
 			</form>
 		</div>]
@@ -41,43 +41,38 @@
 	<tbody>
 <BOUCLE_liste_types(MOTS)
 	{id_groupe=#CONFIG{svptype/typologies/#ENV{typologie}/id_groupe}}
+	{profondeur=0}
 	{where?}
 	{recherche?}
 	{tri #ENV{par, identifiant}, #GET{defaut_tri}}
 	{pagination #ENV{nb,100}}>
-		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][(#GET{typologie_arbo}|et{#PROFONDEUR|=={0}}|oui) racine]">
-			<td class="titre principale">
-				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
-				[(#GET{typologie_arbo}|et{#ENV{type}|non}|oui)
-					[(#PROFONDEUR|mostar_tabulation)]
-				]
-					#IDENTIFIANT
-				</a>
-			</td>
-			<td class="nombre">
-				#SET{affectations_mot, #ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|}}
-				[(#GET{affectations_mot})]
-			</td>
-			<td class="id">
-			[(#AUTORISER{modifier, typeplugin, #ID_MOT}|?{
-				<a href="[(#URL_ECRIRE{type_plugin_edit}|parametre_url{id_mot, #ID_MOT})]"
-				   class="bouton-modifier"
-				   data-action="modifier"[
-				   title="(#GET{title_modifier}|attribut_html)"]>
-					#ID_MOT
-				</a>,
-				#ID_MOT
-			})]
-			</td>
-			<td class="action">
-			[(#AUTORISER{supprimer, typeplugin, #ID_MOT}|oui)
-				[(#BOUTON_ACTION{supprimer,#URL_ACTION_AUTEUR{supprimer_mot,#ID_MOT,#SELF},ajax,'','','(function(me){$(me).parents("tr").animateRemove();return true;})(this)'})]
-			]
-			</td>
-		</tr>
-		[(#GET{typologie_arbo}|non|ou{#GET{typologie_arbo}|et{#PROFONDEUR|>{0}}}|oui)
-			#SET{affectations, #GET{affectations}|plus{#GET{affectations_mot}}}
-		]
+		#SET{affectations_mot_racine, #ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|}}
+		<INCLURE{fond=prive/squelettes/inclure/inc-type_plugin,
+			typologie_arbo=#GET{typologie_arbo},
+			title_modifier=#GET{title_modifier},
+			compteur_boucle=#COMPTEUR_BOUCLE,
+			affectations_mot=#GET{affectations_mot_racine},
+			id_mot,
+			identifiant,
+			profondeur,
+			env} />
+
+		<BOUCLE_liste_types_enfants(MOTS)
+			{id_parent=#ID_MOT}
+			{tri #ENV{par, identifiant}, #GET{defaut_tri}}>
+			#SET{affectations_mot, #ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|}}
+			<INCLURE{fond=prive/squelettes/inclure/inc-type_plugin,
+				typologie_arbo=#GET{typologie_arbo},
+				title_modifier=#GET{title_modifier},
+				compteur_boucle=#COMPTEUR_BOUCLE,
+				affectations_mot=#GET{affectations_mot},
+				id_mot,
+				identifiant,
+				profondeur,
+				env} />
+		</BOUCLE_liste_types_enfants>
+
+		#SET{affectations, #GET{affectations}|plus{#GET{affectations_mot_racine}}}
 </BOUCLE_liste_types>
 	</tbody>
 	<tfoot>

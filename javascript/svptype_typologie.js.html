@@ -11,7 +11,8 @@ jQuery(function($){
 	$('a.bouton-modifier').click(function(){
 		var contenu = $(this).parents('.liste-objets').eq(0);
 		$(contenu).animateLoading();
-		$.modalboxload(parametre_url(parametre_url(parametre_url($(this).attr('href'),'popin','oui'),'var_zajax','contenu'), 'redirect',''),{
+		$.modalboxload(parametre_url(parametre_url(parametre_url($(this).attr('href'),'popin','oui'),'var_zajax','contenu'), 'redirect',''),
+		{
 			onClose: function (dialog) {$(contenu).ajaxReload()},
             onComplete: function() {
 			    $('.formulaire_editer_mot .editer.editer_groupe_mot').hide();

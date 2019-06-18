@@ -23,7 +23,7 @@ function liste_type_plugin_filtrer($type) {
 				$filtre = 'plugins_typologies.id_mot=' . $id;
 			} else {
 				// Le type est une racine, on filtre en utilisant son id comme un parent.
-				$filtre = 'id_parent=' . $id;
+				$filtre = 'id_mot=' . $id;
 			}
 		}
 	}

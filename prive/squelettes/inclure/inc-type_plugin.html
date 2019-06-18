@@ -1,0 +1,29 @@
+<tr class="[(#ENV{compteur_boucle}|alterner{row_odd,row_even})][(#ENV{typologie_arbo}|et{#PROFONDEUR|=={0}}|oui) racine]">
+	<td class="titre principale">
+		<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
+		[(#ENV{typologie_arbo}|et{#ENV{type}|non}|oui)
+			[(#PROFONDEUR|mostar_tabulation)]
+		]
+			#IDENTIFIANT
+		</a>
+	</td>
+	<td class="nombre">
+		[(#ENV{affectations_mot})]
+	</td>
+	<td class="id">
+	[(#AUTORISER{modifier, typeplugin, #ID_MOT}|?{
+		<a href="[(#URL_ECRIRE{type_plugin_edit}|parametre_url{typologie, #ENV{typologie}}|parametre_url{id_mot, #ID_MOT})]"
+		   class="bouton-modifier"
+		   data-action="modifier"[
+		   title="(#ENV{title_modifier}|attribut_html)"]>
+			#ID_MOT
+		</a>,
+		#ID_MOT
+	})]
+	</td>
+	<td class="action">
+	[(#AUTORISER{supprimer, typeplugin, #ID_MOT}|oui)
+		[(#BOUTON_ACTION{supprimer,#URL_ACTION_AUTEUR{supprimer_mot,#ID_MOT,#SELF},ajax,'','','(function(me){$(me).parents("tr").animateRemove();return true;})(this)'})]
+	]
+	</td>
+</tr>
