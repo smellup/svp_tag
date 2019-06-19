@@ -11,7 +11,15 @@
 		<h1>(#ENV{titre,#INFO_TITRE{mot,#ID_MOT}|sinon{<:mots:texte_nouveau_mot:>}})</h1>]
 	</div>
 
-	#FORMULAIRE_EDITER_MOT{#ENV{id_mot, oui}, #ENV{id_groupe}}
+	#FORMULAIRE_EDITER_MOT{
+		#ENV{id_mot, oui},
+		#ENV{id_groupe},
+		#URL_ECRIRE{svptype_typologie}|parametre_url{typologie, #ENV{typologie}}}
 </div>
 
-[<script src="(#PRODUIRE{fond=javascript/svptype_typologie.js}|compacte{js}|timestamp)" type="text/javascript"></script>]
+<script type="text/javascript">/*<![CDATA[*/
+	jQuery(document).ready(function() {
+		$('.formulaire_editer_mot .editer.editer_groupe_mot').toggle();
+		$('.formulaire_editer_mot .editer.editer_texte').toggle();
+	});
+/*]]>*/</script>
