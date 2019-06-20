@@ -8,7 +8,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * Modifie les champs du formulaire d'édition d'un mot.
  *
  * Sur les mots appartenant à un groupe plugin :
- * - ajouter la saisie de l'identifiant
+ * - ajouter la saisie de l'identifiant juste avant le titre
+ * - remplacer la saisie du parent par une saisie du type parent basée sur la saisie type_plugin.
  *
  * @pipeline formulaire_fond
  *
@@ -22,19 +23,44 @@ function svptype_formulaire_fond($flux) {
 
 	if (($env = $flux['args']['contexte'])
 	and ($flux['args']['form'] == 'editer_mot')
-	and isset($env['id_groupe'])) {
+	and isset($env['id_groupe'])
+	and ($id_groupe = intval($env['id_groupe']))) {
 		// Formulaire d'édition d'un mot :
 		// -- on teste si c'est un mot plugin (catégorie ou tag)
 		include_spip('inc/svptype_mot');
-		if (groupe_est_plugin($env['id_groupe'])) {
-			// Construction de la saisie et positionnement en fin du formulaire.
-			$saisie_identifiant = recuperer_fond('formulaires/inclure/identifiant_mot', $env);
+		if (groupe_est_plugin($id_groupe)) {
+			// Insertion de l'identifiant avant le titre
+			$saisie_identifiant = recuperer_fond('formulaires/inclure/inc-type_plugin_identifiant', $env);
 
-			if (strpos($flux['data'], '<!--extra-->') !== false) {
+			$cherche = "/(<(li|div)[^>]*class=(?:'|\")editer-groupe[^>]*>)\s*(<(li|div)[^>]*class=(?:'|\")editer editer_titre)/is";
+			if (preg_match($cherche, $flux['data'], $m)) {
 				$flux['data'] = preg_replace(
-					'%(<!--extra-->)%is',
-					"${saisie_identifiant}\n" . '$1',
-					$flux['data']
+					$cherche,
+					'$1' . "\n${saisie_identifiant}" . '$3',
+					$flux['data'],
+					1
+				);
+			}
+
+			// Remplacement de la saisie du mot parent par celle du type parent.
+			// -- on complète l'environnement avec la typologie, xxx
+			include_spip('inc/config');
+			$typologies = lire_config('svptype/typologies', array());
+			foreach ($typologies as $_typologie => $_config) {
+				if ($_config['id_groupe'] == $id_groupe) {
+					$env['typologie'] = $_typologie;
+					break;
+				}
+			}
+			$saisie_parent = recuperer_fond('formulaires/inclure/inc-type_plugin_parent', $env);
+
+			$cherche = "/(<(li|div)[^>]*class=(?:'|\")editer editer_id_parent.*?<\/\\2>)/is";
+			if (preg_match($cherche, $flux['data'], $m)) {
+				$flux['data'] = preg_replace(
+					$cherche,
+					$saisie_parent,
+					$flux['data'],
+					1
 				);
 			}
 		}

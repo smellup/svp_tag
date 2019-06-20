@@ -23,6 +23,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_menu_titre' => 'Catégories',
 	'categorie_modifier_title' => 'Modifier cette catégorie',
 	'categorie_page_titre' => 'Gestion des catégories de plugin',
+	'categorie_parent_label' => 'Catégorie parente',
+	'categorie_parent_aucun_label' => 'Aucune',
 	'categorie_selection_option_tout' => 'Toutes les catégories',
 
 	// I

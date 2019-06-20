@@ -9,7 +9,7 @@
 [(#SET{option_tout, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_selection_option_tout}|_T)]})]
 [(#SET{filtre, #ENV{type}|liste_type_plugin_filtrer})]
 
-[(#REM) <!-- Liste des types pour la typologie concernée (catégorie, tag...) --> ]
+[(#REM) <!-- Liste des types ou des affectations pour la typologie concernée (catégorie, tag...) --> ]
 <INCLURE{fond=prive/objets/#GET{vue}/types_plugins,
 	typologie=#GET{typologie},
 	titre=#GET{fond_titre},

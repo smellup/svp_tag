@@ -59,10 +59,11 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 	// -- L'option optgroup a déjà été vérifiée : si elle est encore active, on est en présence
 	//    d'une arborescence de types à présenter avec optgroup.
 	//    Sinon, on veut une liste aplatie classée alphabétiquement.
+	$data = array();
 	if (!empty($options['optgroup'])) {
 		// On retraite le tableau en arborescence conformément à ce qui est attendu par la saisie selection avec
 		// optgroup.
-		$data = $groupes = array();
+		$groupes = array();
 		// On initialise les groupes et on réserve l'index afin de pouvoir les reconnaitre lors de la prochaine boucle.
 		foreach ($types as $_type) {
 			if ($_type['profondeur'] == 0) {
@@ -72,6 +73,7 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 			}
 		}
 		// On ajoute ensuite les enfants dans le groupe parent.
+		// -- préfixe des enfants au format de mots arborescents
 		foreach ($types as $_type) {
 			if ($_type['profondeur'] == 1) {
 				// Extraction de l'identifiant du groupe (groupe/xxxx)
@@ -83,11 +85,22 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 			}
 		}
 	} else {
-		// Si on ne veut pas de optgroup, on liste les types dans l'ordre alphabétique.
+		// Si on ne veut pas de optgroup, on liste les types dans l'ordre alphabétique en gérant l'icone qui indique
+		// la profondeur.
 		// Seule l'option du titre est à considérer.
-		$data = !empty($options['titre_affiche'])
-			? array_column($types, 'titre', 'identifiant')
-			: array_column($types, 'identifiant', 'identifiant');
+		if (!empty($options['niveau_affiche'])) {
+			$data = !empty($options['titre_affiche'])
+				? array_column($types, 'titre', 'identifiant')
+				: array_column($types, 'identifiant', 'identifiant');
+		} else {
+			include_spip('motsar_fonctions');
+			foreach ($types as $_type) {
+				$prefixe = mostar_tabulation($_type['profondeur']);
+				$data[$_type['identifiant']] = empty($options['titre_affiche'])
+					? $prefixe . $_type['identifiant']
+					: $prefixe . $_type['titre'];
+			}
+		}
 	}
 
     return $data;

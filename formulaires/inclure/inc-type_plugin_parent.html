@@ -1,0 +1,14 @@
+#SET{label_parent, #VAL{svptype:}|concat{#ENV{typologie}_parent_label}|_T}
+<BOUCLE_type_plugin(MOTS) {id_mot}>
+	#SET{data, #ARRAY}
+	<BOUCLE_parents(MOTS) {profondeur=0}{id_mot!=#ID_PARENT}>
+		#SET{data, #GET{data}|array_merge{#ARRAY{#ID_MOT, #IDENTIFIANT}}}
+	</BOUCLE_parents>
+</BOUCLE_type_plugin>
+
+[(#INCLURE{fond=saisies/selection,
+	id_parent,
+	option_intro=<:svptype:categorie_parent_aucun_label:>
+	data=#GET{data},
+	label=#GET{label_parent},
+	env})]
