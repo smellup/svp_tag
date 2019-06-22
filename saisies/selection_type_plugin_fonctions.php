@@ -86,7 +86,7 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 		}
 	} else {
 		// Si on ne veut pas de optgroup, on liste les types dans l'ordre alphabétique en gérant l'icone qui indique
-		// la profondeur.
+		// la profondeur quand cela est nécessaire (arborescence).
 		// Seule l'option du titre est à considérer.
 		if (!empty($options['niveau_affiche'])) {
 			$data = !empty($options['titre_affiche'])

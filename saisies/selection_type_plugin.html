@@ -50,6 +50,6 @@
 #SET{data, #ENV{typologie, categorie}|selection_type_plugin_peupler{#GET{options}}}
 
 [(#REM) On appelle la saisie sélection avec les data et le env qui contient les autres paramètres possibles
-        -- attention à ne pas avoir de caractère autre que , ou } avec le env !!!
+        -- attention à ne pas avoir de caractère autre que , ou } après le env !!!
 ]
 [(#INCLURE{fond=saisies/selection, data=#GET{data}, env})]
