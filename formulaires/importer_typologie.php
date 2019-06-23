@@ -13,7 +13,7 @@ if (!defined("_ECRIRE_INC_VERSION")) {
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_import
+ * @param string $type_data
  *        Type d'import. Prend les valeurs :
  *        - `liste` pour indiquer qu'on veut importer la liste des types d'une typologie
  *        - `affectation` pour indiquer qu'on veut importer des affectations type-plugin.
@@ -24,12 +24,12 @@ if (!defined("_ECRIRE_INC_VERSION")) {
  * 		Tableau des données à charger par le formulaire (affichage).
  * 		- `titre`		 : (affichage) titre du formulaire
  */
-function formulaires_importer_typologie_charger($typologie, $type_import, $redirect = '') {
+function formulaires_importer_typologie_charger($typologie, $type_data, $redirect = '') {
 
 	// Initialisation du tableau des variables fournies au formulaire.
 	$valeurs = array();
 
-	$valeurs['_titre'] = _T("svptype:${typologie}_import_${type_import}_form_titre");
+	$valeurs['_titre'] = _T("svptype:${typologie}_import_${type_data}_form_titre");
 
 	return $valeurs;
 }
@@ -39,7 +39,7 @@ function formulaires_importer_typologie_charger($typologie, $type_import, $redir
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_import
+ * @param string $type_data
  *        Type d'import. Prend les valeurs :
  *        - `liste` pour indiquer qu'on veut importer la liste des types d'une typologie
  *        - `affectation` pour indiquer qu'on veut importer des affectations type-plugin.
@@ -49,7 +49,7 @@ function formulaires_importer_typologie_charger($typologie, $type_import, $redir
  * @return array
  * 		Tableau des erreurs concernant le fichier ou tableau vide si aucune erreur.
  */
-function formulaires_importer_typologie_verifier($typologie, $type_import, $redirect = '') {
+function formulaires_importer_typologie_verifier($typologie, $type_data, $redirect = '') {
 
 	// Initialisation des messages d'erreur
 	$erreurs = array();
@@ -75,7 +75,7 @@ function formulaires_importer_typologie_verifier($typologie, $type_import, $redi
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_import
+ * @param string $type_data
  *        Type d'import. Prend les valeurs :
  *        - `liste` pour indiquer qu'on veut importer la liste des types d'une typologie
  *        - `affectation` pour indiquer qu'on veut importer des affectations type-plugin.
@@ -86,7 +86,7 @@ function formulaires_importer_typologie_verifier($typologie, $type_import, $redi
  * 		Tableau retourné par le formulaire contenant toujours un message de bonne exécution ou
  * 		d'erreur. L'indicateur editable est toujours à vrai.
  */
-function formulaires_importer_typologie_traiter($typologie, $type_import, $redirect = '') {
+function formulaires_importer_typologie_traiter($typologie, $type_data, $redirect = '') {
 
 	// Initialisation du retour de traitement du formulaire (message, editable).
 	$retour = array();
@@ -114,7 +114,7 @@ function formulaires_importer_typologie_traiter($typologie, $type_import, $redir
 			// -- Importation du tableau représentant la typologie.
 			if ($liste) {
 				include_spip('inc/svptype_typologie');
-				$importer = "type_plugin_importer_${type_import}";
+				$importer = "type_plugin_importer_${type_data}";
 				if (function_exists($importer)) {
 					$resultat_import = $importer($typologie, $liste);
 				}

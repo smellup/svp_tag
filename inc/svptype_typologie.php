@@ -124,8 +124,10 @@ function type_plugin_lister_affectation($typologie, $type = '') {
 /**
  * Importe une liste de types appartenant à la même typologie.
  *
+ * @param string $typologie
+ *        Typologie concernée : categorie ou tag.
  * @param array  $liste
- *        Tableau des catégories présenté comme une arborescence.
+ *        Tableau des types présenté comme une arborescence ou à plat suivant la typologie.
  *
  * @return bool|int
  *         Nombre de catégories ajoutées.
@@ -169,7 +171,7 @@ function type_plugin_importer_liste($typologie, $liste) {
 				// -- on est sur que le type racine existe
 				if (($groupe['mots_arborescents'] == 'oui')
 				and isset($_type['sous-types'])
-				and	$id_type) {
+				and $id_type) {
 					// On insère les sous-types si ils ne sont pas déjà présentes dans la base.
 					foreach ($_type['sous-types'] as $_sous_type) {
 						if (!mot_lire_id($_sous_type['identifiant'])) {
@@ -188,6 +190,59 @@ function type_plugin_importer_liste($typologie, $liste) {
 	}
 
 	return $types_ajoutes;
+}
+
+
+/**
+ * Importe une liste de types appartenant à la même typologie.
+ *
+ * @param string $typologie
+ *        Typologie concernée : categorie ou tag.
+ *
+ * @return array
+ *         Tableau des types exportés.
+ */
+function type_plugin_exporter_liste($typologie) {
+
+	// Initialisation du nombre de types ajoutés.
+	$types_exportes = array();
+
+	// Déterminer les informations du groupe typologique.
+	include_spip('inc/config');
+	$groupe = lire_config("svptype/typologies/${typologie}", array());
+
+	if ($id_groupe = intval($groupe['id_groupe'])) {
+		// Identification des champs exportables pour un type.
+		$champs = array('identifiant', 'titre', 'descriptif');
+
+		// Extraction de tous les types racine pour la typologie concernée.
+		// -- si la typologie est arborescente, les feuilles sont de profondeur 1 et sont acquises par la suite.
+		$where = array(
+			'id_groupe=' . $id_groupe, 'profondeur=0'
+		);
+
+		$types_racine = sql_allfetsel($champs, 'spip_mots', $where);
+		if ($types_racine) {
+			if ($groupe['mots_arborescents'] == 'oui') {
+				$where[1] = 'profondeur=1';
+				foreach ($types_racine as $_cle => $_type) {
+					// Recherche des types enfants qui sont forcément des feuilles.
+					$where = 'id_parent=' . intval($_type['id_mot']);
+					$types_feuille = sql_allfetsel($champs, 'spip_mots', $where);
+
+					// Construction du tableau arborescent des types
+					$types_exportes[$_cle] = $_type;
+					if ($types_feuille) {
+						$types_exportes[$_cle]['sous-types'] = $types_feuille;
+					}
+				}
+			} else {
+				$types_exportes = $types_racine;
+			}
+		}
+	}
+
+	return $types_exportes;
 }
 
 

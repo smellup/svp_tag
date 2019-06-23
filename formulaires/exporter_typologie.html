@@ -1,0 +1,28 @@
+<div class="formulaire_spip formulaire_charger formulaire_#FORM">
+
+	[<h3 class="titrem">(#ENV{_titre})</h3>]
+
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	<form method="post" action="#ENV{action}" enctype="multipart/form-data">
+	<div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+		<div class="editer-groupe">
+			[(#SAISIE{radio, choix_export,
+				label=<:svptype:export_choix_label:>,
+				data=#ARRAY{
+					local, <:svptype:export_choix_local_label:>,
+					serveur, <:svptype:export_choix_serveur_label:>
+				},
+				defaut=local
+			})]
+		</div>
+
+		<p class="boutons">
+			<span class="image_loading">&nbsp;</span>
+			<input type="submit" class="submit" value="<:bouton_valider:>" />
+		</p>
+	</div>
+	</form>
+</div>

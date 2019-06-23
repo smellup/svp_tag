@@ -1,0 +1,23 @@
+[(#AUTORISER{webmestre}|sinon_interdire_acces)]
+<h1>[(#VAL{svptype:}|concat{#ENV{operation}}|concat{_page_titre}|_T)]</h1>
+
+#SET{redirect, ''}
+[(#ENV{popin}|non)
+	[(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
+		|parametre_url{typologie, #ENV{typologie, categorie}}
+		|parametre_url{vue, #ENV{type_data, liste}})]
+	})]
+]
+#SET{redirect, #ENV{redirect}|sinon{#GET{redirect}}}
+
+[(#ENV{operation}|=={import}|oui)
+[<div class="noajax">
+	(#FORMULAIRE_IMPORTER_TYPOLOGIE{#ENV{typologie, categorie}, #ENV{type_data, liste}, #GET{redirect}})
+</div>]
+]
+
+[(#ENV{operation}|=={export}|oui)
+[<div class="ajax">
+	(#FORMULAIRE_EXPORTER_TYPOLOGIE{#ENV{typologie, categorie}, #ENV{type_data, liste}, ''})
+</div>]
+]

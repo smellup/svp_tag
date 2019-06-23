@@ -7,13 +7,21 @@
 #SET{vue, #ENV{vue, liste}}
 
 [(#AUTORISER{webmestre}|oui)
-	[(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_import_}|concat{#GET{vue}}|concat{_bouton_titre}|_T)]})]
-	[(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}|concat{_import}})]
-
 	#BOITE_OUVRIR{'','raccourcis'}
-		[(#URL_ECRIRE{svptype_importation}
+		[(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_export_}|concat{#GET{vue}}|concat{_bouton_titre}|_T)]})]
+		[(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}|concat{_export}})]
+		[(#URL_ECRIRE{svptype_maintenance}
 			|parametre_url{typologie, #GET{typologie}}
-			|parametre_url{type_import, #GET{vue}}
+			|parametre_url{operation, export}
+			|parametre_url{type_data, #GET{vue}}
+			|icone_horizontale{#GET{bouton_titre}, #GET{bouton_icone}, '', typologie-export})]
+
+		[(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_import_}|concat{#GET{vue}}|concat{_bouton_titre}|_T)]})]
+		[(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}|concat{_import}})]
+		[(#URL_ECRIRE{svptype_maintenance}
+			|parametre_url{typologie, #GET{typologie}}
+			|parametre_url{operation, import}
+			|parametre_url{type_data, #GET{vue}}
 			|icone_horizontale{#GET{bouton_titre}, #GET{bouton_icone}, '', typologie-import})]
 	#BOITE_FERMER
 ]

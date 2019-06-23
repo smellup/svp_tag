@@ -10,7 +10,7 @@
 [(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}})]
 [(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
 	|parametre_url{typologie, #GET{typologie}}
-	|parametre_url{vue, #ENV{type_import, liste}})]
+	|parametre_url{vue, #ENV{type_data, liste}})]
 })]
 [(#AUTORISER{creer, typeplugin, '', '', #ARRAY{id_groupe, #GET{id_groupe}}})
 	[(#URL_ECRIRE{type_plugin_edit}

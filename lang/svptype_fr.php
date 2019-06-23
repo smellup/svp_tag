@@ -12,6 +12,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// C
 	'categorie_identifiant_label' => 'Catégorie',
+	'categorie_export_affectation_bouton_titre' => 'Exporter des affectations catégorie-plugin',
+	'categorie_export_affectation_form_titre' => 'Exportation d\'une liste d\'affectation catégorie-plugin',
+	'categorie_export_liste_bouton_titre' => 'Exporter une liste de catégories',
+	'categorie_export_liste_form_titre' => 'Exportation d\'une liste de catégories',
 	'categorie_import_affectation_bouton_titre' => 'Importer des affectations catégorie-plugin',
 	'categorie_import_affectation_form_titre' => 'Importation d\'une liste d\'affectation catégorie-plugin',
 	'categorie_import_liste_bouton_titre' => 'Importer une liste de catégories',
@@ -33,6 +37,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// I
 	'identifiant_label' => 'Identifiant',
+	'export_page_titre' => 'Exportation d\'une typologie de plugin',
+	'export_choix_label' => 'Que faire du fichier d\'export ?',
+	'export_choix_serveur_label' => 'Sauvegarder le fichier sur le serveur',
+	'export_choix_local_label' => 'Télécharger le fichier localement',
 	'import_page_titre' => 'Importation d\'une typologie de plugin',
 	'import_fichier_label' => 'Fichier à importer',
 	'import_fichier_explication' => 'Choisissez un fichier JSON conforme au schéma autorisé. Seuls les données n\'existant pas encore dans la base seront ajoutées.',
@@ -48,6 +56,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// T
 	'tag_identifiant_label' => 'Tags',
+	'tag_export_affectation_bouton_titre' => 'Exporter une liste d\'affectation tag-plugin',
+	'tag_export_affectation_form_titre' => 'Exportation d\'une liste d\'affectation tag-plugin',
+	'tag_export_liste_bouton_titre' => 'Exporter une liste de tags',
+	'tag_export_liste_form_titre' => 'Exportation d\'une liste de tags',
 	'tag_import_affectation_bouton_titre' => 'Importer une liste d\'affectation tag-plugin',
 	'tag_import_affectation_form_titre' => 'Importation d\'une liste d\'affectation tag-plugin',
 	'tag_import_liste_bouton_titre' => 'Importer une liste de tags',
