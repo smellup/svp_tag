@@ -1,14 +1,17 @@
 [(#ID_MOT|intval|oui)
-	[(#AUTORISER{modifier, typeplugin, #ID_MOT}|sinon_interdire_acces)]]
+	[(#AUTORISER{modifier, typeplugin, #ID_MOT}|sinon_interdire_acces)]
+	#SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_modifier_title}|_T}
+]
 [(#ID_MOT|intval|non)
-	[(#AUTORISER{creer,mot,#ID_MOT,'','',#ARRAY{associer_objet,#ENV{associer_objet}}}|sinon_interdire_acces)]]
+	[(#AUTORISER{creer, typeplugin, oui, '', #ARRAY{id_groupe, #ENV{id_groupe}}}|sinon_interdire_acces)]
+	#SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_creer_title}|_T}
+]
 
-#SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_modifier_title}|_T}
-
+#SET{titre_defaut, #VAL{svptype:}|concat{#ENV{typologie}_creer_titre_defaut}|_T}
 <div class='cadre-formulaire-editer'>
 	<div class="entete-formulaire">
-		[[(#ID_MOT|intval|?{#GET{title_modifier},<:titre_ajouter_un_mot:>})]
-		<h1>(#ENV{titre,#INFO_TITRE{mot,#ID_MOT}|sinon{<:mots:texte_nouveau_mot:>}})</h1>]
+		[[(#GET{title_modifier})]
+		<h1>(#ENV{titre, #INFO_TITRE{mot, #ID_MOT}|sinon{#GET{titre_defaut}}})</h1>]
 	</div>
 
 	#FORMULAIRE_EDITER_MOT{

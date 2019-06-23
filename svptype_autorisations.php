@@ -75,3 +75,30 @@ function autoriser_typeplugin_modifier($faire, $type, $id, $qui, $opt) {
 
 	return $autoriser;
 }
+
+
+/**
+ * Autorisation de créer un type de plugin.
+ *
+ * Un type de plugin est un mot-cle technique pouvant être arborescent ou pas ce qui implique de vérifier :
+ * - l'autorisation de création d'un mot (plugin mots)
+ *
+ * @param  string $faire Action demandée
+ * @param  string $type  Type d'objet sur lequel appliquer l'action
+ * @param  int    $id    Identifiant de l'objet
+ * @param  array  $qui   Description de l'auteur demandant l'autorisation
+ * @param  array  $opt   Options de cette autorisation. Contient le groupe de mots dans lequel créer le mot.
+ * @return bool          true s'il a le droit, false sinon
+ **/
+function autoriser_typeplugin_creer($faire, $type, $id, $qui, $opt) {
+
+	// Initialisation de l'autorisation
+	$autoriser = false;
+
+	// Vérification préalable de l'autorisation standard du plugin 'mots'.
+	if (autoriser('creer', 'mot', $id, $qui, $opt)) {
+			$autoriser = true;
+	}
+
+	return $autoriser;
+}

@@ -1,16 +1,20 @@
 #SET{label_parent, #VAL{svptype:}|concat{#ENV{typologie}_parent_label}|_T}
-#SET{data, #ARRAY}
+#SET{profondeur, 0}
+#SET{id_groupe, #ENV{id_groupe, 0}}
 <BOUCLE_type_plugin(MOTS) {id_mot}>
 	#SET{profondeur, #PROFONDEUR|moins{1}|max{0}}
-	<BOUCLE_type_plugin_parents(MOTS) {id_groupe}{profondeur=#GET{profondeur}}>
-		#SET{data, #GET{data}|array_merge{#ARRAY{#IDENTIFIANT, #ID_MOT}}}
-	</BOUCLE_type_plugin_parents>
-
-	[(#SAISIE{selection,
-		id_parent,
-		label=#GET{label_parent},
-		option_intro=<:svptype:categorie_parent_aucun_label:>,
-		data=[(#GET{data}|array_flip)],
-		defaut=#ID_PARENT,
-		env})]
+	#SET{id_groupe, #ID_GROUPE}
 </BOUCLE_type_plugin>
+
+#SET{data, #ARRAY}
+<BOUCLE_type_plugin_parents(MOTS) {id_groupe=#GET{id_groupe}}{profondeur=#GET{profondeur}}>
+	#SET{data, #GET{data}|array_merge{#ARRAY{#IDENTIFIANT, #ID_MOT}}}
+</BOUCLE_type_plugin_parents>
+
+[(#SAISIE{selection,
+	id_parent,
+	label=#GET{label_parent},
+	option_intro=<:svptype:categorie_parent_aucun_label:>,
+	data=[(#GET{data}|array_flip)],
+	defaut=#ID_PARENT,
+	env})]

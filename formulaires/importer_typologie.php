@@ -80,7 +80,7 @@ function formulaires_importer_typologie_verifier($typologie, $type_import, $redi
  *        - `liste` pour indiquer qu'on veut importer la liste des types d'une typologie
  *        - `affectation` pour indiquer qu'on veut importer des affectations type-plugin.
  * @param string $redirect
- *        URL de redirection en fin de traitement : on revient toujours de la page source.
+ *        URL de redirection en fin de traitement : on revient toujours à la page source.
  *
  * @return array
  * 		Tableau retourné par le formulaire contenant toujours un message de bonne exécution ou

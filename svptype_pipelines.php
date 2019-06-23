@@ -5,7 +5,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 
 /**
- * Modifie les champs du formulaire d'édition d'un mot.
+ * Modifie les champs du formulaire d'édition (création ou modification) d'un mot.
  *
  * Sur les mots appartenant à un groupe plugin :
  * - ajouter la saisie de l'identifiant juste avant le titre
@@ -43,7 +43,7 @@ function svptype_formulaire_fond($flux) {
 			}
 
 			// Remplacement de la saisie du mot parent par celle du type parent.
-			// -- on complète l'environnement avec la typologie, xxx
+			// -- on complète l'environnement avec la typologie et le groupe principalement utile pour la création
 			include_spip('inc/config');
 			$typologies = lire_config('svptype/typologies', array());
 			foreach ($typologies as $_typologie => $_config) {
@@ -209,7 +209,7 @@ function svptype_afficher_contenu_objet($flux) {
 			and groupe_est_plugin($id_groupe)) {
 				// On affiche l'identifiant du mot
 				$contexte = array('id_mot' => $id_objet);
-				$html_identifiant = recuperer_fond('prive/squelettes/inclure/mot_identifiant', $contexte);
+				$html_identifiant = recuperer_fond('prive/squelettes/inclure/inc-type_plugin_identifiant', $contexte);
 				$flux['data'] .= $html_identifiant;
 			}
 		}

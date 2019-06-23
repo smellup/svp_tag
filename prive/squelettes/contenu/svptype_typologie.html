@@ -1,15 +1,33 @@
 [(#AUTORISER{webmestre}|sinon_interdire_acces)]
 #SET{typologie, #ENV{typologie, categorie}}
+#SET{id_groupe, #CONFIG{svptype/typologies/#GET{typologie}/id_groupe, 0}}
 #SET{vue, #ENV{vue, liste}}
 
 <h1>[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_page_titre}|_T)]</h1>
 
+[(#REM) <!-- Bouton d'ajout d'un type ou d'une affectation --> ]
+[(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_ajouter}|_T)]})]
+[(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}})]
+[(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
+	|parametre_url{typologie, #GET{typologie}}
+	|parametre_url{vue, #ENV{type_import, liste}})]
+})]
+[(#AUTORISER{creer, typeplugin, '', '', #ARRAY{id_groupe, #GET{id_groupe}}})
+	[(#URL_ECRIRE{type_plugin_edit}
+		|parametre_url{new, oui}
+		|parametre_url{typologie, #GET{typologie}}
+		|parametre_url{id_groupe, #GET{id_groupe}}
+		|parametre_url{redirect, #GET{redirect}}
+		|icone_verticale{#GET{bouton_titre}, #GET{bouton_icone}, new, right})]
+]
+<br class="clear" />
+
+[(#REM) <!-- Liste des types ou des affectations pour la typologie concernée (catégorie, tag...) --> ]
 [(#SET{fond_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_titre}|_T)]})]
 [(#SET{liste_vide, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_erreur_vide}|_T)]})]
 [(#SET{option_tout, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_selection_option_tout}|_T)]})]
 [(#SET{filtre, #ENV{type}|liste_type_plugin_filtrer})]
 
-[(#REM) <!-- Liste des types ou des affectations pour la typologie concernée (catégorie, tag...) --> ]
 <INCLURE{fond=prive/objets/#GET{vue}/types_plugins,
 	typologie=#GET{typologie},
 	titre=#GET{fond_titre},
