@@ -224,10 +224,11 @@ function type_plugin_exporter_liste($typologie) {
 		$types_racine = sql_allfetsel($champs, 'spip_mots', $where);
 		if ($types_racine) {
 			if ($groupe['mots_arborescents'] == 'oui') {
+				include_spip('inc/svptype_mot');
 				$where[1] = 'profondeur=1';
 				foreach ($types_racine as $_cle => $_type) {
 					// Recherche des types enfants qui sont forcément des feuilles.
-					$where = 'id_parent=' . intval($_type['id_mot']);
+					$where = 'id_parent=' . mot_lire_id($_type['identifiant']);
 					$types_feuille = sql_allfetsel($champs, 'spip_mots', $where);
 
 					// Construction du tableau arborescent des types

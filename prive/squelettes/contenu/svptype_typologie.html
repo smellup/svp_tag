@@ -10,7 +10,7 @@
 [(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}})]
 [(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
 	|parametre_url{typologie, #GET{typologie}}
-	|parametre_url{vue, #ENV{type_data, liste}})]
+	|parametre_url{vue, #GET{vue}})]
 })]
 [(#AUTORISER{creer, typeplugin, '', '', #ARRAY{id_groupe, #GET{id_groupe}}})
 	[(#URL_ECRIRE{type_plugin_edit}
@@ -26,7 +26,7 @@
 [(#SET{fond_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_titre}|_T)]})]
 [(#SET{liste_vide, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_erreur_vide}|_T)]})]
 [(#SET{option_tout, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_selection_option_tout}|_T)]})]
-[(#SET{filtre, #ENV{type}|liste_type_plugin_filtrer})]
+[(#SET{filtre, #GET{typologie}|liste_type_plugin_filtrer{#ENV{type}, #GET{vue}}})]
 
 <INCLURE{fond=prive/objets/#GET{vue}/types_plugins,
 	typologie=#GET{typologie},

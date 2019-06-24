@@ -57,21 +57,22 @@ function formulaires_exporter_typologie_traiter($typologie, $type_data, $redirec
 
 	// Initialisation du retour de traitement du formulaire (message, editable).
 	$retour = array();
-	$types = array();
-	$resultat_export = false;
+
+	// Extraction des données requises pour la typologie concernée.
+	include_spip('inc/svptype_typologie');
+	$exporter = "type_plugin_exporter_${type_data}";
+	$types = $exporter($typologie);
 
 	if ($types) {
 		// Construction du nom du fichier
-		$nom_fichier = "${typologie}_${type_data}.json";
+		$date = date('Y-m-d_H-i');
+		$nom_fichier = "${typologie}_${type_data}_${date}.json";
 
 		// Formatage du contenu exportés en json;
-		$export = json_encode($types);
+		$export = json_encode($types, JSON_PRETTY_PRINT);
 
 		if (_request('choix_export') == 'local') {
-			refuser_traiter_formulaire_ajax();
-			// Pour empêcher l'extension dev d'ajouter un div avec l'usage mémoire.
-			set_request('action', 'courcircuiter_affichage_usage_memoire');
-			header('Content-Type: text/x-json;');
+			header('Content-Type: application/json;');
 			header("Content-Disposition: attachment; filename=${nom_fichier}");
 			header('Content-Length: ' . strlen($export));
 			echo $export;
@@ -80,19 +81,17 @@ function formulaires_exporter_typologie_traiter($typologie, $type_data, $redirec
 			// -- Création du répertoire d'upload
 			$dir = sous_repertoire(_DIR_TMP, 'svptype');
 			$fichier = $dir . $nom_fichier;
-			if (ecrire_fichier($fichier, $export)) {
-				return array('message_ok' => _T('ieconfig:message_ok_export', array('filename' => $nom_fichier)));
-			} else {
-				return array('message_erreur' => _T('ieconfig:message_erreur_export', array('filename' => $nom_fichier)));
+			if (!ecrire_fichier($fichier, $export)) {
+				$retour['message_nok'] = _T('svptype:export_message_nok');
 			}
 		}
+	} else {
+		$retour['message_nok'] = _T('svptype:export_message_vide');
 	}
 
 	// Retour du formulaire.
-	if ($resultat_export) {
-		$retour['message_ok'] = _T('svptype:import_message_ok', array('nb' => $resultat_export));
-	} else {
-		$retour['message_nok'] = _T('svptype:import_message_nok');
+	if (empty($retour['message_nok'])) {
+		$retour['message_ok'] = _T('svptype:export_message_ok');
 	}
 	$retour['redirect'] = $redirect;
 	$retour['editable'] = true;
