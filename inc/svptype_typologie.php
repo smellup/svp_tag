@@ -1,6 +1,6 @@
 <?php
 /**
- * Ce fichier contient l'API de gestion des différentes typologie de plugin.
+ * Ce fichier contient l'API de gestion des différentes typologies de plugin.
  */
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
