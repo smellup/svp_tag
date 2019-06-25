@@ -28,7 +28,7 @@ function svptype_formulaire_fond($flux) {
 		// Formulaire d'édition d'un mot :
 		// -- on teste si c'est un mot plugin (catégorie ou tag)
 		include_spip('inc/svptype_mot');
-		if (groupe_est_plugin($id_groupe)) {
+		if (groupe_est_typologie_plugin($id_groupe)) {
 			// Insertion de l'identifiant avant le titre
 			$saisie_identifiant = recuperer_fond('formulaires/inclure/inc-type_plugin_identifiant', $env);
 
@@ -94,7 +94,7 @@ function svptype_formulaire_verifier($flux) {
 		if ($id_groupe = intval(_request('id_groupe'))) {
 			include_spip('inc/svptype_mot');
 			// On teste si c'est un mot plugin (catégorie ou tag)
-			if (groupe_est_plugin($id_groupe)) {
+			if (groupe_est_typologie_plugin($id_groupe)) {
 				$identifiant = _request('identifiant');
 				if (!$identifiant) {
 					$flux['data']['identifiant'] = _T('info_obligatoire');
@@ -141,7 +141,7 @@ function svptype_pre_insertion($flux) {
 		and ($id_groupe = intval(_request('id_groupe')))) {
 			include_spip('inc/svptype_mot');
 			// On teste si c'est un mot plugin (catégorie ou tag)
-			if (groupe_est_plugin($id_groupe)) {
+			if (groupe_est_typologie_plugin($id_groupe)) {
 				$flux['data']['identifiant'] = $identifiant;
 			}
 		}
@@ -175,7 +175,7 @@ function svptype_pre_edition($flux) {
 		and ($id_groupe = intval(_request('id_groupe')))) {
 			// On teste si c'est un mot plugin (catégorie ou tag)
 			include_spip('inc/svptype_mot');
-			if (groupe_est_plugin($id_groupe)) {
+			if (groupe_est_typologie_plugin($id_groupe)) {
 				$flux['data']['identifiant'] = $identifiant;
 			}
 		}
@@ -206,7 +206,7 @@ function svptype_afficher_contenu_objet($flux) {
 			// -- on teste si c'est un mot plugin (catégorie ou tag)
 			include_spip('inc/svptype_mot');
 			if (($id_groupe = mot_lire_groupe($id_objet))
-			and groupe_est_plugin($id_groupe)) {
+			and groupe_est_typologie_plugin($id_groupe)) {
 				// On affiche l'identifiant du mot
 				$contexte = array('id_mot' => $id_objet);
 				$html_identifiant = recuperer_fond('prive/squelettes/inclure/inc-type_plugin_identifiant', $contexte);

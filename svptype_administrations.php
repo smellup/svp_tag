@@ -28,12 +28,14 @@ function svptype_upgrade($nom_meta_base_version, $version_cible) {
 	$maj = array();
 
 	// Créer la configuration par défaut du plugin
-	$config_defaut = configurer_svptype();
+	$configuration = array(
+		'typologies' => typologie_configurer()
+	);
 
 	// Création des tables
 	$maj['create'] = array(
 		array('maj_tables', array('spip_groupes_mots', 'spip_mots', 'spip_plugins_typologies')),
-		array('ecrire_config', 'svptype', $config_defaut)
+		array('ecrire_config', 'svptype', $configuration)
 	);
 
 	include_spip('base/upgrade');
@@ -41,7 +43,7 @@ function svptype_upgrade($nom_meta_base_version, $version_cible) {
 
 	// Création des groupes de mots nécessaires à la typologie des plugins
 	// -- la configuration a déjà été mise à jour en BDD.
-	creer_groupes_typologie();
+	typologie_creer_groupe();
 }
 
 
@@ -63,10 +65,11 @@ function svptype_vider_tables($nom_meta_base_version) {
 	$typologies = lire_config('svptype/typologies', array());
 	if ($typologies) {
 		foreach ($typologies as $_typologie => $_config) {
-			// suppression du groupe pour la typologie
-			sql_delete('spip_groupes_mots', array('id_groupe=' . intval($_config['id_groupe'])));
+			$where = array('id_groupe=' . intval($_config['id_groupe']));
 			// suppression des mots-clés du groupe
-			sql_delete('spip_mots', array('id_groupe=' . intval($_config['id_groupe'])));
+			sql_delete('spip_mots', $where);
+			// suppression du groupe pour la typologie
+			sql_delete('spip_groupes_mots', $where);
 		}
 	}
 
@@ -86,29 +89,28 @@ function svptype_vider_tables($nom_meta_base_version) {
 
 
 /**
- * Initialise la configuration du plugin.
+ * Initialise la configuration des typologies du plugin.
  *
  * @return array
- * 		Le tableau de la configuration par défaut qui servira à initialiser la meta `svptype`.
+ * 		Le tableau de la configuration par défaut qui servira à initialiser l'index `typologies` de la meta `svptype`.
  */
-function configurer_svptype() {
+function typologie_configurer() {
 
+	// Deux typologies actuellement :
+	// - categorie : les catégories de plugin
+	// - tag : les tags de plugin
 	$config = array(
-		'typologies' => array(
-			'categorie' => array(
-				'identifiant'       => 'plugin-categories',
-				'mots_arborescents' => 'oui',
-				'id_groupe'         => 0,
-				'max_affectations'  => 1,
-				'max_profondeur'    => 1
-			),
-			'tag'       => array(
-				'identifiant'       => 'plugin-tags',
-				'mots_arborescents' => 'non',
-				'id_groupe'         => 0,
-				'max_affectations'  => 0,
-				'max_profondeur'    => 0
-			),
+		'categorie' => array(
+			'est_arborescente' => true,
+			'id_groupe'        => 0,
+			'max_affectations' => 1,
+			'max_profondeur'   => 1
+		),
+		'tag'       => array(
+			'est_arborescente' => false,
+			'id_groupe'        => 0,
+			'max_affectations' => 0,
+			'max_profondeur'   => 0
 		),
 	);
 
@@ -120,46 +122,42 @@ function configurer_svptype() {
  * Création des groupes de mots nécessaires à la typologie des plugins.
  * Si le groupe existe déjà on ne fait rien, sinon on le crée en stockant l'id dans la configuration.
  *
- * @param array $config
- * 		Configuration du plugin : données des groupes de mots.
- *
  * @return void
  */
-function creer_groupes_typologie() {
+function typologie_creer_groupe() {
 
-	// Les groupes plugin ont les caractéristiques communes suivantes :
+	// Les groupes de typologie de plugin ont les caractéristiques communes suivantes :
 	// - groupe technique
 	// - sans tables liées
 	// - et uniquement pour les administrateurs complets.
-	// En outre :
-	// - plugin-categories : le groupe arborescent des catégories de plugin
-	// - plugin-tags : le groupe non arborescent des tags de plugin (initialisé mais pas utilisé pour l'instant)
 
-	// On acquiert la configuration du plugin et donc celle des groupes.
+	// On acquiert la configuration déjà enregistrée pour le plugin.
 	include_spip('inc/config');
 	$config = lire_config('svptype', array());
 
 	if (!empty($config['typologies'])) {
 		include_spip('action/editer_objet');
 		$config_modifiee = false;
-		foreach ($config['typologies'] as $_type => $_groupe) {
+		foreach ($config['typologies'] as $_typologie => $_config) {
 			// On vérifie d'abord si le groupe existe déjà. Si oui, on ne fait rien.
-			if (!sql_countsel('spip_groupes_mots', array('identifiant=' . sql_quote($_groupe['identifiant'])))) {
+			if (!$_config['id_groupe']) {
 				$groupe = array(
-					'identifiant'       => $_groupe['identifiant'],
-					'titre'             => $_groupe['identifiant'],
+					'titre'             => "typologie-${_typologie}-plugin",
 					'technique'         => 'oui',
-					'mots_arborescents' => $_groupe['mots_arborescents'],
+					'mots_arborescents' => $_config['est_arborescente'] ? 'oui' : 'non',
 					'tables_liees'      => '',
 					'minirezo'          => 'oui',
 					'comite'            => 'non',
 					'forum'             => 'non',
 				);
 				if ($id_groupe = objet_inserer('groupe_mots', null, $groupe)) {
-					$config['typologies'][$_type]['id_groupe'] = $id_groupe;
+					$config['typologies'][$_typologie]['id_groupe'] = $id_groupe;
 					$config_modifiee = true;
 				} else {
-					spip_log("Erreur lors de l'ajout du groupe {$_groupe['identifiant']}", 'svptype' . _LOG_ERREUR);
+					spip_log(
+						"Erreur lors de l'ajout du groupe pour la typologie ${_typologie}",
+						'svptype' . _LOG_ERREUR
+					);
 				}
 			}
 		}

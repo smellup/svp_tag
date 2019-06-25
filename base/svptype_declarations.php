@@ -5,8 +5,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 
 /**
- * Ajouter le champ `identifiant` à la table des mots et des groupes de mots.
- * Ce champ est une chaine sans espace qui représente un id textuel unique (pour les mots l'unicité se définit
+ * Ajouter le champ `identifiant` à la table des mots.
+ * Ce champ est une chaine sans espace qui représente un id textuel unique (l'unicité se définit
  * au sein d'un groupe de mots).
  *
  * @pipeline declarer_tables_objets_sql
@@ -20,7 +20,6 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 function svptype_declarer_tables_objets_sql($tables){
 
 	// Colonne 'identifiant'
-	$tables['spip_groupes_mots']['field']['identifiant'] = "varchar(255) DEFAULT '' NOT NULL";
 	$tables['spip_mots']['field']['identifiant'] = "varchar(255) DEFAULT '' NOT NULL";
 
 	return $tables;

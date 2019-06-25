@@ -1,77 +1,38 @@
 <?php
 /**
- * Ce fichier contient l'API de gestion de mots propre à SVP Typologie.
+ * Ce fichier contient l'API de gestion des mots-clés propre à SVP Typologie.
  */
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
 
-function groupe_lire_identifiant($id_groupe) {
-
-	static $identifiants = array();
-
-	if (!isset($identifiants[$id_groupe])) {
-		$identifiants[$id_groupe] = '';
-
-		$from = 'spip_groupes_mots';
-		$where = array('id_groupe=' . intval($id_groupe));
-		$categorie = sql_getfetsel('identifiant', $from, $where);
-		if ($categorie !== null) {
-			$identifiants[$id_groupe] = $categorie;
-		}
-	}
-
-	return $identifiants[$id_groupe];
-}
-
-
-function groupe_lire_id($identifiant) {
-
-	static $ids_groupe = array();
-
-	if (!isset($ids_groupe[$identifiant])) {
-		$ids_groupe[$identifiant] = 0;
-
-		$from = 'spip_groupes_mots';
-		$where = array('identifiant=' . sql_quote($identifiant));
-		$id = sql_getfetsel('id_groupe', $from, $where);
-		if ($id !== null) {
-			$ids_groupe[$identifiant] = intval($id);
-		}
-	}
-
-	return $ids_groupe[$identifiant];
-}
-
-
 /**
- * Vérifie que la rubrique concernée fait bien partie d'un secteur-plugin.
- * Il suffit de vérifier que le secteur a bien une catégorie non vide.
+ * Vérifie que le groupe identifié par son id matérialise bien une typologie de plugin.
  *
- * @param int $id
- * 		Id de la rubrique concernée.
+ * @param int $id_groupe
+ * 		Id du groupe de mots concerné.
  *
  * @return bool
- *       True si la rubrique fait partie d'un secteur-plugin, false sinon.
+ *       True si le groupe est celui d'une typologie, false sinon.
  */
-function groupe_est_plugin($id_groupe) {
+function groupe_est_typologie_plugin($id_groupe) {
 
-	static $est_plugin = array();
+	static $est_typologie = array();
 
-	if (!isset($est_plugin[$id_groupe])) {
-		$est_plugin[$id_groupe] = false;
+	if (!isset($est_typologie[$id_groupe])) {
+		$est_typologie[$id_groupe] = false;
 
 		include_spip('inc/config');
-		if ($groupes = lire_config('svptype/typologies', array())) {
-			$groupes = array_column($groupes, 'identifiant');
-			if (in_array(groupe_lire_identifiant($id_groupe), $groupes)) {
-				$est_plugin[$id_groupe] = true;
+		if ($typologies = lire_config('svptype/typologies', array())) {
+			$ids_groupe = array_column($typologies, 'id_groupe');
+			if (in_array($id_groupe, $ids_groupe)) {
+				$est_typologie[$id_groupe] = true;
 			}
 		}
 	}
 
-	return $est_plugin[$id_groupe];
+	return $est_typologie[$id_groupe];
 }
 
 

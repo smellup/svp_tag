@@ -33,7 +33,7 @@ function autoriser_typeplugin_supprimer($faire, $type, $id, $qui, $opt) {
 		include_spip('inc/svptype_mot');
 		$id_mot = intval($id);
 		$id_groupe = mot_lire_groupe($id_mot);
-		if (groupe_est_plugin($id_groupe)) {
+		if (groupe_est_typologie_plugin($id_groupe)) {
 			// Le mot est un type de plugin, il faut vérifier :
 			// -- que le type ne doit avoir aucune affectation de plugins car on sait que c'est une feuille
 			$where = array(
