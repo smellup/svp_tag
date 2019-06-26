@@ -189,10 +189,10 @@ function svptype_pre_edition($flux) {
  * Exclure les groupes de mots et le mots-clés relatifs à une typologie de plugin si le critère typologie_plugin
  * n'est pas explicitement utilisé.
  *
- * @param array $boucle
+ * @param object $boucle
  *     Description de la boucle
  *
- * @return array
+ * @return object
  *     Description complétée de la boucle
 **/
 function svptype_pre_boucle($boucle) {
@@ -200,15 +200,23 @@ function svptype_pre_boucle($boucle) {
 	if (($boucle->type_requete == 'mots')
 	or ($boucle->type_requete == 'groupes_mots')) {
 
-		$id_table = $boucle->id_table;
-		if (!isset($boucle->modificateur['typologie_plugin'])) {
+		$table = $boucle->id_table;
+		if (!isset($boucle->modificateur['criteres']['typologie_plugin'])
+		or !isset($boucle->modificateur['typologie_plugin'])) {
 			// Récupérer les id des groupes matérialisant les typologies.
 			include_spip('inc/config');
 			if ($typologies = lire_config('svptype/typologies', array())) {
 				$ids_groupe = array_column($typologies, 'id_groupe');
 
 				// Restreindre aux mots cles ou au groupes non typologiques.
-				$boucle->where[] = array("'NOT IN'", "'$id_table.id_groupe'", "'(".implode(',',$ids_groupe).")'");
+				$boucle->where[] = array(
+					"'NOT'",
+					array(
+						"'IN'",
+						"'${table}.id_groupe'",
+						"'(" . implode(',', $ids_groupe) . ")'"
+					)
+				);
 			}
 		}
 	}
