@@ -3,7 +3,7 @@
 [(#CONFIG{svptype/typologies/#GET{typologie}/mots_arborescents}|=={oui}|oui) #SET{typologie_arbo, oui}]
 #SET{title_modifier, #VAL{svptype:}|concat{#GET{typologie}_modifier_title}|_T}
 
-<B_liste_types>
+<B_demo_liste_types>
 <div class="liste-objets types_plugins[ (#GET{typologie})]">
 	<table class="spip liste">
 		[<caption>
@@ -18,7 +18,7 @@
 			</tr>
 		</thead>
 		<tbody>
-<BOUCLE_liste_types(MOTS)
+<BOUCLE_demo_liste_types(MOTS)
 	{technique=oui}
 	{typologie_plugin #ENV{typologie}}
 	{profondeur=0}
@@ -33,18 +33,18 @@
 				identifiant,
 				profondeur,
 				env} />
-</BOUCLE_liste_types>
+</BOUCLE_demo_liste_types>
 		</tbody>
 	</table>
 </div>
-</B_liste_types>
+</B_demo_liste_types>
 <div class="liste-objets types_plugins[ (#GET{typologie})] caption-wrap">
 	<strong class="caption">TYPE PLUGIN : AUCUN !</strong>
 </div>
-<//B_liste_types>
+<//B_demo_liste_types>
 
 <br />
-<B_mots_non_typologiques>
+<B_demo_mots_non_typologiques>
 <div class="liste-objets types_plugins">
 	<table class="spip liste">
 		<caption>
@@ -59,7 +59,7 @@
 		</tr>
 		</thead>
 		<tbody>
-<BOUCLE_mots_non_typologiques(MOTS)
+<BOUCLE_demo_mots_non_typologiques(MOTS)
 	{profondeur=0}
 	{tri titre}>
 			<tr class="[(#ENV{compteur_boucle}|alterner{row_odd,row_even})]">
@@ -76,12 +76,12 @@
 					#TYPE
 				</td>
 			</tr>
-</BOUCLE_mots_non_typologiques>
+</BOUCLE_demo_mots_non_typologiques>
 		</tbody>
 	</table>
 </div>
-</B_mots_non_typologiques>
+</B_demo_mots_non_typologiques>
 <div class="liste-objets types_plugins caption-wrap">
 	<strong class="caption">MOT-CLE NON TYPOLOGIQUE : AUCUN</strong>
 </div>
-<//B_mots_non_typologiques>
+<//B_demo_mots_non_typologiques>

@@ -197,8 +197,12 @@ function svptype_pre_edition($flux) {
 **/
 function svptype_pre_boucle($boucle) {
 
-	if (($boucle->type_requete == 'mots')
-	or ($boucle->type_requete == 'groupes_mots')) {
+	// Vérifier qu'on n'a pas un critère utilisant l'id de la table auquel cas on ne fait.
+	if ((($boucle->type_requete == 'mots')
+		and (!isset($boucle->modificateur['criteres']['id_mot']))
+		and (!isset($boucle->modificateur['criteres']['id_groupe'])))
+	or (($boucle->type_requete == 'groupes_mots')
+		and (!isset($boucle->modificateur['criteres']['id_groupe'])))) {
 		// Vérification de l'existence ou pas du critère {typologie_plugin}
 		$typologie_plugin = false;
 		foreach($boucle->criteres as $_critere){
