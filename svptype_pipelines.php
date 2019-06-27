@@ -186,7 +186,7 @@ function svptype_pre_edition($flux) {
 
 
 /**
- * Exclure les groupes de mots et le mots-clés relatifs à une typologie de plugin si le critère typologie_plugin
+ * Exclure les groupes de mots et les mots-clés relatifs à une typologie de plugin si le critère typologie_plugin
  * n'est pas explicitement utilisé.
  *
  * @param object $boucle
@@ -199,16 +199,26 @@ function svptype_pre_boucle($boucle) {
 
 	if (($boucle->type_requete == 'mots')
 	or ($boucle->type_requete == 'groupes_mots')) {
+		// Vérification de l'existence ou pas du critère {typologie_plugin}
+		$typologie_plugin = false;
+		foreach($boucle->criteres as $_critere){
+			if (isset($_critere->op)
+			and ($_critere->op == 'typologie_plugin')) {
+				$typologie_plugin = true;
+				break;
+			}
+		}
 
-		$table = $boucle->id_table;
-		if (!isset($boucle->modificateur['criteres']['typologie_plugin'])
-		or !isset($boucle->modificateur['typologie_plugin'])) {
+		// Si le critère n'est pas explicite dans la boucle, alors on exclut tous les types de plugins
+		// et les groupes typologiques du résultat que l'on soit dans l'espace privé ou public.
+		if (!$typologie_plugin) {
 			// Récupérer les id des groupes matérialisant les typologies.
 			include_spip('inc/config');
 			if ($typologies = lire_config('svptype/typologies', array())) {
 				$ids_groupe = array_column($typologies, 'id_groupe');
 
-				// Restreindre aux mots cles ou au groupes non typologiques.
+				// Restreindre aux mots-cles ou au groupes non typologiques.
+				$table = $boucle->id_table;
 				$boucle->where[] = array(
 					"'NOT'",
 					array(

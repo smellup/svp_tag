@@ -1,0 +1,87 @@
+#SET{typologie, #ENV{typologie, categorie}}
+#SET{typologie_arbo, ''}
+[(#CONFIG{svptype/typologies/#GET{typologie}/mots_arborescents}|=={oui}|oui) #SET{typologie_arbo, oui}]
+#SET{title_modifier, #VAL{svptype:}|concat{#GET{typologie}_modifier_title}|_T}
+
+<B_liste_types>
+<div class="liste-objets types_plugins[ (#GET{typologie})]">
+	<table class="spip liste">
+		[<caption>
+			<strong class="caption">(#ENV*{titre})</strong>
+		</caption>]
+		<thead>
+			<tr class="first_row">
+				<th class="titre" scope="col">[(#TRI{titre,<:svptype:identifiant_label:>,ajax})]</th>
+				<th class="nombre" scope="col">[(#TRI{type,<:svptype:plugin_compteur_label:>,ajax})]</th>
+				<th class="id" scope="col">[(#TRI{id_mot,<:info_numero_abbreviation:>,ajax})]</th>
+				<th class="action" scope="col">&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+<BOUCLE_liste_types(MOTS)
+	{technique=oui}
+	{typologie_plugin #ENV{typologie}}
+	{profondeur=0}
+	{tri identifiant}>
+			#SET{affectations_mot_racine, #GET{typologie}|type_plugin_compter_affectations{#ID_MOT|}}
+			<INCLURE{fond=prive/squelettes/inclure/inc-type_plugin,
+				typologie_arbo=#GET{typologie_arbo},
+				title_modifier=#GET{title_modifier},
+				compteur_boucle=#COMPTEUR_BOUCLE,
+				affectations_mot=#GET{affectations_mot_racine},
+				id_mot,
+				identifiant,
+				profondeur,
+				env} />
+</BOUCLE_liste_types>
+		</tbody>
+	</table>
+</div>
+</B_liste_types>
+<div class="liste-objets types_plugins[ (#GET{typologie})] caption-wrap">
+	<strong class="caption">TYPE PLUGIN : AUCUN !</strong>
+</div>
+<//B_liste_types>
+
+<br />
+<B_mots_non_typologiques>
+<div class="liste-objets types_plugins">
+	<table class="spip liste">
+		<caption>
+			<strong class="caption">MOTS NON TYPOLOGIQUES</strong>
+		</caption>
+		<thead>
+		<tr class="first_row">
+			<th class="titre" scope="col">[(#TRI{titre, Titre, ajax})]</th>
+			<th class="titre" scope="col">Identifiant</th>
+			<th class="id" scope="col">[(#TRI{id_mot,<:info_numero_abbreviation:>,ajax})]</th>
+			<th class="titre" scope="col">[(#TRI{type, Groupe, ajax})]</th>
+		</tr>
+		</thead>
+		<tbody>
+<BOUCLE_mots_non_typologiques(MOTS)
+	{profondeur=0}
+	{tri titre}>
+			<tr class="[(#ENV{compteur_boucle}|alterner{row_odd,row_even})]">
+				<td class="titre principale">
+					#TITRE
+				</td>
+				<td class="titre">
+					#IDENTIFIANT
+				</td>
+				<td class="id">
+					#ID_MOT
+				</td>
+				<td class="titre">
+					#TYPE
+				</td>
+			</tr>
+</BOUCLE_mots_non_typologiques>
+		</tbody>
+	</table>
+</div>
+</B_mots_non_typologiques>
+<div class="liste-objets types_plugins caption-wrap">
+	<strong class="caption">MOT-CLE NON TYPOLOGIQUE : AUCUN</strong>
+</div>
+<//B_mots_non_typologiques>
