@@ -1,6 +1,6 @@
 <?php
 
-include_spip('inc/svptype_typologie');
+include_spip('inc/svptype_type_plugin');
 
 function critere_typologie_plugin_dist($idb, &$boucles, $critere) {
 
@@ -12,7 +12,8 @@ function critere_typologie_plugin_dist($idb, &$boucles, $critere) {
 	// -- Initialisation avec le chargement de la fonction de calcul du critère.
 	$boucle->hash .= '
 	// TYPOLOGIE PLUGIN
-	$creer_where = \'typologie_plugin_construire_critere\';';
+	include_spip(\'inc/svptype_typologie\');
+	$conditionner = \'typologie_plugin_construire_condition\';';
 
 	// On identifie les typologies explicitement fournies dans le critère.
 	$typologies = array();
@@ -29,44 +30,6 @@ function critere_typologie_plugin_dist($idb, &$boucles, $critere) {
 
 	// On construit la condition en la calculant à l'exécution.
 	$boucle->hash .= '
-	$where = $creer_where(array(' . implode(',', $typologies) . '), \'' . $table . '\');';
+	$where = $conditionner(array(' . implode(',', $typologies) . '), \'' . $table . '\');';
 	$boucle->where[] = '$where';
-}
-
-function typologie_plugin_construire_critere($typologies, $table) {
-
-	// Initialisation de la condition pour le cas où la syntaxe serait en erreur :
-	// -- on annule l'effet du critère.
-	$condition = '1=1';
-
-	// Acquérir la configuration des typologies, en particulier pour les id des groupes.
-	include_spip('inc/config');
-	$configuration = lire_config('svptype/typologies', array());
-
-	// Construire la liste des id des groupes correspondants à ou aux typologies incluses dans le critère.
-	$ids_groupe = array();
-	if (!$typologies) {
-		// Le critère est de la forme {typologie_plugin} ou sa négation :
-		// -- on récupère toutes les typologies supportées.
-		$ids_groupe = array_column($configuration, 'id_groupe');
-	} else {
-		// Le critère est de la forme {typologie_plugin xxx}, {typologie_plugin #ENV[xxx}} ou sa négation :
-		// -- on parcourt tous les index du tableau des typologies pour trouver les id de groupe correspondants.
-		foreach ($typologies as $_typologie) {
-			if (isset($configuration[$_typologie])) {
-				$ids_groupe[] = $configuration[$_typologie]['id_groupe'];
-			}
-		}
-	}
-
-	// Construction de la condition.
-	if ($ids_groupe) {
-		if (count($ids_groupe) == 1) {
-			$condition = "${table}.id_groupe=" . $ids_groupe[0];
-		} else {
-			$condition = "'${table}.id_groupe' IN" . ' (' . implode(',', $ids_groupe) . ')';
-		}
-	}
-
-	return $condition;
 }

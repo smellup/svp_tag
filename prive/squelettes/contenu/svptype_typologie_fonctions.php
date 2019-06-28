@@ -16,10 +16,11 @@ function liste_type_plugin_filtrer($typologie, $type, $vue) {
 		include_spip('inc/config');
 		if ($config_typologie = lire_config("svptype/typologies/${typologie}", array())) {
 			// On détermine l'id et la profondeur du type.
-			include_spip('inc/svptype_mot');
-			if ($id = mot_lire_id($type)) {
+			include_spip('inc/svptype_type_plugin');
+			if ($type_plugin = type_plugin_lire($typologie, $type)) {
 				// On détermine la profondeur du type qui est plus fiable que de tester l'existence d'un "/".
-				$profondeur = mot_lire_profondeur($id);
+				$id = $type_plugin['id_mot'];
+				$profondeur = $type_plugin['profondeur'];
 
 				if (!$config_typologie['est_arborescente']
 				or ($config_typologie['est_arborescente'] and ($profondeur == 1))) {

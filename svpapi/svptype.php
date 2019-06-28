@@ -49,7 +49,7 @@ function categories_collectionner($filtres, $configuration) {
 		'profondeur',
 		'identifiant',
 	);
-	include_spip('inc/svptype_typologie');
+	include_spip('inc/svptype_type_plugin');
 	$collection = type_plugin_repertorier($typologie, $filtres, $informations);
 
 	// On refactore le tableau de sortie en un tableau associatif indexé par les identifiants de catégorie.
@@ -67,7 +67,7 @@ function categories_collectionner($filtres, $configuration) {
 
 			// Déterminer la liste des plugins affectés pour les catégories feuille.
 			if ($_categorie['profondeur'] == 1) {
-				$affectations = type_plugin_lister_affectation($typologie, $_categorie['identifiant']);
+				$affectations = type_plugin_affectation_repertorier($typologie, $_categorie['identifiant']);
 				$categorie['plugins'] = array_column($affectations, 'prefixe');
 			}
 
@@ -163,7 +163,7 @@ function plugins_verifier_critere_categorie($categorie, &$extra) {
 	$est_valide = true;
 
 	// Acquisition de la liste des catégories affectables.
-	include_spip('inc/svptype_typologie');
+	include_spip('inc/svptype_type_plugin');
 	$filtres = array('profondeur' => 1);
 	$informations = array('identifiant');
 	$categories = type_plugin_repertorier('categorie', $filtres, $informations);
@@ -194,7 +194,7 @@ function plugins_construire_critere_categorie($categorie) {
 	$condition = '0=1';
 
 	// On récupère les affectations de plugins pour la catégorie demandée
-	$affectations = type_plugin_lister_affectation('categorie', $categorie);
+	$affectations = type_plugin_affectation_repertorier('categorie', $categorie);
 
 	// Construction de la condition sur les préfixes
 	if ($affectations) {

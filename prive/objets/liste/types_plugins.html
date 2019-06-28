@@ -47,7 +47,7 @@
 	{recherche?}
 	{tri #ENV{par, identifiant}, #GET{defaut_tri}}
 	{pagination #ENV{nb,100}}>
-		#SET{affectations_mot_racine, #ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|}}
+		#SET{affectations_mot_racine, #ENV{typologie}|type_plugin_affectation_compter{#ID_MOT|}}
 		<INCLURE{fond=prive/squelettes/inclure/inc-type_plugin,
 			typologie_arbo=#GET{typologie_arbo},
 			title_modifier=#GET{title_modifier},
@@ -64,7 +64,7 @@
 			{typologie_plugin #ENV{typologie}}
 			{id_parent=#ID_MOT}
 			{tri #ENV{par, identifiant}, #GET{defaut_tri}}>
-			#SET{affectations_mot, #ENV{typologie}|type_plugin_compter_affectations{#ID_MOT|}}
+			#SET{affectations_mot, #ENV{typologie}|type_plugin_affectation_compter{#ID_MOT|}}
 			<INCLURE{fond=prive/squelettes/inclure/inc-type_plugin,
 				typologie_arbo=#GET{typologie_arbo},
 				title_modifier=#GET{title_modifier},
@@ -72,6 +72,7 @@
 				affectations_mot=#GET{affectations_mot},
 				id_mot,
 				identifiant,
+				titre,
 				profondeur,
 				env} />
 		</BOUCLE_liste_types_enfants>

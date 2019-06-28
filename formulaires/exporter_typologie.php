@@ -59,8 +59,9 @@ function formulaires_exporter_typologie_traiter($typologie, $type_data, $redirec
 	$retour = array();
 
 	// Extraction des données requises pour la typologie concernée.
-	include_spip('inc/svptype_typologie');
-	$exporter = "type_plugin_exporter_${type_data}";
+	include_spip('inc/svptype_type_plugin');
+	$objet = $type_data == 'liste' ? 'type_plugin' : "type_plugin_${type_data}";
+	$exporter = "${objet}_exporter";
 	$types = $exporter($typologie);
 
 	if ($types) {

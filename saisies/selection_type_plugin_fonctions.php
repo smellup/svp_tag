@@ -38,8 +38,8 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 	}
 	// - 'parent' : si non vide, on affiche que les enfants du type parent.
 	if (!empty($options['parent'])) {
-		include_spip('inc/svptype_mot');
-		$id_parent = mot_lire_id($options['parent']);
+		include_spip('inc/svptype_type_plugin');
+		$id_parent = type_plugin_lire($typologie, $options['parent'], 'id_mot');
 		$where[] = 'id_parent=' . $id_parent;
 	}
 

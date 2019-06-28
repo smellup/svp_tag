@@ -10,6 +10,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * Sur les mots appartenant à un groupe plugin :
  * - ajouter la saisie de l'identifiant juste avant le titre
  * - remplacer la saisie du parent par une saisie du type parent basée sur la saisie type_plugin.
+ * - remplacer la saisie du groupe par un hidden avec l'id du groupe qui ne peut pas être modifié.
  *
  * @pipeline formulaire_fond
  *
@@ -59,6 +60,19 @@ function svptype_formulaire_fond($flux) {
 				$flux['data'] = preg_replace(
 					$cherche,
 					$saisie_parent,
+					$flux['data'],
+					1
+				);
+			}
+
+			// Remplacement de la sélection du groupe de mots par un hidden avec l'id du groupe.
+			$hidden_id_groupe = "<input type=\"hidden\" name=\"id_groupe\" value=\"${id_groupe}\">";
+
+			$cherche = "/(<(li|div)[^>]*class=(?:'|\")editer editer_groupe_mot.*?<\/\\2>)/is";
+			if (preg_match($cherche, $flux['data'], $m)) {
+				$flux['data'] = preg_replace(
+					$cherche,
+					$hidden_id_groupe,
 					$flux['data'],
 					1
 				);

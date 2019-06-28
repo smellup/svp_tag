@@ -74,25 +74,6 @@ function mot_lire_profondeur($id_mot) {
 }
 
 
-function mot_lire_id($identifiant) {
-
-	static $ids_mot = array();
-
-	if (!isset($ids_mot[$identifiant])) {
-		$ids_mot[$identifiant] = 0;
-
-		$from = 'spip_mots';
-		$where = array('identifiant=' . sql_quote($identifiant));
-		$id = sql_getfetsel('id_mot', $from, $where);
-		if ($id !== null) {
-			$ids_mot[$identifiant] = intval($id);
-		}
-	}
-
-	return $ids_mot[$identifiant];
-}
-
-
 function mot_lire_identifiant($id_mot) {
 
 	static $identifiants = array();
