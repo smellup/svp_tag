@@ -14,15 +14,15 @@ function liste_type_plugin_filtrer($typologie, $type, $vue) {
 	if ($type) {
 		// Déterminer les informations de configuration de la typologie.
 		include_spip('inc/config');
-		if ($config = lire_config("svptype/typologies/${typologie}", array())) {
+		if ($config_typologie = lire_config("svptype/typologies/${typologie}", array())) {
 			// On détermine l'id et la profondeur du type.
 			include_spip('inc/svptype_mot');
 			if ($id = mot_lire_id($type)) {
 				// On détermine la profondeur du type qui est plus fiable que de tester l'existence d'un "/".
 				$profondeur = mot_lire_profondeur($id);
 
-				if (($config['mots_arborescents'] == 'non')
-				or ((($config['mots_arborescents'] == 'oui')) and ($profondeur == 1))) {
+				if (!$config_typologie['est_arborescente']
+				or ($config_typologie['est_arborescente'] and ($profondeur == 1))) {
 					// Le type est une feuille, on filtre sur son id.
 					$filtre = 'plugins_typologies.id_mot=' . $id;
 				} else {

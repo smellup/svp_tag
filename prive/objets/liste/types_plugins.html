@@ -6,7 +6,7 @@
 }})
 ]
 #SET{typologie_arbo, ''}
-[(#CONFIG{svptype/typologies/#ENV{typologie}/mots_arborescents}|=={oui}|oui)
+[(#CONFIG{svptype/typologies/#ENV{typologie}/est_arborescente}|oui)
 	#SET{typologie_arbo, oui}
 ]
 #SET{affectations, 0}
@@ -17,7 +17,7 @@
 <div class="liste-objets types_plugins[ (#ENV{typologie})]">
 <table class="spip liste">
 	[<caption>
-		<strong class="caption">(#ENV*{titre})</strong>
+		<strong class="caption">(#ENV*{titre_liste})</strong>
 		[(#GET{typologie_arbo}|oui)
 		<div class="filtre">
 			<form method="GET" action="#SELF" onChange="this.submit(); return true;">
@@ -55,6 +55,7 @@
 			affectations_mot=#GET{affectations_mot_racine},
 			id_mot,
 			identifiant,
+			titre,
 			profondeur,
 			env} />
 

@@ -14,7 +14,7 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 	$config_typologie = lire_config("svptype/typologies/${typologie}", array());
 
 	// Vérification des options.
-	if (!$config_typologie['est_arborescent']) {
+	if (!$config_typologie['est_arborescente']) {
 		// Seule l'option du titre est acceptée pour cette typologie car les types ne sont pas arborescents.
 		$options['niveau_affiche'] = '';
 		$options['optgroup'] = '';

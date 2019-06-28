@@ -1,6 +1,7 @@
 <tr class="[(#ENV{compteur_boucle}|alterner{row_odd,row_even})][(#ENV{typologie_arbo}|et{#PROFONDEUR|=={0}}|oui) racine]">
 	<td class="titre principale">
-		<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
+		<a href="[(#ID_MOT|generer_url_entite{mot})]"
+		   title="[(#TITRE|sinon{<:info_numero_abbreviation:> #ID_MOT}|attribut_html)]">
 		[(#ENV{typologie_arbo}|oui)
 			[(#PROFONDEUR|mostar_tabulation)]
 		]

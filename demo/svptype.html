@@ -1,6 +1,6 @@
 #SET{typologie, #ENV{typologie, categorie}}
 #SET{typologie_arbo, ''}
-[(#CONFIG{svptype/typologies/#GET{typologie}/mots_arborescents}|=={oui}|oui) #SET{typologie_arbo, oui}]
+[(#CONFIG{svptype/typologies/#GET{typologie}/est_arborescente}|oui) #SET{typologie_arbo, oui}]
 #SET{title_modifier, #VAL{svptype:}|concat{#GET{typologie}_modifier_title}|_T}
 
 <B_demo_liste_types>

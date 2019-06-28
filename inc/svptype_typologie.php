@@ -138,11 +138,11 @@ function type_plugin_importer_liste($typologie, $liste) {
 	$types_ajoutes = 0;
 
 	if ($liste) {
-		// Déterminer les informations du groupe typologique.
+		// Acquérir la configuration de la typologie.
 		include_spip('inc/config');
-		$groupe = lire_config("svptype/typologies/${typologie}", array());
+		$config_typologie = lire_config("svptype/typologies/${typologie}", array());
 
-		if ($id_groupe = intval($groupe['id_groupe'])) {
+		if ($id_groupe = intval($config_typologie['id_groupe'])) {
 			// Identification des champs acceptables pour un type.
 			include_spip('base/objets');
 			$description_table = lister_tables_objets_sql('spip_mots');
@@ -169,7 +169,7 @@ function type_plugin_importer_liste($typologie, $liste) {
 				// -- le groupe est arborescent
 				// -- il existe des sous-types dans le fichier pour le type racine
 				// -- on est sur que le type racine existe
-				if (($groupe['mots_arborescents'] == 'oui')
+				if ($config_typologie['est_arborescente']
 				and isset($_type['sous-types'])
 				and $id_type) {
 					// On insère les sous-types si ils ne sont pas déjà présentes dans la base.
@@ -209,9 +209,9 @@ function type_plugin_exporter_liste($typologie) {
 
 	// Déterminer les informations du groupe typologique.
 	include_spip('inc/config');
-	$groupe = lire_config("svptype/typologies/${typologie}", array());
+	$config_typologie = lire_config("svptype/typologies/${typologie}", array());
 
-	if ($id_groupe = intval($groupe['id_groupe'])) {
+	if ($id_groupe = intval($config_typologie['id_groupe'])) {
 		// Identification des champs exportables pour un type.
 		$champs = array('identifiant', 'titre', 'descriptif');
 
@@ -223,7 +223,7 @@ function type_plugin_exporter_liste($typologie) {
 
 		$types_racine = sql_allfetsel($champs, 'spip_mots', $where);
 		if ($types_racine) {
-			if ($groupe['mots_arborescents'] == 'oui') {
+			if ($config_typologie['est_arborescente']) {
 				include_spip('inc/svptype_mot');
 				$where[1] = 'profondeur=1';
 				foreach ($types_racine as $_cle => $_type) {
@@ -267,9 +267,9 @@ function type_plugin_importer_affectation($typologie, $affectations) {
 	if ($affectations) {
 		// Déterminer les informations du groupe typologique.
 		include_spip('inc/config');
-		$groupe = lire_config("svptype/typologies/${typologie}", array());
+		$config_typologie = lire_config("svptype/typologies/${typologie}", array());
 
-		if ($id_groupe = intval($groupe['id_groupe'])) {
+		if ($id_groupe = intval($config_typologie['id_groupe'])) {
 			// Initialisation d'un enregistrement d'affectation.
 			$set = array(
 				'id_groupe' => $id_groupe
@@ -295,8 +295,8 @@ function type_plugin_importer_affectation($typologie, $affectations) {
 							'prefixe=' . sql_quote($_affectation['prefixe']),
 							'id_groupe=' . $id_groupe
 						);
-						if (!$groupe['max_affectations']
-						or (sql_countsel('spip_plugins_typologies', $where) < $groupe['max_affectations'])) {
+						if (!$config_typologie['max_affectations']
+						or (sql_countsel('spip_plugins_typologies', $where) < $config_typologie['max_affectations'])) {
 							// On peut insérer la nouvelle affectation
 							$set['id_mot'] = $id_mot;
 							$set['prefixe'] = $_affectation['prefixe'];
@@ -319,12 +319,12 @@ function type_plugin_compter_affectations($typologie, $type) {
 
 	// Initialisations statiques pour les performances.
 	static $compteurs = array();
-	static $groupes = array();
+	static $configurations = array();
 
 	// Déterminer les informations du groupe typologique si il n'est pas encore stocké.
-	if (!isset($groupes[$typologie])) {
+	if (!isset($configurations[$typologie])) {
 		include_spip('inc/config');
-		$groupes[$typologie] = lire_config("svptype/typologies/${typologie}", array());
+		$configurations[$typologie] = lire_config("svptype/typologies/${typologie}", array());
 	}
 
 	// Le type est fourni soit sous forme de son identifiant soit de son id.
@@ -340,13 +340,13 @@ function type_plugin_compter_affectations($typologie, $type) {
 	// -- et les catégories feuille auxquelles sont attachés les plugins (auteur/extension)
 	if (!isset($compteurs[$id_mot])) {
 		// Initialisation de la condition sur le groupe de mots.
-		$where = array('id_groupe=' . intval($groupes[$typologie]['id_groupe']));
+		$where = array('id_groupe=' . intval($configurations[$typologie]['id_groupe']));
 
 		// Déterminer le mode de recherche suivant que :
 		// - la typologie est arborescente ou pas
 		// - le type est une racine ou une feuille.
 		$profondeur = mot_lire_profondeur($id_mot);
-		if (($groupes[$typologie]['mots_arborescents'] == 'oui')
+		if ($configurations[$typologie]['est_arborescente']
 		and ($profondeur == 0)) {
 			// La typologie est arborescente et le type est une racine, il faut établir la condition sur les mots
 			// feuille de cette racine.
