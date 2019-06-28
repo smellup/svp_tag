@@ -138,13 +138,13 @@ function typologie_creer_groupe() {
 	if (!empty($config['typologies'])) {
 		include_spip('action/editer_objet');
 		$config_modifiee = false;
-		foreach ($config['typologies'] as $_typologie => $_config) {
+		foreach ($config['typologies'] as $_typologie => $config_typologie) {
 			// On vérifie d'abord si le groupe existe déjà. Si oui, on ne fait rien.
-			if (!$_config['id_groupe']) {
+			if (!$config_typologie['id_groupe']) {
 				$groupe = array(
 					'titre'             => "typologie-${_typologie}-plugin",
 					'technique'         => 'oui',
-					'mots_arborescents' => $_config['est_arborescente'] ? 'oui' : 'non',
+					'mots_arborescents' => $config_typologie['est_arborescente'] ? 'oui' : 'non',
 					'tables_liees'      => '',
 					'minirezo'          => 'oui',
 					'comite'            => 'non',

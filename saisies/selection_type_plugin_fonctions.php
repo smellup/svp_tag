@@ -11,10 +11,10 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 
 	// Déterminer les informations du groupe typologique.
 	include_spip('inc/config');
-	$groupe = lire_config("svptype/typologies/${typologie}", array());
+	$config_typologie = lire_config("svptype/typologies/${typologie}", array());
 
 	// Vérification des options.
-	if ($groupe['mots_arborescents'] == 'non') {
+	if (!$config_typologie['est_arborescent']) {
 		// Seule l'option du titre est acceptée pour cette typologie car les types ne sont pas arborescents.
 		$options['niveau_affiche'] = '';
 		$options['optgroup'] = '';
@@ -32,7 +32,7 @@ function selection_type_plugin_peupler($typologie, $options = array()) {
 
 	// Calcul du where en fonction des options :
 	// - 'niveau_affiche' : si vide, on affiche tout, sinon on affiche un niveau donné.
-	$where = array('id_groupe=' . intval($groupe['id_groupe']));
+	$where = array('id_groupe=' . intval($config_typologie['id_groupe']));
 	if (!empty($options['niveau_affiche'])) {
 		$where[] = 'profondeur=' . ($options['niveau_affiche'] == 'racine' ? 0 : 1);
 	}
