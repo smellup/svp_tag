@@ -6,9 +6,9 @@
 <B_demo_liste_types>
 <div class="liste-objets types_plugins[ (#GET{typologie})]">
 	<table class="spip liste">
-		[<caption>
-			<strong class="caption">(#ENV*{titre})</strong>
-		</caption>]
+		<caption>
+			<strong class="caption">TYPES PLUGIN</strong>
+		</caption>
 		<thead>
 			<tr class="first_row">
 				<th class="titre" scope="col">[(#TRI{titre,<:svptype:identifiant_label:>,ajax})]</th>
@@ -31,6 +31,7 @@
 				affectations_mot=#GET{affectations_mot_racine},
 				id_mot,
 				identifiant,
+				titre,
 				profondeur,
 				env} />
 </BOUCLE_demo_liste_types>
