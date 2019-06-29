@@ -23,7 +23,7 @@
 	{typologie_plugin #ENV{typologie}}
 	{profondeur=0}
 	{tri identifiant}>
-			#SET{affectations_mot_racine, #GET{typologie}|type_plugin_affectation_compter{#ID_MOT|}}
+			#SET{affectations_mot_racine, #GET{typologie}|type_plugin_compter_affectation{#ID_MOT|}}
 			<INCLURE{fond=prive/squelettes/inclure/inc-type_plugin,
 				typologie_arbo=#GET{typologie_arbo},
 				title_modifier=#GET{title_modifier},

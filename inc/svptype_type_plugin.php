@@ -1,32 +1,30 @@
 <?php
 /**
- * Ce fichier contient l'API de gestion des types de plugin et de leurs affectations aux plugins.
+ * Ce fichier contient l'API de gestion des types de plugin.
+ *
+ * @package SPIP\SVPTYPE\TYPE_PLUGIN\API
  */
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
 
-// -----------------------------------------------------------------------
-// -------------------------- TYPES DE PLUGIN ----------------------------
-// -----------------------------------------------------------------------
-
 /**
- * Retourne la description complète du type de plugin ou une information donnée uniquement.
+ * Retourne la description complète du type de plugin ou uniquement une information précise.
  *
  * @api
  *
  * @param string     $typologie
- *        Identifiant de la page ou de la composition.
- * @param string|int $type
- *        Information spécifique à retourner ou vide pour retourner toute la description.
+ *        Typologie concernée : categorie, tag... Ne sert que si le type est passé sous forme du champ `identifiant`
+ *        qui n'est unique qu'au sein d'une même typologie.
+ * @param int|string $type
+ *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
  * @param string     $information
- *        Information spécifique à retourner ou vide pour retourner toute la description.
+ *        Champ spécifique à retourner ou vide pour retourner toute la description.
  *
  * @return array|string
  *        La description complète ou un champ précis demandé pour une page donnée. Les champs
- *        de type tableau sont systématiquement désérialisés et si demandé, les champs textuels peuvent être
- *        traités avec la fonction typo().
+ *        de type entier sont traités avec la fonction intval() avant d'être fournis.
  */
 function type_plugin_lire($typologie, $type, $information = '') {
 
@@ -87,19 +85,21 @@ function type_plugin_lire($typologie, $type, $information = '') {
 
 
 /**
- * Renvoie l'information brute demandée pour l'ensemble des types concernés
+ * Renvoie l'information brute demandée pour l'ensemble des types de plugins d'une typologie donnée
  * ou toute les descriptions si aucune information n'est explicitement demandée.
  *
+ * @api
+ *
  * @param string $typologie
- *        Typologie concernée : categorie ou tag.
+ *        Typologie concernée : categorie, tag...
  * @param array  $filtres
- *        Identifiant d'un champ de la description d'un contrôle.
+ *        Liste des couples (champ, valeur) ou tableau vide.
  * @param array  $informations
- *        Identifiant d'un champ ou plusieurs champs de la description d'un type de plugin.
+ *        Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
  *        Si l'argument est vide, la fonction renvoie les descriptions complètes.
  *
  * @return array
- *        Tableau de la forme `[type_controle]  information ou description complète`.
+ *        Description complète ou information précise pour chaque type de plugin de la typologie concernée.
  */
 function type_plugin_repertorier($typologie, $filtres = array(), $informations = array()) {
 
@@ -144,170 +144,29 @@ function type_plugin_repertorier($typologie, $filtres = array(), $informations =
 
 
 /**
- * Importe une liste de types appartenant à la même typologie.
+ * Renvoie les affectations (type de plugin, plugin) pour une typologie donnée.
  *
- * @param string $typologie
- *        Typologie concernée : categorie ou tag.
- * @param array  $liste
- *        Tableau des types présenté comme une arborescence ou à plat suivant la typologie.
+ * @api
  *
- * @return bool|int
- *         Nombre de catégories ajoutées.
- */
-function type_plugin_importer($typologie, $liste) {
-
-	// Initialisation du nombre de types ajoutés.
-	$types_ajoutes = 0;
-
-	if ($liste) {
-		// Acquérir la configuration de la typologie.
-		include_spip('inc/config');
-		$config_typologie = lire_config("svptype/typologies/${typologie}", array());
-
-		if ($id_groupe = intval($config_typologie['id_groupe'])) {
-			// Identification des champs acceptables pour un type.
-			include_spip('base/objets');
-			$description_table = lister_tables_objets_sql('spip_mots');
-			$champs = $description_table['field'];
-
-			include_spip('action/editer_objet');
-			include_spip('inc/svptype_mot');
-			foreach ($liste as $_type) {
-				// On teste l'existence du type racine :
-				// - si il n'existe pas on le rajoute,
-				// - sinon on ne fait rien.
-				// Dans tous les cas, on réserve l'id.
-				if (!$id_type = type_plugin_lire($typologie, $_type['identifiant'], 'id_mot')) {
-					// On insère le type racine (id_parent à 0).
-					$set = array_intersect_key($_type, $champs);
-					$set['id_parent'] = 0;
-					$id_type = objet_inserer('mot', $id_groupe, $set);
-
-					// Enregistrement du type ajouté.
-					++$types_ajoutes;
-				}
-
-				// On traite maintenant les sous-types si :
-				// -- le groupe est arborescent
-				// -- il existe des sous-types dans le fichier pour le type racine
-				// -- on est sur que le type racine existe
-				if ($config_typologie['est_arborescente']
-				and isset($_type['sous-types'])
-				and $id_type) {
-					// On insère les sous-types si ils ne sont pas déjà présentes dans la base.
-					foreach ($_type['sous-types'] as $_sous_type) {
-						if (!type_plugin_lire($typologie, $_sous_type['identifiant'], 'id_mot')) {
-							// On insère le sous-type feuille sous son parent (un seul niveau permis).
-							$set = array_intersect_key($_sous_type, $champs);
-							$set['id_parent'] = $id_type;
-							if (objet_inserer('mot', $id_groupe, $set)) {
-								// Enregistrement du type ajouté.
-								++$types_ajoutes;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return $types_ajoutes;
-}
-
-
-/**
- * Importe une liste de types appartenant à la même typologie.
- *
- * @param string $typologie
- *        Typologie concernée : categorie ou tag.
+ * @param string     $typologie
+ *        Typologie concernée : categorie, tag...
+ * @param int|string $type
+ *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
  *
  * @return array
- *         Tableau des types exportés.
+ *        Description de chaque affectation (type de plugin, plugin) de la typologie concernée.
  */
-function type_plugin_exporter($typologie) {
-
-	// Initialisation du nombre de types ajoutés.
-	$types_exportes = array();
-
-	// Déterminer les informations du groupe typologique.
-	include_spip('inc/config');
-	$config_typologie = lire_config("svptype/typologies/${typologie}", array());
-
-	if ($id_groupe = intval($config_typologie['id_groupe'])) {
-		// Identification des champs exportables pour un type.
-		$champs = array('identifiant', 'titre', 'descriptif');
-
-		// Extraction de tous les types racine pour la typologie concernée.
-		// -- si la typologie est arborescente, les feuilles sont de profondeur 1 et sont acquises par la suite.
-		$where = array(
-			'id_groupe=' . $id_groupe, 'profondeur=0'
-		);
-
-		$types_racine = sql_allfetsel($champs, 'spip_mots', $where);
-		if ($types_racine) {
-			if ($config_typologie['est_arborescente']) {
-				include_spip('inc/svptype_mot');
-				$where[1] = 'profondeur=1';
-				foreach ($types_racine as $_cle => $_type) {
-					// Recherche des types enfants qui sont forcément des feuilles.
-					$where = 'id_parent=' . type_plugin_lire($typologie, $_type['identifiant'], 'id_mot');
-					$types_feuille = sql_allfetsel($champs, 'spip_mots', $where);
-
-					// Construction du tableau arborescent des types
-					$types_exportes[$_cle] = $_type;
-					if ($types_feuille) {
-						$types_exportes[$_cle]['sous-types'] = $types_feuille;
-					}
-				}
-			} else {
-				$types_exportes = $types_racine;
-			}
-		}
-	}
-
-	return $types_exportes;
-}
-
-
-function type_plugin_compter_enfants($typologie, $type) {
-
-	// Le type de plugin peut être fourni soit par son id_mot soit par le couple (typologie, identifiant)
-	// -- on cherche d'abord à déterminer l'id du mot-clé.
-	$id_mot = type_plugin_lire($typologie, $type, 'id_mot');
-
-	// On acquiert les enfants éventuels du type et on en calcule le nombre.
-	include_spip('inc/svptype_mot');
-	$nb_enfants = count(mot_lire_enfants($id_mot));
-
-	return $nb_enfants;
-}
-
-
-// -----------------------------------------------------------------------
-// ------------------ AFFECTATIONS DE TYPES DE PLUGIN --------------------
-// -----------------------------------------------------------------------
-
-/**
- * Renvoie les affectations aux plugins pour une typologie donnée.
- *
- * @param string $typologie
- *        Typologie concernée : categorie ou tag.
- * @param string $type
- *        Valeur d'un type donné pour la typologie concernée.
- *
- * @return array
- */
-function type_plugin_affectation_repertorier($typologie, $type = '') {
+function type_plugin_repertorier_affectation($typologie, $type = '') {
 
 	// Utilisation d'une statique pour éviter les requêtes multiples sur le même hit.
 	static $affectations = array();
 
 	if (!isset($affectations[$typologie])) {
-		// On récupère l'id du groupe pour le type précisé (categorie, tag).
+		// On récupère l'id du groupe pour la typologie concernée.
 		include_spip('inc/config');
 		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
 
-		// On récupère la description complète de toutes les catégories de plugin
+		// On récupère la description complète de toutes les types de plugin de la typologies concernée.
 		$from = array('spip_plugins_typologies', 'spip_mots');
 		$select = array(
 			'spip_plugins_typologies.id_groupe',
@@ -327,14 +186,15 @@ function type_plugin_affectation_repertorier($typologie, $type = '') {
 	if (!$type) {
 		$affectations_filtrees = $affectations[$typologie];
 	} else {
-		// Récupération de l'id du type
-		include_spip('inc/svptype_mot');
-		$id_type = type_plugin_lire($typologie, $type, 'id_mot');
+		// Récupération de l'id du type suivant la nature de l'argument $type.
+		if (!$id_mot = intval($type)) {
+			$id_mot = type_plugin_lire($typologie, $type, 'id_mot');
+		}
 
 		// Extraction des seules affectations au type.
 		$affectations_filtrees = array();
 		foreach ($affectations[$typologie] as $_affectation) {
-			if ($_affectation['id_mot'] == $id_type) {
+			if ($_affectation['id_mot'] == $id_mot) {
 				$affectations_filtrees[] = $_affectation;
 			}
 		}
@@ -345,146 +205,86 @@ function type_plugin_affectation_repertorier($typologie, $type = '') {
 
 
 /**
- * Importe une liste d'affectation type-plugin pour une typologie donnée.
- * Le format du fichier est indépendant de la typologie.
+ * Dénombre les types de plugin enfants d'un type d'une typologie donnée.
  *
- * @param string $typologie
- *        Typologie concernée : categorie ou tag.
- * @param array  $affectations
- *        Tableau des affectations type-plugin (agnostique vis-à-vis de la typologie).
+ * @api
+ *
+ * @param string     $typologie
+ *        Typologie concernée : categorie, tag...
+ * @param int|string $type
+ *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
  *
  * @return int
- *         Nombre d'affectations ajoutées.
+ *         Nombre d'enfants d'un type de plugin ou 0 si aucun.
  */
-function type_plugin_affectation_importer($typologie, $affectations) {
-
-	// Initialisation du nombre d'affectations catégorie-plugin ajoutées.
-	$nb_affectations_ajoutees = 0;
-
-	if ($affectations) {
-		// Déterminer les informations du groupe typologique.
-		include_spip('inc/config');
-		$config_typologie = lire_config("svptype/typologies/${typologie}", array());
-
-		if ($id_groupe = intval($config_typologie['id_groupe'])) {
-			// Initialisation d'un enregistrement d'affectation.
-			$set = array(
-				'id_groupe' => $id_groupe
-			);
-
-			include_spip('inc/svptype_mot');
-			foreach ($affectations as $_affectation) {
-				// On contrôle tout d'abord que l'affectation est correcte :
-				// -- type et préfixe sont renseignés,
-				// -- le type existe dans la base.
-				if (!empty($_affectation['type'])
-				and !empty($_affectation['prefixe'])
-				and ($id_mot = type_plugin_lire($typologie, $_affectation['type'], 'id_mot'))) {
-					// On vérifie que l'affectation n'existe pas déjà pour la typologie.
-					$where = array(
-						'id_mot=' . $id_mot,
-						'prefixe=' . sql_quote($_affectation['prefixe'])
-					);
-					if (!sql_countsel('spip_plugins_typologies', $where)) {
-						// In fine, on vérifie que le nombre maximal d'affectations pour un plugin n'est pas atteint
-						// pour la typologie.
-						$where = array(
-							'prefixe=' . sql_quote($_affectation['prefixe']),
-							'id_groupe=' . $id_groupe
-						);
-						if (!$config_typologie['max_affectations']
-						or (sql_countsel('spip_plugins_typologies', $where) < $config_typologie['max_affectations'])) {
-							// On peut insérer la nouvelle affectation
-							$set['id_mot'] = $id_mot;
-							$set['prefixe'] = $_affectation['prefixe'];
-							if (sql_insertq('spip_plugins_typologies', $set)) {
-								// Enregistrement de l'ajout de l'affectation.
-								++$nb_affectations_ajoutees;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return $nb_affectations_ajoutees;
-}
-
-
-/**
- * Importe une liste de types appartenant à la même typologie.
- *
- * @param string $typologie
- *        Typologie concernée : categorie ou tag.
- *
- * @return array
- *         Tableau des types exportés.
- */
-function type_plugin_affectation_exporter($typologie) {
-
-	// Initialisation du nombre de types ajoutés.
-	$affectations_exportees = array();
-
-	// Déterminer les informations du groupe typologique.
-	include_spip('inc/config');
-	$config_typologie = lire_config("svptype/typologies/${typologie}", array());
-
-	if ($id_groupe = intval($config_typologie['id_groupe'])) {
-		// On récupère le préfixe et l'identifiant du type via une jointure avec spip_mots.
-		$from = array('spip_plugins_typologies', 'spip_mots');
-		$select = array(
-			'spip_plugins_typologies.prefixe',
-			'spip_mots.identifiant'
-		);
-		$where = array(
-			'spip_plugins_typologies.id_groupe=' . $id_groupe,
-			'spip_plugins_typologies.id_mot=spip_mots.id_mot'
-		);
-
-		$affectations_exportees = sql_allfetsel($select, $from, $where);
-	}
-
-	return $affectations_exportees;
-}
-
-
-function type_plugin_affectation_compter($typologie, $type) {
+function type_plugin_compter_enfant($typologie, $type) {
 
 	// Initialisations statiques pour les performances.
 	static $compteurs = array();
-	static $configurations = array();
-
-	// Déterminer les informations du groupe typologique si il n'est pas encore stocké.
-	if (!isset($configurations[$typologie])) {
-		include_spip('inc/config');
-		$configurations[$typologie] = lire_config("svptype/typologies/${typologie}", array());
-	}
 
 	// Le type est fourni soit sous forme de son identifiant soit de son id.
 	// On calcule dans tous les cas l'id.
-	include_spip('inc/svptype_mot');
 	if (!$id_mot = intval($type)) {
 		// On a passé l'identifiant, il faut déterminer l'id du mot.
 		$id_mot = type_plugin_lire($typologie, $type, 'id_mot');
 	}
+
+	// On acquiert les enfants éventuels du type et on en calcule le nombre.
+	if (!isset($compteurs[$id_mot])) {
+		include_spip('inc/svptype_mot');
+		$compteurs[$id_mot] = count(mot_lire_enfants($id_mot));
+	}
+
+	return $compteurs[$id_mot];
+}
+
+
+/**
+ * Dénombre les affectations (type de plugin, plugin) d'un type d'une typologie.
+ *
+ * @api
+ *
+ * @param string     $typologie
+ *        Typologie concernée : categorie, tag...
+ * @param int|string $type
+ *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
+ *
+ * @return int
+ *         Nombre d'affectations (type de plugin, plugin) d'un type de plugin ou 0 si aucun.
+ */
+function type_plugin_compter_affectation($typologie, $type) {
+
+	// Initialisations statiques pour les performances.
+	static $compteurs = array();
+	static $configurations_typologie = array();
+
+	// Déterminer les informations du groupe typologique si il n'est pas encore stocké.
+	if (!isset($configurations_typologie[$typologie])) {
+		include_spip('inc/config');
+		$configurations_typologie[$typologie] = lire_config("svptype/typologies/${typologie}", array());
+	}
+
+	// Le type est fourni soit sous forme de son identifiant soit de son id.
+	// Extrait les informations du type de plugin pour utiliser id_mot et profondeur.
+	$description_type = type_plugin_lire($typologie, $type);
+	$id_mot = $description_type['id_mot'];
 
 	// Recherche des affectations de plugin. Pour les catégories qui sont arborescentes, il faut distinguer :
 	// -- les catégories de regroupement comme auteur
 	// -- et les catégories feuille auxquelles sont attachés les plugins (auteur/extension)
 	if (!isset($compteurs[$id_mot])) {
 		// Initialisation de la condition sur le groupe de mots.
-		$where = array('id_groupe=' . intval($configurations[$typologie]['id_groupe']));
+		$where = array('id_groupe=' . intval($configurations_typologie[$typologie]['id_groupe']));
 
 		// Déterminer le mode de recherche suivant que :
 		// - la typologie est arborescente ou pas
 		// - le type est une racine ou une feuille.
-		$profondeur = mot_lire_profondeur($id_mot);
-		if ($configurations[$typologie]['est_arborescente']
-		and ($profondeur == 0)) {
+		if ($configurations_typologie[$typologie]['est_arborescente']
+		and ($description_type['profondeur'] == 0)) {
 			// La typologie est arborescente et le type est une racine, il faut établir la condition sur les mots
 			// feuille de cette racine.
 			// -- On recherche les id_mot des feuilles de la racine
+			include_spip('inc/svptype_mot');
 			$ids_enfant = mot_lire_enfants($id_mot);
 			$where[] = sql_in('id_mot', $ids_enfant);
 		} else {

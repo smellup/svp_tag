@@ -2,7 +2,7 @@
 /**
  * Ce fichier contient l'ensemble des fonctions de service spécifiques à une collection.
  *
- * @package SPIP\SVPAPI\SERVICE
+ * @package SPIP\SVPTYPE\SVPAPI\SERVICE
  */
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
@@ -67,7 +67,7 @@ function categories_collectionner($filtres, $configuration) {
 
 			// Déterminer la liste des plugins affectés pour les catégories feuille.
 			if ($_categorie['profondeur'] == 1) {
-				$affectations = type_plugin_affectation_repertorier($typologie, $_categorie['identifiant']);
+				$affectations = type_plugin_repertorier_affectation($typologie, $_categorie['identifiant']);
 				$categorie['plugins'] = array_column($affectations, 'prefixe');
 			}
 
@@ -194,7 +194,7 @@ function plugins_construire_critere_categorie($categorie) {
 	$condition = '0=1';
 
 	// On récupère les affectations de plugins pour la catégorie demandée
-	$affectations = type_plugin_affectation_repertorier('categorie', $categorie);
+	$affectations = type_plugin_repertorier_affectation('categorie', $categorie);
 
 	// Construction de la condition sur les préfixes
 	if ($affectations) {

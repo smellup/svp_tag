@@ -15,10 +15,10 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @pipeline formulaire_fond
  *
  * @param array $flux
- * 		Données du pipeline
+ * 	      Données du pipeline
  *
  * @return array
- * 		Données du pipeline complétées
+ * 	       Données du pipeline complétées
 **/
 function svptype_formulaire_fond($flux) {
 
@@ -95,10 +95,10 @@ function svptype_formulaire_fond($flux) {
  * @pipeline formulaire_verifier
  *
  * @param array $flux
- * 		Données du pipeline
+ * 	      Données du pipeline
  *
  * @return array
- * 		Données du pipeline complétées
+ * 	       Données du pipeline complétées
 **/
 function svptype_formulaire_verifier($flux) {
 
@@ -141,10 +141,10 @@ function svptype_formulaire_verifier($flux) {
  * @pipeline pre_insertion
  *
  * @param array $flux
- *     Données du pipeline
+ * 	      Données du pipeline
  *
  * @return array
- *     Données du pipeline complétées
+ * 	       Données du pipeline complétées
  **/
 function svptype_pre_insertion($flux) {
 
@@ -174,10 +174,10 @@ function svptype_pre_insertion($flux) {
  * @pipeline pre_edition
  *
  * @param array $flux
- *     Données du pipeline
+ * 	      Données du pipeline
  *
  * @return array
- *     Données du pipeline complétées
+ * 	       Données du pipeline complétées
 **/
 function svptype_pre_edition($flux) {
 
@@ -204,10 +204,10 @@ function svptype_pre_edition($flux) {
  * n'est pas explicitement utilisé.
  *
  * @param object $boucle
- *     Description de la boucle
+ *        Description de la boucle.
  *
  * @return object
- *     Description complétée de la boucle
+ *         Description complétée de la boucle.
 **/
 function svptype_pre_boucle($boucle) {
 
@@ -254,13 +254,15 @@ function svptype_pre_boucle($boucle) {
 
 
 /**
- * Ajouter le champs identifiant dans l'affichage d'un mot plugin.
+ * Ajoute le champs identifiant dans l'affichage d'un mot plugin.
  *
  * @pipeline afficher_contenu_objet
  *
- * @param array $flux Données du pipeline
+ * @param array $flux
+ * 	      Données du pipeline
  *
- * @return array      Données du pipeline
+ * @return array
+ * 	       Données du pipeline complétées
 **/
 function svptype_afficher_contenu_objet($flux) {
 
@@ -287,24 +289,32 @@ function svptype_afficher_contenu_objet($flux) {
 }
 
 
+/**
+ * Déclare de nouvelles collections (les typologies, les affectations) et met à jour les collections
+ * existantes déjà déclarées par SVP API (plugins).
+ *
+ * @pipeline declarer_collections_svp
+ *
+ * @param array $collections
+ * 	      Configuration des collections déjà déclarées.
+ *
+ * @return array
+ * 	       Collections complétées.
+ */
 function svptype_declarer_collections_svp($collections) {
 
-	// Les index désignent les collections.
-	// -- SVP Typologie rajoute les collections, catégories, tags et les affectations de types.
-	$collections['categories'] = array(
-		'module'    => 'svptype',
-		'filtres'   => array(
-			array(
-				'critere' => 'profondeur'
-			)
-		)
-	);
+	// Les index désignent les collections. SVP Typologie rajoute :
+	// -- les collections correspondant aux typologies supportées
+	include_spip('inc/config');
+	$configurations_collection = array_column(lire_config('svptype/typologies', array()), 'collection');
+	foreach ($configurations_collection as $_collection) {
+		// Le nom d'une collection est l'index du tableau de déclaration.
+		$collections[$_collection['nom']] = $_collection;
+		// Inutile donc de garder le nom dans le tableau.
+		unset($collections[$_collection['nom']]['nom']);
+	}
 
-	$collections['tags'] = array(
-		'module'    => 'svptype',
-		'filtres'   => array()
-	);
-
+	// -- la collection des affectations.
 	$collections['affectations'] = array(
 		'module'    => 'svptype',
 		'filtres'   => array(
@@ -317,7 +327,7 @@ function svptype_declarer_collections_svp($collections) {
 		)
 	);
 
-	// -- SVP Typologie rajoute le filtre de catégorie dans la collection plugins.
+	// -- SVP Typologie rajoute le filtre de catégorie dans la collection plugins proposée par défaut par SVP API.
 	$collections['plugins']['filtres'][] = array(
 		'critere' => 'categorie',
 		'module'  => 'svptype'
@@ -336,10 +346,10 @@ function svptype_declarer_collections_svp($collections) {
  * @pipeline post_collection_svp
  *
  * @param array $flux
- *     Données du pipeline
+ * 	      Données du pipeline
  *
  * @return array
- *     Données du pipeline complétées
+ * 	       Données du pipeline complétées
 **/
 function svptype_post_collection_svp($flux) {
 
@@ -375,10 +385,10 @@ function svptype_post_collection_svp($flux) {
  * @pipeline post_collection_svp
  *
  * @param array $flux
- *     Données du pipeline
+ * 	      Données du pipeline
  *
  * @return array
- *     Données du pipeline complétées
+ * 	       Données du pipeline complétées
 **/
 function svptype_post_ressource_svp($flux) {
 

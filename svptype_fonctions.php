@@ -1,7 +1,42 @@
 <?php
+/**
+ * Ce fichier contient les filtres nécessaires aux squelettes de SVP Typologie.
+ */
+if (!defined('_ECRIRE_INC_VERSION')) {
+	return;
+}
 
+// La plupart des fonction d'API des types de plugin sont utilisés dans les squelettes.
 include_spip('inc/svptype_type_plugin');
 
+/**
+ * Critère de restriction d'une boucle mots ou groupes de mots à une ou plusieurs typologies de plugin.
+ * Ce critère ne supporte pas la négation.
+ *
+ * Fonctionne sur les tables spip_mots et spip_groupes_mots.
+ *
+ * @package SPIP\SVPTYPE\TYPOLOGIE_PLUGIN\CRITERE
+ *
+ * @uses typologie_plugin_elaborer_critere()
+ *
+ * @critere
+ *
+ * @example
+ *   {typologie_plugin}, pour intégrer toutes les typologies supportées dans la boucle
+ *   {typologie_plugin categorie}
+ *   {typologie_plugin categorie,tag}
+ *   {typologie_plugin #ENV{typologie}}, #ENV{typologie} désigne forcément une unique typologie
+ *   {typologie_plugin #GET{typologie}}, #GET{typologie} désigne forcément une unique typologie
+ *
+ * @param string  $idb
+ *        Identifiant de la boucle.
+ * @param array $boucles
+ *        AST du squelette.
+ * @param Critere $critere
+ *        Paramètres du critère dans la boucle.
+ *
+ * @return void
+ */
 function critere_typologie_plugin_dist($idb, &$boucles, $critere) {
 
 	// Initialisation de la table (spip_mots ou spip_groupes_mots) et de la boucle concernée.
@@ -13,7 +48,7 @@ function critere_typologie_plugin_dist($idb, &$boucles, $critere) {
 	$boucle->hash .= '
 	// TYPOLOGIE PLUGIN
 	include_spip(\'inc/svptype_typologie\');
-	$conditionner = \'typologie_plugin_construire_condition\';';
+	$conditionner = \'typologie_plugin_elaborer_critere\';';
 
 	// On identifie les typologies explicitement fournies dans le critère.
 	$typologies = array();
