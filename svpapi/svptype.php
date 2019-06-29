@@ -27,54 +27,12 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  */
 function categories_collectionner($filtres, $configuration) {
 
-	// Initialisation de la collection
-	$categories = array();
-
 	// Initialisation de la typologie
 	$typologie = 'categorie';
 
-	// Récupérer les informations sur le groupe de mots.
-	include_spip('inc/config');
-	$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
-	$select = array('titre', 'identifiant');
-	$where = array('id_groupe=' . intval($id_groupe));
-	$categories['groupe'] = sql_fetsel($select, 'spip_groupes_mots', $where);
-
-	// Récupérer la liste des catégories (filtrée ou pas).
-	// -- Extraction des seuls champs significatifs.
-	$informations = array(
-		'titre',
-		'descriptif',
-		'id_parent',
-		'profondeur',
-		'identifiant',
-	);
-	include_spip('inc/svptype_type_plugin');
-	$collection = type_plugin_repertorier($typologie, $filtres, $informations);
-
-	// On refactore le tableau de sortie en un tableau associatif indexé par les identifiants de catégorie.
-	include_spip('inc/svptype_mot');
-	if ($collection) {
-		$categories['categories'] = array();
-		foreach ($collection as $_categorie) {
-			$categorie = $_categorie;
-
-			// Identification du parent et suppression de l'id_parent qui devient inutile.
-			$categorie['parent'] = $_categorie['id_parent']
-				? mot_lire_identifiant($_categorie['id_parent'])
-				: '';
-			unset($categorie['id_parent']);
-
-			// Déterminer la liste des plugins affectés pour les catégories feuille.
-			if ($_categorie['profondeur'] == 1) {
-				$affectations = type_plugin_repertorier_affectation($typologie, $_categorie['identifiant']);
-				$categorie['plugins'] = array_column($affectations, 'prefixe');
-			}
-
-			// Ajout au tableau de sortie avec l'identifiant en index
-			$categories['categories'][$_categorie['identifiant']] = $categorie;
-		}
-	}
+	// Récupérer la collection demandée.
+	include_spip('inc/svptype_typologie');
+	$categories = typologie_plugin_collectionner($typologie, $filtres);
 
 	return $categories;
 }
@@ -84,7 +42,28 @@ function categories_collectionner($filtres, $configuration) {
 // ------------------------------- TAGS ----------------------------------
 // -----------------------------------------------------------------------
 
+/**
+ * Récupère la liste des tags de la table spip_mots.
+ *
+ * @param array $filtres
+ *      Tableau des critères de filtrage additionnels: toujours vide pour les tags.
+ * @param array $configuration
+ *      Configuration de la collection catégories utile pour savoir quelle fonction appeler pour construire
+ *      chaque filtre.
+ *
+ * @return array
+ *      Tableau des catégories.
+ */
 function tags_collectionner($filtres, $configuration) {
+
+	// Initialisation de la typologie
+	$typologie = 'tag';
+
+	// Récupérer la collection demandée.
+	include_spip('inc/svptype_typologie');
+	$tags = typologie_plugin_collectionner($typologie, $filtres);
+
+	return $tags;
 }
 
 
@@ -118,9 +97,9 @@ function affectations_collectionner($filtres, $configuration) {
 		// Récupérer les informations sur le groupe de mots matérialisant cette typologie.
 		include_spip('inc/config');
 		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
-		$select = array('titre', 'identifiant');
+		$select = array('titre');
 		$where = array('id_groupe=' . intval($id_groupe));
-		$affectations['groupe'] = sql_fetsel($select, 'spip_groupes_mots', $where);
+		$affectations['typologie'] = sql_fetsel($select, 'spip_groupes_mots', $where);
 
 		// On supprime la typologie des filtres car le traitement est particulier
 		unset($filtres['typologie']);
@@ -194,6 +173,7 @@ function plugins_construire_critere_categorie($categorie) {
 	$condition = '0=1';
 
 	// On récupère les affectations de plugins pour la catégorie demandée
+	include_spip('inc/svptype_type_plugin');
 	$affectations = type_plugin_repertorier_affectation('categorie', $categorie);
 
 	// Construction de la condition sur les préfixes

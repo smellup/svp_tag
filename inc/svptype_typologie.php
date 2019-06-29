@@ -353,6 +353,79 @@ function typologie_plugin_exporter_affectation($typologie) {
 
 
 /**
+ * Elabore la collection des types de plugin pour la typologie concernée au format demandé par l'API REST SVP API.
+ *
+ * @param string $typologie
+ *        Identifiant de la typologie concernée : categorie, tag...
+ * @param array $filtres
+ *      Tableau des critères de filtrage additionnels.
+ *
+ * @return array
+ *      Tableau des types des plugins demandés.
+ */
+function typologie_plugin_collectionner($typologie, $filtres) {
+
+	// Initialisation de la collection
+	$types = array();
+
+	// Récupération de la configuration de la typologie
+	include_spip('inc/config');
+	$configuration_typologie = lire_config("svptype/typologies/${typologie}");
+
+	// Récupérer les informations sur la typologie et le groupe de mots correspondant.
+	// -- on loge l'identifiant de la typologie.
+	$types['typologie'] = array('identifiant' => $typologie);
+	// -- on ajoute le titre du groupe de mots
+	$id_groupe = $configuration_typologie['id_groupe'];
+	$select = array('titre');
+	$where = array('id_groupe=' . intval($id_groupe));
+	$types['typologie'] = array_merge(
+		$types['typologie'],
+		sql_fetsel($select, 'spip_groupes_mots', $where)
+	);
+
+	// Récupérer la liste des catégories (filtrée ou pas).
+	// -- Extraction des seuls champs significatifs.
+	$informations = array(
+		'titre',
+		'descriptif',
+		'id_parent',
+		'profondeur',
+		'identifiant'
+	);
+	include_spip('inc/svptype_type_plugin');
+	$collection = type_plugin_repertorier($typologie, $filtres, $informations);
+
+	// On refactore le tableau de sortie en un tableau associatif indexé par les identifiants de catégorie.
+	include_spip('inc/svptype_mot');
+	if ($collection) {
+		$index_collection = $configuration_typologie['collection']['nom'];
+		$types[$index_collection] = array();
+		foreach ($collection as $_type) {
+			$type = $_type;
+
+			// Identification du parent et suppression de l'id_parent qui devient inutile.
+			$type['parent'] = $_type['id_parent']
+				? mot_lire_identifiant($_type['id_parent'])
+				: '';
+			unset($type['id_parent']);
+
+			// Déterminer la liste des plugins affectés pour les types feuille.
+			if ($_type['profondeur'] == $configuration_typologie['max_profondeur']) {
+				$affectations = type_plugin_repertorier_affectation($typologie, $_type['identifiant']);
+				$type['plugins'] = array_column($affectations, 'prefixe');
+			}
+
+			// Ajout au tableau de sortie avec l'identifiant en index
+			$types[$index_collection][$_type['identifiant']] = $type;
+		}
+	}
+
+	return $types;
+}
+
+
+/**
  * Construit la condition SQL issue de l'analyse du critère `{typologie_plugin[ identifiant1, identifiant2]}`.
  *
  * @param array  $typologies

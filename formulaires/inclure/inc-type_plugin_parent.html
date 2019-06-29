@@ -7,10 +7,14 @@
 </BOUCLE_type_plugin>
 
 #SET{data, #ARRAY}
+#SET{nb_enfant, 0}
+[(#ID_MOT|intval|oui)
+	#SET{nb_enfant, #ENV{typologie}|type_plugin_compter_enfant{#ID_MOT}}
+]
 <BOUCLE_type_plugin_parents(MOTS)
 	{id_groupe=#GET{id_groupe}}
 	{profondeur=#GET{profondeur}}
-	{si #ENV{typologie}|type_plugin_compter_enfant{#ID_MOT}|non}>
+	{si #GET{nb_enfant}|non}>
 
 	#SET{data, #GET{data}|array_merge{#ARRAY{#IDENTIFIANT, #ID_MOT}}}
 </BOUCLE_type_plugin_parents>

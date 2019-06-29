@@ -6,5 +6,13 @@
 	{
 		"prefixe": "FORUM",
 		"type": "collaboration"
+	},
+	{
+		"prefixe": "FORUM",
+		"type": "inconnue"
+	},
+	{
+		"prefixe": "SVP",
+		"type": "collaboration"
 	}
 ]

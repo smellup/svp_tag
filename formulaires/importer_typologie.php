@@ -115,7 +115,7 @@ function formulaires_importer_typologie_traiter($typologie, $type_data, $redirec
 			if ($liste) {
 				include_spip('inc/svptype_typologie');
 				$suffixe = $type_data == 'liste' ? '' : "_${type_data}";
-				$importer = "typologie_impporter${suffixe}";
+				$importer = "typologie_plugin_importer${suffixe}";
 				$resultat_import = $importer($typologie, $liste);
 			}
 		}
