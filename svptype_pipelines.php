@@ -319,18 +319,25 @@ function svptype_declarer_collections_svp($collections) {
 		'module'    => 'svptype',
 		'filtres'   => array(
 			array(
-				'critere' => 'typologie'
+				'critere'         => 'typologie',
+				'est_obligatoire' => true
 			),
 			array(
-				'critere' => 'type'
+				'critere'         => 'type',
+				'est_obligatoire' => false
+			),
+			array(
+				'critere'         => 'prefixe',
+				'est_obligatoire' => false
 			)
 		)
 	);
 
 	// -- SVP Typologie rajoute le filtre de catégorie dans la collection plugins proposée par défaut par SVP API.
 	$collections['plugins']['filtres'][] = array(
-		'critere' => 'categorie',
-		'module'  => 'svptype'
+		'critere'         => 'categorie',
+		'module'          => 'svptype',
+		'est_obligatoire' => false
 	);
 
 	return $collections;

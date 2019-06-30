@@ -7,5 +7,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// E
-	'extra_url_liste_categories' => 'http://contrib.spip.net/xxxx'
+	'extra_url_liste_categories' => 'http://contrib.spip.net/xxxx',
+	'extra_max_profondeur'       => '0 ≤ profondeur ≤ @max@',
+	'extra_typologie'            => '@liste@'
 );

@@ -10,7 +10,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 
 // -----------------------------------------------------------------------
-// ---------------------------- CATEGORIES -------------------------------
+// ----------------------- COLLECTION CATEGORIES -------------------------
 // -----------------------------------------------------------------------
 
 /**
@@ -37,9 +37,35 @@ function categories_collectionner($filtres, $configuration) {
 	return $categories;
 }
 
+/**
+ * Détermine si la valeur de la profondeur est valide.
+ *
+ * @param string $profondeur
+ *        La valeur du critère profondeur
+ *
+ * @return bool
+ *        `true` si la valeur est valide, `false` sinon.
+ */
+function categories_verifier_critere_profondeur($profondeur, &$extra) {
+
+	$est_valide = true;
+
+	// Acquisition de la liste des catégories affectables.
+	include_spip('inc/config');
+	$max_profondeur = lire_config('svptype/typologies/categorie/max_profondeur', 0);
+
+	// Test de validité
+	if (intval($profondeur) > $max_profondeur) {
+		$est_valide = false;
+		$extra = _T('svpapi:extra_max_profondeur', array('max' => $max_profondeur));
+	}
+
+	return $est_valide;
+}
+
 
 // -----------------------------------------------------------------------
-// ------------------------------- TAGS ----------------------------------
+// -------------------------- COLLECTION TAGS ----------------------------
 // -----------------------------------------------------------------------
 
 /**
@@ -68,7 +94,7 @@ function tags_collectionner($filtres, $configuration) {
 
 
 // -----------------------------------------------------------------------
-// --------------------------- AFFECTATIONS ------------------------------
+// ---------------------- COLLECTION AFFECTATIONS ------------------------
 // -----------------------------------------------------------------------
 
 /**
@@ -81,50 +107,86 @@ function tags_collectionner($filtres, $configuration) {
  *      chaque filtre (pas utilisée aujourd'hui).
  *
  * @return array
- *      Tableau des affectations.
+ *      Tableau des affectations indexé par préfixe de plugin.
  */
 function affectations_collectionner($filtres, $configuration) {
 
 	// Initialisation de la collection
 	$affectations = array();
 
-	// Vérifier si un filtre de typologie est fourni et si oui récupérer les informations associées.
-	$typologie = '';
-	if (isset($filtres['typologie'])) {
-		// Initialisation de la typologie
-		$typologie = $filtres['typologie'];
+	// On traite préalablement le filtre typologie :
+	// -- celui-ci est forcément présent (obligatoire) et sa valeur est forcément valide.
+	$typologie = $filtres['typologie'];
 
-		// Récupérer les informations sur le groupe de mots matérialisant cette typologie.
-		include_spip('inc/config');
-		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
-		$select = array('titre');
-		$where = array('id_groupe=' . intval($id_groupe));
-		$affectations['typologie'] = sql_fetsel($select, 'spip_groupes_mots', $where);
+	// Récupérer les informations sur la typologie et le groupe de mots correspondant.
+	// -- on loge l'identifiant de la typologie.
+	$affectations['typologie'] = array('identifiant' => $typologie);
+	// -- on ajoute le titre du groupe de mots
+	include_spip('inc/config');
+	$configuration_typologie = lire_config("svptype/typologies/${typologie}", array());
+	$id_groupe = intval($configuration_typologie['id_groupe']);
+	$select = array('titre');
+	$where = array('id_groupe=' . $id_groupe);
+	$affectations['typologie'] = array_merge(
+		$affectations['typologie'],
+		sql_fetsel($select, 'spip_groupes_mots', $where)
+	);
 
-		// On supprime la typologie des filtres car le traitement est particulier
-		unset($filtres['typologie']);
-	}
+	// On supprime la typologie des filtres pour ne garder que les filtres optionnels à traiter.
+	unset($filtres['typologie']);
 
 	// Récupération du couple (identifiant du type, préfixe du plugin) de chaque affectation.
-	// -- Initialisation de la jointure avec spip_mots
-	$from = array('spip_plugins_typologies', 'spip_mots');
-	$select = array('spip_plugins_typologies.prefixe as prefixe', 'spip_mots.identifiant as type');
+	// Le tableau de sortie est présenté par préfixe de plugin :
+	// - si la typologie n'autorise qu'un type par plugin le tableau est de la forme [prefixe] = [type]
+	// - sinon si plusieurs types sont possibles, le tableauu est de la forme [prefixe] = array(types)
+	include_spip('inc/svptype_type_plugin');
+	$collection = type_plugin_repertorier_affectation($typologie, $filtres);
 
-	// -- Initialisation du where avec la conditions sur la jointure.
-	$where = array('spip_plugins_typologies.id_mot=spip_mots.id_mot');
-	// -- Traitement de la typologie si elle est définie.
-	if ($typologie) {
-		$where[] = 'spip_plugins_typologies.id_groupe=' . intval($id_groupe);
+	// On refactore le tableau de façon à le présenter avec le préfixe en index.
+	// -- la liste des types est toujours un tableau même si pour une typologie un seul type est affectable.
+	$affectations['affectations'] = array();
+	if ($collection) {
+		foreach ($collection as $_affectation) {
+			$affectations['affectations'][$_affectation['prefixe']][] = $_affectation['identifiant_mot'];
+		}
 	}
-	$affectations['affectations'] = sql_allfetsel($select, $from, $where);
-	$affectations['affectations'] = array_column($affectations['affectations'], 'type', 'prefixe');
 
 	return $affectations;
 }
 
 
+/**
+ * Détermine si la valeur de la profondeur est valide.
+ *
+ * @param string $typologie
+ *        Identifiant de la typologie concernée : categorie, tag...
+ *
+ * @return bool
+ *        `true` si la valeur est valide, `false` sinon.
+ */
+function affectations_verifier_critere_typologie($typologie, &$extra) {
+
+	$est_valide = true;
+
+	// Acquisition de la liste des catégories affectables.
+	include_spip('inc/config');
+	$typologies = array_keys(lire_config('svptype/typologies', array()));
+
+	// Test de validité
+	if (!in_array($typologie, $typologies)) {
+		$est_valide = false;
+		$extra = _T(
+			'svpapi:extra_typologie',
+			array('liste' => implode(', ', $typologies))
+		);
+	}
+
+	return $est_valide;
+}
+
+
 // -----------------------------------------------------------------------
-// ----------------------------- PLUGINS ---------------------------------
+// ------------------------ COLLECTION PLUGINS ---------------------------
 // -----------------------------------------------------------------------
 
 /**
@@ -174,7 +236,8 @@ function plugins_construire_critere_categorie($categorie) {
 
 	// On récupère les affectations de plugins pour la catégorie demandée
 	include_spip('inc/svptype_type_plugin');
-	$affectations = type_plugin_repertorier_affectation('categorie', $categorie);
+	$filtres = array('type' => $categorie);
+	$affectations = type_plugin_repertorier_affectation('categorie', $filtres);
 
 	// Construction de la condition sur les préfixes
 	if ($affectations) {

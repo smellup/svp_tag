@@ -148,59 +148,61 @@ function type_plugin_repertorier($typologie, $filtres = array(), $informations =
  *
  * @api
  *
- * @param string     $typologie
+ * @param string $typologie
  *        Typologie concernée : categorie, tag...
- * @param int|string $type
- *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
+ * @param array  $filtres
+ *        Liste des couples (champ, valeur) ou tableau vide.
+ *        Pratiquement, les critères admins sont `prefixe`, `id_mot` et aussi `type` qui revient à filtrer
+ *        sur un type de plugin comme id_mot.
  *
  * @return array
  *        Description de chaque affectation (type de plugin, plugin) de la typologie concernée.
  */
-function type_plugin_repertorier_affectation($typologie, $type = '') {
+function type_plugin_repertorier_affectation($typologie, $filtres = array()) {
 
-	// Utilisation d'une statique pour éviter les requêtes multiples sur le même hit.
-	static $affectations = array();
+	// On récupère l'id du groupe pour la typologie concernée.
+	include_spip('inc/config');
+	$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
 
-	if (!isset($affectations[$typologie])) {
-		// On récupère l'id du groupe pour la typologie concernée.
-		include_spip('inc/config');
-		$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
+	// On initialise la jointure pour récupérer l'identifiant du type de plugin et pas uniquement son id.
+	$from = array('spip_plugins_typologies', 'spip_mots');
+	$select = array(
+		'spip_plugins_typologies.id_groupe',
+		'spip_plugins_typologies.id_mot',
+		'spip_mots.identifiant as identifiant_mot',
+		'spip_plugins_typologies.prefixe'
+	);
+	$order_by = array('spip_plugins_typologies.id_mot', 'spip_plugins_typologies.prefixe');
 
-		// On récupère la description complète de toutes les types de plugin de la typologies concernée.
-		$from = array('spip_plugins_typologies', 'spip_mots');
-		$select = array(
-			'spip_plugins_typologies.id_groupe',
-			'spip_plugins_typologies.id_mot',
-			'spip_mots.identifiant as identifiant_mot',
-			'spip_plugins_typologies.prefixe'
-		);
-		$where = array(
-			'spip_plugins_typologies.id_groupe=' . $id_groupe,
-			'spip_plugins_typologies.id_mot=spip_mots.id_mot'
-		);
-		$order_by = array('spip_plugins_typologies.id_mot', 'spip_plugins_typologies.prefixe');
-		$affectations[$typologie] = sql_allfetsel($select, $from, $where, '', $order_by);
-	}
-
-	// Filtrer sur le type souhaité si il existe.
-	if (!$type) {
-		$affectations_filtrees = $affectations[$typologie];
-	} else {
-		// Récupération de l'id du type suivant la nature de l'argument $type.
-		if (!$id_mot = intval($type)) {
-			$id_mot = type_plugin_lire($typologie, $type, 'id_mot');
+	// On calcule les conditions en y intégrant les critères si ils existent
+	// -- conditions minimales
+	$where = array(
+		'spip_plugins_typologies.id_groupe=' . $id_groupe,
+		'spip_plugins_typologies.id_mot=spip_mots.id_mot'
+	);
+	// -- conditions issues des filtres
+	if ($filtres) {
+		// Traitement du cas où le critère 'type' est utilisé : on le transforme en un critère id_mot.
+		if (isset($filtres['type'])) {
+			$id_mot = type_plugin_lire($typologie, $filtres['type'], 'id_mot');
+			unset($filtres['type']);
+			$filtres['id_mot'] = $id_mot;
 		}
 
-		// Extraction des seules affectations au type.
-		$affectations_filtrees = array();
-		foreach ($affectations[$typologie] as $_affectation) {
-			if ($_affectation['id_mot'] == $id_mot) {
-				$affectations_filtrees[] = $_affectation;
+		// on traite maintenant tous les filtres
+		foreach ($filtres as $_critere => $_valeur) {
+			if ($_critere == 'id_mot') {
+				$where[] = "spip_plugins_typologies.${_critere}=" . intval($_valeur);
+			} elseif ($_critere == 'prefixe') {
+				$where[] = "spip_plugins_typologies.${_critere}=" . sql_quote(strtoupper($_valeur));
 			}
 		}
 	}
 
-    return $affectations_filtrees;
+	// Récupération des affectations.
+	$affectations = sql_allfetsel($select, $from, $where, '', $order_by);
+
+    return $affectations;
 }
 
 

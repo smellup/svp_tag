@@ -34,7 +34,8 @@ function typologie_plugin_configurer() {
 				'module'    => 'svptype',
 				'filtres'   => array(
 					array(
-						'critere' => 'profondeur'
+						'critere'         => 'profondeur',
+						'est_obligatoire' => false
 					)
 				)
 			)
@@ -385,18 +386,20 @@ function typologie_plugin_collectionner($typologie, $filtres) {
 	);
 
 	// Récupérer la liste des catégories (filtrée ou pas).
-	// -- Extraction des seuls champs significatifs.
+	// -- Extraction des seuls champs significatifs et nécessaires aux traitements suivants :
+	//    id_parent sera transformé en son identifiant et id_mot sera supprimé après avoir été utilisé.
 	$informations = array(
 		'titre',
 		'descriptif',
 		'id_parent',
 		'profondeur',
-		'identifiant'
+		'identifiant',
+		'id_mot'
 	);
 	include_spip('inc/svptype_type_plugin');
 	$collection = type_plugin_repertorier($typologie, $filtres, $informations);
 
-	// On refactore le tableau de sortie en un tableau associatif indexé par les identifiants de catégorie.
+	// On refactore le tableau de sortie en un tableau associatif indexé par les identifiants de type de plugin.
 	include_spip('inc/svptype_mot');
 	if ($collection) {
 		$index_collection = $configuration_typologie['collection']['nom'];
@@ -412,9 +415,13 @@ function typologie_plugin_collectionner($typologie, $filtres) {
 
 			// Déterminer la liste des plugins affectés pour les types feuille.
 			if ($_type['profondeur'] == $configuration_typologie['max_profondeur']) {
-				$affectations = type_plugin_repertorier_affectation($typologie, $_type['identifiant']);
+				$affectations = type_plugin_repertorier_affectation(
+					$typologie,
+					array('id_mot' => $_type['id_mot'])
+				);
 				$type['plugins'] = array_column($affectations, 'prefixe');
 			}
+			unset($type['id_mot']);
 
 			// Ajout au tableau de sortie avec l'identifiant en index
 			$types[$index_collection][$_type['identifiant']] = $type;
