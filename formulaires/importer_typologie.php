@@ -13,10 +13,6 @@ if (!defined("_ECRIRE_INC_VERSION")) {
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_data
- *        Type d'import. Prend les valeurs :
- *        - `liste` pour indiquer qu'on veut importer la liste des types d'une typologie
- *        - `affectation` pour indiquer qu'on veut importer des affectations type-plugin.
  * @param string $redirect
  *        URL de redirection en fin de traitement : on revient toujours de la page source.
  *
@@ -24,12 +20,16 @@ if (!defined("_ECRIRE_INC_VERSION")) {
  * 		Tableau des données à charger par le formulaire (affichage).
  * 		- `titre`		 : (affichage) titre du formulaire
  */
-function formulaires_importer_typologie_charger($typologie, $type_data, $redirect = '') {
+function formulaires_importer_typologie_charger($typologie, $redirect = '') {
 
 	// Initialisation du tableau des variables fournies au formulaire.
 	$valeurs = array();
 
-	$valeurs['_titre'] = _T("svptype:${typologie}_import_${type_data}_form_titre");
+	$valeurs['_vues'] = array(
+		'liste'       => _T("svptype:${typologie}_import_vue_liste_label"),
+		'affectation' => _T("svptype:${typologie}_import_vue_affectation_label"),
+	);
+	$valeurs['_vue_defaut'] = 'liste';
 
 	return $valeurs;
 }
@@ -39,17 +39,13 @@ function formulaires_importer_typologie_charger($typologie, $type_data, $redirec
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_data
- *        Type d'import. Prend les valeurs :
- *        - `liste` pour indiquer qu'on veut importer la liste des types d'une typologie
- *        - `affectation` pour indiquer qu'on veut importer des affectations type-plugin.
  * @param string $redirect
  *        URL de redirection en fin de traitement : on revient toujours de la page source.
  *
  * @return array
  * 		Tableau des erreurs concernant le fichier ou tableau vide si aucune erreur.
  */
-function formulaires_importer_typologie_verifier($typologie, $type_data, $redirect = '') {
+function formulaires_importer_typologie_verifier($typologie, $redirect = '') {
 
 	// Initialisation des messages d'erreur
 	$erreurs = array();
@@ -62,7 +58,7 @@ function formulaires_importer_typologie_verifier($typologie, $type_data, $redire
 		// Le fichier choisi doit être un JSON
 		if (empty($_FILES[$champ]['type'])
 		or ($_FILES[$champ]['type'] != 'application/json')) {
-			$erreurs[$champ] = _T('svptype:import_message_fichier_non_json');
+			$erreurs[$champ] = _T('svptype:import_message_nok_json');
 		}
 	}
 
@@ -75,10 +71,6 @@ function formulaires_importer_typologie_verifier($typologie, $type_data, $redire
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_data
- *        Type d'import. Prend les valeurs :
- *        - `liste` pour indiquer qu'on veut importer la liste des types d'une typologie
- *        - `affectation` pour indiquer qu'on veut importer des affectations type-plugin.
  * @param string $redirect
  *        URL de redirection en fin de traitement : on revient toujours à la page source.
  *
@@ -86,11 +78,14 @@ function formulaires_importer_typologie_verifier($typologie, $type_data, $redire
  * 		Tableau retourné par le formulaire contenant toujours un message de bonne exécution ou
  * 		d'erreur. L'indicateur editable est toujours à vrai.
  */
-function formulaires_importer_typologie_traiter($typologie, $type_data, $redirect = '') {
+function formulaires_importer_typologie_traiter($typologie, $redirect = '') {
 
 	// Initialisation du retour de traitement du formulaire (message, editable).
 	$retour = array();
 	$resultat_import = false;
+
+	// Récupération des saisies
+	$vue = _request('vue_export');
 
 	if ($_FILES['fichier_import']['name'] != '') {
 		// Récupération du fichier, décodage du contenu JSON et importation en base.
@@ -114,7 +109,7 @@ function formulaires_importer_typologie_traiter($typologie, $type_data, $redirec
 			// -- Importation du tableau représentant la typologie.
 			if ($liste) {
 				include_spip('inc/svptype_typologie');
-				$suffixe = $type_data == 'liste' ? '' : "_${type_data}";
+				$suffixe = $vue == 'liste' ? '' : "_${vue}";
 				$importer = "typologie_plugin_importer${suffixe}";
 				$resultat_import = $importer($typologie, $liste);
 			}

@@ -1,26 +1,29 @@
 [(#AUTORISER{webmestre}|sinon_interdire_acces)]
-<h1>[(#VAL{svptype:}|concat{#ENV{operation}}|concat{_page_titre}|_T)]</h1>
+#SET{typologie, #ENV{typologie, categorie}}
+
+<h1>[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_page_titre}|_T)]</h1>
+
+[(#REM) <!-- Onglets pour naviguer entre les typologie --> ]
+<INCLURE{fond=prive/squelettes/inclure/inc-svptype_onglets,
+	typologie=#GET{typologie},
+	env} />
 
 #SET{redirect, ''}
 [(#ENV{popin}|non)
 	[(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
-		|parametre_url{typologie, #ENV{typologie, categorie}}
+		|parametre_url{typologie, #GET{typologie}}
 		|parametre_url{vue, #ENV{type_data, liste}})]
 	})]
 ]
 #SET{redirect, #ENV{redirect}|sinon{#GET{redirect}}}
 
-[(#ENV{operation}|=={import}|oui)
 [<div class="noajax">
-	(#FORMULAIRE_IMPORTER_TYPOLOGIE{#ENV{typologie, categorie}, #ENV{type_data, liste}, #GET{redirect}})
+	(#FORMULAIRE_IMPORTER_TYPOLOGIE{#GET{typologie}, #GET{redirect}})
 </div>]
-]
 
-[(#ENV{operation}|=={export}|oui)
 [<div class="noajax">
-	(#FORMULAIRE_EXPORTER_TYPOLOGIE{#ENV{typologie, categorie}, #ENV{type_data, liste}, ''})
+	(#FORMULAIRE_EXPORTER_TYPOLOGIE{#GET{typologie}, ''})
 </div>]
-]
 
 [(#INCLURE{fond=formulaires/inc-lister-sauvegardes,
 	name='',

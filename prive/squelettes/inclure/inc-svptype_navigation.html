@@ -1,33 +1,35 @@
-[(#REM) <!-- Menu des onglets "fonction liste", "fonction affectation". --> ]
-
+[(#REM) <!-- Menu --> ]
 #SET{typologie, #ENV{typologie, categorie}}
 #SET{vue, #ENV{vue, liste}}
 
-<BOUCLE_typologies(DATA){source table, #CONFIG{svptype/typologies}|array_keys}>
-<h3>[(#VAL{svptype:}|concat{#VALEUR}|concat{_menu_titre}|_T)]</h3>
 <ul class="liste-items sous_navigation">
 	[<li class="item">
 		(#URL_ECRIRE{svptype_typologie}
-			|parametre_url{typologie, #VALEUR}
 			|parametre_url{vue, liste}
+			|parametre_url{typologie, #GET{typologie}}
 			|lien_ou_expose{
 				<:svptype:typologie_menu_liste_titre:>,
 				[(#ENV{exec}|=={svptype_typologie}
-					|et{#GET{typologie}|=={#VALEUR}}
 					|et{#GET{vue}|=={liste}}
 				)]})
 	</li>]
 	[<li class="item">
 		(#URL_ECRIRE{svptype_typologie}
-			|parametre_url{typologie, #VALEUR}
 			|parametre_url{vue, affectation}
+			|parametre_url{typologie, #GET{typologie}}
 			|lien_ou_expose{
 				<:svptype:typologie_menu_affectation_titre:>,
 				[(#ENV{exec}|=={svptype_typologie}
-					|et{#GET{typologie}|=={#VALEUR}}
 					|et{#GET{vue}|=={affectation}}
 				)]})
 	</li>]
+	[<li class="item">
+		(#URL_ECRIRE{svptype_maintenance}
+			|parametre_url{typologie, #GET{typologie}}
+			|lien_ou_expose{
+				<:svptype:typologie_menu_maintenance_titre:>,
+				#ENV{exec}|=={svptype_maintenance}
+			})
+	</li>]
 </ul>
-</BOUCLE_typologies>
 

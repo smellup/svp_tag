@@ -13,10 +13,6 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_data
- *        Type de données à exporter. Prend les valeurs :
- *        - `liste` pour indiquer qu'on veut exporter la liste des types d'une typologie
- *        - `affectation` pour indiquer qu'on veut exporter des affectations type-plugin.
  * @param string $redirect
  *        URL de redirection en fin de traitement : aucune, on reste sur la page d'export.
  *
@@ -24,12 +20,16 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * 		Tableau des données à charger par le formulaire (affichage).
  * 		- `titre`		 : (affichage) titre du formulaire
  */
-function formulaires_exporter_typologie_charger($typologie, $type_data, $redirect = '') {
+function formulaires_exporter_typologie_charger($typologie, $redirect = '') {
 
 	// Initialisation du tableau des variables fournies au formulaire.
 	$valeurs = array();
 
-	$valeurs['_titre'] = _T("svptype:${typologie}_export_${type_data}_form_titre");
+	$valeurs['_vues'] = array(
+		'liste'       => _T("svptype:${typologie}_export_vue_liste_label"),
+		'affectation' => _T("svptype:${typologie}_export_vue_affectation_label"),
+	);
+	$valeurs['_vue_defaut'] = 'liste';
 
 	return $valeurs;
 }
@@ -42,10 +42,6 @@ function formulaires_exporter_typologie_charger($typologie, $type_data, $redirec
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $type_data
- *        Type de données à exporter. Prend les valeurs :
- *        - `liste` pour indiquer qu'on veut exporter la liste des types d'une typologie
- *        - `affectation` pour indiquer qu'on veut exporter des affectations type-plugin.
  * @param string $redirect
  *        URL de redirection en fin de traitement : aucune, on reste sur la page d'export.
  *
@@ -53,40 +49,27 @@ function formulaires_exporter_typologie_charger($typologie, $type_data, $redirec
  * 		Tableau retourné par le formulaire contenant toujours un message de bonne exécution ou
  * 		d'erreur. L'indicateur editable est toujours à vrai.
  */
-function formulaires_exporter_typologie_traiter($typologie, $type_data, $redirect = '') {
+function formulaires_exporter_typologie_traiter($typologie, $redirect = '') {
 
 	// Initialisation du retour de traitement du formulaire (message, editable).
 	$retour = array();
 
+	// Récupération des saisies
+	$vue = _request('vue_export');
+
 	// Copnstruction de la fonction d'export.
 	include_spip('inc/svptype_typologie');
-	$suffixe = $type_data == 'liste' ? '' : "_${type_data}";
+	$suffixe = $vue == 'liste' ? '' : "_${vue}";
 	$exporter = "typologie_plugin_exporter${suffixe}";
 
 	// Création du fichier d'export en local.
 	if ($fichier = $exporter($typologie)) {
-		// Si la demande est de télécharger le fichier dans la foulée on active cette option.
-		if (_request('choix_export') == 'local') {
-			// Telechargement du fichier cache (.xml)
-			header("Pragma: public");
-			header("Expires: 0");
-			header("Cache-Control: must-revalidate");
-			header("Cache-Control: private", false);
-			header('Content-Type: application/json');
-			header("Content-Length: ".filesize($fichier));
-			header("Content-Disposition: attachment; filename=\"".basename($fichier)."\"");
-			header("Content-Transfer-Encoding: binary");
-			@readfile($fichier);
-			exit();
-		}
+		$retour['message_ok'] = _T('svptype:export_message_ok');
 	} else {
 		$retour['message_nok'] = _T('svptype:export_message_nok');
 	}
 
 	// Retour du formulaire.
-	if (empty($retour['message_nok'])) {
-		$retour['message_ok'] = _T('svptype:export_message_ok');
-	}
 	$retour['redirect'] = $redirect;
 	$retour['editable'] = true;
 

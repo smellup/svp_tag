@@ -1,0 +1,20 @@
+[(#REM) Onglets de premier niveau pour le choix d'une typologie ]
+<B_typologies>
+<div class="onglets_simple">
+	<ul class="typologies">
+<BOUCLE_typologies(DATA){source table, #CONFIG{svptype/typologies}}>
+		[<li>
+			(#SELF
+				|parametre_url{typologie, #CLE}
+				|lien_ou_expose{
+					[(#VAL{svptype:}|concat{#CLE}|concat{_menu_titre}|_T)],
+					#ENV{typologie, categorie}|=={#CLE},
+					ajax
+				}
+			)
+		</li>]
+</BOUCLE_typologies>
+	</ul>
+	<div class="clear"></div>
+</div>
+</B_typologies>

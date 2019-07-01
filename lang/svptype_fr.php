@@ -16,6 +16,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_export_affectation_form_titre' => 'Exportation d\'une liste d\'affectations catégorie-plugin',
 	'categorie_export_liste_bouton_titre' => 'Exporter une liste de catégories',
 	'categorie_export_liste_form_titre' => 'Exportation d\'une liste de catégories',
+	'categorie_export_vue_liste_label' => 'la liste des catégories',
+	'categorie_export_vue_affectation_label' => 'la liste des affectations catégorie-plugin',
+	'categorie_import_vue_liste_label' => 'une liste de catégories',
+	'categorie_import_vue_affectation_label' => 'une liste d\'affectations catégorie-plugin',
 	'categorie_import_affectation_bouton_titre' => 'Importer des affectations catégorie-plugin',
 	'categorie_import_affectation_form_titre' => 'Importation d\'une liste d\'affectations catégorie-plugin',
 	'categorie_import_liste_bouton_titre' => 'Importer une liste de catégories',
@@ -38,19 +42,20 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// I
 	'identifiant_label' => 'Identifiant',
 	'identifiant_erreur_duplication' => 'L\'identifiant est déjà utilisé',
+	'export_form_titre' => 'Exportation',
 	'export_page_titre' => 'Exportation d\'une typologie de plugin',
-	'export_choix_label' => 'Que faire du fichier d\'export ?',
-	'export_choix_serveur_label' => 'Sauvegarder le fichier sur le serveur',
-	'export_choix_local_label' => 'Télécharger le fichier localement',
+	'export_vue_label' => 'Que voulez-vous exporter ?',
 	'export_message_ok' => 'Exportation réussie.',
 	'export_message_nok' => 'Erreur lors de l\'exportation.',
 	'export_message_vide' => 'Aucune donné à exporter.',
+	'import_vue_label' => 'Que voulez-vous importer ?',
+	'import_form_titre' => 'Importation',
 	'import_page_titre' => 'Importation d\'une typologie de plugin',
 	'import_fichier_label' => 'Fichier à importer',
 	'import_fichier_explication' => 'Choisissez un fichier JSON conforme au schéma autorisé. Seuls les données n\'existant pas encore dans la base seront ajoutées.',
 	'import_message_ok' => 'Importation réussie : @nb@.',
 	'import_message_nok' => 'Aucune donnée importée.',
-	'import_message_fichier_non_json' => 'Le fichier choisi n\'est pas au format JSON.',
+	'import_message_nok_json' => 'Le fichier choisi n\'est pas au format JSON.',
 
 	// P
 	'plugin_compteur_label' => 'Affectations',
@@ -60,6 +65,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// T
 	'tag_identifiant_label' => 'Tags',
+	'tag_export_vue_liste_label' => 'la liste des tags',
+	'tag_export_vue_affectation_label' => 'la liste des affectations tag-plugin',
+	'tag_import_vue_liste_label' => 'une liste de tags',
+	'tag_import_vue_affectation_label' => 'une liste d\'affectations tag-plugin',
 	'tag_export_affectation_bouton_titre' => 'Exporter une liste d\'affectations tag-plugin',
 	'tag_export_affectation_form_titre' => 'Exportation d\'une liste d\'affectations tag-plugin',
 	'tag_export_liste_bouton_titre' => 'Exporter une liste de tags',
@@ -82,5 +91,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'tag_selection_option_tout' => 'Tous les tags',
 	'typologie_menu_liste_titre' => 'Gérer la liste',
 	'typologie_menu_affectation_titre' => 'Gérer l\'affectation des plugins',
+	'typologie_menu_maintenance_titre' => 'Importer / exporter',
 
 );

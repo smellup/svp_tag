@@ -1,9 +1,14 @@
 [(#AUTORISER{webmestre}|sinon_interdire_acces)]
 #SET{typologie, #ENV{typologie, categorie}}
-#SET{id_groupe, #CONFIG{svptype/typologies/#GET{typologie}/id_groupe, 0}}
 #SET{vue, #ENV{vue, liste}}
+#SET{id_groupe, #CONFIG{svptype/typologies/#GET{typologie}/id_groupe, 0}}
 
 <h1>[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_page_titre}|_T)]</h1>
+
+[(#REM) <!-- Onglets pour naviguer entre les typologie --> ]
+<INCLURE{fond=prive/squelettes/inclure/inc-svptype_onglets,
+	typologie=#GET{typologie},
+	env} />
 
 [(#REM) <!-- Bouton d'ajout d'un type ou d'une affectation --> ]
 [(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_ajouter}|_T)]})]
