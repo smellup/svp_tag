@@ -188,25 +188,28 @@ function typologie_plugin_importer($typologie, $types) {
 
 
 /**
- * Exporte de la base de données les types de plugin appartenant à une même typologie.
+ * Exporte de la base de données les types de plugin appartenant à une même typologie dans un fichier sur
+ * le serveur.
  *
  * @api
  *
  * @param string $typologie
  *        Identifiant de la typologie concernée : categorie, tag...
  *
- * @return array
- *         Tableau des types de plugin exportés.
+ * @return bool|string
+ *         Le nom du fichier d'export ou false si erreur.
  */
 function typologie_plugin_exporter($typologie) {
 
-	// Initialisation du nombre de types ajoutés.
-	$types_exportes = array();
+	// Initialisation de la sortie.
+	$retour = false;
 
 	// Déterminer les informations du groupe typologique.
 	include_spip('inc/config');
 	$configuration_typologie = lire_config("svptype/typologies/${typologie}", array());
 
+	// Extraction des types de plugin pour la typologie concernée
+	$types_exportes = array();
 	if ($id_groupe = intval($configuration_typologie['id_groupe'])) {
 		// Identification des champs exportables pour un type de plugin.
 		$champs = array('identifiant', 'titre', 'descriptif');
@@ -240,7 +243,19 @@ function typologie_plugin_exporter($typologie) {
 		}
 	}
 
-	return $types_exportes;
+	// Ecriture des types de plugin dans un fichier d'export local au serveur
+	// -- Formatage du contenu exportés en json
+	$export = json_encode($types_exportes, JSON_PRETTY_PRINT);
+	// -- Création du répertoire d'export et construction du nom du fichier
+	$dir = sous_repertoire(_DIR_TMP, 'svptype');
+	$date = date('Y-m-d_H-i');
+	$fichier = "${dir}${typologie}_${date}.json";
+	// -- Ecriture du fichier
+	if (ecrire_fichier($fichier, $export)) {
+		$retour = $fichier;
+	}
+
+	return $retour;
 }
 
 
@@ -315,25 +330,27 @@ function typologie_plugin_importer_affectation($typologie, $affectations) {
 
 
 /**
- * Exporte les affectations (type de plugin, plugin) appartenant à la même typologie.
+ * Exporte les affectations (type de plugin, plugin) appartenant à la même typologie dans un fichier sur
+ * le serveur.
  *
  * @api
  *
  * @param string $typologie
  *        Identifiant de la typologie concernée : categorie, tag...
  *
- * @return array
- *         Tableau des affectations (type de plugin, plugin) exportées.
+ * @return bool|string
+ *         Le nom du fichier d'export ou false si erreur.
  */
 function typologie_plugin_exporter_affectation($typologie) {
 
-	// Initialisation du nombre de types ajoutés.
-	$affectations_exportees = array();
+	// Initialisation de la sortie.
+	$retour = false;
 
 	// Déterminer les informations du groupe typologique.
 	include_spip('inc/config');
 	$configuration_typologie = lire_config("svptype/typologies/${typologie}", array());
 
+	$affectations_exportees = array();
 	if ($id_groupe = intval($configuration_typologie['id_groupe'])) {
 		// On récupère le préfixe et l'identifiant du type via une jointure avec spip_mots.
 		$from = array('spip_plugins_typologies', 'spip_mots');
@@ -349,7 +366,19 @@ function typologie_plugin_exporter_affectation($typologie) {
 		$affectations_exportees = sql_allfetsel($select, $from, $where);
 	}
 
-	return $affectations_exportees;
+	// Ecriture des types de plugin dans un fichier d'export local au serveur
+	// -- Formatage du contenu exportés en json
+	$export = json_encode($affectations_exportees, JSON_PRETTY_PRINT);
+	// -- Création du répertoire d'export et construction du nom du fichier
+	$dir = sous_repertoire(_DIR_TMP, 'svptype');
+	$date = date('Y-m-d_H-i');
+	$fichier = "${dir}${typologie}_${date}.json";
+	// -- Ecriture du fichier
+	if (ecrire_fichier($fichier, $export)) {
+		$retour = $fichier;
+	}
+
+	return $retour;
 }
 
 

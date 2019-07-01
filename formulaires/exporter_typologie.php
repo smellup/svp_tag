@@ -58,36 +58,29 @@ function formulaires_exporter_typologie_traiter($typologie, $type_data, $redirec
 	// Initialisation du retour de traitement du formulaire (message, editable).
 	$retour = array();
 
-	// Extraction des données requises pour la typologie concernée.
+	// Copnstruction de la fonction d'export.
 	include_spip('inc/svptype_typologie');
 	$suffixe = $type_data == 'liste' ? '' : "_${type_data}";
 	$exporter = "typologie_plugin_exporter${suffixe}";
-	$types = $exporter($typologie);
 
-	if ($types) {
-		// Construction du nom du fichier
-		$date = date('Y-m-d_H-i');
-		$nom_fichier = "${typologie}_${type_data}_${date}.json";
-
-		// Formatage du contenu exportés en json;
-		$export = json_encode($types, JSON_PRETTY_PRINT);
-
+	// Création du fichier d'export en local.
+	if ($fichier = $exporter($typologie)) {
+		// Si la demande est de télécharger le fichier dans la foulée on active cette option.
 		if (_request('choix_export') == 'local') {
-			header('Content-Type: application/json;');
-			header("Content-Disposition: attachment; filename=${nom_fichier}");
-			header('Content-Length: ' . strlen($export));
-			echo $export;
-			exit;
-		} else {
-			// -- Création du répertoire d'upload
-			$dir = sous_repertoire(_DIR_TMP, 'svptype');
-			$fichier = $dir . $nom_fichier;
-			if (!ecrire_fichier($fichier, $export)) {
-				$retour['message_nok'] = _T('svptype:export_message_nok');
-			}
+			// Telechargement du fichier cache (.xml)
+			header("Pragma: public");
+			header("Expires: 0");
+			header("Cache-Control: must-revalidate");
+			header("Cache-Control: private", false);
+			header('Content-Type: application/json');
+			header("Content-Length: ".filesize($fichier));
+			header("Content-Disposition: attachment; filename=\"".basename($fichier)."\"");
+			header("Content-Transfer-Encoding: binary");
+			@readfile($fichier);
+			exit();
 		}
 	} else {
-		$retour['message_nok'] = _T('svptype:export_message_vide');
+		$retour['message_nok'] = _T('svptype:export_message_nok');
 	}
 
 	// Retour du formulaire.

@@ -21,3 +21,13 @@
 	(#FORMULAIRE_EXPORTER_TYPOLOGIE{#ENV{typologie, categorie}, #ENV{type_data, liste}, ''})
 </div>]
 ]
+
+[(#INCLURE{fond=formulaires/inc-lister-sauvegardes,
+	name='',
+	id=sauvegarde,
+	titre=<:dump:sauvegardes_existantes:>,
+	download=#AUTORISER{webmestre},
+	delete=#AUTORISER{webmestre},
+	env,
+	ajax}
+)]

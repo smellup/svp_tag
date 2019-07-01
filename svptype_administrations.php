@@ -62,6 +62,18 @@ function svptype_upgrade($nom_meta_base_version, $version_cible) {
  */
 function svptype_vider_tables($nom_meta_base_version) {
 
+	// on exporte les données du plugin avant de tout supprimer
+	include_spip('inc/sbptype_typologie');
+	include_spip('inc/config');
+	$typologies = array_keys(lire_config('svptype/typologies', array()));
+	foreach ($typologies as $_typologie) {
+		// Export des types
+		typologie_plugin_exporter($_typologie);
+
+		// Export des affectations
+		typologie_plugin_exporter_affectation($_typologie);
+	}
+
 	// on supprime les groupes et les mots-clés créés
 	include_spip('inc/config');
 	$ids_groupe = array_column(lire_config('svptype/typologies', array()), 'id_groupe');
