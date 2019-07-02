@@ -44,6 +44,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'identifiant_erreur_duplication' => 'L\'identifiant est déjà utilisé',
 	'export_form_titre' => 'Exportation',
 	'export_page_titre' => 'Exportation d\'une typologie de plugin',
+	'export_vue_explication' => 'Le fichier JSON résultant est conforme au schéma autorisé pour une importation.',
 	'export_vue_label' => 'Que voulez-vous exporter ?',
 	'export_message_ok' => 'Exportation réussie.',
 	'export_message_nok' => 'Erreur lors de l\'exportation.',
