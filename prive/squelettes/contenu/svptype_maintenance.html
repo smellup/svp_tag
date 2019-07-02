@@ -25,12 +25,9 @@
 	(#FORMULAIRE_EXPORTER_TYPOLOGIE{#GET{typologie}, ''})
 </div>]
 
-[(#INCLURE{fond=formulaires/inc-lister-sauvegardes,
-	name='',
-	id=sauvegarde,
-	titre=<:dump:sauvegardes_existantes:>,
-	download=#AUTORISER{webmestre},
-	delete=#AUTORISER{webmestre},
+[(#INCLURE{fond=prive/squelettes/liste/typologies_exports,
+	titre_liste=<:svptype:export_liste_titre:>,
+	typologie=#GET{typologie},
 	env,
 	ajax}
 )]

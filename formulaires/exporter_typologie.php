@@ -59,7 +59,7 @@ function formulaires_exporter_typologie_traiter($typologie, $redirect = '') {
 
 	// Copnstruction de la fonction d'export.
 	include_spip('inc/svptype_typologie');
-	$suffixe = $vue == 'liste' ? '' : "_${vue}";
+	$suffixe = ($vue == 'liste' ? '' : "_${vue}");
 	$exporter = "typologie_plugin_exporter${suffixe}";
 
 	// Création du fichier d'export en local.

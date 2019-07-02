@@ -1,0 +1,54 @@
+[(#SET{defaut_tri, #ARRAY{
+	nom, 1,
+	taille, 1,
+	date, 1}
+})]
+
+<B_liste_exports>
+<div class="liste-objets export_typologie[ (#ENV{typologie})]">
+	<table class="spip liste">
+		[<caption>
+			<strong class="caption">(#ENV{titre_liste})</strong>
+		</caption>]
+		<thead>
+		<tr class="first_row">
+			<th scope="col">[(#TRI{nom, <:info_nom:>, ajax})]</th>
+			[(#AUTORISER{webmestre}|oui)<th scope="col"></th>]
+			<th scope="col">[(#TRI{taille, <:label_poids_fichier:>, ajax})]</th>
+			<th scope="col">[(#TRI{date, <:public:date:>, ajax})]</th>
+			[(#AUTORISER{webmestre}|oui)<th scope="col"></th>]
+		</tr>
+		</thead>
+		<tbody>
+<BOUCLE_liste_exports(DATA){source table, #ENV{typologie}|typologie_plugin_export_lister}{tri #ENV{par, nom}, #GET{defaut_tri}}>
+			<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
+				<td class="fichier principale">
+					<label for="export_#COMPTEUR_BOUCLE" title="[(#VALEUR{nom}|attribut_html)]">[(#VALEUR{nom})]</label>
+				</td>
+				[(#AUTORISER{webmestre}|oui)
+				<td>
+					<a href="#URL_ACTION_AUTEUR{telecharger_export, #VALEUR{fichier}}" title="<:bouton_download|attribut_html:>">
+						[(#CHEMIN_IMAGE{telecharger-16.png}|balise_img{<:bouton_download:>})]
+					</a>
+				</td>]
+				<td class="taille">
+					[(#VALEUR{taille}|taille_en_octets)]
+				</td>
+				<td>
+					[(#VAL{'Y-m-d H:i:s'}|date{#VALEUR{date}}|affdate_heure)]
+				</td>
+				[(#AUTORISER{webmestre}|oui)
+				<td>
+					[(#BOUTON_ACTION{
+						[(#CHEMIN_IMAGE{supprimer-12.png}|balise_img{<:lien_supprimer:>})],
+						#URL_ACTION_AUTEUR{supprimer_export, #VALEUR{fichier}, #SELF},
+						ajax,
+						<:dump:confirmer_supprimer_sauvegarde:>}
+					)]
+				</td>]
+			</tr>
+</BOUCLE_liste_exports>
+		</tbody>
+	</table>
+</div>
+</B_liste_exports>

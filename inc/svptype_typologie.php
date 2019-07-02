@@ -248,7 +248,7 @@ function typologie_plugin_exporter($typologie) {
 	$export = json_encode($types_exportes, JSON_PRETTY_PRINT);
 	// -- Création du répertoire d'export et construction du nom du fichier
 	$dir = sous_repertoire(_DIR_TMP, 'svptype');
-	$date = date('Y-m-d_H-i');
+	$date = date('YmdHi');
 	$fichier = "${dir}${typologie}_${date}.json";
 	// -- Ecriture du fichier
 	if (ecrire_fichier($fichier, $export)) {
@@ -371,8 +371,8 @@ function typologie_plugin_exporter_affectation($typologie) {
 	$export = json_encode($affectations_exportees, JSON_PRETTY_PRINT);
 	// -- Création du répertoire d'export et construction du nom du fichier
 	$dir = sous_repertoire(_DIR_TMP, 'svptype');
-	$date = date('Y-m-d_H-i');
-	$fichier = "${dir}${typologie}_${date}.json";
+	$date = date('YmdHi');
+	$fichier = "${dir}${typologie}_affectation_${date}.json";
 	// -- Ecriture du fichier
 	if (ecrire_fichier($fichier, $export)) {
 		$retour = $fichier;
