@@ -20,7 +20,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @param string $typologie
  *        Typologie que l'on souhaite renvoyer pour le plugin concernée : categorie, tag...
  *
- * @return string|array
+ * @return array|string
  *         Le ou les types du plugin pour la typologie concernée.
  */
 function plugin_lire_type($prefixe, $typologie) {

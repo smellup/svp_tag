@@ -63,7 +63,7 @@ function svptype_upgrade($nom_meta_base_version, $version_cible) {
 function svptype_vider_tables($nom_meta_base_version) {
 
 	// on exporte les données du plugin avant de tout supprimer
-	include_spip('inc/sbptype_typologie');
+	include_spip('inc/svptype_typologie');
 	include_spip('inc/config');
 	$typologies = array_keys(lire_config('svptype/typologies', array()));
 	foreach ($typologies as $_typologie) {
