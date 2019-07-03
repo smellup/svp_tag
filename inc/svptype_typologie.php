@@ -383,6 +383,40 @@ function typologie_plugin_exporter_affectation($typologie) {
 
 
 /**
+ * Lister les fichiers d'export JSON stockés dans le répertoire temporaire idoine.
+ *
+ * @api
+ *
+ * @param string $typologie
+ *        Identifiant de la typologie concernée : categorie, tag...
+ *
+ * @return array
+ *         Tableau associatif des fichiers d'export fournissant, le chemin complet, le nom sans extension,
+ *         la date et la taille de chaque fichier.
+ */
+function typologie_plugin_lister_export($typologie) {
+
+	// Initialisation de la liste
+	$exports = array();
+
+	// Recherche des fichiers dans le répertoire idoine.
+	$fichiers = glob(_DIR_TMP . "svptype/${typologie}_*.json*");
+
+	// Construction de la liste pour l'affichage.
+	foreach ($fichiers as $_fichier) {
+		$exports[] = array(
+			'fichier' => $_fichier,
+			'nom'     => basename($_fichier, '.json'),
+			'date'    => filemtime($_fichier),
+			'taille'  => filesize($_fichier)
+		);
+	}
+
+	return $exports;
+}
+
+
+/**
  * Elabore la collection des types de plugin pour la typologie concernée au format demandé par l'API REST SVP API.
  *
  * @param string $typologie

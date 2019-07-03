@@ -8,21 +8,12 @@
 	typologie=#GET{typologie},
 	env} />
 
-#SET{redirect, ''}
-[(#ENV{popin}|non)
-	[(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
-		|parametre_url{typologie, #GET{typologie}}
-		|parametre_url{vue, #ENV{type_data, liste}})]
-	})]
-]
-#SET{redirect, #ENV{redirect}|sinon{#GET{redirect}}}
-
 [<div class="noajax">
-	(#FORMULAIRE_IMPORTER_TYPOLOGIE{#GET{typologie}, #GET{redirect}})
+	(#FORMULAIRE_IMPORTER_TYPOLOGIE{#GET{typologie}})
 </div>]
 
 [<div class="noajax">
-	(#FORMULAIRE_EXPORTER_TYPOLOGIE{#GET{typologie}, ''})
+	(#FORMULAIRE_EXPORTER_TYPOLOGIE{#GET{typologie}})
 </div>]
 
 [(#INCLURE{fond=prive/squelettes/liste/typologies_exports,

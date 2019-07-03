@@ -4,7 +4,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 /**
- * Telecharger un ficheir d'export JSON d'une typologie.
+ * Telecharger un fichier d'export JSON.
  *
  * @return void
  */
@@ -22,11 +22,9 @@ function action_telecharger_export_dist() {
 			@ob_end_clean();
 		}
 
-		$nom = basename($fichier);
-
 		// Header du stream
+		$nom = basename($fichier);
 		header('Content-Type: application/json');
-
 		header("Content-Disposition: attachment; filename=\"${nom}\";");
 		header('Content-Transfer-Encoding: binary');
 
