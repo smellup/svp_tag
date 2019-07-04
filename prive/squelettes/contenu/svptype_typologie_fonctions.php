@@ -17,7 +17,7 @@ function liste_type_plugin_filtrer($typologie, $type, $vue) {
 		if ($config_typologie = lire_config("svptype/typologies/${typologie}", array())) {
 			// On détermine l'id et la profondeur du type.
 			include_spip('inc/svptype_type_plugin');
-			if ($type_plugin = type_plugin_lire($typologie, $type)) {
+			if ($type_plugin = type_plugin_lire($typologie, $type, array('id_mot', 'profondeur'))) {
 				// On détermine la profondeur du type qui est plus fiable que de tester l'existence d'un "/".
 				$id = $type_plugin['id_mot'];
 				$profondeur = $type_plugin['profondeur'];

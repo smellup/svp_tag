@@ -368,13 +368,22 @@ function svptype_post_collection_svp($flux) {
 	if ($collection == 'plugins') {
 		// On récupère les typologies supportées.
 		include_spip('inc/config');
-		$typologies = lire_config('svptype/typologies', array());
+		$configurations_typologie = lire_config('svptype/typologies', array());
 
 		// Pour chaque typologie, on rajoute le champ nécessaire à tous les plugins de la collection.
-		include_spip('inc/svptype_plugin');
-		foreach ($typologies as $_typologie => $_configuration) {
+		include_spip('inc/svptype_type_plugin');
+		foreach ($configurations_typologie as $_typologie => $_configuration) {
 			foreach ($flux['data'] as $_prefixe => $_plugin) {
-				$flux['data'][$_prefixe][$_typologie] = plugin_lire_type($_prefixe, $_typologie);
+				$affectations = type_plugin_repertorier_affectation(
+					$_typologie,
+					array('prefixe' => $_prefixe)
+				);
+				if ($_configuration['max_affectations'] == 1) {
+					$affectations = array_shift($affectations);
+					$flux['data'][$_prefixe][$_typologie] = $affectations['identifiant_mot'];
+				} else {
+					$flux['data'][$_prefixe][$_typologie] = array_column($affectations, 'identifiant_mot');
+				}
 			}
 		}
 	}
@@ -407,14 +416,23 @@ function svptype_post_ressource_svp($flux) {
 	if ($collection == 'plugins') {
 		// On récupère les typologies supportées.
 		include_spip('inc/config');
-		$typologies = array_keys(lire_config('svptype/typologies', array()));
+		$configurations_typologie = lire_config('svptype/typologies', array());
 
 		// Pour chaque typologie, on rajoute le champ nécessaire soit au plugin concerné, soit à tous les
 		// plugins de la collection.
-		include_spip('inc/svptype_plugin');
-		foreach ($typologies as $_typologie) {
+		include_spip('inc/svptype_type_plugin');
+		foreach ($configurations_typologie as $_typologie => $_configuration) {
 			// C'est une requête de type ressource, la ressource désigne le préfixe.
-			$flux['data']['plugin'][$_typologie] = plugin_lire_type($flux['args']['ressource'], $_typologie);
+			$affectations = type_plugin_repertorier_affectation(
+				$_typologie,
+				array('prefixe' => $flux['args']['ressource'])
+			);
+			if ($_configuration['max_affectations'] == 1) {
+				$affectations = array_shift($affectations);
+				$flux['data']['plugin'][$_typologie] = $affectations['identifiant_mot'];
+			} else {
+				$flux['data']['plugin'][$_typologie] = array_column($affectations, 'identifiant_mot');
+			}
 		}
 	}
 

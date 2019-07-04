@@ -19,14 +19,16 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *        qui n'est unique qu'au sein d'une même typologie.
  * @param int|string $type
  *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
- * @param string     $information
- *        Champ spécifique à retourner ou vide pour retourner toute la description.
+ * @param array|string  $informations
+ *        Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
+ *        Si l'argument est vide, la fonction renvoie la description complète.
  *
  * @return array|string
- *        La description complète ou un champ précis demandé pour une page donnée. Les champs
- *        de type entier sont traités avec la fonction intval() avant d'être fournis.
+ *         La description brute complète ou partielle du type de plugin :
+ *         - sous la forme d'une valeur simple si l'information demandée est unique (chaine)
+ *         - sous la forme d'un tableau associatif indexé par le nom du champ sinon.
  */
-function type_plugin_lire($typologie, $type, $information = '') {
+function type_plugin_lire($typologie, $type, $informations = array()) {
 
 	static $description_type = array();
 	static $configurations = array();
@@ -40,7 +42,7 @@ function type_plugin_lire($typologie, $type, $information = '') {
 
 		// Chargement de la description nécessaire du type de plugin en base de données.
 		// -- seules l'id, l'id_parent, la profondeur, l'identifiant typologique, le titre et le descriptif sont utiles.
-		$select = array('id_mot', 'id_parent', 'identifiant', 'profondeur', 'titre', 'descriptif');
+		$champs_type_plugin = array('id_mot', 'id_parent', 'identifiant', 'profondeur', 'titre', 'descriptif');
 		// -- on construit la condition soit sur l'id_mot soit sur l'identifiant en fonction de ce qui est passé
 		//    dans le paramètre $type.
 		if ($id_mot = intval($type)) {
@@ -53,7 +55,7 @@ function type_plugin_lire($typologie, $type, $information = '') {
 				'identifiant=' . sql_quote($type)
 			);
 		}
-		$description = sql_fetsel($select, 'spip_mots', $where);
+		$description = sql_fetsel($champs_type_plugin, 'spip_mots', $where);
 
 		// Sauvegarde de la description de la page pour une consultation ultérieure dans le même hit.
 		if ($description) {
@@ -66,21 +68,35 @@ function type_plugin_lire($typologie, $type, $information = '') {
 			$description_type[$typologie][$type] = $description;
 		} else {
 			// En cas d'erreur stocker une description vide
-			$description_type[$typologie][$type] = array();
+			$description_type[$typologie][$type] = false;
 		}
 	}
 
-	if ($information) {
-		if (isset($description_type[$typologie][$type][$information])) {
-			$type_lu = $description_type[$typologie][$type][$information];
-		} else {
-			$type_lu = null;
+	// On ne retourne que les champs demandés
+	$type_plugin = $description_type[$typologie][$type];
+	if ($type_plugin and $informations) {
+		// Extraction des seules informations demandées.
+		// -- si on demande une information unique on renvoie la valeur simple, sinon on renvoie un tableau.
+		// -- si une information n'est pas un champ valide elle n'est pas renvoyée sans monter d'erreur.
+		if (is_array($informations)) {
+			if (count($informations) == 1) {
+				// Tableau d'une seule information : on revient à une chaine unique.
+				$informations = array_shift($informations);
+			} else {
+				// Tableau des informations valides
+				$type_plugin = array_intersect_key($type_plugin, array_flip($informations));
+			}
 		}
-	} else {
-		$type_lu = $description_type[$typologie][$type];
-	}
 
-	return $type_lu;
+		if (is_string($informations)) {
+			// Valeur unique demandée.
+			$type_plugin = isset($description_type[$typologie][$type][$informations])
+				? $description_type[$typologie][$type][$informations]
+				: '';
+		}
+ 	}
+
+	return $type_plugin;
 }
 
 
@@ -268,7 +284,7 @@ function type_plugin_compter_affectation($typologie, $type) {
 
 	// Le type est fourni soit sous forme de son identifiant soit de son id.
 	// Extrait les informations du type de plugin pour utiliser id_mot et profondeur.
-	$description_type = type_plugin_lire($typologie, $type);
+	$description_type = type_plugin_lire($typologie, $type, array('id_mot', 'profondeur'));
 	$id_mot = $description_type['id_mot'];
 
 	// Recherche des affectations de plugin. Pour les catégories qui sont arborescentes, il faut distinguer :
