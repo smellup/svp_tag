@@ -8,13 +8,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// B
 	'boite_info_explication' => 'SVP Typologie permet de gérer les différentes typologies des plugins (catégories, tags...).
-	Pour chaque typologie, une vue permet de consulter et de modifier la liste des types et une autre de consulter et de modifier les affectations aux plugins.',
+	Pour chaque typologie, une vue permet de consulter et de modifier la liste des types de plugin, une autre de consulter et de modifier les affectations aux plugins et enfin une dernière d\'importer ou d\'exporter les types de plugins et affectations.',
 
 	// C
 	'categorie_identifiant_label' => 'Catégorie',
-	'categorie_export_affectation_bouton_titre' => 'Exporter des affectations catégorie-plugin',
+//	'categorie_export_affectation_bouton_titre' => 'Exporter des affectations catégorie-plugin',
 	'categorie_export_affectation_form_titre' => 'Exportation d\'une liste d\'affectations catégorie-plugin',
-	'categorie_export_liste_bouton_titre' => 'Exporter une liste de catégories',
+//	'categorie_export_liste_bouton_titre' => 'Exporter une liste de catégories',
 	'categorie_export_liste_form_titre' => 'Exportation d\'une liste de catégories',
 	'categorie_export_vue_liste_label' => 'la liste des catégories',
 	'categorie_export_vue_affectation_label' => 'la liste des affectations catégorie-plugin',
