@@ -356,7 +356,7 @@ function typologie_plugin_exporter_affectation($typologie) {
 		$from = array('spip_plugins_typologies', 'spip_mots');
 		$select = array(
 			'spip_plugins_typologies.prefixe',
-			'spip_mots.identifiant'
+			'spip_mots.identifiant as type'
 		);
 		$where = array(
 			'spip_plugins_typologies.id_groupe=' . $id_groupe,
