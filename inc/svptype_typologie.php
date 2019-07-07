@@ -314,7 +314,7 @@ function typologie_plugin_importer_affectation($typologie, $affectations) {
 							// On peut insérer la nouvelle affectation
 							$set['id_mot'] = $id_mot;
 							$set['prefixe'] = $_affectation['prefixe'];
-							if (sql_insertq('spip_plugins_typologies', $set)) {
+							if (sql_insertq('spip_plugins_typologies', $set) === 0) {
 								// Enregistrement de l'ajout de l'affectation.
 								++$nb_affectations_ajoutees;
 							}

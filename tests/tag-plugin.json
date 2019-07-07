@@ -14,5 +14,9 @@
 	{
 		"prefixe": "SVP",
 		"type": "collaboration"
+	},
+	{
+		"prefixe": "SVP",
+		"type": "groupe"
 	}
 ]
