@@ -8,15 +8,13 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
-
 /**
  * Initialise la configuration des différentes typologies de plugin proposées.
  * Cette configuration sert à initialiser l'index `typologies` de la meta `svptype`.
  *
  * @api
  *
- * @return array
- *        Le tableau de la configuration par défaut indexé par l'identifiant de chaque typologie.
+ * @return array Le tableau de la configuration par défaut indexé par l'identifiant de chaque typologie.
  */
 function typologie_plugin_configurer() {
 
@@ -55,7 +53,6 @@ function typologie_plugin_configurer() {
 
 	return $configurations_typologie;
 }
-
 
 /**
  * Création des groupes de mots matérialisant chaque typologie de plugin.
@@ -111,20 +108,16 @@ function typologie_plugin_creer_groupe() {
 	}
 }
 
-
 /**
  * Importe une liste de types de plugin appartenant à une même typologie.
  * Les types de plugin de la liste déjà présents en base de données sont ignorés.
  *
  * @api
  *
- * @param string $typologie
- *        Identifiant de la typologie concernée : categorie, tag...
- * @param array  $types
- *        Tableau des types présenté comme une arborescence ou à plat suivant la typologie.
+ * @param string $typologie Identifiant de la typologie concernée : categorie, tag...
+ * @param array  $types     Tableau des types présenté comme une arborescence ou à plat suivant la typologie.
  *
- * @return bool|int
- *         Nombre de catégories ajoutées.
+ * @return bool|int Nombre de catégories ajoutées.
  */
 function typologie_plugin_importer($typologie, $types) {
 
@@ -186,18 +179,15 @@ function typologie_plugin_importer($typologie, $types) {
 	return $types_ajoutes;
 }
 
-
 /**
  * Exporte de la base de données les types de plugin appartenant à une même typologie dans un fichier sur
  * le serveur.
  *
  * @api
  *
- * @param string $typologie
- *        Identifiant de la typologie concernée : categorie, tag...
+ * @param string $typologie Identifiant de la typologie concernée : categorie, tag...
  *
- * @return bool|string
- *         Le nom du fichier d'export ou false si erreur.
+ * @return bool|string Le nom du fichier d'export ou false si erreur.
  */
 function typologie_plugin_exporter($typologie) {
 
@@ -258,20 +248,16 @@ function typologie_plugin_exporter($typologie) {
 	return $retour;
 }
 
-
 /**
  * Importe une liste d'affectations (type de plugin, plugin) pour une typologie donnée.
  * Les affectations de la liste déjà présentes en base de données sont ignorées.
  *
  * @api
  *
- * @param string $typologie
- *        Identifiant de la typologie concernée : categorie, tag...
- * @param array  $affectations
- *        Tableau des affectations (type de plugin, plugin).
+ * @param string $typologie    Identifiant de la typologie concernée : categorie, tag...
+ * @param array  $affectations Tableau des affectations (type de plugin, plugin).
  *
- * @return int
- *         Nombre d'affectations ajoutées.
+ * @return int Nombre d'affectations ajoutées.
  */
 function typologie_plugin_importer_affectation($typologie, $affectations) {
 
@@ -328,18 +314,15 @@ function typologie_plugin_importer_affectation($typologie, $affectations) {
 	return $nb_affectations_ajoutees;
 }
 
-
 /**
  * Exporte les affectations (type de plugin, plugin) appartenant à la même typologie dans un fichier sur
  * le serveur.
  *
  * @api
  *
- * @param string $typologie
- *        Identifiant de la typologie concernée : categorie, tag...
+ * @param string $typologie Identifiant de la typologie concernée : categorie, tag...
  *
- * @return bool|string
- *         Le nom du fichier d'export ou false si erreur.
+ * @return bool|string Le nom du fichier d'export ou false si erreur.
  */
 function typologie_plugin_exporter_affectation($typologie) {
 
@@ -381,18 +364,15 @@ function typologie_plugin_exporter_affectation($typologie) {
 	return $retour;
 }
 
-
 /**
  * Lister les fichiers d'export JSON stockés dans le répertoire temporaire idoine.
  *
  * @api
  *
- * @param string $typologie
- *        Identifiant de la typologie concernée : categorie, tag...
+ * @param string $typologie Identifiant de la typologie concernée : categorie, tag...
  *
- * @return array
- *         Tableau associatif des fichiers d'export fournissant, le chemin complet, le nom sans extension,
- *         la date et la taille de chaque fichier.
+ * @return array Tableau associatif des fichiers d'export fournissant, le chemin complet, le nom sans extension,
+ *               la date et la taille de chaque fichier.
  */
 function typologie_plugin_lister_export($typologie) {
 
@@ -415,17 +395,14 @@ function typologie_plugin_lister_export($typologie) {
 	return $exports;
 }
 
-
 /**
  * Elabore la collection des types de plugin pour la typologie concernée au format demandé par l'API REST SVP API.
  *
- * @param string $typologie
- *        Identifiant de la typologie concernée : categorie, tag...
- * @param array $filtres
- *      Tableau des critères de filtrage additionnels.
+ * @param string $typologie Identifiant de la typologie concernée : categorie, tag...
+ * @param array  $filtres   Tableau des critères de filtrage additionnels.
  *
  * @return array
- *      Tableau des types des plugins demandés.
+ *               Tableau des types des plugins demandés.
  */
 function typologie_plugin_collectionner($typologie, $filtres) {
 
@@ -494,18 +471,14 @@ function typologie_plugin_collectionner($typologie, $filtres) {
 	return $types;
 }
 
-
 /**
  * Construit la condition SQL issue de l'analyse du critère `{typologie_plugin[ identifiant1, identifiant2]}`.
  *
- * @param array  $typologies
- *        Liste des identifiants de typologie passé en argument du critère. Si la liste est vide on intègre
- *        toutes les typologies dans la condition.
- * @param string $table
- *        Identifiant de la table sur laquelle porte la condition, soit `mots` ou `groupes_mots`.
+ * @param array  $typologies Liste des identifiants de typologie passé en argument du critère. Si la liste est vide on intègre
+ *                           toutes les typologies dans la condition.
+ * @param string $table      Identifiant de la table sur laquelle porte la condition, soit `mots` ou `groupes_mots`.
  *
- * @return string
- *         Condition SQL traduisant le critère (égalité ou IN).
+ * @return string Condition SQL traduisant le critère (égalité ou IN).
  */
 function typologie_plugin_elaborer_critere($typologies, $table) {
 

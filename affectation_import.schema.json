@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Fichier d'import d'une liste d'affectations type de plugin-plugin",
+  "description": "Règles de validation du fichier JSON d'import d'une liste d'affectations type de plugin-plugin",
+  "definitions": {
+    "affectation": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "prefixe": { "type": "string" }
+      },
+      "required": ["type", "prefixe"]
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/affectation"
+  }
+}
