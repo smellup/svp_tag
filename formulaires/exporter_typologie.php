@@ -28,9 +28,30 @@ function formulaires_exporter_typologie_charger($typologie) {
 		'liste'       => _T("svptype:${typologie}_export_vue_liste_label"),
 		'affectation' => _T("svptype:${typologie}_export_vue_affectation_label"),
 	);
-	$valeurs['_vue_defaut'] = 'liste';
 
 	return $valeurs;
+}
+/**
+ * Vérification des saisies : il est indispensable de choisir d'exporter les types de plugin ou leurs affectations.
+ *
+ * @param string $typologie
+ *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
+ *
+ * @return array
+ * 		Tableau des erreurs concernant le choix de la vue qui est obligatoire.
+ */
+function formulaires_exporter_typologie_verifier($typologie) {
+
+	// Initialisation des messages d'erreur
+	$erreurs = array();
+
+	$champ = 'vue';
+	if (empty(_request($champ))) {
+		// Aucune vue choisie.
+		$erreurs[$champ] = _T('info_obligatoire');
+	}
+
+	return $erreurs;
 }
 
 

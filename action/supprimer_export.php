@@ -9,7 +9,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @return void
  */
-function action_supprimer_dump_dist() {
+function action_supprimer_export_dist() {
 
 	$securiser_action = charger_fonction('securiser_action', 'inc');
 	$fichier = $securiser_action();
