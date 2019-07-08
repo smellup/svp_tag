@@ -30,7 +30,6 @@ function formulaires_importer_typologie_charger($typologie) {
 		'liste'       => _T("svptype:${typologie}_import_vue_liste_label"),
 		'affectation' => _T("svptype:${typologie}_import_vue_affectation_label"),
 	);
-	$valeurs['_vue_defaut'] = 'liste';
 
 	return $valeurs;
 }
@@ -51,6 +50,12 @@ function formulaires_importer_typologie_verifier($typologie) {
 
 	// Initialisation des messages d'erreur
 	$erreurs = array();
+
+	$champ = 'vue_import';
+	if (empty(_request($champ))) {
+		// Aucune vue choisie.
+		$erreurs[$champ] = _T('info_obligatoire');
+	}
 
 	$champ = 'fichier_import';
 	if (empty($_FILES[$champ]['name'])) {
@@ -89,7 +94,7 @@ function formulaires_importer_typologie_traiter($typologie) {
 	$resultat_import = false;
 
 	// Récupération des saisies
-	$vue = _request('vue_export');
+	$vue = _request('vue_import');
 
 	if ($_FILES['fichier_import']['name'] != '') {
 		// Récupération du fichier, décodage du contenu JSON et importation en base.

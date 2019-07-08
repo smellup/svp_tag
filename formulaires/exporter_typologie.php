@@ -45,7 +45,7 @@ function formulaires_exporter_typologie_verifier($typologie) {
 	// Initialisation des messages d'erreur
 	$erreurs = array();
 
-	$champ = 'vue';
+	$champ = 'vue_export';
 	if (empty(_request($champ))) {
 		// Aucune vue choisie.
 		$erreurs[$champ] = _T('info_obligatoire');

@@ -9,9 +9,8 @@
 		<div>
 			#ACTION_FORMULAIRE{#ENV{action}}
 			<div class="editer-groupe">
-				[(#SAISIE{radio, vue_export,
+				[(#SAISIE{radio, vue_import,
 					label=<:svptype:import_vue_label:>,
-					defaut=#ENV{_vue_defaut},
 					data=#ENV{_vues}
 				})]
 
