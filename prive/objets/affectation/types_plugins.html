@@ -25,7 +25,6 @@
 		<tr class="first_row">
 			<th class="titre" scope="col">[(#TRI{prefixe,<:svp:label_prefixe:>,ajax})]</th>
 			<th class="titre" scope="col">[(#TRI{identifiant, #GET{label_identifiant},ajax})]</th>
-			<th class="action" scope="col">&nbsp;</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,20 +43,6 @@
 				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
 					[(#IDENTIFIANT)]
 				</a>
-			</td>
-			<td class="action">
-			[(#AUTORISER{modifier_affectation}|oui)
-				<a
-					href="[(#URL_ECRIRE{editer_affectation}
-							|parametre_url{id_groupe, #ID_GROUPE}
-							|parametre_url{id_mot, #ID_MOT}
-							|parametre_url{prefixe, #PREFIXE}
-					)]"
-					class="bouton-modifier"
-					data-action="modifier">
-					\[<:bouton_modifier:>\]
-				</a>
-			]
 			</td>
 		</tr>
 </BOUCLE_liste_categorie>

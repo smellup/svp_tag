@@ -1,0 +1,21 @@
+<ul>
+	<li class="editer affecter_plugin #TYPOLOGIE[ (#UNSEUL|=={oui}|oui)unseul][ (#OBLIGATOIRE|=={oui}|oui)obligatoire]">
+		<label for="affecter_plugin-#TYPOLOGIE"[ title="(#ENV{label}|supprimer_tags|attribut_html)"]>[(#ENV{label})]</label>
+		<select
+			name="affecter_plugin[#PREFIXE:#TYPOLOGIE]"
+			id="affecter_plugin-#TYPOLOGIE"
+			onchange="jQuery(this).siblings('input.submit').css('visibility','visible');"
+		>
+		<BOUCLE_mots(MOTS)
+			{technique=oui}
+			{typologie_plugin #ENV{typologie}}
+			{profondeur=#CONFIG{svptype/typologies/#ENV{typologie}/max_profondeur}}
+			{par identifiant}
+		>
+			#SET{value, #PREFIXE:#ID_MOT:#TYPOLOGIE}
+			<option value="#GET{value}"[(#GET{value}|=={#GET{expose}}|oui)selected="selected" class="on"]>#IDENTIFIANT</option>
+		</BOUCLE_mots>
+		</select>
+		<input type="submit" class="btn submit" name="typologie_#TYPOLOGIE" value="<:bouton_changer:>"[(#GET{selected}|non)style="visibility:hidden;"]/>
+	</li>
+</ul>

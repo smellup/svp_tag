@@ -4,8 +4,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 // fonction pour le pipeline, n'a rien a effectuer
-function svptype_autoriser(){}
-
+function svptype_autoriser() {
+}
 
 /**
  * Autorisation de supprimer un type de plugin.
@@ -15,12 +15,13 @@ function svptype_autoriser(){}
  * - l'autorisation de suppression d'un mots arborescents, ie pas d'enfant (plugin mots arborescents)
  * - le type n'est pas encore affecté à un plugin
  *
- * @param  string $faire Action demandée
- * @param  string $type  Type d'objet sur lequel appliquer l'action
- * @param  int    $id    Identifiant de l'objet
- * @param  array  $qui   Description de l'auteur demandant l'autorisation
- * @param  array  $opt   Options de cette autorisation
- * @return bool          true s'il a le droit, false sinon
+ * @param string $faire Action demandée
+ * @param string $type  Type d'objet sur lequel appliquer l'action
+ * @param int    $id    Identifiant de l'objet
+ * @param array  $qui   Description de l'auteur demandant l'autorisation
+ * @param array  $opt   Options de cette autorisation
+ *
+ * @return bool true s'il a le droit, false sinon
  **/
 function autoriser_typeplugin_supprimer($faire, $type, $id, $qui, $opt) {
 
@@ -49,19 +50,19 @@ function autoriser_typeplugin_supprimer($faire, $type, $id, $qui, $opt) {
 	return $autoriser;
 }
 
-
 /**
  * Autorisation de modifier un type de plugin.
  *
  * Un type de plugin est un mot-cle technique pouvant être arborescent ou pas ce qui implique de vérifier :
  * - l'autorisation de modification d'un mot (plugin mots)
  *
- * @param  string $faire Action demandée
- * @param  string $type  Type d'objet sur lequel appliquer l'action
- * @param  int    $id    Identifiant de l'objet
- * @param  array  $qui   Description de l'auteur demandant l'autorisation
- * @param  array  $opt   Options de cette autorisation
- * @return bool          true s'il a le droit, false sinon
+ * @param string $faire Action demandée
+ * @param string $type  Type d'objet sur lequel appliquer l'action
+ * @param int    $id    Identifiant de l'objet
+ * @param array  $qui   Description de l'auteur demandant l'autorisation
+ * @param array  $opt   Options de cette autorisation
+ *
+ * @return bool true s'il a le droit, false sinon
  **/
 function autoriser_typeplugin_modifier($faire, $type, $id, $qui, $opt) {
 
@@ -70,12 +71,11 @@ function autoriser_typeplugin_modifier($faire, $type, $id, $qui, $opt) {
 
 	// Vérification préalable de l'autorisation standard du plugin 'mots'.
 	if (autoriser('modifier', 'mot', $id, $qui, $opt)) {
-			$autoriser = true;
+		$autoriser = true;
 	}
 
 	return $autoriser;
 }
-
 
 /**
  * Autorisation de créer un type de plugin.
@@ -83,12 +83,13 @@ function autoriser_typeplugin_modifier($faire, $type, $id, $qui, $opt) {
  * Un type de plugin est un mot-cle technique pouvant être arborescent ou pas ce qui implique de vérifier :
  * - l'autorisation de création d'un mot (plugin mots)
  *
- * @param  string $faire Action demandée
- * @param  string $type  Type d'objet sur lequel appliquer l'action
- * @param  int    $id    Identifiant de l'objet
- * @param  array  $qui   Description de l'auteur demandant l'autorisation
- * @param  array  $opt   Options de cette autorisation. Contient le groupe de mots dans lequel créer le mot.
- * @return bool          true s'il a le droit, false sinon
+ * @param string $faire Action demandée
+ * @param string $type  Type d'objet sur lequel appliquer l'action
+ * @param int    $id    Identifiant de l'objet
+ * @param array  $qui   Description de l'auteur demandant l'autorisation
+ * @param array  $opt   Options de cette autorisation. Contient le groupe de mots dans lequel créer le mot.
+ *
+ * @return bool true s'il a le droit, false sinon
  **/
 function autoriser_typeplugin_creer($faire, $type, $id, $qui, $opt) {
 
@@ -97,8 +98,28 @@ function autoriser_typeplugin_creer($faire, $type, $id, $qui, $opt) {
 
 	// Vérification préalable de l'autorisation standard du plugin 'mots'.
 	if (autoriser('creer', 'mot', $id, $qui, $opt)) {
-			$autoriser = true;
+		$autoriser = true;
 	}
+
+	return $autoriser;
+}
+
+/**
+ * Autorisation, pour un plugin, de lui affecter un type de plugin, de lui supprimer ou de lui modifier
+ * une affectation existante.
+ *
+ * @param string $faire Action demandée
+ * @param string $type  Type d'objet sur lequel appliquer l'action
+ * @param int    $id    Identifiant de l'objet
+ * @param array  $qui   Description de l'auteur demandant l'autorisation
+ * @param array  $opt   Options de cette autorisation. Contient le groupe de mots dans lequel créer le mot.
+ *
+ * @return bool true s'il a le droit, false sinon
+ **/
+function autoriser_plugin_affecter($faire, $type, $id, $qui, $opt) {
+
+	// Initialisation de l'autorisation
+	$autoriser = autoriser('webmestre');
 
 	return $autoriser;
 }

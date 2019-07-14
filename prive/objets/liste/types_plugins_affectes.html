@@ -1,0 +1,60 @@
+[(#SET{defaut_tri, #ARRAY{
+	identifiant, 1,
+	titre, 1,
+	id_mot, 1,
+	points, -1
+}})
+]
+#SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_modifier_title}|_T}
+#SET{
+	types_plugins_affectes,
+	#ENV{typologie}
+		|type_plugin_repertorier_affectation{#ARRAY{prefixe, #ENV{prefixe}}}
+		|array_column{id_mot}
+}
+<B_liste_types>
+#ANCRE_PAGINATION
+<div class="liste-objets liste-objets-lies types_plugins[ (#ENV{typologie})]">
+<table class="spip liste">
+	[<caption>
+		<strong class="caption">(#ENV*{titre_liste})</strong>
+	</caption>]
+	<thead>
+		<tr class="first_row">
+			<th class="titre" scope="col">[(#TRI{titre,<:svptype:identifiant_label:>,ajax})]</th>
+			<th class="action" scope="col">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+<BOUCLE_liste_types(MOTS)
+	{technique=oui}
+	{typologie_plugin #ENV{typologie}}
+	{id_mot IN #GET{types_plugins_affectes}}
+	{where?}
+	{tri #ENV{par, identifiant}, #GET{defaut_tri}}
+	{pagination #ENV{nb,10}}>
+		<tr class="[(#ENV{compteur_boucle}|alterner{row_odd,row_even})]">
+			<td class="titre principale">
+				<a href="[(#ID_MOT|generer_url_entite{mot})]"
+				   title="[(#TITRE|sinon{<:info_numero_abbreviation:> #ID_MOT}|attribut_html)]">
+					#IDENTIFIANT
+				</a>
+			</td>
+			<td class="action">
+			[(#AUTORISER{affecter, plugin, #ID_PLUGIN}|oui)
+				<button type="submit" class="button link delete" name="desaffecter_plugin\[#PREFIXE:#ID_MOT\]" value="X">
+					#ENV{titre_desaffectation}[&nbsp;(#CHEMIN_IMAGE{supprimer-12.png}|balise_img{'X'})]
+				</button>
+			]
+			</td>
+		</tr>
+</BOUCLE_liste_types>
+	</tbody>
+</table>
+[<p class="pagination">(#PAGINATION{prive})</p>]
+</div>
+</B_liste_types>[
+<div class="liste-objets liste-objets-lies types_plugins[ (#ENV{typologie})] caption-wrap">
+	<strong class="caption">(#ENV*{sinon,''})</strong>
+</div>
+]<//B_liste_types>

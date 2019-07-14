@@ -8,32 +8,28 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
-
 /**
  * Retourne la description complète du type de plugin ou uniquement une information précise.
  *
  * @api
  *
- * @param string     $typologie
- *        Typologie concernée : categorie, tag... Ne sert que si le type est passé sous forme du champ `identifiant`
- *        qui n'est unique qu'au sein d'une même typologie.
- * @param int|string $type
- *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
- * @param array|string  $informations
- *        Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
- *        Si l'argument est vide, la fonction renvoie la description complète.
+ * @param string       $typologie    Typologie concernée : categorie, tag... Ne sert que si le type est passé sous forme du champ `identifiant`
+ *                                   qui n'est unique qu'au sein d'une même typologie.
+ * @param int|string   $type_plugin  Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
+ * @param array|string $informations
+ *                                   Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
+ *                                   Si l'argument est vide, la fonction renvoie la description complète.
  *
  * @return array|string
- *         La description brute complète ou partielle du type de plugin :
- *         - sous la forme d'une valeur simple si l'information demandée est unique (chaine)
- *         - sous la forme d'un tableau associatif indexé par le nom du champ sinon.
+ *                      La description brute complète ou partielle du type de plugin :
+ *                      - sous la forme d'une valeur simple si l'information demandée est unique (chaine)
+ *                      - sous la forme d'un tableau associatif indexé par le nom du champ sinon.
  */
-function type_plugin_lire($typologie, $type, $informations = array()) {
-
+function type_plugin_lire($typologie, $type_plugin, $informations = array()) {
 	static $description_type = array();
 	static $configurations = array();
 
-	if (!isset($description_type[$typologie][$type])) {
+	if (!isset($description_type[$typologie][$type_plugin])) {
 		// Déterminer les informations du groupe typologique si il n'est pas encore stocké.
 		if (!isset($configurations[$typologie])) {
 			include_spip('inc/config');
@@ -44,15 +40,15 @@ function type_plugin_lire($typologie, $type, $informations = array()) {
 		// -- seules l'id, l'id_parent, la profondeur, l'identifiant typologique, le titre et le descriptif sont utiles.
 		$champs_type_plugin = array('id_mot', 'id_parent', 'identifiant', 'profondeur', 'titre', 'descriptif');
 		// -- on construit la condition soit sur l'id_mot soit sur l'identifiant en fonction de ce qui est passé
-		//    dans le paramètre $type.
-		if ($id_mot = intval($type)) {
+		//    dans le paramètre $type_plugin.
+		if ($id_mot = intval($type_plugin)) {
 			$where = array(
 				'id_mot=' . $id_mot,
 			);
 		} else {
 			$where = array(
 				'id_groupe=' . intval($configurations[$typologie]['id_groupe']),
-				'identifiant=' . sql_quote($type)
+				'identifiant=' . sql_quote($type_plugin)
 			);
 		}
 		$description = sql_fetsel($champs_type_plugin, 'spip_mots', $where);
@@ -65,16 +61,16 @@ function type_plugin_lire($typologie, $type, $informations = array()) {
 			$description['profondeur'] = intval($description['profondeur']);
 
 			// Stockage de la description
-			$description_type[$typologie][$type] = $description;
+			$description_type[$typologie][$type_plugin] = $description;
 		} else {
 			// En cas d'erreur stocker une description vide
-			$description_type[$typologie][$type] = false;
+			$description_type[$typologie][$type_plugin] = false;
 		}
 	}
 
 	// On ne retourne que les champs demandés
-	$type_plugin = $description_type[$typologie][$type];
-	if ($type_plugin and $informations) {
+	$type_plugin_lu = $description_type[$typologie][$type_plugin];
+	if ($type_plugin_lu and $informations) {
 		// Extraction des seules informations demandées.
 		// -- si on demande une information unique on renvoie la valeur simple, sinon on renvoie un tableau.
 		// -- si une information n'est pas un champ valide elle n'est pas renvoyée sans monter d'erreur.
@@ -84,21 +80,20 @@ function type_plugin_lire($typologie, $type, $informations = array()) {
 				$informations = array_shift($informations);
 			} else {
 				// Tableau des informations valides
-				$type_plugin = array_intersect_key($type_plugin, array_flip($informations));
+				$type_plugin_lu = array_intersect_key($type_plugin_lu, array_flip($informations));
 			}
 		}
 
 		if (is_string($informations)) {
 			// Valeur unique demandée.
-			$type_plugin = isset($description_type[$typologie][$type][$informations])
-				? $description_type[$typologie][$type][$informations]
+			$type_plugin_lu = isset($description_type[$typologie][$type_plugin][$informations])
+				? $description_type[$typologie][$type_plugin][$informations]
 				: '';
 		}
- 	}
+	}
 
-	return $type_plugin;
+	return $type_plugin_lu;
 }
-
 
 /**
  * Renvoie l'information brute demandée pour l'ensemble des types de plugins d'une typologie donnée
@@ -106,16 +101,12 @@ function type_plugin_lire($typologie, $type, $informations = array()) {
  *
  * @api
  *
- * @param string $typologie
- *        Typologie concernée : categorie, tag...
- * @param array  $filtres
- *        Liste des couples (champ, valeur) ou tableau vide.
- * @param array  $informations
- *        Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
- *        Si l'argument est vide, la fonction renvoie les descriptions complètes.
+ * @param string $typologie    Typologie concernée : categorie, tag...
+ * @param array  $filtres      Liste des couples (champ, valeur) ou tableau vide.
+ * @param array  $informations Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
+ *                             Si l'argument est vide, la fonction renvoie les descriptions complètes.
  *
- * @return array
- *        Description complète ou information précise pour chaque type de plugin de la typologie concernée.
+ * @return array Description complète ou information précise pour chaque type de plugin de la typologie concernée.
  */
 function type_plugin_repertorier($typologie, $filtres = array(), $informations = array()) {
 
@@ -155,24 +146,20 @@ function type_plugin_repertorier($typologie, $filtres = array(), $informations =
 		}
 	}
 
-    return $types_filtrees;
+	return $types_filtrees;
 }
-
 
 /**
  * Renvoie les affectations (type de plugin, plugin) pour une typologie donnée.
  *
  * @api
  *
- * @param string $typologie
- *        Typologie concernée : categorie, tag...
- * @param array  $filtres
- *        Liste des couples (champ, valeur) ou tableau vide.
- *        Pratiquement, les critères admins sont `prefixe`, `id_mot` et aussi `type` qui revient à filtrer
- *        sur un type de plugin comme id_mot.
+ * @param string $typologie Typologie concernée : categorie, tag...
+ * @param array  $filtres   Liste des couples (champ, valeur) ou tableau vide.
+ *                          Pratiquement, les critères admins sont `prefixe`, `id_mot` et aussi `type` qui revient à filtrer
+ *                          sur un type de plugin comme id_mot.
  *
- * @return array
- *        Description de chaque affectation (type de plugin, plugin) de la typologie concernée.
+ * @return array Description de chaque affectation (type de plugin, plugin) de la typologie concernée.
  */
 function type_plugin_repertorier_affectation($typologie, $filtres = array()) {
 
@@ -218,33 +205,29 @@ function type_plugin_repertorier_affectation($typologie, $filtres = array()) {
 	// Récupération des affectations.
 	$affectations = sql_allfetsel($select, $from, $where, '', $order_by);
 
-    return $affectations;
+	return $affectations;
 }
-
 
 /**
  * Dénombre les types de plugin enfants d'un type d'une typologie donnée.
  *
  * @api
  *
- * @param string     $typologie
- *        Typologie concernée : categorie, tag...
- * @param int|string $type
- *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
+ * @param string     $typologie   Typologie concernée : categorie, tag...
+ * @param int|string $type_plugin Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
  *
- * @return int
- *         Nombre d'enfants d'un type de plugin ou 0 si aucun.
+ * @return int Nombre d'enfants d'un type de plugin ou 0 si aucun.
  */
-function type_plugin_compter_enfant($typologie, $type) {
+function type_plugin_compter_enfant($typologie, $type_plugin) {
 
 	// Initialisations statiques pour les performances.
 	static $compteurs = array();
 
 	// Le type est fourni soit sous forme de son identifiant soit de son id.
 	// On calcule dans tous les cas l'id.
-	if (!$id_mot = intval($type)) {
+	if (!$id_mot = intval($type_plugin)) {
 		// On a passé l'identifiant, il faut déterminer l'id du mot.
-		$id_mot = type_plugin_lire($typologie, $type, 'id_mot');
+		$id_mot = type_plugin_lire($typologie, $type_plugin, 'id_mot');
 	}
 
 	// On acquiert les enfants éventuels du type et on en calcule le nombre.
@@ -256,21 +239,17 @@ function type_plugin_compter_enfant($typologie, $type) {
 	return $compteurs[$id_mot];
 }
 
-
 /**
  * Dénombre les affectations (type de plugin, plugin) d'un type d'une typologie.
  *
  * @api
  *
- * @param string     $typologie
- *        Typologie concernée : categorie, tag...
- * @param int|string $type
- *        Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
+ * @param string     $typologie   Typologie concernée : categorie, tag...
+ * @param int|string $type_plugin Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
  *
- * @return int
- *         Nombre d'affectations (type de plugin, plugin) d'un type de plugin ou 0 si aucun.
+ * @return int Nombre d'affectations (type de plugin, plugin) d'un type de plugin ou 0 si aucun.
  */
-function type_plugin_compter_affectation($typologie, $type) {
+function type_plugin_compter_affectation($typologie, $type_plugin) {
 
 	// Initialisations statiques pour les performances.
 	static $compteurs = array();
@@ -284,7 +263,7 @@ function type_plugin_compter_affectation($typologie, $type) {
 
 	// Le type est fourni soit sous forme de son identifiant soit de son id.
 	// Extrait les informations du type de plugin pour utiliser id_mot et profondeur.
-	$description_type = type_plugin_lire($typologie, $type, array('id_mot', 'profondeur'));
+	$description_type = type_plugin_lire($typologie, $type_plugin, array('id_mot', 'profondeur'));
 	$id_mot = $description_type['id_mot'];
 
 	// Recherche des affectations de plugin. Pour les catégories qui sont arborescentes, il faut distinguer :

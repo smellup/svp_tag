@@ -1,0 +1,27 @@
+#SET{selected,''}
+<select
+<BOUCLE_remplacer(MOTS)
+	{technique=oui}
+	{typologie_plugin #ENV{typologie}}
+	{id_mot IN #ENV{types_plugins_exclus}}>
+	#SET{expose,mot-#ID_MOT-#OBJET-#ID_OBJET}
+	name="changer_plugin[mot-#ID_MOT-#OBJET-#ID_OBJET][groupe#ID_GROUPE]"
+</BOUCLE_remplacer>
+	#SET{expose,#ENV{ajouter_lien}|table_valeur{groupe#ID_GROUPE}}}
+	#SET{selected,#GET{expose}|oui}
+	name="affecter_plugin[groupe#ID_GROUPE]"
+<//B_remplacer>
+id="ajouter_lien-groupe#ID_GROUPE"
+	onchange="jQuery(this).siblings('input.submit').css('visibility','visible');"
+>
+<BOUCLE_mots(MOTS)
+	{technique=oui}
+	{typologie_plugin #ENV{typologie}}
+	{profondeur=#CONFIG{svptype/typologies/#ENV{typologie}/max_profondeur}}
+	{par identifiant}
+>
+	#SET{value,mot-#ID_MOT-#OBJET-#ID_OBJET}
+	<option value="#GET{value}"[(#GET{value}|=={#GET{expose}}|oui)selected="selected" class="on"]>#IDENTIFIANT</option>
+</BOUCLE_mots>
+</select>
+<input type="submit" class="btn submit" name="groupe#ID_GROUPE" value="<:bouton_changer:>"[(#GET{selected}|non)style="visibility:hidden;"]/>
