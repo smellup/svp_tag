@@ -1,11 +1,15 @@
 [(#SET{label_typologie, #VAL{svptype:}|concat{#ENV{typologie}_identifiant_label}|_T})]
+#SET{id_type_plugin_affecte, 0}
+[(#ENV{typologie_unique}|oui)
+	#SET{id_type_plugin_affecte, #ENV{affectations}|reset}
+]
 <ul>
 	<li class="editer affecter_plugin #TYPOLOGIE[ (#ENV{typologie_unique}|oui)unseul]">
 		<label for="affecter_plugin-#TYPOLOGIE"[ title="(#ENV{label}|supprimer_tags|attribut_html)"]>
 			[(#GET{label_typologie})]
 		</label>
 		<select
-			name="affecter_plugin[#PREFIXE:#TYPOLOGIE]"
+			name="affecter_plugin[#GET{id_type_plugin_affecte}]"
 			id="affecter_plugin-#TYPOLOGIE"
 			onchange="jQuery(this).siblings('input.submit').css('visibility','visible');"
 		>
