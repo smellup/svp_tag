@@ -1,3 +1,4 @@
+[(#SET{bouton_affecter, #VAL{svptype:}|concat{#ENV{typologie}_affecter_label}|_T})]
 <div class="formulaire_spip formulaire_editer formulaire_editer_liens formulaire_#FORM formulaire_#FORM-#ENV{attribut_id}[(#ENV{editable}|non)non_editable]">
 	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
 	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
@@ -15,26 +16,27 @@
 	]
 
 		[(#SET{titre_liste, #VAL{svptype:}|concat{#ENV{typologie}_identifiant_label}|_T})]
-		[(#SET{titre_desaffectation, #VAL{svptype:}|concat{#ENV{typologie}_desaffecter_label}|_T})]
+		[(#SET{titre_liste_vide, #VAL{svptype:plugin_}|concat{#ENV{typologie}_erreur_vide}|_T})]
 		<INCLURE{fond=prive/objets/liste/types_plugins_affectes,
 			typologie,
 			prefixe,
 			id_plugin,
+			affectations,
 			titre_liste=#GET{titre_liste},
-			titre_desaffectation=#GET{titre_desaffectation},
+			sinon=#GET{titre_liste_vide},
 			env,
 			ajax} />
 
 		[(#ENV{visible, 0}|et{#ENV{editable}}|oui)
 		<div class="selecteur">
 			[(#SET{titre_affectation, #VAL{svptype:}|concat{#ENV{typologie}_affecter_label}|_T})]
-			[(#SET{label_typologie, #VAL{svptype:}|concat{#ENV{typologie}_identifiant_label}|_T})]
 			<h3 class="titrem">[(#GET{titre_affectation})]</h3>
 			<INCLURE{fond=prive/objets/liste/types_plugins_affecter,
 				typologie,
 				prefixe,
-				id_plugin,
-				label=#GET{label_typologie},
+				affectations,
+				profondeur_feuille=#ENV{profondeur_max},
+				typologie_unique,
 				env,
 				ajax} />
 			<div class="toggle_box_link">
@@ -51,13 +53,20 @@
 				/>
 			</p>
 		</div>
+		<div class="toggle_box_link" style="display:none;">
+			&#91;
+			<a href="#"	onclick="jQuery(this).parents('div.toggle_box_link').hide('fast').siblings('.selecteur').show('fast');jQuery('#visible-#ENV{attribut_id}').attr('value',1);return false;">
+				[(#GET{bouton_affecter})]
+			</a>
+			&#93;
+		</div>
 		]
 	[(#ENV{editable})
 		[(#ENV{visible, 0}|non)
 		<div class="toggle_box_link">
 			&#91;
 			<button type="submit" class="link" name="visible" value="1">
-				[(#VAL{svptype:}|concat{#ENV{typologie}_affecter_label}|_T)]
+				[(#GET{bouton_affecter})]
 			</button>
 			&#93;
 		</div>

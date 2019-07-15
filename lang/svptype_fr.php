@@ -65,6 +65,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// P
 	'plugin_compteur_label' => 'Affectations',
+	'plugin_categorie_erreur_vide' => 'Aucune catégorie',
+	'plugin_tag_erreur_vide' => 'Aucun tag',
 
 	// S
 	'svptype_menu_titre' => 'Catégories et tags des plugins',

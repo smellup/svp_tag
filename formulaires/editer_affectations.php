@@ -43,17 +43,17 @@ function formulaires_editer_affectations_charger($id_plugin, $typologie, $option
 	include_spip('inc/config');
 	$configuration_typologie = lire_config("svptype/typologies/${typologie}", array());
 
+	// On détermine si la typologie n'accepte qu'un type de plugin par plugin ou plus.
+	$typologie_unique = ($configuration_typologie['max_affectations'] == 1);
+
 	// On détermine la liste des types de plugin de la catégorie concernée qui sont déjà affectés au plugin.
-	// On en déduit :
-	// -- le nombre déjà affectés
-	// -- l'indication d'atteinte ou pas du nombre maximal d'affectations.
+	// On en déduit l'indication d'atteinte ou pas du nombre maximal d'affectations.
 	include_spip('inc/svptype_plugin');
 	$affectations = plugin_lister_type_plugin($prefixe, $typologie);
-	$nb_affectations = count($affectations);
-	$max_affectations_atteint = 0;
+	$typologie_complete = false;
 	if ($configuration_typologie['max_affectations']
-	and ($nb_affectations == $configuration_typologie['max_affectations'])) {
-		$max_affectations_atteint = 1;
+	and (count($affectations) == $configuration_typologie['max_affectations'])) {
+		$typologie_complete = true;
 	}
 
 	// Envoi des valeurs au formulaire.
@@ -62,11 +62,11 @@ function formulaires_editer_affectations_charger($id_plugin, $typologie, $option
 		'prefixe'            => $prefixe,
 		'typologie'          => $typologie,
 		'affectations'       => $affectations,
-		'typologie_complete' => $max_affectations_atteint,
+		'profondeur_max'     => $configuration_typologie['max_profondeur'],
+		'typologie_complete' => $typologie_complete,
+		'typologie_unique'   => $typologie_unique,
 		'attribut_id'        => "plugin-${typologie}",
-		'_objet_lien'        => 'type_plugin',
-		'id_lien_ajoute'     => _request('id_lien_ajoute'),
-		'ajouter_lien'       => '',
+		'affecter_plugin'    => '',
 		'desaffecter_plugin' => '',
 		'visible'            => 0,
 		'editable'           => $editable,

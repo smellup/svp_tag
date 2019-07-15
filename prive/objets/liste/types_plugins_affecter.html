@@ -1,21 +1,27 @@
+[(#SET{label_typologie, #VAL{svptype:}|concat{#ENV{typologie}_identifiant_label}|_T})]
 <ul>
-	<li class="editer affecter_plugin #TYPOLOGIE[ (#UNSEUL|=={oui}|oui)unseul][ (#OBLIGATOIRE|=={oui}|oui)obligatoire]">
-		<label for="affecter_plugin-#TYPOLOGIE"[ title="(#ENV{label}|supprimer_tags|attribut_html)"]>[(#ENV{label})]</label>
+	<li class="editer affecter_plugin #TYPOLOGIE[ (#ENV{typologie_unique}|oui)unseul]">
+		<label for="affecter_plugin-#TYPOLOGIE"[ title="(#ENV{label}|supprimer_tags|attribut_html)"]>
+			[(#GET{label_typologie})]
+		</label>
 		<select
 			name="affecter_plugin[#PREFIXE:#TYPOLOGIE]"
 			id="affecter_plugin-#TYPOLOGIE"
 			onchange="jQuery(this).siblings('input.submit').css('visibility','visible');"
 		>
-		<BOUCLE_mots(MOTS)
+			<option value="">--</option>
+		<BOUCLE_types_plugins(MOTS)
 			{technique=oui}
 			{typologie_plugin #ENV{typologie}}
-			{profondeur=#CONFIG{svptype/typologies/#ENV{typologie}/max_profondeur}}
+			{profondeur=#ENV{profondeur_feuille}}
+			{id_mot !IN #ENV{affectations}}
 			{par identifiant}
 		>
 			#SET{value, #PREFIXE:#ID_MOT:#TYPOLOGIE}
-			<option value="#GET{value}"[(#GET{value}|=={#GET{expose}}|oui)selected="selected" class="on"]>#IDENTIFIANT</option>
-		</BOUCLE_mots>
+			<option value="#GET{value}">#IDENTIFIANT</option>
+		</BOUCLE_types_plugins>
 		</select>
-		<input type="submit" class="btn submit" name="typologie_#TYPOLOGIE" value="<:bouton_changer:>"[(#GET{selected}|non)style="visibility:hidden;"]/>
+		[(#SET{bouton_affecter, #ENV{typologie_unique}|?{<:bouton_changer:>, <:bouton_ajouter:>}})]
+		<input type="submit" class="btn submit" name="typologie_#TYPOLOGIE" value="[(#GET{bouton_affecter})]" style="visibility:hidden;" />
 	</li>
 </ul>

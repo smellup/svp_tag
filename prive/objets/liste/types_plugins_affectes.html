@@ -5,13 +5,8 @@
 	points, -1
 }})
 ]
+[(#SET{bouton_desaffecter, #VAL{svptype:}|concat{#ENV{typologie}_desaffecter_label}|_T})]
 #SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_modifier_title}|_T}
-#SET{
-	types_plugins_affectes,
-	#ENV{typologie}
-		|type_plugin_repertorier_affectation{#ARRAY{prefixe, #ENV{prefixe}}}
-		|array_column{id_mot}
-}
 <B_liste_types>
 #ANCRE_PAGINATION
 <div class="liste-objets liste-objets-lies types_plugins[ (#ENV{typologie})]">
@@ -29,7 +24,7 @@
 <BOUCLE_liste_types(MOTS)
 	{technique=oui}
 	{typologie_plugin #ENV{typologie}}
-	{id_mot IN #GET{types_plugins_affectes}}
+	{id_mot IN #ENV{affectations}}
 	{where?}
 	{tri #ENV{par, identifiant}, #GET{defaut_tri}}
 	{pagination #ENV{nb,10}}>
@@ -43,7 +38,7 @@
 			<td class="action">
 			[(#AUTORISER{affecter, plugin, #ID_PLUGIN}|oui)
 				<button type="submit" class="button link delete" name="desaffecter_plugin\[#PREFIXE:#ID_MOT\]" value="X">
-					#ENV{titre_desaffectation}[&nbsp;(#CHEMIN_IMAGE{supprimer-12.png}|balise_img{'X'})]
+					#GET{bouton_desaffecter}[&nbsp;(#CHEMIN_IMAGE{supprimer-12.png}|balise_img{'X'})]
 				</button>
 			]
 			</td>
