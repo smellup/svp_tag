@@ -109,6 +109,44 @@ function typologie_plugin_creer_groupe() {
 }
 
 /**
+ * Supprime, pour une typologie donnée, l'ensemble des types de plugin ou l'ensemble des affectations
+ * plugin-type de plugin.
+ *
+ * @api
+ *
+ * @param string $typologie    Identifiant de la typologie concernée : categorie, tag...
+ * @param string $vue          Nature des données à supprimer. Prend les valeurs :
+ *                             - liste : pour les types de plugin,
+ *                             - affectation : pour les affectations plugin-type de plugin.
+ *
+ * @return bool True si le vidage s'est bien passé, false sinon.
+ */
+function typologie_plugin_vider($typologie, $vue = 'liste') {
+
+	// Initialisation du retour.
+	$retour = true;
+
+	// Déterminer l'id du groupe pour la typologie concernée.
+	include_spip('inc/config');
+	$id_groupe = lire_config("svptype/typologies/${typologie}/id_groupe", 0);
+
+	// Déterminer la table en fonction de la nature des données à vider.
+	$from = ($vue == 'liste') ? 'spip_mots' : 'spip_plugins_typologies';
+
+	// Construction de la condition sur l'id du groupe qui permet de se limiter à la typologie concernée.
+	$where = array(
+		'id_groupe=' . $id_groupe,
+	);
+
+	// Suppression des données de la base.
+	if (!sql_delete($from, $where)) {
+		$retour = false;
+	}
+
+	return $retour;
+}
+
+/**
  * Importe une liste de types de plugin appartenant à une même typologie.
  * Les types de plugin de la liste déjà présents en base de données sont ignorés.
  *

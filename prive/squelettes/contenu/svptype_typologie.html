@@ -10,14 +10,14 @@
 	typologie=#GET{typologie},
 	env} />
 
-[(#REM) <!-- Bouton d'ajout d'un type ou d'une affectation --> ]
+[(#REM) <!-- Bouton d'ajout d'un type de plugin --> ]
 [(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_ajouter}|_T)]})]
 [(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}})]
 [(#SET{redirect, [(#URL_ECRIRE{svptype_typologie}
 	|parametre_url{typologie, #GET{typologie}}
 	|parametre_url{vue, #GET{vue}})]
 })]
-[(#AUTORISER{creer, typeplugin, '', '', #ARRAY{id_groupe, #GET{id_groupe}}})
+[(#AUTORISER{creer, typeplugin, '', '', #ARRAY{id_groupe, #GET{id_groupe}}}|et{#GET{vue}|=={liste}}|oui)
 	[(#URL_ECRIRE{type_plugin_edit}
 		|parametre_url{new, oui}
 		|parametre_url{typologie, #GET{typologie}}

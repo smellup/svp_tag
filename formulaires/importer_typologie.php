@@ -18,18 +18,23 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @return array
  * 		Tableau des données à charger par le formulaire (affichage) :
- * 		- `_vues`       : (affichage) choix d'exportation entre les types de plugin ou leurs affectations.
- *      - `_vue_defaut` : choix par défaut (types de plugin).
+ * 		- `_vues`         : (affichage) choix d'exportation entre les types de plugin ou leurs affectations.
+ *      - `_est_affectee` : indique que des affectations existent pour la typologie.
  */
 function formulaires_importer_typologie_charger($typologie) {
 
 	// Initialisation du tableau des variables fournies au formulaire.
 	$valeurs = array();
 
+	// Choix des natures de données à importer ou exporter.
 	$valeurs['_vues'] = array(
 		'liste'       => _T("svptype:${typologie}_import_vue_liste_label"),
 		'affectation' => _T("svptype:${typologie}_import_vue_affectation_label"),
 	);
+
+	// Déterminer si des affectations existent pour la typologie concernée afin de ne pas proposer
+	// le vidage éventuel des types de plugin.
+
 
 	return $valeurs;
 }
@@ -117,7 +122,14 @@ function formulaires_importer_typologie_traiter($typologie) {
 
 			// -- Importation du tableau représentant la typologie.
 			if ($liste) {
+				// On vérifie si un vidage des données d'affectation ou de types de plugin a été demandé.
+				// Si oui, on vide ces données avant de charger celles du fichier d'import.
 				include_spip('inc/svptype_typologie');
+				if (_request('vidage')) {
+					typologie_plugin_vider($typologie, $vue);
+				}
+
+				// Import de la liste.
 				$suffixe = $vue == 'liste' ? '' : "_${vue}";
 				$importer = "typologie_plugin_importer${suffixe}";
 				$resultat_import = $importer($typologie, $liste);
