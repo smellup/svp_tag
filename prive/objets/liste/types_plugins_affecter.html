@@ -1,10 +1,10 @@
 [(#SET{label_typologie, #VAL{svptype:}|concat{#ENV{typologie}_identifiant_label}|_T})]
 #SET{id_type_plugin_affecte, 0}
-[(#ENV{typologie_unique}|oui)
+[(#ENV{typologie_singuliere}|oui)
 	#SET{id_type_plugin_affecte, #ENV{affectations}|reset}
 ]
 <ul>
-	<li class="editer affecter_plugin #TYPOLOGIE[ (#ENV{typologie_unique}|oui)unseul]">
+	<li class="editer affecter_plugin #TYPOLOGIE[ (#ENV{typologie_singuliere}|oui)unseul]">
 		<label for="affecter_plugin-#TYPOLOGIE"[ title="(#ENV{label}|supprimer_tags|attribut_html)"]>
 			[(#GET{label_typologie})]
 		</label>
@@ -25,7 +25,7 @@
 			<option value="#GET{value}">#IDENTIFIANT</option>
 		</BOUCLE_types_plugins>
 		</select>
-		[(#SET{bouton_affecter, #ENV{typologie_unique}|?{<:bouton_changer:>, <:bouton_ajouter:>}})]
+		[(#SET{bouton_affecter, #ENV{typologie_singuliere}|?{<:bouton_changer:>, <:bouton_ajouter:>}})]
 		<input type="submit" class="btn submit" name="typologie_#TYPOLOGIE" value="[(#GET{bouton_affecter})]" style="visibility:hidden;" />
 	</li>
 </ul>
