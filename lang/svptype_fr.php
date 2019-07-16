@@ -41,6 +41,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_parent_label' => 'Catégorie parente',
 	'categorie_parent_aucun_label' => '-- à la racine, aucun parent --',
 	'categorie_selection_option_tout' => 'Toutes les catégories',
+	'categorie_vidage_liste_label' => 'Supprimer les catégories ?',
+	'categorie_vidage_affectation_label' => 'Supprimer les affectations plugin-categorie ?',
 
 	// I
 	'identifiant_label' => 'Identifiant',
@@ -55,7 +57,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'export_message_suppression' => 'Êtes-vous sûr de vouloir supprimer cet export ?',
 	'export_message_vide' => 'Aucune donné à exporter.',
 	'import_vue_label' => 'Que voulez-vous importer ?',
-	'import_vidage_labelcase' => 'Supprimer, au préalable, les données existantes ?',
 	'import_form_titre' => 'Importation',
 	'import_page_titre' => 'Importation d\'une typologie de plugin',
 	'import_fichier_label' => 'Fichier à importer',
@@ -100,8 +101,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'tag_modifier_title' => 'Modifier ce tag',
 	'tag_page_titre' => 'Gestion des tags de plugin',
 	'tag_selection_option_tout' => 'Tous les tags',
+	'tag_vidage_liste_label' => 'Supprimer les tags ?',
+	'tag_vidage_affectation_label' => 'Supprimer les affectations plugin-tag ?',
 	'typologie_menu_liste_titre' => 'Gérer la liste',
 	'typologie_menu_affectation_titre' => 'Gérer l\'affectation des plugins',
 	'typologie_menu_maintenance_titre' => 'Importer / exporter / vider',
 
+	// V
+	'vidage_form_titre' => 'Vidage',
+	'vidage_liste_explication' => 'La suppression n\'est possible que si il n\'existe aucune affectation.',
 );

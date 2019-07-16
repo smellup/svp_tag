@@ -13,13 +13,10 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $redirect
- *        URL de redirection en fin de traitement : on revient toujours de la page source.
  *
  * @return array
  * 		Tableau des données à charger par le formulaire (affichage) :
  * 		- `_vues`         : (affichage) choix d'exportation entre les types de plugin ou leurs affectations.
- *      - `_est_affectee` : indique que des affectations existent pour la typologie.
  */
 function formulaires_importer_typologie_charger($typologie) {
 
@@ -29,12 +26,8 @@ function formulaires_importer_typologie_charger($typologie) {
 	// Choix des natures de données à importer ou exporter.
 	$valeurs['_vues'] = array(
 		'liste'       => _T("svptype:${typologie}_import_vue_liste_label"),
-		'affectation' => _T("svptype:${typologie}_import_vue_affectation_label"),
+		'affectation' => _T("svptype:${typologie}_import_vue_affectation_label")
 	);
-
-	// Déterminer si des affectations existent pour la typologie concernée afin de ne pas proposer
-	// le vidage éventuel des types de plugin.
-
 
 	return $valeurs;
 }
@@ -45,8 +38,6 @@ function formulaires_importer_typologie_charger($typologie) {
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
- * @param string $redirect
- *        URL de redirection en fin de traitement : on revient toujours de la page source.
  *
  * @return array
  * 		Tableau des erreurs concernant le fichier ou tableau vide si aucune erreur.
@@ -84,9 +75,6 @@ function formulaires_importer_typologie_verifier($typologie) {
  *
  * @param string $typologie
  *        Typologie de plugin concernée. Prend les valeurs `categorie`, `tag`...
- * @param string $redirect
- *        URL de redirection en fin de traitement : on retourne sur la page des plugins ou des affectations
- *        suivant le choix de l'import.
  *
  * @return array
  * 		Tableau retourné par le formulaire contenant toujours un message de bonne exécution ou
@@ -122,14 +110,6 @@ function formulaires_importer_typologie_traiter($typologie) {
 
 			// -- Importation du tableau représentant la typologie.
 			if ($liste) {
-				// On vérifie si un vidage des données d'affectation ou de types de plugin a été demandé.
-				// Si oui, on vide ces données avant de charger celles du fichier d'import.
-				include_spip('inc/svptype_typologie');
-				if (_request('vidage')) {
-					typologie_plugin_vider($typologie, $vue);
-				}
-
-				// Import de la liste.
 				$suffixe = $vue == 'liste' ? '' : "_${vue}";
 				$importer = "typologie_plugin_importer${suffixe}";
 				$resultat_import = $importer($typologie, $liste);
