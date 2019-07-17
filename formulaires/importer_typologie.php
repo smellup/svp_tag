@@ -1,7 +1,7 @@
 <?php
 /**
  * Gestion du formulaire d'importation d'une typologie de plugin
- * (liste des types ou liste des affectations type-plugin).
+ * (liste des types ou liste des affectations plugin-type de plugin).
  */
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
@@ -11,12 +11,10 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * Chargement des données : le formulaire sert à tout type d'importation. Il est donc nécessaire de construire le
  * choix d'exportation entre les types de plugins ou leurs affectations.
  *
- * @param string $typologie
- *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
+ * @param string $typologie Typologie de plugin concernée. Prend les valeurs `categorie`, `tag`...
  *
- * @return array
- * 		Tableau des données à charger par le formulaire (affichage) :
- * 		- `_vues`         : (affichage) choix d'exportation entre les types de plugin ou leurs affectations.
+ * @return array Tableau des données à charger par le formulaire (affichage) :
+ *               - `_vues` : (affichage) choix d'exportation entre les types de plugin ou leurs affectations.
  */
 function formulaires_importer_typologie_charger($typologie) {
 
@@ -32,15 +30,12 @@ function formulaires_importer_typologie_charger($typologie) {
 	return $valeurs;
 }
 
-
 /**
  * Vérification des saisies : il est indispensable de choisir un fichier d'import de type JSON.
  *
- * @param string $typologie
- *        Typologie de plugin concernée. Prend les valeurs `categorie` ou `tag`.
+ * @param string $typologie Typologie de plugin concernée. Prend les valeurs `categorie`, `tag`...
  *
- * @return array
- * 		Tableau des erreurs concernant le fichier ou tableau vide si aucune erreur.
+ * @return array Tableau des erreurs concernant le fichier ou tableau vide si aucune erreur.
  */
 function formulaires_importer_typologie_verifier($typologie) {
 
@@ -68,17 +63,14 @@ function formulaires_importer_typologie_verifier($typologie) {
 	return $erreurs;
 }
 
-
 /**
  * Exécution du formulaire : le fichier choisi est décodé et les types de plugin ou les affectations sont chargés
  * en base si il ne sont pas déjà présents.
  *
- * @param string $typologie
- *        Typologie de plugin concernée. Prend les valeurs `categorie`, `tag`...
+ * @param string $typologie Typologie de plugin concernée. Prend les valeurs `categorie`, `tag`...
  *
- * @return array
- * 		Tableau retourné par le formulaire contenant toujours un message de bonne exécution ou
- * 		d'erreur. L'indicateur editable est toujours à vrai.
+ * @return array Tableau retourné par le formulaire contenant toujours un message de bonne exécution ou
+ *               d'erreur. L'indicateur editable est toujours à vrai.
  */
 function formulaires_importer_typologie_traiter($typologie) {
 
@@ -110,6 +102,7 @@ function formulaires_importer_typologie_traiter($typologie) {
 
 			// -- Importation du tableau représentant la typologie.
 			if ($liste) {
+				include_spip('inc/svptype_typologie');
 				$suffixe = $vue == 'liste' ? '' : "_${vue}";
 				$importer = "typologie_plugin_importer${suffixe}";
 				$resultat_import = $importer($typologie, $liste);

@@ -110,4 +110,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// V
 	'vidage_form_titre' => 'Vidage',
 	'vidage_liste_explication' => 'La suppression n\'est possible que si il n\'existe aucune affectation.',
+	'vidage_message_ok' => 'Vidage réussi.',
+	'vidage_message_nok' => 'Choisissez les données à supprimer.',
 );
