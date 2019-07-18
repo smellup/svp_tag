@@ -114,10 +114,10 @@ function typologie_plugin_creer_groupe() {
  *
  * @api
  *
- * @param string $typologie    Identifiant de la typologie concernée : categorie, tag...
- * @param string $vue          Nature des données à supprimer. Prend les valeurs :
- *                             - liste : pour les types de plugin,
- *                             - affectation : pour les affectations plugin-type de plugin.
+ * @param string $typologie Identifiant de la typologie concernée : categorie, tag...
+ * @param string $vue       Nature des données à supprimer. Prend les valeurs :
+ *                          - liste : pour les types de plugin,
+ *                          - affectation : pour les affectations plugin-type de plugin.
  *
  * @return bool True si le vidage s'est bien passé, false sinon.
  */
