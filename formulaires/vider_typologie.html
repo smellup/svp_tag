@@ -29,18 +29,18 @@
 <script type="text/javascript">
 //<![CDATA[
 	jQuery(document).ready(function() {
-		[(#ENV{_nb_affectations}|>{0}|oui)
+		[(#ENV{_nb_affectations}|oui)
 			jQuery(".editer_vidage_liste input.checkbox").attr('disabled', 'disabled');
 		]
-		jQuery(".editer_vidage_affectation input.checkbox").click(function() {
-			if (jQuery("editer_vidage_affectation input.checkbox").attr('checked')) {
-				jQuery(".editer_vidage_liste input.checkbox").attr('disabled', '');
+		jQuery(".editer_vidage_affectation input.checkbox").on('click', function() {
+			if (jQuery(".editer_vidage_affectation input.checkbox").prop('checked')) {
+				jQuery(".editer_vidage_liste input.checkbox").attr('disabled', null);
 			} else {
 				[(#ENV{_nb_affectations}|oui)
 					jQuery(".editer_vidage_liste input.checkbox").attr('disabled', 'disabled');
 				]
 				[(#ENV{_nb_affectations}|non)
-					jQuery(".editer_vidage_liste input.checkbox").attr('disabled', '');
+					jQuery(".editer_vidage_liste input.checkbox").attr('disabled', null);
 				]
 			}
 			jQuery(this).blur();
