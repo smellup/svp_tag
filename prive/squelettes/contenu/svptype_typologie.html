@@ -10,6 +10,33 @@
 	typologie=#GET{typologie},
 	env} />
 
+
+[(#REM) <!-- Onglets pour naviguer entre les plugins avec et sans affectation dans les vues idoines --> ]
+[(#GET{vue}|=={liste}|non)
+<div class="onglets_simple second clearfix">
+	<ul>
+		[<li class="first">
+			(#SELF
+				|parametre_url{vue, affectation}
+				|lien_ou_expose{
+					[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_affectation_filtre_avec}|_T)],
+					#GET{vue}|=={affectation},
+					ajax}
+			)
+		</li>]
+		[<li>
+			(#SELF
+				|parametre_url{vue, plugins_sans_affectation}
+				|lien_ou_expose{
+					[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_affectation_filtre_sans}|_T)],
+					#GET{vue}|=={plugins_sans_affectation},
+					ajax})
+		</li>]
+	</ul>
+	<div class="clear"></div>
+</div>]
+
+
 [(#REM) <!-- Bouton d'ajout d'un type de plugin --> ]
 [(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_ajouter}|_T)]})]
 [(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}})]
@@ -28,6 +55,7 @@
 <br class="clear" />
 
 [(#REM) <!-- Liste des types ou des affectations pour la typologie concernée (catégorie, tag...) --> ]
+[(#GET{vue}|=={plugins_sans_affectation}|non)
 [(#SET{fond_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_titre}|_T)]})]
 [(#SET{liste_vide, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_erreur_vide}|_T)]})]
 [(#SET{option_tout, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_selection_option_tout}|_T)]})]
@@ -40,4 +68,14 @@
 	option_intro=#GET{option_tout},
 	sinon=#GET{liste_vide},
 	env, ajax} />
+]
 
+[(#REM) <!-- Liste des plugins n'ayant aucune affectation pour la typologie concernée --> ]
+[(#GET{vue}|=={plugins_sans_affectation}|oui)
+[(#SET{filtre, #GET{typologie}|liste_plugin_filtrer})]
+
+<INCLURE{fond=prive/objets/liste/plugins,
+	where=#GET{filtre},
+	par=prefixe,
+	env, ajax} />
+]

@@ -6,9 +6,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
-
 function liste_type_plugin_filtrer($typologie, $type, $vue) {
-
 	$filtre = '';
 
 	if ($type) {
@@ -38,6 +36,32 @@ function liste_type_plugin_filtrer($typologie, $type, $vue) {
 					}
 				}
 			}
+		}
+	}
+
+	return $filtre;
+}
+
+function liste_plugin_filtrer($typologie) {
+	$filtre = '';
+
+	$select = array('prefixe', 'spip_plugins.id_plugin as id_plugin');
+	$from = array('spip_plugins', 'spip_depots_plugins');
+	$group_by = array('spip_plugins.id_plugin');
+	$where = array('spip_depots_plugins.id_depot>0', 'spip_depots_plugins.id_plugin=spip_plugins.id_plugin');
+	$plugins = sql_allfetsel($select, $from, $where, $group_by);
+	$plugins = array_column($plugins, 'id_plugin', 'prefixe');
+
+	if ($plugins) {
+		$affectations = type_plugin_repertorier_affectation($typologie);
+		$plugins_affectes = array_column($affectations, null, 'prefixe');
+
+		if (count($plugins_affectes) > count($plugins) / 2) {
+			$plugins_filtres = array_diff_key($plugins, $plugins_affectes);
+			$filtre = 'plugins.id_plugin IN (' . implode(',', $plugins_filtres) . ')';
+		} else {
+			$plugins_filtres = array_intersect_key($plugins, $plugins_affectes);
+			$filtre = 'plugins.id_plugin NOT IN (' . implode(',', $plugins_filtres) . ')';
 		}
 	}
 

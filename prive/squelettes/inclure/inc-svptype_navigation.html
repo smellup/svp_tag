@@ -20,7 +20,7 @@
 			|lien_ou_expose{
 				<:svptype:typologie_menu_affectation_titre:>,
 				[(#ENV{exec}|=={svptype_typologie}
-					|et{#GET{vue}|=={affectation}}
+					|et{#GET{vue}|match{affectation|plugins_sans_affectation}}
 				)]})
 	</li>]
 	[<li class="item">
