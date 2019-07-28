@@ -46,6 +46,18 @@ function plugin_affecter($plugin, $id_mot, $typologie) {
 	);
 	if (sql_insertq('spip_plugins_typologies', $set) === false) {
 		$retour = false;
+	} else {
+		pipeline(
+			'post_affectation_plugin',
+			array(
+				'args' => array(
+					'typologie' => $typologie,
+					'prefixe'   => $prefixe,
+					'id_mot'    => $id_mot,
+				),
+				'data' => array()
+			)
+		);
 	}
 
 	return $retour;

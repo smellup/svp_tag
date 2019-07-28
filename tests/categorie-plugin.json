@@ -1,5 +1,9 @@
 [
 	{
+		"prefixe": "ADHCLUB",
+		"type": "activite/association"
+	},
+	{
 		"prefixe": "AMAP",
 		"type": "activite/association"
 	},
@@ -8,40 +12,16 @@
 		"type": "activite/association"
 	},
 	{
-		"prefixe": "ADHCLUB",
-		"type": "activite/association"
-	},
-	{
-		"prefixe": "DECLINAISONS",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "FORMIDABLEPAIEMENT",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "LIVRAISON",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "SOUSCRIPTION",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "TRANSACTION",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "RESERVATIONS_CREDITS",
-		"type": "activite/commerce"
-	},
-	{
 		"prefixe": "ABONNEMENT",
 		"type": "activite/commerce"
 	},
 	{
-		"prefixe": "BOUTIQUE",
+		"prefixe": "BANK",
 		"type": "activite/commerce"
+	},
+	{
+		"type": "activite/commerce",
+		"prefixe": "BOUTIQUE"
 	},
 	{
 		"prefixe": "CATALOGUE",
@@ -68,6 +48,10 @@
 		"type": "activite/commerce"
 	},
 	{
+		"prefixe": "DECLINAISONS",
+		"type": "activite/commerce"
+	},
+	{
 		"prefixe": "DEVISE",
 		"type": "activite/commerce"
 	},
@@ -81,6 +65,14 @@
 	},
 	{
 		"prefixe": "FLATTR",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "FORMIDABLEPAIEMENT",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "LIVRAISON",
 		"type": "activite/commerce"
 	},
 	{
@@ -108,11 +100,27 @@
 		"type": "activite/commerce"
 	},
 	{
+		"prefixe": "PANIER_OPTIONS",
+		"type": "activite/commerce"
+	},
+	{
 		"prefixe": "PANIER2COMMANDE",
 		"type": "activite/commerce"
 	},
 	{
 		"prefixe": "PANIERS",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "PAYPAL",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "PRIX",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "PRIX_OBJETS",
 		"type": "activite/commerce"
 	},
 	{
@@ -124,7 +132,27 @@
 		"type": "activite/commerce"
 	},
 	{
+		"prefixe": "PRODUITS_LIENS",
+		"type": "activite/commerce"
+	},
+	{
 		"prefixe": "REGLEMENTS",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "RELANCE",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "RESERVATION_BANK",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "RESERVATIONS_CREDITS",
+		"type": "activite/commerce"
+	},
+	{
+		"prefixe": "SOUSCRIPTION",
 		"type": "activite/commerce"
 	},
 	{
@@ -140,6 +168,10 @@
 		"type": "activite/commerce"
 	},
 	{
+		"prefixe": "TRANSACTION",
+		"type": "activite/commerce"
+	},
+	{
 		"prefixe": "TUTOCOMMERCE",
 		"type": "activite/commerce"
 	},
@@ -149,38 +181,6 @@
 	},
 	{
 		"prefixe": "ZCOMMERCE",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "PRIX_OBJETS",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "BANK",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "PAYPAL",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "PRIX",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "PRODUITS_LIENS",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "RELANCE",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "RESERVATION_BANK",
-		"type": "activite/commerce"
-	},
-	{
-		"prefixe": "PANIER_OPTIONS",
 		"type": "activite/commerce"
 	},
 	{
@@ -228,7 +228,15 @@
 		"type": "activite/projet"
 	},
 	{
+		"prefixe": "PREPROD",
+		"type": "activite/projet"
+	},
+	{
 		"prefixe": "PROJETS",
+		"type": "activite/projet"
+	},
+	{
+		"prefixe": "PROJETS_ORGANISATIONS",
 		"type": "activite/projet"
 	},
 	{
@@ -240,6 +248,10 @@
 		"type": "activite/projet"
 	},
 	{
+		"prefixe": "SPIPMINE",
+		"type": "activite/projet"
+	},
+	{
 		"prefixe": "TICKETS",
 		"type": "activite/projet"
 	},
@@ -248,23 +260,11 @@
 		"type": "activite/projet"
 	},
 	{
-		"prefixe": "PREPROD",
-		"type": "activite/projet"
-	},
-	{
-		"prefixe": "PROJETS_ORGANISATIONS",
-		"type": "activite/projet"
-	},
-	{
-		"prefixe": "SPIPMINE",
-		"type": "activite/projet"
-	},
-	{
-		"prefixe": "BOUTON_PROPOSER",
+		"prefixe": "AED",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "IDENTITE_EXTRA",
+		"prefixe": "AFFICHER_OBJETS",
 		"type": "administration/espace-prive"
 	},
 	{
@@ -272,15 +272,27 @@
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "COMPAGNON",
+		"prefixe": "BANDO",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "AED",
+		"prefixe": "BASICONE",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "BOUTON_PROPOSER",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "CHANGESTATUT",
 		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "CMOTS",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "COMPAGNON",
 		"type": "administration/espace-prive"
 	},
 	{
@@ -324,6 +336,10 @@
 		"type": "administration/espace-prive"
 	},
 	{
+		"prefixe": "EXPLICATIONS",
+		"type": "administration/espace-prive"
+	},
+	{
 		"prefixe": "FORCER_CHOIX_RUBRIQUE",
 		"type": "administration/espace-prive"
 	},
@@ -332,43 +348,23 @@
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "MANUELSITE",
+		"prefixe": "GRISEUSICO",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "MINIDOC",
+		"prefixe": "GRISEUSICOBARRE",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "NEMEQUITTEPAS",
+		"prefixe": "GRISEUSVIGNETTES",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "PRIVE_AFFICHE_CONNEXE",
+		"prefixe": "IDENTITE_EXTRA",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "PRIVE_FLUIDE",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "PRIVE_FLUIDE_REMIX",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "SELECTEUR-RUBRIQUES-TRIALPHA",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "SPIP_HOP",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "STATUT_ARTICLES",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "VERSIONING",
+		"prefixe": "INFOBOX",
 		"type": "administration/espace-prive"
 	},
 	{
@@ -400,23 +396,7 @@
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "POLPRIV",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "PRIVEPERSO",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "THEMES_INTERFACE_PRIVEE",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "AFFICHER_OBJETS",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "BANDO",
+		"prefixe": "MANUELSITE",
 		"type": "administration/espace-prive"
 	},
 	{
@@ -424,27 +404,27 @@
 		"type": "administration/espace-prive"
 	},
 	{
+		"prefixe": "MINIDOC",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "NEMEQUITTEPAS",
+		"type": "administration/espace-prive"
+	},
+	{
 		"prefixe": "PLAN",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "CHANGESTATUT",
+		"prefixe": "POLPRIV",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "BASICONE",
+		"prefixe": "PRIVE_AFFICHE_CONNEXE",
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "GRISEUSICO",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "GRISEUSICOBARRE",
-		"type": "administration/espace-prive"
-	},
-	{
-		"prefixe": "GRISEUSVIGNETTES",
+		"prefixe": "PRIVE_FLUIDE",
 		"type": "administration/espace-prive"
 	},
 	{
@@ -452,59 +432,55 @@
 		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "DEPUBLIE",
-		"type": "administration/maintenance"
+		"prefixe": "PRIVE_FLUIDE_REMIX",
+		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "DOT2",
-		"type": "administration/maintenance"
+		"prefixe": "PRIVEPERSO",
+		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "REQUETEURSQL",
-		"type": "administration/maintenance"
+		"prefixe": "PROTECTION_FORMULAIRES",
+		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "WP_IMPORT",
-		"type": "administration/maintenance"
+		"prefixe": "SELECTEUR-RUBRIQUES-TRIALPHA",
+		"type": "administration/espace-prive"
 	},
 	{
-		"prefixe": "WP2SPIP",
-		"type": "administration/maintenance"
+		"prefixe": "SPIP_HOP",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "STATUT_ARTICLES",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "THEMES",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "THEMES_INTERFACE_PRIVEE",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "VERSIONING",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "VIGNETTES_OXYGEN",
+		"type": "administration/espace-prive"
+	},
+	{
+		"prefixe": "VIGNETTES_OXYGEN52",
+		"type": "administration/espace-prive"
 	},
 	{
 		"prefixe": "ACTIVITE_EDITORIALE",
 		"type": "administration/maintenance"
 	},
 	{
-		"prefixe": "CSVIMPORT",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "EMAILTOSPIP",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "EXPORTCSV",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "MULTI_BLOC",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "PARTAGEUR",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SNIPPETS",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SPIP2SPIP",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "VIDER_RUBRIQUE",
+		"prefixe": "ADMINER",
 		"type": "administration/maintenance"
 	},
 	{
@@ -528,11 +504,19 @@
 		"type": "administration/maintenance"
 	},
 	{
+		"prefixe": "CONSOLE",
+		"type": "administration/maintenance"
+	},
+	{
 		"prefixe": "CORBEILLE",
 		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "COUTEAU_SUISSE",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "CSVIMPORT",
 		"type": "administration/maintenance"
 	},
 	{
@@ -544,7 +528,19 @@
 		"type": "administration/maintenance"
 	},
 	{
+		"prefixe": "DEPUBLIE",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "DOT2",
+		"type": "administration/maintenance"
+	},
+	{
 		"prefixe": "DUMP",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "DUMP_XML",
 		"type": "administration/maintenance"
 	},
 	{
@@ -552,7 +548,23 @@
 		"type": "administration/maintenance"
 	},
 	{
+		"prefixe": "EMAILTOSPIP",
+		"type": "administration/maintenance"
+	},
+	{
 		"prefixe": "ENTRAVAUX",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "EVA_INSTALL",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "EXPORTCSV",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "EZSQL",
 		"type": "administration/maintenance"
 	},
 	{
@@ -568,11 +580,23 @@
 		"type": "administration/maintenance"
 	},
 	{
+		"prefixe": "IE_EXTRAS",
+		"type": "administration/maintenance"
+	},
+	{
 		"prefixe": "IECONFIG",
 		"type": "administration/maintenance"
 	},
 	{
 		"prefixe": "IECONFIGPLUS",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "INFO_SITES",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "INFO_SPIP",
 		"type": "administration/maintenance"
 	},
 	{
@@ -584,99 +608,11 @@
 		"type": "administration/maintenance"
 	},
 	{
-		"prefixe": "LINKCHECK",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "MAINTENANCEKIT",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "MES_FICHIERS",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "MIGRESTATIC",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "MOSAIQUE_ORDOC",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "MUTUALISATION",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "PARAVENT",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SAVEAUTO",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SAVECFG",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SCEXTRAS",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SIMPLOG",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SPIXPLORER",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "STEP",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "SVP",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "VERIFIE31",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "VERIFIER_PLUGINS",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "LISTER_DOSSIERS",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "LISTER_LOGOS",
-		"type": "administration/maintenance"
-	},
-	{
 		"prefixe": "LIENSCONTENUS",
 		"type": "administration/maintenance"
 	},
 	{
-		"prefixe": "SPIP_400",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "ADMINER",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "CONSOLE",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "EZSQL",
-		"type": "administration/maintenance"
-	},
-	{
-		"prefixe": "IE_EXTRAS",
+		"prefixe": "LINKCHECK",
 		"type": "administration/maintenance"
 	},
 	{
@@ -685,6 +621,10 @@
 	},
 	{
 		"prefixe": "LISTER_CONSTANTES",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "LISTER_DOSSIERS",
 		"type": "administration/maintenance"
 	},
 	{
@@ -700,6 +640,10 @@
 		"type": "administration/maintenance"
 	},
 	{
+		"prefixe": "LISTER_LOGOS",
+		"type": "administration/maintenance"
+	},
+	{
 		"prefixe": "LISTER_OBJETS",
 		"type": "administration/maintenance"
 	},
@@ -708,7 +652,15 @@
 		"type": "administration/maintenance"
 	},
 	{
+		"prefixe": "MAINTENANCEKIT",
+		"type": "administration/maintenance"
+	},
+	{
 		"prefixe": "MEDIAS_NETTOYAGE",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "MES_FICHIERS",
 		"type": "administration/maintenance"
 	},
 	{
@@ -716,7 +668,87 @@
 		"type": "administration/maintenance"
 	},
 	{
-		"prefixe": "VERTEBRES",
+		"prefixe": "MIGRATION",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "MIGRESTATIC",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "MOSAIQUE_ORDOC",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "MULTI_BLOC",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "MUTUALISATION",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "PARAVENT",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "PARTAGEUR",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "REQUETEURSQL",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SAVEAUTO",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SAVECFG",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SCEXTRAS",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SIA",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SIMPLOG",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SNIPPETS",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SPIP_400",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SPIP2SPIP",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SPIPSERVICE",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SPIXPLORER",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "STEP",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SVP",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "SVPAPI",
 		"type": "administration/maintenance"
 	},
 	{
@@ -724,27 +756,39 @@
 		"type": "administration/maintenance"
 	},
 	{
+		"prefixe": "VERIFIE31",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "VERIFIER_PLUGINS",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "VERTEBRES",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "VIDER_RUBRIQUE",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "WP_IMPORT",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "WP2SPIP",
+		"type": "administration/maintenance"
+	},
+	{
+		"prefixe": "CACHE_COOL",
+		"type": "administration/performance"
+	},
+	{
 		"prefixe": "CACHEFIX",
 		"type": "administration/performance"
 	},
 	{
 		"prefixe": "CACHELAB",
-		"type": "administration/performance"
-	},
-	{
-		"prefixe": "MACROSESSION",
-		"type": "administration/performance"
-	},
-	{
-		"prefixe": "REFRESHER",
-		"type": "administration/performance"
-	},
-	{
-		"prefixe": "XRAY",
-		"type": "administration/performance"
-	},
-	{
-		"prefixe": "CACHE_COOL",
 		"type": "administration/performance"
 	},
 	{
@@ -764,6 +808,10 @@
 		"type": "administration/performance"
 	},
 	{
+		"prefixe": "MACROSESSION",
+		"type": "administration/performance"
+	},
+	{
 		"prefixe": "MEMOIZATION",
 		"type": "administration/performance"
 	},
@@ -780,36 +828,20 @@
 		"type": "administration/performance"
 	},
 	{
+		"prefixe": "REFRESHER",
+		"type": "administration/performance"
+	},
+	{
 		"prefixe": "SMUSH",
 		"type": "administration/performance"
 	},
 	{
-		"prefixe": "METASPLUS",
-		"type": "administration/referencement"
+		"prefixe": "VARNISH",
+		"type": "administration/performance"
 	},
 	{
-		"prefixe": "SHORTCUT_URL",
-		"type": "administration/referencement"
-	},
-	{
-		"prefixe": "MULTIDOMAINES",
-		"type": "administration/referencement"
-	},
-	{
-		"prefixe": "SITEMAP",
-		"type": "administration/referencement"
-	},
-	{
-		"prefixe": "SITEMAP_NEWS",
-		"type": "administration/referencement"
-	},
-	{
-		"prefixe": "METAS",
-		"type": "administration/referencement"
-	},
-	{
-		"prefixe": "URLEDIT",
-		"type": "administration/referencement"
+		"prefixe": "XRAY",
+		"type": "administration/performance"
 	},
 	{
 		"prefixe": "DUBLIN_CORE",
@@ -817,6 +849,18 @@
 	},
 	{
 		"prefixe": "MEDIAS_DEREFERENCER",
+		"type": "administration/referencement"
+	},
+	{
+		"prefixe": "METAS",
+		"type": "administration/referencement"
+	},
+	{
+		"prefixe": "METASPLUS",
+		"type": "administration/referencement"
+	},
+	{
+		"prefixe": "MULTIDOMAINES",
 		"type": "administration/referencement"
 	},
 	{
@@ -832,7 +876,23 @@
 		"type": "administration/referencement"
 	},
 	{
+		"prefixe": "SHORTCUT_URL",
+		"type": "administration/referencement"
+	},
+	{
+		"prefixe": "SITEMAP",
+		"type": "administration/referencement"
+	},
+	{
 		"prefixe": "SITEMAP_IMAGES",
+		"type": "administration/referencement"
+	},
+	{
+		"prefixe": "SITEMAP_NEWS",
+		"type": "administration/referencement"
+	},
+	{
+		"prefixe": "URLEDIT",
 		"type": "administration/referencement"
 	},
 	{
@@ -848,11 +908,11 @@
 		"type": "administration/referencement"
 	},
 	{
-		"prefixe": "HTMLPURIFIER",
+		"prefixe": "CSP",
 		"type": "administration/securite"
 	},
 	{
-		"prefixe": "CSP",
+		"prefixe": "HTMLPURIFIER",
 		"type": "administration/securite"
 	},
 	{
@@ -876,14 +936,6 @@
 		"type": "administration/securite"
 	},
 	{
-		"prefixe": "GEO_VISITEURS",
-		"type": "administration/statistique"
-	},
-	{
-		"prefixe": "TRICHE",
-		"type": "administration/statistique"
-	},
-	{
 		"prefixe": "ACTIJOUR",
 		"type": "administration/statistique"
 	},
@@ -905,6 +957,10 @@
 	},
 	{
 		"prefixe": "DW2",
+		"type": "administration/statistique"
+	},
+	{
+		"prefixe": "GEO_VISITEURS",
 		"type": "administration/statistique"
 	},
 	{
@@ -956,6 +1012,10 @@
 		"type": "administration/statistique"
 	},
 	{
+		"prefixe": "TRICHE",
+		"type": "administration/statistique"
+	},
+	{
 		"prefixe": "VISITEURS_CONNECTES",
 		"type": "administration/statistique"
 	},
@@ -1004,7 +1064,15 @@
 		"type": "auteur/autorisation"
 	},
 	{
+		"prefixe": "ARP",
+		"type": "auteur/autorisation"
+	},
+	{
 		"prefixe": "AUTORITE",
+		"type": "auteur/autorisation"
+	},
+	{
+		"prefixe": "INTRANET",
 		"type": "auteur/autorisation"
 	},
 	{
@@ -1012,11 +1080,7 @@
 		"type": "auteur/autorisation"
 	},
 	{
-		"prefixe": "ARP",
-		"type": "auteur/autorisation"
-	},
-	{
-		"prefixe": "INTRANET",
+		"prefixe": "REDACREST",
 		"type": "auteur/autorisation"
 	},
 	{
@@ -1028,7 +1092,23 @@
 		"type": "auteur/connexion"
 	},
 	{
+		"prefixe": "COOKIEBAR",
+		"type": "auteur/connexion"
+	},
+	{
+		"prefixe": "COOKIECHOICES",
+		"type": "auteur/connexion"
+	},
+	{
 		"prefixe": "DECOAUTO",
+		"type": "auteur/connexion"
+	},
+	{
+		"prefixe": "FOND_ESPACE_PRIVE",
+		"type": "auteur/connexion"
+	},
+	{
+		"prefixe": "INCARNER",
 		"type": "auteur/connexion"
 	},
 	{
@@ -1048,19 +1128,23 @@
 		"type": "auteur/connexion"
 	},
 	{
-		"prefixe": "COOKIEBAR",
-		"type": "auteur/connexion"
-	},
-	{
-		"prefixe": "COOKIECHOICES",
-		"type": "auteur/connexion"
-	},
-	{
 		"prefixe": "PASSE_COMPLEXE",
 		"type": "auteur/connexion"
 	},
 	{
+		"prefixe": "AUTEUR_EVENEMENT",
+		"type": "auteur/extension"
+	},
+	{
 		"prefixe": "AUTEURS_SYNDIC",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "AUTEURSPARTOUT",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "AVATAR_VOKI",
 		"type": "auteur/extension"
 	},
 	{
@@ -1072,11 +1156,35 @@
 		"type": "auteur/extension"
 	},
 	{
+		"prefixe": "CSV2AUTEURS",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "CSV2SPIP",
+		"type": "auteur/extension"
+	},
+	{
 		"prefixe": "EXAU",
 		"type": "auteur/extension"
 	},
 	{
+		"prefixe": "GRAVATAR",
+		"type": "auteur/extension"
+	},
+	{
 		"prefixe": "GROUPES",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "HAL_AUTEURS",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "HAVATAR",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "IMPORTATEUR_CONTACTS",
 		"type": "auteur/extension"
 	},
 	{
@@ -1088,7 +1196,19 @@
 		"type": "auteur/extension"
 	},
 	{
+		"prefixe": "MES_PREFERENCES",
+		"type": "auteur/extension"
+	},
+	{
 		"prefixe": "OMNIPRESENCE",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "OPENINVITER",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "PROFILPUBLIC",
 		"type": "auteur/extension"
 	},
 	{
@@ -1100,6 +1220,14 @@
 		"type": "auteur/extension"
 	},
 	{
+		"prefixe": "ROLES_AUTEURS",
+		"type": "auteur/extension"
+	},
+	{
+		"prefixe": "RUBRIQUEPREFEREE",
+		"type": "auteur/extension"
+	},
+	{
 		"prefixe": "SIGNATURE",
 		"type": "auteur/extension"
 	},
@@ -1108,60 +1236,12 @@
 		"type": "auteur/extension"
 	},
 	{
-		"prefixe": "GRAVATAR",
-		"type": "auteur/extension"
+		"prefixe": "AUSU",
+		"type": "auteur/inscription"
 	},
 	{
-		"prefixe": "HAVATAR",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "AUTEUR_EVENEMENT",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "PROFILPUBLIC",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "AUTEURSPARTOUT",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "CSV2SPIP",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "HAL_AUTEURS",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "ROLES_AUTEURS",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "MES_PREFERENCES",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "AVATAR_VOKI",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "RUBRIQUEPREFEREE",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "CSV2AUTEURS",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "IMPORTATEUR_CONTACTS",
-		"type": "auteur/extension"
-	},
-	{
-		"prefixe": "OPENINVITER",
-		"type": "auteur/extension"
+		"prefixe": "AUTEUR_AUTOMATIQUE",
+		"type": "auteur/inscription"
 	},
 	{
 		"prefixe": "DATE_INSCRIPTION",
@@ -1184,23 +1264,31 @@
 		"type": "auteur/inscription"
 	},
 	{
-		"prefixe": "RUBRIQUE_A_LINSCRIPTION",
-		"type": "auteur/inscription"
-	},
-	{
 		"prefixe": "PARRAINAGE",
 		"type": "auteur/inscription"
 	},
 	{
-		"prefixe": "AUSU",
+		"prefixe": "RUBRIQUE_A_LINSCRIPTION",
 		"type": "auteur/inscription"
 	},
 	{
-		"prefixe": "AUTEUR_AUTOMATIQUE",
-		"type": "auteur/inscription"
+		"prefixe": "ALERTE_URGENCE",
+		"type": "communication/annonce"
+	},
+	{
+		"prefixe": "AP",
+		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "BADGE_DON",
+		"type": "communication/annonce"
+	},
+	{
+		"prefixe": "BANNIERES",
+		"type": "communication/annonce"
+	},
+	{
+		"prefixe": "BONNE_ANNEE",
 		"type": "communication/annonce"
 	},
 	{
@@ -1212,27 +1300,11 @@
 		"type": "communication/annonce"
 	},
 	{
-		"prefixe": "BONNE_ANNEE",
-		"type": "communication/annonce"
-	},
-	{
-		"prefixe": "AP",
-		"type": "communication/annonce"
-	},
-	{
-		"prefixe": "BANNIERES",
-		"type": "communication/annonce"
-	},
-	{
-		"prefixe": "ALERTE_URGENCE",
+		"prefixe": "PUBBAN",
 		"type": "communication/annonce"
 	},
 	{
 		"prefixe": "VACANCES",
-		"type": "communication/annonce"
-	},
-	{
-		"prefixe": "PUBBAN",
 		"type": "communication/annonce"
 	},
 	{
@@ -1356,6 +1428,10 @@
 		"type": "communication/messagerie"
 	},
 	{
+		"prefixe": "NOTIFAVANCEES",
+		"type": "communication/messagerie"
+	},
+	{
 		"prefixe": "NOTIFICATIONS",
 		"type": "communication/messagerie"
 	},
@@ -1420,8 +1496,20 @@
 		"type": "communication/messagerie"
 	},
 	{
-		"prefixe": "NOTIFAVANCEES",
-		"type": "communication/messagerie"
+		"prefixe": "AFF_ZONE",
+		"type": "communication/syndication"
+	},
+	{
+		"prefixe": "COMARQUAGE",
+		"type": "communication/syndication"
+	},
+	{
+		"prefixe": "JSONP",
+		"type": "communication/syndication"
+	},
+	{
+		"prefixe": "JSONPGIS",
+		"type": "communication/syndication"
 	},
 	{
 		"prefixe": "PIVOTSYNDIC",
@@ -1448,39 +1536,11 @@
 		"type": "communication/syndication"
 	},
 	{
-		"prefixe": "AFF_ZONE",
-		"type": "communication/syndication"
-	},
-	{
-		"prefixe": "COMARQUAGE",
-		"type": "communication/syndication"
-	},
-	{
-		"prefixe": "JSONP",
-		"type": "communication/syndication"
-	},
-	{
-		"prefixe": "JSONPGIS",
-		"type": "communication/syndication"
-	},
-	{
-		"prefixe": "FORMAT_PHONE",
+		"prefixe": "ACCORDION",
 		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "APROPOS",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "BIGFOOT",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "CTAN",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "JCLICMODELE",
 		"type": "contenu/affichage"
 	},
 	{
@@ -1492,11 +1552,23 @@
 		"type": "contenu/affichage"
 	},
 	{
+		"prefixe": "BIGFOOT",
+		"type": "contenu/affichage"
+	},
+	{
 		"prefixe": "BLOCSDEPLIABLES",
 		"type": "contenu/affichage"
 	},
 	{
 		"prefixe": "BOUTONSTEXTE",
+		"type": "contenu/affichage"
+	},
+	{
+		"prefixe": "CHARTJS",
+		"type": "contenu/affichage"
+	},
+	{
+		"prefixe": "CHARTS",
 		"type": "contenu/affichage"
 	},
 	{
@@ -1524,6 +1596,10 @@
 		"type": "contenu/affichage"
 	},
 	{
+		"prefixe": "CTAN",
+		"type": "contenu/affichage"
+	},
+	{
 		"prefixe": "DECOUPER",
 		"type": "contenu/affichage"
 	},
@@ -1532,7 +1608,19 @@
 		"type": "contenu/affichage"
 	},
 	{
+		"prefixe": "FORMAT_PHONE",
+		"type": "contenu/affichage"
+	},
+	{
 		"prefixe": "HAL",
+		"type": "contenu/affichage"
+	},
+	{
+		"prefixe": "JCLICMODELE",
+		"type": "contenu/affichage"
+	},
+	{
+		"prefixe": "JPGRAPH",
 		"type": "contenu/affichage"
 	},
 	{
@@ -1572,7 +1660,19 @@
 		"type": "contenu/affichage"
 	},
 	{
+		"prefixe": "READABILITY",
+		"type": "contenu/affichage"
+	},
+	{
 		"prefixe": "RETOURSIMPLE",
+		"type": "contenu/affichage"
+	},
+	{
+		"prefixe": "SUPPRIMER_ENVELOPPE_MAILTO",
+		"type": "contenu/affichage"
+	},
+	{
+		"prefixe": "TABLESORTER",
 		"type": "contenu/affichage"
 	},
 	{
@@ -1608,38 +1708,6 @@
 		"type": "contenu/affichage"
 	},
 	{
-		"prefixe": "SUPPRIMER_ENVELOPPE_MAILTO",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "CHARTJS",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "CHARTS",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "JPGRAPH",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "TABLESORTER",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "ACCORDION",
-		"type": "contenu/affichage"
-	},
-	{
-		"prefixe": "HAL_PUB",
-		"type": "contenu/bibliographie"
-	},
-	{
-		"prefixe": "PMB",
-		"type": "contenu/bibliographie"
-	},
-	{
 		"prefixe": "AERES",
 		"type": "contenu/bibliographie"
 	},
@@ -1648,7 +1716,19 @@
 		"type": "contenu/bibliographie"
 	},
 	{
+		"prefixe": "BOOKSEARCH",
+		"type": "contenu/bibliographie"
+	},
+	{
 		"prefixe": "CITE",
+		"type": "contenu/bibliographie"
+	},
+	{
+		"prefixe": "HAL_PUB",
+		"type": "contenu/bibliographie"
+	},
+	{
+		"prefixe": "PMB",
 		"type": "contenu/bibliographie"
 	},
 	{
@@ -1660,23 +1740,27 @@
 		"type": "contenu/bibliographie"
 	},
 	{
-		"prefixe": "BOOKSEARCH",
-		"type": "contenu/bibliographie"
-	},
-	{
-		"prefixe": "OBJETS_DISPONIBILITES",
-		"type": "contenu/extension"
-	},
-	{
 		"prefixe": "ARCHIVE",
 		"type": "contenu/extension"
 	},
 	{
-		"prefixe": "DATERUBRIQUES",
+		"prefixe": "BOUQ",
 		"type": "contenu/extension"
 	},
 	{
-		"prefixe": "BOUQ",
+		"prefixe": "BREVES",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "CHANTS",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "COULEUR_OBJET",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "DATERUBRIQUES",
 		"type": "contenu/extension"
 	},
 	{
@@ -1692,7 +1776,23 @@
 		"type": "contenu/extension"
 	},
 	{
+		"prefixe": "EXTRAIREDOC",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "GLOSSAIRE",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "HOMONYMES",
+		"type": "contenu/extension"
+	},
+	{
 		"prefixe": "IDENTIFIANTS",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "IEXTRAS",
 		"type": "contenu/extension"
 	},
 	{
@@ -1700,7 +1800,19 @@
 		"type": "contenu/extension"
 	},
 	{
+		"prefixe": "INGREDIENT",
+		"type": "contenu/extension"
+	},
+	{
 		"prefixe": "LICENCE",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "MELUSINE_COULEURS_ARTICLE",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "OBJETS_DISPONIBILITES",
 		"type": "contenu/extension"
 	},
 	{
@@ -1720,35 +1832,11 @@
 		"type": "contenu/extension"
 	},
 	{
-		"prefixe": "SPIPERIPSUM",
-		"type": "contenu/extension"
-	},
-	{
-		"prefixe": "VU",
-		"type": "contenu/extension"
-	},
-	{
-		"prefixe": "BREVES",
-		"type": "contenu/extension"
-	},
-	{
-		"prefixe": "CHANTS",
-		"type": "contenu/extension"
-	},
-	{
-		"prefixe": "INGREDIENT",
-		"type": "contenu/extension"
-	},
-	{
-		"prefixe": "SITES",
-		"type": "contenu/extension"
-	},
-	{
 		"prefixe": "PB_COULEUR_RUBRIQUE",
 		"type": "contenu/extension"
 	},
 	{
-		"prefixe": "MELUSINE_COULEURS_ARTICLE",
+		"prefixe": "PLOM",
 		"type": "contenu/extension"
 	},
 	{
@@ -1756,15 +1844,43 @@
 		"type": "contenu/extension"
 	},
 	{
-		"prefixe": "COULEUR_OBJET",
+		"prefixe": "SITES",
 		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "SLOGAN",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "SPIPERIPSUM",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "VOCABULAIRE",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "VU",
+		"type": "contenu/extension"
+	},
+	{
+		"prefixe": "CARTO_ITINERAIRE",
+		"type": "contenu/geographie"
 	},
 	{
 		"prefixe": "CODES_POSTAUX",
 		"type": "contenu/geographie"
 	},
 	{
+		"prefixe": "COG",
+		"type": "contenu/geographie"
+	},
+	{
 		"prefixe": "COGGPS",
+		"type": "contenu/geographie"
+	},
+	{
+		"prefixe": "CONTINENTS",
 		"type": "contenu/geographie"
 	},
 	{
@@ -1773,6 +1889,10 @@
 	},
 	{
 		"prefixe": "GEOGRAPHIE",
+		"type": "contenu/geographie"
+	},
+	{
+		"prefixe": "GEOIP",
 		"type": "contenu/geographie"
 	},
 	{
@@ -1836,24 +1956,8 @@
 		"type": "contenu/geographie"
 	},
 	{
-		"prefixe": "CARTO_ITINERAIRE",
-		"type": "contenu/geographie"
-	},
-	{
 		"prefixe": "VILLEBE",
 		"type": "contenu/geographie"
-	},
-	{
-		"prefixe": "COG",
-		"type": "contenu/geographie"
-	},
-	{
-		"prefixe": "CONTINENTS",
-		"type": "contenu/geographie"
-	},
-	{
-		"prefixe": "FUSIONPDF",
-		"type": "contenu/impression"
 	},
 	{
 		"prefixe": "ARTICLE_PDF",
@@ -1865,6 +1969,18 @@
 	},
 	{
 		"prefixe": "DOCUMENTATION2LATEX",
+		"type": "contenu/impression"
+	},
+	{
+		"prefixe": "DOMPDF",
+		"type": "contenu/impression"
+	},
+	{
+		"prefixe": "FPDF",
+		"type": "contenu/impression"
+	},
+	{
+		"prefixe": "FUSIONPDF",
 		"type": "contenu/impression"
 	},
 	{
@@ -1880,19 +1996,15 @@
 		"type": "contenu/impression"
 	},
 	{
-		"prefixe": "FPDF",
-		"type": "contenu/impression"
-	},
-	{
-		"prefixe": "BIBLE",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "RECHREMP",
+		"prefixe": "ACCESSIBILITE",
 		"type": "contenu/redaction"
 	},
 	{
 		"prefixe": "ACRONYMES",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "ARTICLES_VERS_RUBRIQUES",
 		"type": "contenu/redaction"
 	},
 	{
@@ -1904,7 +2016,15 @@
 		"type": "contenu/redaction"
 	},
 	{
+		"prefixe": "BIBLE",
+		"type": "contenu/redaction"
+	},
+	{
 		"prefixe": "BOLO",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "BREVES_VERS_ARTICLES",
 		"type": "contenu/redaction"
 	},
 	{
@@ -1932,7 +2052,19 @@
 		"type": "contenu/redaction"
 	},
 	{
+		"prefixe": "DAME",
+		"type": "contenu/redaction"
+	},
+	{
 		"prefixe": "ENCARTS",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "EVABINETTES",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "EXERGUE",
 		"type": "contenu/redaction"
 	},
 	{
@@ -1973,6 +2105,18 @@
 	},
 	{
 		"prefixe": "MARKDOWN",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "MATHJAX",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "MATHJAX_LATEX",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "MATHJAX_SPIP",
 		"type": "contenu/redaction"
 	},
 	{
@@ -2032,6 +2176,14 @@
 		"type": "contenu/redaction"
 	},
 	{
+		"prefixe": "RAPER",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "RECHREMP",
+		"type": "contenu/redaction"
+	},
+	{
 		"prefixe": "REVISIONNBSP",
 		"type": "contenu/redaction"
 	},
@@ -2040,7 +2192,19 @@
 		"type": "contenu/redaction"
 	},
 	{
+		"prefixe": "RSSARTICLE",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "RUBRIQUEUR",
+		"type": "contenu/redaction"
+	},
+	{
 		"prefixe": "SCENARI",
+		"type": "contenu/redaction"
+	},
+	{
+		"prefixe": "SHORTCODES",
 		"type": "contenu/redaction"
 	},
 	{
@@ -2072,38 +2236,6 @@
 		"type": "contenu/redaction"
 	},
 	{
-		"prefixe": "ARTICLES_VERS_RUBRIQUES",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "BREVES_VERS_ARTICLES",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "ACCESSIBILITE",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "DAME",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "EXERGUE",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "MATHJAX",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "MATHJAX_LATEX",
-		"type": "contenu/redaction"
-	},
-	{
-		"prefixe": "EVABINETTES",
-		"type": "contenu/redaction"
-	},
-	{
 		"prefixe": "INTERTITRESTDM",
 		"type": "contenu/sommaire"
 	},
@@ -2125,6 +2257,10 @@
 	},
 	{
 		"prefixe": "INTERFACE_TRADUCTION_OBJETS",
+		"type": "contenu/traduction"
+	},
+	{
+		"prefixe": "LANGONET",
 		"type": "contenu/traduction"
 	},
 	{
@@ -2156,12 +2292,8 @@
 		"type": "contenu/traduction"
 	},
 	{
-		"prefixe": "LANGONET",
+		"prefixe": "TRADUIRETEXTE",
 		"type": "contenu/traduction"
-	},
-	{
-		"prefixe": "RESERVATIONS_MULTIPLES",
-		"type": "date/agenda"
 	},
 	{
 		"prefixe": "ABCALENDRIER",
@@ -2216,11 +2348,23 @@
 		"type": "date/agenda"
 	},
 	{
+		"prefixe": "ORR",
+		"type": "date/agenda"
+	},
+	{
 		"prefixe": "PIMAGENDA",
 		"type": "date/agenda"
 	},
 	{
+		"prefixe": "PLANNING_SIMPLE",
+		"type": "date/agenda"
+	},
+	{
 		"prefixe": "RESERVATION_EVENEMENT",
+		"type": "date/agenda"
+	},
+	{
+		"prefixe": "RESERVATIONS_MULTIPLES",
 		"type": "date/agenda"
 	},
 	{
@@ -2240,14 +2384,6 @@
 		"type": "date/agenda"
 	},
 	{
-		"prefixe": "ORR",
-		"type": "date/agenda"
-	},
-	{
-		"prefixe": "PLANNING_SIMPLE",
-		"type": "date/agenda"
-	},
-	{
 		"prefixe": "DATE_CREATION",
 		"type": "date/extension"
 	},
@@ -2260,15 +2396,19 @@
 		"type": "date/extension"
 	},
 	{
+		"prefixe": "PERIODES",
+		"type": "date/extension"
+	},
+	{
+		"prefixe": "TIMEPICKER",
+		"type": "date/extension"
+	},
+	{
 		"prefixe": "TIMEZONE",
 		"type": "date/extension"
 	},
 	{
 		"prefixe": "WCALENDAR",
-		"type": "date/extension"
-	},
-	{
-		"prefixe": "TIMEPICKER",
 		"type": "date/extension"
 	},
 	{
@@ -2308,16 +2448,112 @@
 		"type": "developpement/api"
 	},
 	{
+		"prefixe": "EDITER_LIENS_SIMPLES",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "EMOGRIFIER",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "EXTRAS",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "FACD",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "GDATA",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "GRENIER",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "HTTP",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "ITERATEUR_XLS",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "ITERATEURS",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "ITERDEMOS",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "ITERSIMPLEXML",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "LESSCSS",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "LESSPIP",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "NCORE",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "PALETTE",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "PHPCURL",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "PI",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "PIPELINE_AD",
+		"type": "developpement/api"
+	},
+	{
 		"prefixe": "ROLES",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "SALE",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "SCSSPHP",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "SPIP_BONUX",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "SWITCHCASE",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "VERIFIER",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "XML",
+		"type": "developpement/api"
+	},
+	{
+		"prefixe": "XMLRPC",
 		"type": "developpement/api"
 	},
 	{
 		"prefixe": "YAML",
 		"type": "developpement/api"
-	},
-	{
-		"prefixe": "EZCSS",
-		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "BASECSS",
@@ -2348,19 +2584,75 @@
 		"type": "developpement/framework"
 	},
 	{
+		"prefixe": "EZCSS",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "FORM_UNIFORM",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "FOUNDATION",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "FOUNDATION_6",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "HTML5",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "HTML5_RESPONSIVE",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "JFU",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "JQUERY",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "JQUERY192",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "JQUERYP",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "JQUERYUI",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "PETRONILLE",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "PIECON",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "PREFIXFREE",
+		"type": "developpement/framework"
+	},
+	{
+		"prefixe": "QUERYPATH",
+		"type": "developpement/framework"
+	},
+	{
 		"prefixe": "TINYTYPO",
 		"type": "developpement/framework"
 	},
 	{
-		"prefixe": "INHIBECACHE",
-		"type": "developpement/outil"
+		"prefixe": "W3CSS",
+		"type": "developpement/framework"
 	},
 	{
 		"prefixe": "AA",
-		"type": "developpement/outil"
-	},
-	{
-		"prefixe": "TROUVER_OBJET",
 		"type": "developpement/outil"
 	},
 	{
@@ -2376,7 +2668,47 @@
 		"type": "developpement/outil"
 	},
 	{
+		"prefixe": "INHIBECACHE",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "JS_LOG",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "NOCACHE",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "PLUGONET",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "REPERES",
+		"type": "developpement/outil"
+	},
+	{
 		"prefixe": "SELECTEURGENERIQUE",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "SKELEDITOR",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "SVN_UPDATE",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "TB",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "TROUVER_OBJET",
+		"type": "developpement/outil"
+	},
+	{
+		"prefixe": "W3CGH",
 		"type": "developpement/outil"
 	},
 	{
@@ -2416,12 +2748,16 @@
 		"type": "interactivite/evaluation"
 	},
 	{
+		"prefixe": "SIGNALEMENT",
+		"type": "interactivite/evaluation"
+	},
+	{
 		"prefixe": "SONDAGE",
 		"type": "interactivite/evaluation"
 	},
 	{
-		"prefixe": "SIGNALEMENT",
-		"type": "interactivite/evaluation"
+		"prefixe": "AJAXFORMS",
+		"type": "interactivite/formulaire"
 	},
 	{
 		"prefixe": "CONTACT",
@@ -2429,6 +2765,14 @@
 	},
 	{
 		"prefixe": "CONTACT_LIBRE",
+		"type": "interactivite/formulaire"
+	},
+	{
+		"prefixe": "CVTM",
+		"type": "interactivite/formulaire"
+	},
+	{
+		"prefixe": "CVTUPLOAD",
 		"type": "interactivite/formulaire"
 	},
 	{
@@ -2464,15 +2808,23 @@
 		"type": "interactivite/formulaire"
 	},
 	{
+		"prefixe": "FORMULAIREUPLOAD",
+		"type": "interactivite/formulaire"
+	},
+	{
+		"prefixe": "SAISIE_CHOIX_COULEUR",
+		"type": "interactivite/formulaire"
+	},
+	{
+		"prefixe": "SAISIE_LISTE",
+		"type": "interactivite/formulaire"
+	},
+	{
+		"prefixe": "SAISIES",
+		"type": "interactivite/formulaire"
+	},
+	{
 		"prefixe": "SCRUT_PROP",
-		"type": "interactivite/formulaire"
-	},
-	{
-		"prefixe": "AJAXFORMS",
-		"type": "interactivite/formulaire"
-	},
-	{
-		"prefixe": "CVTUPLOAD",
 		"type": "interactivite/formulaire"
 	},
 	{
@@ -2540,6 +2892,10 @@
 		"type": "interactivite/jeux"
 	},
 	{
+		"prefixe": "MAXIGOS",
+		"type": "interactivite/jeux"
+	},
+	{
 		"prefixe": "PGN4SPIP",
 		"type": "interactivite/jeux"
 	},
@@ -2548,15 +2904,15 @@
 		"type": "interactivite/jeux"
 	},
 	{
-		"prefixe": "MAXIGOS",
-		"type": "interactivite/jeux"
-	},
-	{
 		"prefixe": "AMIS",
 		"type": "interactivite/reseau-social"
 	},
 	{
 		"prefixe": "FACEBOOK",
+		"type": "interactivite/reseau-social"
+	},
+	{
+		"prefixe": "FB_MODELES",
 		"type": "interactivite/reseau-social"
 	},
 	{
@@ -2569,6 +2925,10 @@
 	},
 	{
 		"prefixe": "MICROBLOG",
+		"type": "interactivite/reseau-social"
+	},
+	{
+		"prefixe": "REZOSOCIOS",
 		"type": "interactivite/reseau-social"
 	},
 	{
@@ -2586,30 +2946,6 @@
 	{
 		"prefixe": "TWITTER",
 		"type": "interactivite/reseau-social"
-	},
-	{
-		"prefixe": "REZOSOCIOS",
-		"type": "interactivite/reseau-social"
-	},
-	{
-		"prefixe": "FB_MODELES",
-		"type": "interactivite/reseau-social"
-	},
-	{
-		"prefixe": "EVANEWS",
-		"type": "interface-publique/noisette"
-	},
-	{
-		"prefixe": "GAZETTE",
-		"type": "interface-publique/noisette"
-	},
-	{
-		"prefixe": "HERBIER",
-		"type": "interface-publique/noisette"
-	},
-	{
-		"prefixe": "ZGROUPEMOTS",
-		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "AVELINE",
@@ -2640,6 +2976,18 @@
 		"type": "interface-publique/noisette"
 	},
 	{
+		"prefixe": "EVANEWS",
+		"type": "interface-publique/noisette"
+	},
+	{
+		"prefixe": "GAZETTE",
+		"type": "interface-publique/noisette"
+	},
+	{
+		"prefixe": "HERBIER",
+		"type": "interface-publique/noisette"
+	},
+	{
 		"prefixe": "LIVRE_2",
 		"type": "interface-publique/noisette"
 	},
@@ -2656,12 +3004,20 @@
 		"type": "interface-publique/noisette"
 	},
 	{
+		"prefixe": "NOIZETIER_DOC",
+		"type": "interface-publique/noisette"
+	},
+	{
+		"prefixe": "SITRA_SELECT",
+		"type": "interface-publique/noisette"
+	},
+	{
 		"prefixe": "TIMECIRCLES",
 		"type": "interface-publique/noisette"
 	},
 	{
-		"prefixe": "ZEROCLIPBOARD",
-		"type": "interface-publique/outil"
+		"prefixe": "ZGROUPEMOTS",
+		"type": "interface-publique/noisette"
 	},
 	{
 		"prefixe": "ACS",
@@ -2672,27 +3028,71 @@
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "NOIZETIER",
+		"prefixe": "BARRAC",
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "SKTHEME",
+		"prefixe": "CAMBIAR_ESQUELETO",
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "SWITCHER",
+		"prefixe": "CELEMENTS",
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "TSWITCHER",
+		"prefixe": "CHOSEN",
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "ZENGARDEN",
+		"prefixe": "COLORIAGEDIST",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "COMPOSITIONS",
 		"type": "interface-publique/outil"
 	},
 	{
 		"prefixe": "CREER_SPRITES",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "DISPOSITION",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ELEMENTS",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "EVA_HABILLAGE",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "EVAMENTIONS",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "EXCLURE_SECT",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "FENFLO",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "FONDS",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "FONI",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "INCLUREAJAXLOAD",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "INTRODUCTION_DISTINGUANTE",
 		"type": "interface-publique/outil"
 	},
 	{
@@ -2708,23 +3108,19 @@
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "SPIPOPUP",
+		"prefixe": "KNACSSPIP",
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "BARRAC",
+		"prefixe": "MACROS",
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "CELEMENTS",
+		"prefixe": "MSIE_COMPAT",
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "CHOSEN",
-		"type": "interface-publique/outil"
-	},
-	{
-		"prefixe": "ELEMENTS",
+		"prefixe": "NOIZETIER",
 		"type": "interface-publique/outil"
 	},
 	{
@@ -2732,7 +3128,63 @@
 		"type": "interface-publique/outil"
 	},
 	{
+		"prefixe": "PACK_MELUSINE",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "PAGES",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "PAGES_MOBILES",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SKTHEME",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SPIP_PROPRIO",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SPIP_RESET",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SPIPOPUP",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SQUELETTES_PAR_RUBRIQUE",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SQUELETTESMOTS",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SQUELETTESPROFILS",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "STORIFY",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "SWITCHER",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "TIDY",
+		"type": "interface-publique/outil"
+	},
+	{
 		"prefixe": "TOOLTIP",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "TSWITCHER",
 		"type": "interface-publique/outil"
 	},
 	{
@@ -2740,19 +3192,11 @@
 		"type": "interface-publique/outil"
 	},
 	{
-		"prefixe": "CAMBIAR_ESQUELETO",
-		"type": "interface-publique/outil"
-	},
-	{
-		"prefixe": "COMPOSITIONS",
-		"type": "interface-publique/outil"
-	},
-	{
-		"prefixe": "FENFLO",
-		"type": "interface-publique/outil"
-	},
-	{
 		"prefixe": "VARICELLE",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "WEBFONTS",
 		"type": "interface-publique/outil"
 	},
 	{
@@ -2760,19 +3204,15 @@
 		"type": "interface-publique/outil"
 	},
 	{
+		"prefixe": "ZENGARDEN",
+		"type": "interface-publique/outil"
+	},
+	{
+		"prefixe": "ZEROCLIPBOARD",
+		"type": "interface-publique/outil"
+	},
+	{
 		"prefixe": "ZINIT",
-		"type": "interface-publique/outil"
-	},
-	{
-		"prefixe": "KNACSSPIP",
-		"type": "interface-publique/outil"
-	},
-	{
-		"prefixe": "PACK_MELUSINE",
-		"type": "interface-publique/outil"
-	},
-	{
-		"prefixe": "SPIP_RESET",
 		"type": "interface-publique/outil"
 	},
 	{
@@ -2857,163 +3297,163 @@
 	},
 	{
 		"prefixe": "ADL",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "CHEZNOUS",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "CURALICIOUS",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "DIST",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "DOCUMENTATION",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "EGT",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "GLOBENEWS",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "HTML5_LANDED",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "HTML5UP_EDITORIAL",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "HTML5UP_MASSIVELY",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "HTML5UP_PHANTOM",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "HTML5UP_STORY",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "HTML5UP_STRONGLY_TYPES",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "IENSPACLYON",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "INFINITY",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "MINIGRISPIP",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "R1R2",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "SPIPR_DOC",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "Z",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "Z5",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "ZESTY",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "ZOUNDATION",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "ZPIP_HTML5",
-		"type": "interface-publique/squelette-edito"
+		"type": "interface-publique/squelette-editorial"
 	},
 	{
 		"prefixe": "AHUNTSIC",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "BAZAR",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "ESCAL",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "EVASQUELETTES",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "MEDIAN",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "MELUSINE",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SARKASPIP",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SARKASPIPR",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SCOLASPIP",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SOYEZCREATEURS",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SOYEZCREATEURS_INSTALLATEUR",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SPIPR_DIST",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SQUELETTE_MEDIAN",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SQUELETTE_MULTIFLEX",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "SQUELETTE_SUNNY",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "TYPOMANIAC",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "VITTORY",
-		"type": "interface-publique/squelette-gene"
+		"type": "interface-publique/squelette-generaliste"
 	},
 	{
 		"prefixe": "ALPHA",
@@ -3636,6 +4076,10 @@
 		"type": "interface-publique/theme"
 	},
 	{
+		"prefixe": "BALADO",
+		"type": "media/audiovideo"
+	},
+	{
 		"prefixe": "DEWPLAYER",
 		"type": "media/audiovideo"
 	},
@@ -3708,19 +4152,15 @@
 		"type": "media/audiovideo"
 	},
 	{
-		"prefixe": "BALADO",
-		"type": "media/audiovideo"
-	},
-	{
-		"prefixe": "EVA_FREEMIND",
-		"type": "media/document"
-	},
-	{
-		"prefixe": "EVA_GEOMETRIE",
-		"type": "media/document"
-	},
-	{
 		"prefixe": "COLLECTIONS",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "DOCKER",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "DOCS_LOGOS_AGENDA2",
 		"type": "media/document"
 	},
 	{
@@ -3732,35 +4172,19 @@
 		"type": "media/document"
 	},
 	{
-		"prefixe": "GVIEWER",
-		"type": "media/document"
-	},
-	{
-		"prefixe": "MEDIA",
-		"type": "media/document"
-	},
-	{
-		"prefixe": "MEDOC",
-		"type": "media/document"
-	},
-	{
-		"prefixe": "RESSOURCE",
-		"type": "media/document"
-	},
-	{
-		"prefixe": "ROLES_DOCUMENTS",
-		"type": "media/document"
-	},
-	{
-		"prefixe": "STOCKAGES3",
-		"type": "media/document"
-	},
-	{
 		"prefixe": "EMBED_CODE",
 		"type": "media/document"
 	},
 	{
 		"prefixe": "EPUBREADER",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "EVA_FREEMIND",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "EVA_GEOMETRIE",
 		"type": "media/document"
 	},
 	{
@@ -3776,7 +4200,19 @@
 		"type": "media/document"
 	},
 	{
+		"prefixe": "GVIEWER",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "MEDIA",
+		"type": "media/document"
+	},
+	{
 		"prefixe": "MEDIAS",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "MEDOC",
 		"type": "media/document"
 	},
 	{
@@ -3800,7 +4236,23 @@
 		"type": "media/document"
 	},
 	{
+		"prefixe": "RESSOURCE",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "ROLES_DOCUMENTS",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "STOCKAGES3",
+		"type": "media/document"
+	},
+	{
 		"prefixe": "SUPLOADHTML5",
+		"type": "media/document"
+	},
+	{
+		"prefixe": "SWFUPLOAD",
 		"type": "media/document"
 	},
 	{
@@ -3816,20 +4268,8 @@
 		"type": "media/document"
 	},
 	{
-		"prefixe": "DOCKER",
+		"prefixe": "ZIPTEX",
 		"type": "media/document"
-	},
-	{
-		"prefixe": "SWFUPLOAD",
-		"type": "media/document"
-	},
-	{
-		"prefixe": "DIDA",
-		"type": "media/galerie"
-	},
-	{
-		"prefixe": "DECKJS",
-		"type": "media/galerie"
 	},
 	{
 		"prefixe": "ALBUM",
@@ -3844,11 +4284,27 @@
 		"type": "media/galerie"
 	},
 	{
+		"prefixe": "ARTICLE_ALBUM_PHOTO",
+		"type": "media/galerie"
+	},
+	{
+		"prefixe": "ARTICLE_DIAPORAMA",
+		"type": "media/galerie"
+	},
+	{
+		"prefixe": "DECKJS",
+		"type": "media/galerie"
+	},
+	{
 		"prefixe": "DIAPO",
 		"type": "media/galerie"
 	},
 	{
 		"prefixe": "DIAPOS",
+		"type": "media/galerie"
+	},
+	{
+		"prefixe": "DIDA",
 		"type": "media/galerie"
 	},
 	{
@@ -3980,34 +4436,6 @@
 		"type": "media/galerie"
 	},
 	{
-		"prefixe": "ARTICLE_ALBUM_PHOTO",
-		"type": "media/galerie"
-	},
-	{
-		"prefixe": "ARTICLE_DIAPORAMA",
-		"type": "media/galerie"
-	},
-	{
-		"prefixe": "DOC2IMG",
-		"type": "media/image"
-	},
-	{
-		"prefixe": "LOGO_SVG",
-		"type": "media/image"
-	},
-	{
-		"prefixe": "LOGOS_MULTIPLES",
-		"type": "media/image"
-	},
-	{
-		"prefixe": "SPIP_VISUELS",
-		"type": "media/image"
-	},
-	{
-		"prefixe": "TITRE_LOGO",
-		"type": "media/image"
-	},
-	{
 		"prefixe": "ADAPTIVE_IMAGES",
 		"type": "media/image"
 	},
@@ -4016,11 +4444,19 @@
 		"type": "media/image"
 	},
 	{
+		"prefixe": "BONUX_LOGO",
+		"type": "media/image"
+	},
+	{
 		"prefixe": "CENTRE_IMAGE",
 		"type": "media/image"
 	},
 	{
 		"prefixe": "CLOUDZOOM",
+		"type": "media/image"
+	},
+	{
+		"prefixe": "DOC2IMG",
 		"type": "media/image"
 	},
 	{
@@ -4052,6 +4488,10 @@
 		"type": "media/image"
 	},
 	{
+		"prefixe": "IMAGE_PAR_DEFAUT",
+		"type": "media/image"
+	},
+	{
 		"prefixe": "IMAGE_RAGGED",
 		"type": "media/image"
 	},
@@ -4072,6 +4512,10 @@
 		"type": "media/image"
 	},
 	{
+		"prefixe": "IMGABO",
+		"type": "media/image"
+	},
+	{
 		"prefixe": "IMGCOMPARE",
 		"type": "media/image"
 	},
@@ -4080,11 +4524,23 @@
 		"type": "media/image"
 	},
 	{
+		"prefixe": "LAZYSIZES",
+		"type": "media/image"
+	},
+	{
 		"prefixe": "LEGENDES",
 		"type": "media/image"
 	},
 	{
 		"prefixe": "LOGO_SPIP",
+		"type": "media/image"
+	},
+	{
+		"prefixe": "LOGO_SVG",
+		"type": "media/image"
+	},
+	{
+		"prefixe": "LOGOS_MULTIPLES",
 		"type": "media/image"
 	},
 	{
@@ -4104,7 +4560,15 @@
 		"type": "media/image"
 	},
 	{
+		"prefixe": "MEDIAS_RESPONSIVE",
+		"type": "media/image"
+	},
+	{
 		"prefixe": "MEDIAS_RESPONSIVE_MOD",
+		"type": "media/image"
+	},
+	{
+		"prefixe": "ORIENTATION",
 		"type": "media/image"
 	},
 	{
@@ -4128,11 +4592,19 @@
 		"type": "media/image"
 	},
 	{
+		"prefixe": "SPIP_VISUELS",
+		"type": "media/image"
+	},
+	{
 		"prefixe": "SPIPAGRAM",
 		"type": "media/image"
 	},
 	{
 		"prefixe": "THUMBSITES",
+		"type": "media/image"
+	},
+	{
+		"prefixe": "TITRE_LOGO",
 		"type": "media/image"
 	},
 	{
@@ -4148,23 +4620,19 @@
 		"type": "media/image"
 	},
 	{
-		"prefixe": "BONUX_LOGO",
-		"type": "media/image"
-	},
-	{
-		"prefixe": "SOCIAUX",
-		"type": "navigation/lien"
-	},
-	{
-		"prefixe": "SOCICON",
-		"type": "navigation/lien"
-	},
-	{
 		"prefixe": "AJAX_NAV",
 		"type": "navigation/lien"
 	},
 	{
 		"prefixe": "ANCRESDOUCES",
+		"type": "navigation/lien"
+	},
+	{
+		"prefixe": "ARTICLE_ACCUEIL",
+		"type": "navigation/lien"
+	},
+	{
+		"prefixe": "COURTCIRCUIT",
 		"type": "navigation/lien"
 	},
 	{
@@ -4212,7 +4680,19 @@
 		"type": "navigation/lien"
 	},
 	{
+		"prefixe": "QRCODE",
+		"type": "navigation/lien"
+	},
+	{
 		"prefixe": "SKIPLINK",
+		"type": "navigation/lien"
+	},
+	{
+		"prefixe": "SOCIAUX",
+		"type": "navigation/lien"
+	},
+	{
+		"prefixe": "SOCICON",
 		"type": "navigation/lien"
 	},
 	{
@@ -4220,24 +4700,8 @@
 		"type": "navigation/lien"
 	},
 	{
-		"prefixe": "ARTICLE_ACCUEIL",
-		"type": "navigation/lien"
-	},
-	{
-		"prefixe": "COURTCIRCUIT",
-		"type": "navigation/lien"
-	},
-	{
 		"prefixe": "TITREPARENT",
 		"type": "navigation/lien"
-	},
-	{
-		"prefixe": "BOUTONS_ADMIN_SUPP",
-		"type": "navigation/menu"
-	},
-	{
-		"prefixe": "SIDR",
-		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "ACCORDEON",
@@ -4249,6 +4713,10 @@
 	},
 	{
 		"prefixe": "BABBI",
+		"type": "navigation/menu"
+	},
+	{
+		"prefixe": "BOUTONS_ADMIN_SUPP",
 		"type": "navigation/menu"
 	},
 	{
@@ -4284,24 +4752,8 @@
 		"type": "navigation/menu"
 	},
 	{
-		"prefixe": "SPIPICIOUS",
-		"type": "navigation/motcle"
-	},
-	{
-		"prefixe": "MOTS",
-		"type": "navigation/motcle"
-	},
-	{
-		"prefixe": "MOTS_OBLIGATOIRES",
-		"type": "navigation/motcle"
-	},
-	{
-		"prefixe": "MOTSCREER",
-		"type": "navigation/motcle"
-	},
-	{
-		"prefixe": "MOTUS",
-		"type": "navigation/motcle"
+		"prefixe": "SIDR",
+		"type": "navigation/menu"
 	},
 	{
 		"prefixe": "CRITERE_MOTS",
@@ -4328,7 +4780,19 @@
 		"type": "navigation/motcle"
 	},
 	{
+		"prefixe": "MOTS",
+		"type": "navigation/motcle"
+	},
+	{
 		"prefixe": "MOTS_OBJETS",
+		"type": "navigation/motcle"
+	},
+	{
+		"prefixe": "MOTS_OBLIGATOIRES",
+		"type": "navigation/motcle"
+	},
+	{
+		"prefixe": "MOTS_TECHNIQUES",
 		"type": "navigation/motcle"
 	},
 	{
@@ -4336,11 +4800,23 @@
 		"type": "navigation/motcle"
 	},
 	{
+		"prefixe": "MOTSCREER",
+		"type": "navigation/motcle"
+	},
+	{
 		"prefixe": "MOTSPARTOUT",
 		"type": "navigation/motcle"
 	},
 	{
+		"prefixe": "MOTUS",
+		"type": "navigation/motcle"
+	},
+	{
 		"prefixe": "NUAGE",
+		"type": "navigation/motcle"
+	},
+	{
+		"prefixe": "SPIPICIOUS",
 		"type": "navigation/motcle"
 	},
 	{
@@ -4350,18 +4826,6 @@
 	{
 		"prefixe": "TAGSPHERE",
 		"type": "navigation/motcle"
-	},
-	{
-		"prefixe": "MOTS_TECHNIQUES",
-		"type": "navigation/motcle"
-	},
-	{
-		"prefixe": "MULTILANG",
-		"type": "navigation/multilinguisme"
-	},
-	{
-		"prefixe": "MULTILINGUE",
-		"type": "navigation/multilinguisme"
 	},
 	{
 		"prefixe": "AUTOLANG",
@@ -4380,11 +4844,19 @@
 		"type": "navigation/multilinguisme"
 	},
 	{
+		"prefixe": "MULTILANG",
+		"type": "navigation/multilinguisme"
+	},
+	{
+		"prefixe": "MULTILINGUE",
+		"type": "navigation/multilinguisme"
+	},
+	{
 		"prefixe": "SECTEUR_LANGUE",
 		"type": "navigation/multilinguisme"
 	},
 	{
-		"prefixe": "PSEUDO_HASARD",
+		"prefixe": "NUMERO",
 		"type": "navigation/pagination-tri"
 	},
 	{
@@ -4392,15 +4864,19 @@
 		"type": "navigation/pagination-tri"
 	},
 	{
-		"prefixe": "NUMERO",
-		"type": "navigation/pagination-tri"
-	},
-	{
 		"prefixe": "PAGINART3",
 		"type": "navigation/pagination-tri"
 	},
 	{
+		"prefixe": "PAGINATION",
+		"type": "navigation/pagination-tri"
+	},
+	{
 		"prefixe": "PAGINATIONSIMPLE",
+		"type": "navigation/pagination-tri"
+	},
+	{
+		"prefixe": "PSEUDO_HASARD",
 		"type": "navigation/pagination-tri"
 	},
 	{
@@ -4416,15 +4892,7 @@
 		"type": "navigation/pagination-tri"
 	},
 	{
-		"prefixe": "OAI",
-		"type": "navigation/recherche"
-	},
-	{
-		"prefixe": "SPHINX",
-		"type": "navigation/recherche"
-	},
-	{
-		"prefixe": "GOOGLEAJAXSEARCH",
+		"prefixe": "AJAXFILTRE",
 		"type": "navigation/recherche"
 	},
 	{
@@ -4433,6 +4901,14 @@
 	},
 	{
 		"prefixe": "FULLTEXT",
+		"type": "navigation/recherche"
+	},
+	{
+		"prefixe": "GOOGLEAJAXSEARCH",
+		"type": "navigation/recherche"
+	},
+	{
+		"prefixe": "IND_TAB_AGG",
 		"type": "navigation/recherche"
 	},
 	{
@@ -4452,6 +4928,10 @@
 		"type": "navigation/recherche"
 	},
 	{
+		"prefixe": "OAI",
+		"type": "navigation/recherche"
+	},
+	{
 		"prefixe": "OPENSEARCH",
 		"type": "navigation/recherche"
 	},
@@ -4468,7 +4948,15 @@
 		"type": "navigation/recherche"
 	},
 	{
+		"prefixe": "RECHERCHE_STI",
+		"type": "navigation/recherche"
+	},
+	{
 		"prefixe": "RECHERCHEETENDUE",
+		"type": "navigation/recherche"
+	},
+	{
+		"prefixe": "SPHINX",
 		"type": "navigation/recherche"
 	},
 	{
@@ -4476,23 +4964,11 @@
 		"type": "navigation/recherche"
 	},
 	{
-		"prefixe": "AJAXFILTRE",
-		"type": "navigation/recherche"
-	},
-	{
-		"prefixe": "GRAPPES",
-		"type": "navigation/transverse"
-	},
-	{
-		"prefixe": "LIAISON_OBJET",
-		"type": "navigation/transverse"
-	},
-	{
-		"prefixe": "ROLES_SELECTIONS",
-		"type": "navigation/transverse"
-	},
-	{
 		"prefixe": "A2A",
+		"type": "navigation/transverse"
+	},
+	{
+		"prefixe": "ACTUNITE",
 		"type": "navigation/transverse"
 	},
 	{
@@ -4508,7 +4984,19 @@
 		"type": "navigation/transverse"
 	},
 	{
+		"prefixe": "GRAPPES",
+		"type": "navigation/transverse"
+	},
+	{
+		"prefixe": "LIAISON_OBJET",
+		"type": "navigation/transverse"
+	},
+	{
 		"prefixe": "LIRE_AUSSI",
+		"type": "navigation/transverse"
+	},
+	{
+		"prefixe": "MAGNET",
 		"type": "navigation/transverse"
 	},
 	{
@@ -4524,11 +5012,11 @@
 		"type": "navigation/transverse"
 	},
 	{
-		"prefixe": "SELECTIONS_EDITORIALES",
+		"prefixe": "ROLES_SELECTIONS",
 		"type": "navigation/transverse"
 	},
 	{
-		"prefixe": "MAGNET",
+		"prefixe": "SELECTIONS_EDITORIALES",
 		"type": "navigation/transverse"
 	}
 ]

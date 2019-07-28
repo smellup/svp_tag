@@ -77,6 +77,7 @@ function formulaires_importer_typologie_traiter($typologie) {
 	// Initialisation du retour de traitement du formulaire (message, editable).
 	$retour = array();
 	$resultat_import = false;
+	$erreur_json = '';
 
 	// Récupération des saisies
 	$vue = _request('vue_import');
@@ -98,7 +99,11 @@ function formulaires_importer_typologie_traiter($typologie) {
 			@unlink($fichier);
 
 			// -- Décodage du contenu JSON en tableau PHP.
-			$liste = json_decode($contenu, true);
+			try {
+				$liste = json_decode($contenu, true);
+			} catch (Exception $erreur) {
+				$erreur_json = $erreur->getMessage();
+			}
 
 			// -- Importation du tableau représentant la typologie.
 			if ($liste) {
@@ -125,7 +130,8 @@ function formulaires_importer_typologie_traiter($typologie) {
 			$vue
 		);
 	} else {
-		$retour['message_erreur'] = _T('svptype:import_message_nok');
+		$retour['message_erreur'] = _T('svptype:import_message_nok')
+			. ($erreur_json ? "(${erreur_json})" : '');
 		// On reste sur la page d'importation pour visualiser l'erreur.
 		$redirect = '';
 	}
