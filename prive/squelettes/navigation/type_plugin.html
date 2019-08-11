@@ -1,0 +1,13 @@
+<BOUCLE_nav(MOTS){id_mot}{si #ENV{exec}|=={type_plugin}}>
+	#BOITE_OUVRIR{'','info'}
+		#PIPELINE{
+			boite_infos,
+			#ARRAY{
+				data, '',
+				args, #ARRAY{'type','type_plugin','id',#ENV{id_mot}, typologie, #ENV{typologie}}
+			}
+		}
+	#BOITE_FERMER
+</BOUCLE_nav>
+	[(#ENV{exec}|=={type_plugin_edit}|oui)<INCLURE{fond=prive/squelettes/navigation/type_plugin_edit,env} />]
+<//B_nav>

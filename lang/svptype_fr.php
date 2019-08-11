@@ -76,7 +76,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'svptype_menu_titre' => 'Catégories et tags des plugins',
 
 	// T
-	'tag_identifiant_label' => 'Tags',
+	'tag_identifiant_label' => 'Tag',
 	'tag_export_vue_liste_label' => 'la liste des tags',
 	'tag_export_vue_affectation_label' => 'la liste des affectations plugin-tag',
 	'tag_import_vue_liste_label' => 'une liste de tags',

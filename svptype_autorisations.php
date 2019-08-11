@@ -123,3 +123,40 @@ function autoriser_plugin_affecter($faire, $type, $id, $qui, $opt) {
 
 	return $autoriser;
 }
+
+/**
+ * Autorisation de créer un mot.
+ *
+ * Surcharge l'autorisation du plugin mots pour ne pas afficher le bouton de création dans la page d'un type de
+ * plugin.
+ *
+ * @param string $faire Action demandée
+ * @param string $type  Type d'objet sur lequel appliquer l'action
+ * @param int    $id    Identifiant de l'objet
+ * @param array  $qui   Description de l'auteur demandant l'autorisation
+ * @param array  $opt   Options de cette autorisation
+ *
+ * @return bool true s'il a le droit, false sinon
+**/
+function autoriser_mot_creer($faire, $type, $id, $qui, $opt) {
+
+	// Initialisation de l'autorisation
+	$autoriser = false;
+
+	// si l'autorisation normale ne passe déjà pas, partir !
+	if (autoriser_mot_creer_dist($faire, $type, $id, $qui, $opt)) {
+		// On vérifie qu'on est pas sur la page de visualisation d'un type de plugin.
+		$exec = _request('exec');
+		if ($exec != 'type_plugin') {
+			// On vérifie qu'on est pas en présence d'un type de plugin.
+			include_spip('inc/svptype_mot');
+			$id_mot = intval($id);
+			$id_groupe = mot_lire_groupe($id_mot);
+			if (groupe_est_typologie_plugin($id_groupe)) {
+				$autoriser = true;
+			}
+		}
+	}
+
+	return $autoriser;
+}

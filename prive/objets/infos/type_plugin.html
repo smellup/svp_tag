@@ -1,0 +1,12 @@
+<BOUCLE_info(MOTS){id_mot=#ENV{id}}>
+#SET{titre_identifiant, #VAL{svptype:}|concat{#ENV{typologie}_identifiant_label}|_T}
+<div class="infos">
+	<div class="numero">
+		<:mots:titre_gauche_mots_edit:>
+		<p>#ID_MOT</p>
+	</div>
+	[<div class="numero">
+		(#GET{titre_identifiant})
+	</div>]
+</div>
+</BOUCLE_info>
