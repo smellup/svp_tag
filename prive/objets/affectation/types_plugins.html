@@ -1,7 +1,6 @@
 [(#SET{defaut_tri,#ARRAY{
 	prefixe,1,
 	identifiant,1,
-	id_mot,1,
 	points,-1
 }})
 ]<B_liste_categorie>
@@ -40,7 +39,10 @@
 				</a>
 			</td>
 			<td class="titre">
-				<a href="[(#ID_MOT|generer_url_entite{mot})]" title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
+				<a href="[(#URL_ECRIRE{type_plugin}
+							|parametre_url{typologie, #ENV{typologie}}
+							|parametre_url{id_mot, #ID_MOT})]"
+				   title="<:info_numero_abbreviation|attribut_html:> #ID_MOT">
 					[(#IDENTIFIANT)]
 				</a>
 			</td>

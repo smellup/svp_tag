@@ -1,6 +1,5 @@
 [(#SET{defaut_tri, #ARRAY{
 	identifiant, 1,
-	titre, 1,
 	id_mot, 1,
 	points, -1
 }})
@@ -32,8 +31,8 @@
 	</caption>]
 	<thead>
 		<tr class="first_row">
-			<th class="titre" scope="col">[(#TRI{titre,<:svptype:identifiant_label:>,ajax})]</th>
-			<th class="nombre" scope="col">[(#TRI{type,<:svptype:plugin_compteur_label:>,ajax})]</th>
+			<th class="titre" scope="col">[(#TRI{identifiant,<:svptype:identifiant_label:>,ajax})]</th>
+			<th class="nombre" scope="col"><:svptype:plugin_compteur_label:></th>
 			<th class="id" scope="col">[(#TRI{id_mot,<:info_numero_abbreviation:>,ajax})]</th>
 			<th class="action" scope="col">&nbsp;</th>
 		</tr>

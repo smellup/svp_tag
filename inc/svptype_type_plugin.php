@@ -16,8 +16,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @param string       $typologie    Typologie concernée : categorie, tag... Ne sert que si le type est passé sous forme du champ `identifiant`
  *                                   qui n'est unique qu'au sein d'une même typologie.
  * @param int|string   $type_plugin  Identifiant d'un type de plugin correspondant soit à son `id_mot` soit au champ `identifiant`.
- * @param array|string $informations
- *                                   Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
+ * @param array|string $informations Identifiant d'un champ ou de plusieurs champs de la description d'un type de plugin.
  *                                   Si l'argument est vide, la fonction renvoie la description complète.
  *
  * @return array|string
