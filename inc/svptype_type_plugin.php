@@ -294,3 +294,43 @@ function type_plugin_compter_affectation($typologie, $type_plugin) {
 
 	return $compteurs[$id_mot];
 }
+
+function type_plugin_elaborer_condition($typologie, $type_plugin, $vue) {
+	$filtre = '';
+
+	if ($type_plugin) {
+		// Déterminer les informations de configuration de la typologie.
+		include_spip('inc/config');
+		if ($config_typologie = lire_config("svptype/typologies/${typologie}", array())) {
+			// On détermine l'id et la profondeur du type.
+			include_spip('inc/svptype_type_plugin');
+			if ($description_type_plugin = type_plugin_lire($typologie, $type_plugin, array('id_mot', 'profondeur'))) {
+				// On détermine la profondeur du type qui est plus fiable que de tester l'existence d'un "/".
+				$id = $description_type_plugin['id_mot'];
+				$profondeur = $description_type_plugin['profondeur'];
+
+				if (!$config_typologie['est_arborescente']
+					or ($config_typologie['est_arborescente'] and ($profondeur == 1))) {
+					// Le type est une feuille, on filtre sur son id.
+					if ($vue == 'objet') {
+						$filtre = 'id_mot=' . $id;
+					} else {
+						$filtre = 'plugins_typologies.id_mot=' . $id;
+					}
+				} else {
+					// La typologie est arborescente et le type est une racine.
+					// Suivant la vue (liste ou affectation il faut utiliser un critère différent :
+					// - liste : on veut les sous-types du type racine
+					// - affectation : on veut toutes les affectations liées à ce type ou celui de ses enfants.
+					if (($vue == 'liste') or ($vue == 'objet')) {
+						$filtre = 'id_mot=' . $id;
+					} else {
+						$filtre = 'id_parent=' . $id;
+					}
+				}
+			}
+		}
+	}
+
+	return $filtre;
+}

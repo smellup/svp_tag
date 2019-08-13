@@ -38,7 +38,7 @@ function plugin_affecter($plugin, $id_mot, $typologie) {
 
 	// Contruire l'enregistrement d'une affectation définie par le préfixe du plugin et l'id du mot représentant
 	// le type de plugin. Pour simplifier la récupération des affectations d'une typologie on ajoute aussi l'id du
-	// groupe matérialisant la typolgoie.
+	// groupe matérialisant la typologie.
 	$set = array(
 		'prefixe'   => $prefixe,
 		'id_mot'    => intval($id_mot),
@@ -136,4 +136,42 @@ function plugin_lister_type_plugin($plugin, $typologie) {
 	}
 
 	return $affectations;
+}
+
+function plugin_elaborer_condition($typologie, $id_mot = 0) {
+
+	// Initialisation de la condition
+	$condition = '';
+
+	// Récupération des plugins sous la forme [prefixe] = id_plugin
+	$select = array('prefixe', 'spip_plugins.id_plugin as id_plugin');
+	$from = array('spip_plugins', 'spip_depots_plugins');
+	$group_by = array('spip_plugins.id_plugin');
+	$where = array('spip_depots_plugins.id_depot>0', 'spip_depots_plugins.id_plugin=spip_plugins.id_plugin');
+	$plugins = sql_allfetsel($select, $from, $where, $group_by);
+	$plugins = array_column($plugins, 'id_plugin', 'prefixe');
+
+	if ($plugins) {
+		// Récupération des affectations de plugin filtrées ou pas sur un type de plugin donné et présentées
+		// sous la forme [prefixe] = affectation
+		$filtres = $id_mot ? array('id_mot' => $id_mot) : array();
+		$affectations = type_plugin_repertorier_affectation($typologie, $filtres);
+		$plugins_affectes = array_column($affectations, null, 'prefixe');
+		if (!$id_mot) {
+			// On veut les plugins non encore affectés
+			if (count($plugins_affectes) > count($plugins) / 2) {
+				$plugins_filtres = array_diff_key($plugins, $plugins_affectes);
+				$condition = 'plugins.id_plugin IN (' . implode(',', $plugins_filtres) . ')';
+			} else {
+				$plugins_filtres = array_intersect_key($plugins, $plugins_affectes);
+				$condition = 'plugins.id_plugin NOT IN (' . implode(',', $plugins_filtres) . ')';
+			}
+		} else {
+			// On veut les plugins affectés au type de plugin passé en argument
+			$plugins_filtres = array_intersect_key($plugins, $plugins_affectes);
+			$condition = 'plugins.id_plugin IN (' . implode(',', $plugins_filtres) . ')';
+		}
+	}
+
+	return $condition;
 }

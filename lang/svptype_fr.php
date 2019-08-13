@@ -32,6 +32,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_liste_erreur_vide' => 'Aucune catégorie disponible',
 	'categorie_liste_ajouter' => 'Ajouter une catégorie',
 	'categorie_liste_titre' => 'Liste des catégories',
+	'categorie_enfant_liste_titre' => 'Catégories filles',
 	'categorie_menu_titre' => 'Catégories',
 	'categorie_modifier_title' => 'Modifier cette catégorie',
 	'categorie_desaffecter_label' => 'Retirer la catégorie',

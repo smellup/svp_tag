@@ -138,7 +138,7 @@ function autoriser_plugin_affecter($faire, $type, $id, $qui, $opt) {
  *
  * @return bool true s'il a le droit, false sinon
 **/
-function autoriser_mot_creer($faire, $type, $id, $qui, $opt) {
+function autoriser_mot_creer2($faire, $type, $id, $qui, $opt) {
 
 	// Initialisation de l'autorisation
 	$autoriser = false;

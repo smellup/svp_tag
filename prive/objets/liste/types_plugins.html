@@ -4,11 +4,15 @@
 	points, -1
 }})
 ]
+
 #SET{typologie_arbo, ''}
 [(#CONFIG{svptype/typologies/#ENV{typologie}/est_arborescente}|oui)
 	#SET{typologie_arbo, oui}
 ]
+#SET{avec_filtre, #ENV{avec_filtre, ''}}
+
 #SET{affectations, 0}
+#SET{avec_parent, #ENV{avec_parent, ''}}
 #SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_modifier_title}|_T}
 
 <B_liste_types>
@@ -17,7 +21,7 @@
 <table class="spip liste">
 	[<caption>
 		<strong class="caption">(#ENV*{titre_liste})</strong>
-		[(#GET{typologie_arbo}|oui)
+		[(#GET{typologie_arbo}|et{#GET{avec_filtre}}|oui)
 		<div class="filtre">
 			<form method="GET" action="#SELF" onChange="this.submit(); return true;">
 				[(#SELF|parametre_url{type,''}|form_hidden)]
@@ -47,6 +51,7 @@
 	{tri #ENV{par, identifiant}, #GET{defaut_tri}}
 	{pagination #ENV{nb,100}}>
 		#SET{affectations_mot_racine, #ENV{typologie}|type_plugin_compter_affectation{#ID_MOT|}}
+		[(#GET{avec_parent}|oui)
 		<INCLURE{fond=prive/squelettes/inclure/inc-type_plugin,
 			typologie_arbo=#GET{typologie_arbo},
 			title_modifier=#GET{title_modifier},
@@ -57,7 +62,7 @@
 			titre,
 			profondeur,
 			env} />
-
+		]
 		<BOUCLE_liste_types_enfants(MOTS)
 			{technique=oui}
 			{typologie_plugin #ENV{typologie}}

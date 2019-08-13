@@ -59,20 +59,22 @@
 [(#SET{fond_titre, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_titre}|_T)]})]
 [(#SET{liste_vide, [(#VAL{svptype:}|concat{#GET{typologie}_}|concat{#GET{vue}}|concat{_erreur_vide}|_T)]})]
 [(#SET{option_tout, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_selection_option_tout}|_T)]})]
-[(#SET{filtre, #GET{typologie}|liste_type_plugin_filtrer{#ENV{type}, #GET{vue}}})]
+[(#SET{filtre, #GET{typologie}|type_plugin_elaborer_condition{#ENV{type}, #GET{vue}}})]
 
 <INCLURE{fond=prive/objets/#GET{vue}/types_plugins,
 	typologie=#GET{typologie},
 	titre_liste=#GET{fond_titre},
 	where=#GET{filtre},
+	avec_filtre=oui,
 	option_intro=#GET{option_tout},
+	avec_parent=oui,
 	sinon=#GET{liste_vide},
 	env, ajax} />
 ]
 
 [(#REM) <!-- Liste des plugins n'ayant aucune affectation pour la typologie concernée --> ]
 [(#GET{vue}|=={plugins_sans_affectation}|oui)
-[(#SET{filtre, #GET{typologie}|liste_plugin_filtrer})]
+[(#SET{filtre, #GET{typologie}|plugin_elaborer_condition})]
 
 <INCLURE{fond=prive/objets/liste/plugins,
 	where=#GET{filtre},
