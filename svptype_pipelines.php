@@ -279,7 +279,7 @@ function svptype_afficher_contenu_objet($flux) {
 function svptype_affiche_milieu($flux) {
 
 	// Si on est sur la page d'un plugin, il faut inserer les formulaires d'affectations des types de plugin.
-	if ($exec = trouver_objet_exec($flux['args']['exec'])
+	if (($exec = trouver_objet_exec($flux['args']['exec']))
 		and ($exec['edition'] !== true) // page visu
 		and ($type = $exec['type'])
 		and ($type == 'plugin')

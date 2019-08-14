@@ -108,6 +108,9 @@ function autoriser_typeplugin_creer($faire, $type, $id, $qui, $opt) {
  * Autorisation, pour un plugin, de lui affecter un type de plugin, de lui supprimer ou de lui modifier
  * une affectation existante.
  *
+ * L'autorisation est générique et ne dépend pas du plugin concerné :
+ * - uniquement les webmestres sont autorisés.
+ *
  * @param string $faire Action demandée
  * @param string $type  Type d'objet sur lequel appliquer l'action
  * @param int    $id    Identifiant de l'objet

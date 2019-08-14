@@ -21,7 +21,7 @@
 			{id_mot !IN #ENV{affectations}}
 			{par identifiant}
 		>
-			#SET{value, #PREFIXE:#ID_MOT:#TYPOLOGIE}
+			#SET{value, #ID_PLUGIN:#PREFIXE:#ID_MOT:#TYPOLOGIE}
 			<option value="#GET{value}">#IDENTIFIANT</option>
 		</BOUCLE_types_plugins>
 		</select>

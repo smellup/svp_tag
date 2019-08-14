@@ -35,8 +35,8 @@
 				</a>
 			</td>
 			<td class="action">
-			[(#AUTORISER{affecter, plugin, #ID_PLUGIN}|oui)
-				<button type="submit" class="button link delete" name="desaffecter_plugin\[#PREFIXE:#ID_MOT\]" value="X">
+			[(#AUTORISER{affecter, plugin, #ENV{id_plugin}}|oui)
+				<button type="submit" class="button link delete" name="desaffecter_plugin\[#ENV{id_plugin}:#ENV{prefixe}:#ID_MOT\]" value="X">
 					#GET{bouton_desaffecter}[&nbsp;(#CHEMIN_IMAGE{supprimer-12.png}|balise_img{'X'})]
 				</button>
 			]

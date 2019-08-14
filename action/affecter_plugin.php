@@ -25,11 +25,18 @@ function action_affecter_plugin_dist($arguments = null) {
 	}
 
 	$arguments = explode(':', $arguments);
-	list($id_mot_affecte, $prefixe, $id_mot, $typologie) = $arguments;
+	list($id_mot_affecte, $id_plugin, $prefixe, $id_mot, $typologie) = $arguments;
+
+	// Verification des autorisations
+	if (!autoriser('affecter', 'type_plugin', $id_plugin)) {
+		include_spip('inc/minipres');
+		echo minipres();
+		exit();
+	}
 
 	include_spip('inc/svptype_plugin');
 	// Si on a passé un id non nul dans $id_mot_affecte c'est qu'on veut changer ce mot par un nouveau.
-	// Il faut donc le supprimer.
+	// Il faut donc supprimer cette affectation au préalable.
 	if ($id_mot_affecte) {
 		plugin_desaffecter($prefixe, $id_mot_affecte);
 	}

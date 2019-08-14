@@ -24,7 +24,14 @@ function action_desaffecter_plugin_dist($arguments = null) {
 	}
 
 	$arguments = explode(':', $arguments);
-	list($prefixe, $id_mot) = $arguments;
+	list($id_plugin, $prefixe, $id_mot) = $arguments;
+
+	// Verification des autorisations
+	if (!autoriser('affecter', 'type_plugin', $id_plugin)) {
+		include_spip('inc/minipres');
+		echo minipres();
+		exit();
+	}
 
 	include_spip('inc/svptype_plugin');
 	plugin_desaffecter($prefixe, $id_mot);
