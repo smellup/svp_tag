@@ -14,6 +14,7 @@
 ]
 
 #SET{titre_defaut, #VAL{svptype:}|concat{#ENV{typologie}_creer_titre_defaut}|_T}
+#SET{label_titre, #VAL{svptype:}|concat{#ENV{typologie}_titre_label}|_T}
 <div class='cadre-formulaire-editer'>
 	<div class="entete-formulaire">
 		[(#GET{retour}|icone_verticale{<:icone_retour:>, #ENV{typologie}, '', left retour[(#ENV{retourajax,''}|oui)ajax preload]})]
@@ -31,5 +32,6 @@
 	jQuery(document).ready(function() {
 		$('.formulaire_editer_mot .editer.editer_texte').toggle();
 		$('.formulaire_editer_mot .editer.editer_titre input').attr('placeholder', '#GET{titre_defaut}');
+		$('.formulaire_editer_mot .editer.editer_titre label').text('#GET{label_titre}');
 	});
 /*]]>*/</script>

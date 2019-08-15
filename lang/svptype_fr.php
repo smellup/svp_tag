@@ -12,9 +12,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// C
 	'categorie_identifiant_label' => 'Catégorie',
-//	'categorie_export_affectation_bouton_titre' => 'Exporter des affectations plugin-catégorie',
+	'categorie_export_affectation_bouton_titre' => 'Exporter des affectations plugin-catégorie',
 	'categorie_export_affectation_form_titre' => 'Exportation d\'une liste d\'affectations plugin-catégorie',
-//	'categorie_export_liste_bouton_titre' => 'Exporter une liste de catégories',
+	'categorie_export_liste_bouton_titre' => 'Exporter une liste de catégories',
 	'categorie_export_liste_form_titre' => 'Exportation d\'une liste de catégories',
 	'categorie_export_vue_liste_label' => 'la liste des catégories',
 	'categorie_export_vue_affectation_label' => 'la liste des affectations plugin-catégorie',
@@ -42,6 +42,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_creer_titre_defaut' => 'Nouvelle catégorie',
 	'categorie_page_titre' => 'Gestion des catégories de plugin',
 	'categorie_parent_label' => 'Catégorie parente',
+	'categorie_titre_label' => 'Titre de la catégorie',
 	'categorie_parent_aucun_label' => '-- à la racine, aucun parent --',
 	'categorie_selection_option_tout' => 'Toutes les catégories',
 	'categorie_vidage_liste_label' => 'Supprimer les catégories ?',
@@ -106,6 +107,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'tag_modifier_title' => 'Modifier ce tag',
 	'tag_page_titre' => 'Gestion des tags de plugin',
 	'tag_selection_option_tout' => 'Tous les tags',
+	'tag_titre_label' => 'Titre du tag',
 	'tag_vidage_liste_label' => 'Supprimer les tags ?',
 	'tag_vidage_affectation_label' => 'Supprimer les affectations plugin-tag ?',
 	'typologie_menu_liste_titre' => 'Gérer la liste',
