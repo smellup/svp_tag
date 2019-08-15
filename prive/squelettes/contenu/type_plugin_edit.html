@@ -1,15 +1,22 @@
 [(#ID_MOT|intval|oui)
 	[(#AUTORISER{modifier, typeplugin, #ID_MOT}|sinon_interdire_acces)]
 	#SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_modifier_title}|_T}
+	#SET{retour, #URL_ECRIRE{type_plugin}
+					|parametre_url{typologie, #ENV{typologie}}
+					|parametre_url{id_mot, #ID_MOT}}
 ]
 [(#ID_MOT|intval|non)
 	[(#AUTORISER{creer, typeplugin, oui, '', #ARRAY{id_groupe, #ENV{id_groupe}}}|sinon_interdire_acces)]
 	#SET{title_modifier, #VAL{svptype:}|concat{#ENV{typologie}_creer_title}|_T}
+	#SET{retour, #URL_ECRIRE{svptype_typologie}
+					|parametre_url{typologie, #ENV{typologie}}
+					|parametre_url{vue, liste}}
 ]
 
 #SET{titre_defaut, #VAL{svptype:}|concat{#ENV{typologie}_creer_titre_defaut}|_T}
 <div class='cadre-formulaire-editer'>
 	<div class="entete-formulaire">
+		[(#GET{retour}|icone_verticale{<:icone_retour:>, #ENV{typologie}, '', left retour[(#ENV{retourajax,''}|oui)ajax preload]})]
 		[[(#GET{title_modifier})]
 		<h1>(#ENV{titre, #INFO_TITRE{mot, #ID_MOT}|sinon{#GET{titre_defaut}}})</h1>]
 	</div>
@@ -23,5 +30,6 @@
 <script type="text/javascript">/*<![CDATA[*/
 	jQuery(document).ready(function() {
 		$('.formulaire_editer_mot .editer.editer_texte').toggle();
+		$('.formulaire_editer_mot .editer.editer_titre input').attr('placeholder', '#GET{titre_defaut}');
 	});
 /*]]>*/</script>

@@ -1,5 +1,6 @@
+#SET{placeholder, #VAL{svptype:}|concat{#ENV{typologie}_creer_titre_defaut}|_T}
 <div class="editer editer_identifiant obligatoire[ (#ENV**{erreurs}|table_valeur{identifiant}|oui)erreur]">
 	<label for="identifiant"><:svptype:identifiant_label:></label>[
 	<span class="erreur_message">(#ENV**{erreurs}|table_valeur{identifiant})</span>
-	]<input type="text" class="text" name="identifiant" id="identifiant" value="[(#ENV**{identifiant})]" />
+	]<input type="text" class="text" name="identifiant" id="identifiant" value="[(#ENV**{identifiant})]" placeholder="#GET{placeholder}" />
 </div>

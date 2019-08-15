@@ -1,0 +1,20 @@
+<!-- hierarchie -->
+#SET{typologie, #ENV{typologie, categorie}}
+#SET{titre, #VAL{svptype:}|concat{#ENV{typologie}_menu_titre}|_T}
+#SET{titre_defaut, #VAL{svptype:}|concat{#ENV{typologie}_creer_titre_defaut}|_T}
+<a href="[(#URL_ECRIRE{svptype_typologie}
+			|parametre_url{typologie, #GET{typologie}}
+			|parametre_url{vue, liste})]">
+	#GET{titre}
+</a>
+<BOUCLE_hierarchie(MOTS){id_mot}>
+	<BOUCLE_parent(MOTS){id_mot=#ID_PARENT}>
+	&gt; [(#URL_ECRIRE{type_plugin}
+		|parametre_url{typologie, #GET{typologie}}
+		|parametre_url{id_mot, #ID_MOT}
+		|lien_ou_expose{#IDENTIFIANT,''})]
+	</BOUCLE_parent>
+&gt; <strong class="on">#IDENTIFIANT</strong>
+</BOUCLE_hierarchie>
+&gt; <strong class="on">#GET{titre_defaut}</strong>
+<//B_hierarchie>

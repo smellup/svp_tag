@@ -27,6 +27,15 @@ function svptype_formulaire_fond($flux) {
 		include_spip('inc/svptype_mot');
 		if (groupe_est_typologie_plugin($id_groupe)) {
 			// Insertion de l'identifiant avant le titre
+			// -- on complète l'environnement avec la typologie et le groupe principalement utile pour la création
+			include_spip('inc/config');
+			$typologies = lire_config('svptype/typologies', array());
+			foreach ($typologies as $_typologie => $_config) {
+				if ($_config['id_groupe'] == $id_groupe) {
+					$env['typologie'] = $_typologie;
+					break;
+				}
+			}
 			$saisie_identifiant = recuperer_fond('formulaires/inclure/inc-type_plugin_identifiant', $env);
 
 			$cherche = "/(<(li|div)[^>]*class=(?:'|\")editer-groupe[^>]*>)\s*(<(li|div)[^>]*class=(?:'|\")editer editer_titre)/is";
@@ -40,15 +49,6 @@ function svptype_formulaire_fond($flux) {
 			}
 
 			// Remplacement de la saisie du mot parent par celle du type parent.
-			// -- on complète l'environnement avec la typologie et le groupe principalement utile pour la création
-			include_spip('inc/config');
-			$typologies = lire_config('svptype/typologies', array());
-			foreach ($typologies as $_typologie => $_config) {
-				if ($_config['id_groupe'] == $id_groupe) {
-					$env['typologie'] = $_typologie;
-					break;
-				}
-			}
 			$saisie_parent = recuperer_fond('formulaires/inclure/inc-type_plugin_parent', $env);
 
 			$cherche = "/(<(li|div)[^>]*class=(?:'|\")editer editer_id_parent.*?<\/\\2>)/is";
