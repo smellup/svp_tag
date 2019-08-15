@@ -1,4 +1,4 @@
-[(#AUTORISER{webmestre}|sinon_interdire_acces)]
+[(#AUTORISER{typologie}|sinon_interdire_acces)]
 #SET{typologie, #ENV{typologie, categorie}}
 
 <h1>[(#VAL{svptype:}|concat{#GET{typologie}}|concat{_page_titre}|_T)]</h1>

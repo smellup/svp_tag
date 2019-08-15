@@ -6,7 +6,7 @@
 #SET{typologie, #ENV{typologie, categorie}}
 #SET{vue, #ENV{vue, liste}}
 
-[(#AUTORISER{webmestre}|oui)
+[(#AUTORISER{typologie}|oui)
 	#BOITE_OUVRIR{'','raccourcis'}
 		[(#SET{bouton_titre, [(#VAL{svptype:}|concat{#GET{typologie}}|concat{_export_}|concat{#GET{vue}}|concat{_bouton_titre}|_T)]})]
 		[(#SET{bouton_icone, #GET{typologie}|concat{_#GET{vue}}|concat{_export}})]

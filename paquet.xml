@@ -37,5 +37,5 @@
 	<necessite nom="motsar" compatibilite="[1.1.10;[" />
 	<necessite nom="saisies" compatibilite="[3.19.6;[" />
 
-	<menu nom="svptype" titre="svptype:svptype_menu_titre" parent="menu_administration" icone="images/svptype_menu-16.png" action="svptype_typologie" />
+	<menu nom="typologie" titre="svptype:svptype_menu_titre" parent="menu_administration" icone="images/svptype_menu-16.png" action="svptype_typologie" />
 </paquet>

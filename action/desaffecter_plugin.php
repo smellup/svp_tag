@@ -27,6 +27,7 @@ function action_desaffecter_plugin_dist($arguments = null) {
 	list($id_plugin, $prefixe, $id_mot) = $arguments;
 
 	// Verification des autorisations
+	include_spip('inc/autoriser');
 	if (!autoriser('affecter', 'type_plugin', $id_plugin)) {
 		include_spip('inc/minipres');
 		echo minipres();

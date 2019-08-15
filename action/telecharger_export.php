@@ -13,9 +13,15 @@ function action_telecharger_export_dist() {
 	$securiser_action = charger_fonction('securiser_action', 'inc');
 	$fichier = $securiser_action();
 
+	// Verification des autorisations
 	include_spip('inc/autoriser');
-	if (file_exists($fichier)
-		and autoriser('webmestre')) {
+	if (!autoriser('typologie')) {
+		include_spip('inc/minipres');
+		echo minipres();
+		exit();
+	}
+
+	if (file_exists($fichier)) {
 		// Vider tous les tampons pour ne pas provoquer de Fatal memory exhausted
 		$level = @ob_get_level();
 		while ($level--) {

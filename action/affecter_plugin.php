@@ -28,6 +28,7 @@ function action_affecter_plugin_dist($arguments = null) {
 	list($id_mot_affecte, $id_plugin, $prefixe, $id_mot, $typologie) = $arguments;
 
 	// Verification des autorisations
+	include_spip('inc/autoriser');
 	if (!autoriser('affecter', 'type_plugin', $id_plugin)) {
 		include_spip('inc/minipres');
 		echo minipres();
