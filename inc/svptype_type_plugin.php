@@ -155,7 +155,7 @@ function type_plugin_repertorier($typologie, $filtres = array(), $informations =
  *
  * @param string $typologie Typologie concernée : categorie, tag...
  * @param array  $filtres   Liste des couples (champ, valeur) ou tableau vide.
- *                          Pratiquement, les critères admins sont `prefixe`, `id_mot` et aussi `type` qui revient à filtrer
+ *                          Pratiquement, les critères admis sont `prefixe`, `id_mot` et aussi `type` qui revient à filtrer
  *                          sur un type de plugin comme id_mot.
  *
  * @return array Description de chaque affectation (type de plugin, plugin) de la typologie concernée.

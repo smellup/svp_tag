@@ -412,7 +412,7 @@ function typologie_plugin_exporter_affectation($typologie) {
  * @return array Tableau associatif des fichiers d'export fournissant, le chemin complet, le nom sans extension,
  *               la date et la taille de chaque fichier.
  */
-function typologie_plugin_lister_export($typologie) {
+function typologie_plugin_export_lister($typologie) {
 
 	// Initialisation de la liste
 	$exports = array();
@@ -518,7 +518,7 @@ function typologie_plugin_collectionner($typologie, $filtres) {
  *
  * @return string Condition SQL traduisant le critère (égalité ou IN).
  */
-function typologie_plugin_elaborer_critere($typologies, $table) {
+function typologie_plugin_calculer_critere($typologies, $table) {
 
 	// Initialisation de la condition pour le cas où il y aurait une erreur :
 	// -- on annule l'effet du critère.

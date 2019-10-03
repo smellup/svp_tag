@@ -11,8 +11,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * L'argument attendu est `id_mot_actuel:prefixe:id_mot:typologie`.
  *
- * @uses plugin_desaffecter()
- * @uses plugin_affecter()
+ * @uses plugin_desaffecter_type_plugin()
+ * @uses plugin_affecter_type_plugin()
  *
  * @return void
  */
@@ -39,9 +39,9 @@ function action_affecter_plugin_dist($arguments = null) {
 	// Si on a passé un id non nul dans $id_mot_affecte c'est qu'on veut changer ce mot par un nouveau.
 	// Il faut donc supprimer cette affectation au préalable.
 	if ($id_mot_affecte) {
-		plugin_desaffecter($prefixe, $id_mot_affecte);
+		plugin_desaffecter_type_plugin($prefixe, $id_mot_affecte);
 	}
 
 	// Maintenant on peut ajouter la nouvelle affectation
-	plugin_affecter($prefixe, $id_mot, $typologie);
+	plugin_affecter_type_plugin($prefixe, $id_mot, $typologie);
 }

@@ -11,7 +11,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * L'argument attendu est `prefixe:id_mot`.
  *
- * @uses plugin_desaffecter()
+ * @uses plugin_desaffecter_type_plugin()
  *
  * @return void
  */
@@ -35,5 +35,5 @@ function action_desaffecter_plugin_dist($arguments = null) {
 	}
 
 	include_spip('inc/svptype_plugin');
-	plugin_desaffecter($prefixe, $id_mot);
+	plugin_desaffecter_type_plugin($prefixe, $id_mot);
 }

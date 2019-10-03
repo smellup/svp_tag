@@ -20,7 +20,7 @@
 		</tr>
 		</thead>
 		<tbody>
-<BOUCLE_liste_exports(DATA){source table, #ENV{typologie}|typologie_plugin_lister_export}{tri #ENV{par, nom}, #GET{defaut_tri}}>
+<BOUCLE_liste_exports(DATA){source table, #ENV{typologie}|typologie_plugin_export_lister}{tri #ENV{par, nom}, #GET{defaut_tri}}>
 			<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
 				<td class="fichier principale">
 					<label for="export_#COMPTEUR_BOUCLE" title="[(#VALEUR{nom}|attribut_html)]">[(#VALEUR{nom})]</label>

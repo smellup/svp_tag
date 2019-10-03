@@ -7,7 +7,6 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
-
 /**
  * Installation du schéma de données propre au plugin et gestion des migrations suivant
  * les évolutions du schéma.
@@ -16,24 +15,23 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @api
  *
- * @param string $nom_meta_base_version
- * 		Nom de la meta dans laquelle sera rangée la version du schéma
- * @param string $version_cible
- * 		Version du schéma de données en fin d'upgrade
+ * @param string $nom_meta_base_version Nom de la meta dans laquelle sera rangée la version du schéma
+ * @param string $version_cible         Version du schéma de données en fin d'upgrade
  *
  * @return void
  */
 function svptype_upgrade($nom_meta_base_version, $version_cible) {
 
+	// Initialisation du tableau des mises à jour
 	$maj = array();
 
-	// Créer la configuration par défaut du plugin
+	// Initialiser la configuration par défaut du plugin
 	include_spip('inc/svptype_typologie');
 	$configuration = array(
 		'typologies' => typologie_plugin_configurer()
 	);
 
-	// Création des tables
+	// Création des tables et sauvegarde de la configuration.
 	$maj['create'] = array(
 		array('maj_tables', array('spip_groupes_mots', 'spip_mots', 'spip_plugins_typologies')),
 		array('ecrire_config', 'svptype', $configuration)
@@ -42,12 +40,10 @@ function svptype_upgrade($nom_meta_base_version, $version_cible) {
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
 
-
 	// Création des groupes de mots nécessaires à la typologie des plugins
 	// -- la configuration a déjà été mise à jour en BDD.
 	typologie_plugin_creer_groupe();
 }
-
 
 /**
  * Suppression de l'ensemble du schéma de données propre au plugin, c'est-à-dire
@@ -55,8 +51,7 @@ function svptype_upgrade($nom_meta_base_version, $version_cible) {
  *
  * @api
  *
- * @param string $nom_meta_base_version
- * 		Nom de la meta dans laquelle sera rangée la version du schéma
+ * @param string $nom_meta_base_version Nom de la meta dans laquelle sera rangée la version du schéma
  *
  * @return void
  */
@@ -75,14 +70,13 @@ function svptype_vider_tables($nom_meta_base_version) {
 	}
 
 	// on supprime les groupes et les mots-clés créés
-	include_spip('inc/config');
-	$ids_groupe = array_column(lire_config('svptype/typologies', array()), 'id_groupe');
-	if ($ids_groupe) {
-		foreach ($ids_groupe as $_id_groupe) {
-			$where = array('id_groupe=' . intval($_id_groupe));
+	$typologies = lire_config('svptype/typologies', array());
+	if ($typologies) {
+		foreach ($typologies as $_typologie => $_description) {
 			// suppression des mots-clés du groupe
-			sql_delete('spip_mots', $where);
+			typologie_plugin_vider($_typologie);
 			// suppression du groupe pour la typologie
+			$where = array('id_groupe=' . intval($_description['id_groupe']));
 			sql_delete('spip_groupes_mots', $where);
 		}
 	}

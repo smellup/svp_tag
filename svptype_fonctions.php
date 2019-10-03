@@ -17,7 +17,7 @@ include_spip('inc/svptype_type_plugin');
  *
  * @package SPIP\SVPTYPE\TYPOLOGIE_PLUGIN\CRITERE
  *
- * @uses typologie_plugin_elaborer_critere()
+ * @uses typologie_plugin_calculer_critere()
  *
  * @critere
  *
@@ -28,12 +28,9 @@ include_spip('inc/svptype_type_plugin');
  *   {typologie_plugin #ENV{typologie}}, #ENV{typologie} désigne forcément une unique typologie
  *   {typologie_plugin #GET{typologie}}, #GET{typologie} désigne forcément une unique typologie
  *
- * @param string  $idb
- *        Identifiant de la boucle.
- * @param array $boucles
- *        AST du squelette.
- * @param Critere $critere
- *        Paramètres du critère dans la boucle.
+ * @param string  $idb     Identifiant de la boucle.
+ * @param array   $boucles AST du squelette.
+ * @param Critere $critere Paramètres du critère dans la boucle.
  *
  * @return void
  */
@@ -48,12 +45,12 @@ function critere_typologie_plugin_dist($idb, &$boucles, $critere) {
 	$boucle->hash .= '
 	// TYPOLOGIE PLUGIN
 	include_spip(\'inc/svptype_typologie\');
-	$conditionner = \'typologie_plugin_elaborer_critere\';';
+	$conditionner = \'typologie_plugin_calculer_critere\';';
 
 	// On identifie les typologies explicitement fournies dans le critère.
 	$typologies = array();
 	if (!empty($critere->param)) {
-		// La ou les versions/branches sont explicites dans l'appel du critere.
+		// La ou les typologies sont explicites dans l'appel du critere.
 		// - on boucle sur les paramètres sachant qu'il est possible de fournir une liste séparée par une virgule
 		//   (ex categorie, tag)
 		foreach ($critere->param as $_param) {

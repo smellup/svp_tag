@@ -17,7 +17,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * @return bool `true` si l'insertion se passe correctement ou `false` sinon.
  */
-function plugin_affecter($plugin, $id_mot, $typologie) {
+function plugin_affecter_type_plugin($plugin, $id_mot, $typologie) {
 
 	// La sortie est toujours ok a priori
 	$retour = true;
@@ -71,7 +71,7 @@ function plugin_affecter($plugin, $id_mot, $typologie) {
  *
  * @return bool `true` si la suppresion se passe correctement ou `false` sinon.
  */
-function plugin_desaffecter($plugin, $id_mot) {
+function plugin_desaffecter_type_plugin($plugin, $id_mot) {
 
 	// La sortie est toujours ok a priori
 	$retour = true;
