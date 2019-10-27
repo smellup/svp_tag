@@ -27,6 +27,7 @@
 	<pipeline nom="afficher_contenu_objet" inclure="svptype_pipelines.php" />
 	<pipeline nom="affiche_milieu" inclure="svptype_pipelines.php" />
 	<pipeline nom="declarer_collections_svp" inclure="svptype_pipelines.php" />
+	<pipeline nom="liste_ezcollection" inclure="svptype_pipelines.php" />
 	<pipeline nom="post_collection_svp" inclure="svptype_pipelines.php" />
 	<pipeline nom="post_ressource_svp" inclure="svptype_pipelines.php" />
 	<pipeline nom="post_affectation_plugin" action="" />
@@ -36,6 +37,7 @@
 	<necessite nom="mots_techniques" compatibilite="[1.0.4;[" />
 	<necessite nom="motsar" compatibilite="[1.1.10;[" />
 	<necessite nom="saisies" compatibilite="[3.19.6;[" />
+	<utilise nom="svpapi" compatibilite="[0.6.0;[" />
 
 	<menu nom="typologie" titre="svptype:svptype_menu_titre" parent="menu_administration" icone="images/svptype_menu-16.png" action="svptype_typologie" />
 </paquet>

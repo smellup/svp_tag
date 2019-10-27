@@ -326,7 +326,7 @@ function svptype_affiche_milieu($flux) {
  *
  * @return array Collections complétées.
  */
-function svptype_declarer_collections_svp($collections) {
+function svptype_liste_ezcollection($collections) {
 
 	// Les index désignent les collections. SVP Typologie rajoute :
 	// -- les collections correspondant aux typologies supportées
@@ -359,11 +359,13 @@ function svptype_declarer_collections_svp($collections) {
 	);
 
 	// -- SVP Typologie rajoute le filtre de catégorie dans la collection plugins proposée par défaut par SVP API.
-	$collections['plugins']['filtres'][] = array(
-		'critere'         => 'categorie',
-		'module'          => 'svptype',
-		'est_obligatoire' => false
-	);
+	if (isset($collections['plugins'])) {
+		$collections['plugins']['filtres'][] = array(
+			'critere'         => 'categorie',
+			'module'          => 'svptype',
+			'est_obligatoire' => false
+		);
+	}
 
 	return $collections;
 }
