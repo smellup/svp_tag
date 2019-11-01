@@ -382,7 +382,7 @@ function svptype_liste_ezcollection($collections) {
  *
  * @return array Données du pipeline complétées
 **/
-function svptype_post_collection_svp($flux) {
+function svptype_post_ezcollection($flux) {
 
 	// Extraction des informations sur la collection.
 	// La collection et la configuration existent toujours.
@@ -427,7 +427,7 @@ function svptype_post_collection_svp($flux) {
  *
  * @return array Données du pipeline complétées
 **/
-function svptype_post_ressource_svp($flux) {
+function svptype_post_ezressource($flux) {
 
 	// Extraction des informations sur la collection.
 	// La collection et la configuration existent toujours.

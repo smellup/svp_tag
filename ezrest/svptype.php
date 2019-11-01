@@ -46,7 +46,7 @@ function categories_collectionner($filtres, $configuration) {
  * @return bool
  *        `true` si la valeur est valide, `false` sinon.
  */
-function categories_verifier_critere_profondeur($profondeur, &$extra) {
+function categories_verifier_filtre_profondeur($profondeur, &$extra) {
 
 	$est_valide = true;
 
@@ -164,7 +164,7 @@ function affectations_collectionner($filtres, $configuration) {
  * @return bool
  *        `true` si la valeur est valide, `false` sinon.
  */
-function affectations_verifier_critere_typologie($typologie, &$extra) {
+function affectations_verifier_filtre_typologie($typologie, &$extra) {
 
 	$est_valide = true;
 
@@ -199,7 +199,7 @@ function affectations_verifier_critere_typologie($typologie, &$extra) {
  * @return bool
  *        `true` si la valeur est valide, `false` sinon.
  */
-function plugins_verifier_critere_categorie($categorie, &$extra) {
+function plugins_verifier_filtre_categorie($categorie, &$extra) {
 
 	$est_valide = true;
 

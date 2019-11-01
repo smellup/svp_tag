@@ -1,7 +1,7 @@
 <paquet
 	prefix="svptype"
 	categorie="outil"
-	version="0.3.1"
+	version="0.3.2"
 	etat="test"
 	compatibilite="[3.3.0-dev;3.3.*]"
 	logo="svptype_logo-64.png"
@@ -28,8 +28,8 @@
 	<pipeline nom="affiche_milieu" inclure="svptype_pipelines.php" />
 	<pipeline nom="declarer_collections_svp" inclure="svptype_pipelines.php" />
 	<pipeline nom="liste_ezcollection" inclure="svptype_pipelines.php" />
-	<pipeline nom="post_collection_svp" inclure="svptype_pipelines.php" />
-	<pipeline nom="post_ressource_svp" inclure="svptype_pipelines.php" />
+	<pipeline nom="post_ezcollection" inclure="svptype_pipelines.php" />
+	<pipeline nom="post_ezressource" inclure="svptype_pipelines.php" />
 	<pipeline nom="post_affectation_plugin" action="" />
 
 	<necessite nom="svp" compatibilite="[2.0.7;[" />
