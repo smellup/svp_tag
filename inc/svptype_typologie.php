@@ -35,7 +35,8 @@ function typologie_plugin_configurer() {
 						'critere'         => 'profondeur',
 						'est_obligatoire' => false
 					)
-				)
+				),
+				'sans_condition' => true
 			)
 		),
 		'tag'       => array(
@@ -434,13 +435,12 @@ function typologie_plugin_export_lister($typologie) {
 }
 
 /**
- * Elabore la collection des types de plugin pour la typologie concernée au format demandé par l'API REST SVP API.
+ * Elabore la collection des types de plugin pour la typologie concernée au format demandé par l'API REST Factory.
  *
  * @param string $typologie Identifiant de la typologie concernée : categorie, tag...
  * @param array  $filtres   Tableau des critères de filtrage additionnels.
  *
- * @return array
- *               Tableau des types des plugins demandés.
+ * @return array Tableau des types des plugins demandés.
  */
 function typologie_plugin_collectionner($typologie, $filtres) {
 

@@ -355,7 +355,8 @@ function svptype_liste_ezcollection($collections) {
 				'critere'         => 'prefixe',
 				'est_obligatoire' => false
 			)
-		)
+		),
+		'sans_condition' => true
 	);
 
 	// -- SVP Typologie rajoute le filtre de catégorie dans la collection plugins proposée par défaut par SVP API.

@@ -1,7 +1,7 @@
 <paquet
 	prefix="svptype"
 	categorie="outil"
-	version="0.4.0"
+	version="0.4.1"
 	etat="test"
 	compatibilite="[3.3.0-dev;3.3.*]"
 	logo="svptype_logo-64.png"
@@ -36,6 +36,7 @@
 	<necessite nom="mots_techniques" compatibilite="[1.0.4;[" />
 	<necessite nom="motsar" compatibilite="[1.1.10;[" />
 	<necessite nom="saisies" compatibilite="[3.19.6;[" />
+	<utilise nom="ezrest" compatibilite="[0.2.1;[" />
 	<utilise nom="svpapi" compatibilite="[0.6.0;[" />
 
 	<menu nom="typologie" titre="svptype:svptype_menu_titre" parent="menu_administration" icone="images/svptype_menu-16.png" action="svptype_typologie" />
