@@ -48,6 +48,15 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'categorie_vidage_liste_label' => 'Supprimer les catégories ?',
 	'categorie_vidage_affectation_label' => 'Supprimer les affectations plugin-categorie ?',
 
+	// E
+	'erreur_400_categorie_nok_titre'    => 'La catégorie « @valeur@ » est invalide',
+	'erreur_400_categorie_nok_message'  => 'La liste des catégories est disponible à l\'adresse @extra@',
+	'erreur_400_typologie_nok_titre'    => 'La typologie « @valeur@ » est invalide',
+	'erreur_400_typologie_nok_message'  => 'La liste des typologies disponibles est : @extra@',
+	'erreur_400_profondeur_nok_titre'    => 'La profondeur « @valeur@ » est invalide',
+	'erreur_400_profondeur_nok_message'  => 'La typologie « @collection@ » n\'accepte que les profondeurs suivantes : @extra@',
+	'erreur_400_profondeur_nok_extra'    => '0 ≤ profondeur ≤ @max@',
+
 	// I
 	'identifiant_label' => 'Identifiant',
 	'identifiant_erreur_duplication' => 'L\'identifiant est déjà utilisé',

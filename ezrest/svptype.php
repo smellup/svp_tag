@@ -2,7 +2,7 @@
 /**
  * Ce fichier contient l'ensemble des fonctions de service spécifiques à une collection.
  *
- * @package SPIP\SVPTYPE\SVPAPI\SERVICE
+ * @package SPIP\SVPTYPE\EZREST\SERVICE
  */
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
@@ -16,6 +16,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 /**
  * Récupère la liste des catégories de la table spip_mots éventuellement filtrée par profondeur.
  *
+ * @param array $conditions
+ *      Tableau des conditions SQL à appliquer au select et correspondant aux filtres passés dans la requête.
  * @param array $filtres
  *      Tableau des critères de filtrage additionnels.
  * @param array $configuration
@@ -25,7 +27,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @return array
  *      Tableau des catégories.
  */
-function categories_collectionner($filtres, $configuration) {
+function categories_collectionner($conditions, $filtres, $configuration) {
 
 	// Initialisation de la typologie
 	$typologie = 'categorie';
@@ -46,7 +48,7 @@ function categories_collectionner($filtres, $configuration) {
  * @return bool
  *        `true` si la valeur est valide, `false` sinon.
  */
-function categories_verifier_filtre_profondeur($profondeur, &$extra) {
+function categories_verifier_filtre_profondeur($profondeur, &$erreur) {
 
 	$est_valide = true;
 
@@ -57,7 +59,8 @@ function categories_verifier_filtre_profondeur($profondeur, &$extra) {
 	// Test de validité
 	if (intval($profondeur) > $max_profondeur) {
 		$est_valide = false;
-		$extra = _T('svpapi:extra_max_profondeur', array('max' => $max_profondeur));
+		$erreur['type'] = 'profondeur_nok';
+		$erreur['extra'] = _T('svptype:erreur_400_profondeur_nok_extra', array('max' => $max_profondeur));
 	}
 
 	return $est_valide;
@@ -71,6 +74,8 @@ function categories_verifier_filtre_profondeur($profondeur, &$extra) {
 /**
  * Récupère la liste des tags de la table spip_mots.
  *
+ * @param array $conditions
+ *      Tableau des conditions SQL à appliquer au select et correspondant aux filtres passés dans la requête.
  * @param array $filtres
  *      Tableau des critères de filtrage additionnels: toujours vide pour les tags.
  * @param array $configuration
@@ -80,7 +85,7 @@ function categories_verifier_filtre_profondeur($profondeur, &$extra) {
  * @return array
  *      Tableau des catégories.
  */
-function tags_collectionner($filtres, $configuration) {
+function tags_collectionner($conditions, $filtres, $configuration) {
 
 	// Initialisation de la typologie
 	$typologie = 'tag';
@@ -100,6 +105,8 @@ function tags_collectionner($filtres, $configuration) {
 /**
  * Récupère la liste des affectations pour une typologie donnée.
  *
+ * @param array $conditions
+ *      Tableau des conditions SQL à appliquer au select et correspondant aux filtres passés dans la requête.
  * @param array $filtres
  *      Tableau des critères : permet en particulier de choisir les affectations pour une typologie donnée.
  * @param array $configuration
@@ -109,7 +116,7 @@ function tags_collectionner($filtres, $configuration) {
  * @return array
  *      Tableau des affectations indexé par préfixe de plugin.
  */
-function affectations_collectionner($filtres, $configuration) {
+function affectations_collectionner($conditions, $filtres, $configuration) {
 
 	// Initialisation de la collection
 	$affectations = array();
@@ -164,7 +171,7 @@ function affectations_collectionner($filtres, $configuration) {
  * @return bool
  *        `true` si la valeur est valide, `false` sinon.
  */
-function affectations_verifier_filtre_typologie($typologie, &$extra) {
+function affectations_verifier_filtre_typologie($typologie, &$erreur) {
 
 	$est_valide = true;
 
@@ -175,10 +182,8 @@ function affectations_verifier_filtre_typologie($typologie, &$extra) {
 	// Test de validité
 	if (!in_array($typologie, $typologies)) {
 		$est_valide = false;
-		$extra = _T(
-			'svpapi:extra_typologie',
-			array('liste' => implode(', ', $typologies))
-		);
+		$erreur['type'] = 'typologie_nok';
+		$erreur['extra'] = implode(', ', $typologies);
 	}
 
 	return $est_valide;
@@ -199,7 +204,7 @@ function affectations_verifier_filtre_typologie($typologie, &$extra) {
  * @return bool
  *        `true` si la valeur est valide, `false` sinon.
  */
-function plugins_verifier_filtre_categorie($categorie, &$extra) {
+function plugins_verifier_filtre_categorie($categorie, &$erreur) {
 
 	$est_valide = true;
 
@@ -212,7 +217,8 @@ function plugins_verifier_filtre_categorie($categorie, &$extra) {
 	// Test de validité
 	if (!in_array($categorie, array_column($categories, 'identifiant'))) {
 		$est_valide = false;
-		$extra = _T('svpapi:extra_url_liste_categories');
+		$erreur['type'] = 'categorie_nok';
+		$erreur['extra'] = 'https://contrib.spip.net/';
 	}
 
 	return $est_valide;
@@ -229,7 +235,7 @@ function plugins_verifier_filtre_categorie($categorie, &$extra) {
  * @return string
  *        Chaine représentant le critère sur la catégorie appliqué à la table spip_plugins.
  */
-function plugins_construire_critere_categorie($categorie) {
+function plugins_conditionner_categorie($categorie) {
 
 	// On initialise le critère avec une condition toujours fausse.
 	$condition = '0=1';
