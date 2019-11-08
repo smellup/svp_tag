@@ -342,6 +342,10 @@ function svptype_liste_ezcollection($collections) {
 	// -- la collection des affectations.
 	$collections['affectations'] = array(
 		'module'    => 'svptype',
+		'cache'     => array(
+			'type'  => 'ezrest',
+			'duree' => 3600 * 24
+		),
 		'filtres'   => array(
 			array(
 				'critere'         => 'typologie',
