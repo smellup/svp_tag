@@ -141,7 +141,7 @@ function plugin_lister_type_plugin($plugin, $typologie) {
 function plugin_elaborer_condition($typologie, $id_mot = 0) {
 
 	// Initialisation de la condition
-	$condition = '';
+	$condition = '0=1';
 
 	// Récupération des plugins sous la forme [prefixe] = id_plugin
 	$select = array('prefixe', 'spip_plugins.id_plugin as id_plugin');
@@ -158,8 +158,11 @@ function plugin_elaborer_condition($typologie, $id_mot = 0) {
 		$affectations = type_plugin_repertorier_affectation($typologie, $filtres);
 		$plugins_affectes = array_column($affectations, null, 'prefixe');
 		if (!$id_mot) {
-			// On veut les plugins non encore affectés
-			if (count($plugins_affectes) > count($plugins) / 2) {
+			// On veut les plugins non encore affectés : on essaye de minimiser la liste dans le IN.
+			if (!$plugins_affectes) {
+				// Plutôt que de faire un IN on met une condition toujours vrai car on veut tous les plugins.
+				$condition = '1=1';
+			} elseif (count($plugins_affectes) > count($plugins) / 2) {
 				$plugins_filtres = array_diff_key($plugins, $plugins_affectes);
 				$condition = 'plugins.id_plugin IN (' . implode(',', $plugins_filtres) . ')';
 			} else {
@@ -167,9 +170,11 @@ function plugin_elaborer_condition($typologie, $id_mot = 0) {
 				$condition = 'plugins.id_plugin NOT IN (' . implode(',', $plugins_filtres) . ')';
 			}
 		} else {
-			// On veut les plugins affectés au type de plugin passé en argument
-			$plugins_filtres = array_intersect_key($plugins, $plugins_affectes);
-			$condition = 'plugins.id_plugin IN (' . implode(',', $plugins_filtres) . ')';
+			if ($plugins_affectes) {
+				// On veut les plugins affectés au type de plugin passé en argument
+				$plugins_filtres = array_intersect_key($plugins, $plugins_affectes);
+				$condition = 'plugins.id_plugin IN (' . implode(',', $plugins_filtres) . ')';
+			}
 		}
 	}
 
