@@ -1,2 +1,1 @@
-# svp_tag
-Module SVP de gestion des catégories et des tags
+Plugin déplacé sur la forge SPIP : https://git.spip.net/plugin/svp_typologie
